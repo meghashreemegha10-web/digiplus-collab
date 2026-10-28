@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Full screen container */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Brain full background */
+.brain {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Important */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Golden overlay layer */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(212, 175, 55, 0.55);  /* Golden transparent layer */
+    mix-blend-mode: multiply;
+}
+
+/* Text bottom right */
+.text {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    color: white;
+    text-align: right;
+    z-index: 2;
+}
+
+.text h1 {
+    margin: 0;
+    font-size: 48px;
+    letter-spacing: 3px;
+}
+
+.text h2 {
+    margin: 0;
+    font-size: 42px;
+}

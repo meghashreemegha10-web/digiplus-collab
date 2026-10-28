@@ -1,0 +1,180 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E6C57F; /* Matches the golden background */
+    font-family: 'Arial Black', Gadget, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+}
+
+/* --- Left Section Styles --- */
+.content-left {
+    flex: 1.5;
+    min-width: 350px;
+}
+
+.main-title {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.instruction {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.video-container {
+    border: 5px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: #000;
+}
+
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-btn {
+    width: 80px;
+    height: 80px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-left: 25px solid white;
+    border-bottom: 15px solid transparent;
+    margin-left: 8px;
+}
+
+/* --- Right Sidebar Button Styles --- */
+.button-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.icon-circle {
+    width: 65px;
+    height: 65px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #3498db;
+    z-index: 2;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+.pill-bg {
+    margin-left: -32.5px; /* Overlaps exactly half the circle */
+    padding: 15px 25px 15px 45px;
+    border-radius: 0 40px 40px 0;
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 280px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Gradients */
+.blue-grad { background: linear-gradient(to right, #00d2ff, #9b30ff); }
+.pink-grad { background: linear-gradient(to right, #ff758c, #ff348e); }
+.orange-grad { background: linear-gradient(to right, #ff9a44, #ff1f71); }
+
+/* --- HOVER EFFECTS --- */
+.btn-group:hover {
+    transform: translateX(10px) scale(1.02);
+}
+
+.btn-group:hover .pill-bg {
+    filter: brightness(1.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+.footer-bar {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    border-top: 3px solid #000;
+    margin-top: auto;
+    background-color: transparent;
+}
+@media (max-width: 850px) {
+    .container {
+        flex-direction: column; /* Stacks video on top of buttons */
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .content-left, .button-sidebar {
+        width: 100%; /* Makes both sections fill the screen width */
+        flex: none;
+    }
+
+    .main-title {
+        font-size: 1.5rem; /* Shrinks text for mobile screens */
+        text-align: center;
+    }
+
+    .instruction {
+        text-align: center;
+    }
+
+    .button-sidebar {
+        align-items: center; /* Centers the buttons on mobile */
+    }
+
+    .pill-bg {
+        width: 100%; /* Optional: lets buttons grow to fill mobile width */
+        max-width: 300px;
+    }
+}

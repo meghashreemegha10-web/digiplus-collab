@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Digi Pulse — Member Masterclass Portal</title>
+  <meta name="description" content="Authorized Member Masterclass Portal for Global Digi Pulse. Select from 3 core Meta Advertising tracks to preview intro videos, review theoretical frameworks, and access complete lessons.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=25.0">
+  <style>
+    :root {
+      --bg-dark: #070c18;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(56, 189, 248, 0.2);
+      --cyan-glow: #38bdf8;
+      --purple-glow: #a855f7;
+      --emerald: #10b981;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08), transparent 40%),
+        radial-gradient(circle at 85% 35%, rgba(168, 85, 247, 0.08), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.05), transparent 50%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation Bar */
+    .portal-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 12, 24, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+      padding: 0.85rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .portal-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .portal-logo-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0284c7, #9333ea);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+
+    .portal-brand-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .portal-nav-center {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .portal-nav-item {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .portal-nav-item:hover, .portal-nav-item.active {
+      color: var(--cyan-glow);
+    }
+
+    .portal-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .user-status-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.4rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      color: #34d399;
+      font-weight: 600;
+    }
+
+    .user-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    .btn-portal-logout {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #f87171;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-portal-logout:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    /* Main Container */
+    .portal-main {
+      flex: 1;
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem 1.5rem;
+    }
+
+    /* Section Header */
+    .portal-header {
+      text-align: center;
+      margin-bottom: 2.8rem;
+    }
+
+    .portal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--cyan-glow);
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .portal-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+      color: #ffffff;
+    }
+
+    .portal-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-sub);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* 3 Options Grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 1024px) {
+      .options-grid { grid-template-columns: 1fr; max-width: 650px; margin: 0 auto; }
+      .portal-nav-center { display: none; }
+    }
+
+    .option-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .option-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--cyan-glow);
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.15);
+    }
+
+    .option-thumb-wrapper {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .option-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .option-card:hover .option-thumb-img {
+      transform: scale(1.05);
+    }
+
+    .option-overlay-play {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 12, 24, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .option-card:hover .option-overlay-play {
+      background: rgba(7, 12, 24, 0.2);
+    }
+
+    .play-btn-circle {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0284c7, #9333ea);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+      transition: transform 0.2s;
+    }
+
+    .option-card:hover .play-btn-circle {
+      transform: scale(1.1);
+    }
+
+    .option-tag-pill {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(7, 12, 24, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .option-status-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(7, 12, 24, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .status-locked { border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; }
+    .status-unlocked { border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; }
+
+    .option-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .option-module-label {
+      font-size: 0.8rem;
+      color: var(--cyan-glow);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+
+    .option-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #ffffff;
+      margin-bottom: 0.6rem;
+    }
+
+    .option-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      line-height: 1.55;
+      margin-bottom: 1.2rem;
+      flex: 1;
+    }
+
+    .option-features-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .feature-chip {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: #cbd5e1;
+    }
+
+    .btn-open-option {
+      width: 100%;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      border: none;
+      color: #ffffff;
+      padding: 0.85rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .btn-open-option:hover {
+      background: linear-gradient(135deg, #0369a1, #1d4ed8);
+      box-shadow: 0 4px 18px rgba(2, 132, 199, 0.4);
+    }
+
+    /* Modal Backdrop */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .modal-content-box {
+      background: #0f172a;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 20px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header-bar {
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: #0f172a;
+      z-index: 10;
+    }
+
+    .modal-header-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modal-close-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #cbd5e1;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .modal-close-btn:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    .modal-body-content {
+      padding: 1.75rem;
+    }
+
+    /* Video Player Inside Modal */
+    .modal-video-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      margin-bottom: 1.8rem;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-video-wrapper video {
+      width: 100%;
+      max-height: 440px;
+      display: block;
+      background: #000;
+    }
+
+    /* Theory Information Card */
+    .theory-box {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .theory-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      color: #38bdf8;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .theory-text {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+    }
+
+    .theory-points-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .theory-points-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+
+    .theory-check-icon {
+      color: #10b981;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Action Trigger Button in Modal */
+    .modal-action-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-modal-unlock {
+      width: 100%;
+      max-width: 460px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      border: none;
+      color: #ffffff;
+      padding: 1rem 1.8rem;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+      transition: all 0.2s;
+    }
+
+    .btn-modal-unlock:hover {
+      background: linear-gradient(135deg, #059669, #047857);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.5);
+    }
+
+    .unlock-subtext {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    /* Payment Gateway Modal */
+    .payment-modal-box {
+      background: #0b1329;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+      text-align: center;
+    }
+
+    .payment-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .payment-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
+    }
+
+    .payment-price-row {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #10b981;
+      margin: 1rem 0;
+    }
+
+    .qr-container {
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 14px;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 1.2rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-placeholder {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .btn-confirm-pay {
+      width: 100%;
+      background: linear-gradient(135deg, #10b981, #0284c7);
+      border: none;
+      color: #fff;
+      padding: 0.95rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-confirm-pay:hover {
+      opacity: 0.95;
+      transform: translateY(-2px);
+    }
+
+    /* Unlocked State View in Modal */
+    .unlocked-banner {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 10px;
+      padding: 0.85rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+      color: #34d399;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="portal-nav">
+    <a href="IntroPage.html" class="portal-brand">
+      <div class="portal-logo-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+      </div>
+      <span class="portal-brand-text">GLOBAL DIGI PULSE</span>
+    </a>
+
+    <nav class="portal-nav-center">
+      <a href="IntroPage.html" class="portal-nav-item active">Masterclasses (3 Tracks)</a>
+      <a href="#optionsSection" class="portal-nav-item">Theory Blueprints</a>
+      <a href="#optionsSection" class="portal-nav-item">Real Videos</a>
+      <a href="mailto:support@globaldigipulse.com" class="portal-nav-item">Support</a>
+    </nav>
+
+    <div class="portal-nav-right">
+      <div class="user-status-pill">
+        <span class="user-status-dot"></span>
+        <span>Shriya (Active Member)</span>
+      </div>
+      <button class="btn-portal-logout" id="portalLogoutBtn" onclick="handleLogout()">Logout</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="portal-main" id="optionsSection">
+    
+    <div class="portal-header">
+      <div class="portal-badge">
+        <span>⚡ Member Masterclass Portal</span>
+      </div>
+      <h1 class="portal-title">Select Your Meta Advertising Track</h1>
+      <p class="portal-subtitle">
+        Click any option below to watch its specialized orientation video, examine the step-by-step strategy theory, and unlock the full masterclass.
+      </p>
+    </div>
+
+    <!-- 3 Video Options Grid -->
+    <div class="options-grid">
+
+      <!-- ================= OPTION 1 ================= -->
+      <div class="option-card" onclick="openOptionModal(1)">
+        <div class="option-thumb-wrapper">
+          <img src="../assets/poster_option1.jpg" alt="Option 1 Creative Mastery" class="option-thumb-img">
+          <div class="option-overlay-play">
+            <div class="play-btn-circle">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+            </div>
+          </div>
+          <span class="option-tag-pill">Option 01 • Creative</span>
+          <div class="option-status-badge status-locked" id="cardStatusBadge1">
+            <span>🔒 Click to Preview</span>
+          </div>
+        </div>
+        <div class="option-body">
+          <span class="option-module-label">Module 01 • Creative Mastery</span>
+          <h2 class="option-card-title">3-Second Hook Formulas & High-Converting Video Ads</h2>
+          <p class="option-card-desc">
+            Stop the scroll on Instagram Reels and Facebook Feed. Access psychological hook formulas, UGC templates, and dynamic creative variations to eliminate ad fatigue.
+          </p>
+          <div class="option-features-tags">
+            <span class="feature-chip">3-Second Hooks</span>
+            <span class="feature-chip">Reel Mockups</span>
+            <span class="feature-chip">High-CTR Copy</span>
+            <span class="feature-chip">UGC Formats</span>
+          </div>
+          <button type="button" class="btn-open-option">
+            <span>Watch Intro & Study Theory →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= OPTION 2 ================= -->
+      <div class="option-card" onclick="openOptionModal(2)">
+        <div class="option-thumb-wrapper">
+          <img src="../assets/poster_option2.jpg" alt="Option 2 Backend & Business Setup" class="option-thumb-img">
+          <div class="option-overlay-play">
+            <div class="play-btn-circle">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+            </div>
+          </div>
+          <span class="option-tag-pill">Option 02 • Foundation</span>
+          <div class="option-status-badge status-locked" id="cardStatusBadge2">
+            <span>🔒 Click to Preview</span>
+          </div>
+        </div>
+        <div class="option-body">
+          <span class="option-module-label">Module 02 • Asset Protection</span>
+          <h2 class="option-card-title">Verified Business Manager, GST Exemption & Account Recovery</h2>
+          <p class="option-card-desc">
+            Configure enterprise Facebook Business Managers, sync Pixel and Conversions API (CAPI), set up official GST tax exemptions, and recover disabled accounts.
+          </p>
+          <div class="option-features-tags">
+            <span class="feature-chip">Verified BM</span>
+            <span class="feature-chip">GST Exemption</span>
+            <span class="feature-chip">Account Recovery</span>
+            <span class="feature-chip">Conversions API</span>
+          </div>
+          <button type="button" class="btn-open-option">
+            <span>Watch Intro & Study Theory →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= OPTION 3 ================= -->
+      <div class="option-card" onclick="openOptionModal(3)">
+        <div class="option-thumb-wrapper">
+          <img src="../assets/poster_option3.jpg" alt="Option 3 Campaign Scaling" class="option-thumb-img">
+          <div class="option-overlay-play">
+            <div class="play-btn-circle">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+            </div>
+          </div>
+          <span class="option-tag-pill">Option 03 • Scaling</span>
+          <div class="option-status-badge status-locked" id="cardStatusBadge3">
+            <span>🔒 Click to Preview</span>
+          </div>
+        </div>
+        <div class="option-body">
+          <span class="option-module-label">Module 03 • Revenue Scaling</span>
+          <h2 class="option-card-title">Advantage+ AI Campaigns, Slashing CPL & 6.4X ROAS Scaling</h2>
+          <p class="option-card-desc">
+            Master Meta's Advantage+ AI bidding, scale winning ad sets with horizontal budget allocation, slash lead costs down to ₹2.60, and achieve predictable 6.4X ROAS.
+          </p>
+          <div class="option-features-tags">
+            <span class="feature-chip">Advantage+ AI</span>
+            <span class="feature-chip">₹2.60 CPL</span>
+            <span class="feature-chip">6.4X ROAS</span>
+            <span class="feature-chip">Budget Scaling</span>
+          </div>
+          <button type="button" class="btn-open-option">
+            <span>Watch Intro & Study Theory →</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       POPUP 1: OPTION DETAILS MODAL (INTRO VIDEO + THEORY + UNLOCK BUTTON)
+       ========================================================================= -->
+  <div class="modal-overlay" id="optionModal">
+    <div class="modal-content-box">
+      
+      <div class="modal-header-bar">
+        <div class="modal-header-title">
+          <span id="modalOptionBadge">Option 01</span>
+          <span id="modalOptionTitle">Module Overview</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeOptionModal()" aria-label="Close modal">×</button>
+      </div>
+
+      <div class="modal-body-content">
+        
+        <!-- Unlocked Notice Banner (Shown after payment) -->
+        <div class="unlocked-banner" id="unlockedBanner" style="display: none;">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>🎉 Real Masterclass Unlocked! Streaming full video below.</span>
+        </div>
+
+        <!-- Video Player (Swaps from Intro Video to Real Video upon payment) -->
+        <div class="modal-video-wrapper">
+          <video id="modalVideoPlayer" controls playsinline preload="metadata">
+            <source id="modalVideoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Theory Information Section -->
+        <div class="theory-box">
+          <div class="theory-header">
+            <span>📘 Strategy & Blueprint Theory</span>
+          </div>
+          <p class="theory-text" id="modalTheoryOverview">
+            Theory overview goes here...
+          </p>
+          <ul class="theory-points-list" id="modalTheoryList">
+            <!-- Populated dynamically based on option -->
+          </ul>
+        </div>
+
+        <!-- Action / Payment Button Section -->
+        <div class="modal-action-bar" id="modalActionBar">
+          <button type="button" class="btn-modal-unlock" id="btnUnlockOption" onclick="openPaymentGateway()">
+            <span id="unlockBtnText">💳 Unlock Full Masterclass (Watch Real Video) — ₹499</span>
+          </button>
+          <span class="unlock-subtext">Instant Access • Secure 256-bit Encrypted Checkout • UPI, Cards & NetBanking</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       POPUP 2: PAYMENT GATEWAY MODAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="paymentGatewayModal" style="z-index: 1100;">
+    <div class="payment-modal-box">
+      <button class="modal-close-btn" onclick="closePaymentGateway()" style="position: absolute; top: 16px; right: 16px;">×</button>
+      
+      <span class="payment-badge">🔒 SECURE CHECKOUT</span>
+      <h3 class="payment-title">Unlock Full Masterclass Video</h3>
+      <p style="color: var(--text-sub); font-size: 0.92rem;" id="paymentModuleLabel">Option 01: Creative Mastery</p>
+      
+      <div class="payment-price-row">
+        <span>₹499</span>
+        <span style="font-size: 0.95rem; color: #94a3b8; font-weight: 500;">/ one-time lifetime</span>
+      </div>
+
+      <!-- Dynamic UPI QR Code for instant payment -->
+      <div class="qr-container">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=globaldigipulse@upi%26pn=GlobalDigiPulse%26am=499%26cu=INR" alt="UPI Payment QR" class="qr-placeholder" id="qrImg">
+      </div>
+      <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.2rem;">
+        Scan with Google Pay, PhonePe, Paytm, or any UPI app
+      </p>
+
+      <button type="button" class="btn-confirm-pay" onclick="simulatePaymentSuccess()">
+        <span>⚡ 1-Click Complete Payment & Reveal Real Video</span>
+      </button>
+
+      <p style="font-size: 0.78rem; color: #64748b; margin-top: 1rem;">
+        Guaranteed instant delivery • Receipt sent to registered email
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 2rem; color: #64748b; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.06);">
+    © 2026 GLOBAL DIGI PULSE • ALL RIGHTS RESERVED • Empowering High-Growth Advertisers Worldwide
+  </footer>
+
+  <script>
+    // Module Data Store (Intro Video, Theory Info, Real Video)
+    const optionsData = {
+      1: {
+        id: 1,
+        badge: "Option 01 • Creative Mastery",
+        title: "3-Second Hook Formulas & High-Converting Video Ads",
+        price: "₹499",
+        introVideo: "../assets/intro_option1.mp4",
+        introPoster: "../assets/poster_option1.jpg",
+        realVideo: "https://archive.org/download/bonus-video-2.mp-4/Bonus%20Video%202.mp4.mp4",
+        realPoster: "../assets/poster_option1.jpg",
+        theoryOverview: "Over 80% of paid ad performance depends directly on your creative. If you cannot stop cold users within their first 3 seconds of scrolling, your ad spend is wasted. This masterclass breaks down the exact psychological framework behind scroll-stopping video ads.",
+        theoryPoints: [
+          "<strong>The 3-Second Rule:</strong> Visual pattern interrupts (rapid motion, bold text overlays, direct camera callouts) that freeze thumb movement.",
+          "<strong>The 4-Part Creative Anatomy:</strong> 0-3s Hook → 4-12s Agitation of the core pain point → 13-25s Solution & Social Proof → 26-30s Clear Call-To-Action.",
+          "<strong>Dynamic Creative Testing (DCT):</strong> Uploading 3 hooks, 2 bodies, and 2 CTAs into a single Meta ad set to let the algorithm pinpoint the lowest CPA combination.",
+          "<strong>Smartphone UGC Production:</strong> How to shoot 5 scroll-stopping Reels on an everyday phone without expensive cameras or production studios."
+        ]
+      },
+      2: {
+        id: 2,
+        badge: "Option 02 • Foundation & Protection",
+        title: "Verified Business Manager, GST Exemption & Account Recovery",
+        price: "₹499",
+        introVideo: "../assets/intro_option2.mp4",
+        introPoster: "../assets/poster_option2.jpg",
+        realVideo: "https://archive.org/download/short-video.jpg/short%20video.jpg.mp4",
+        realPoster: "../assets/poster_option2.jpg",
+        theoryOverview: "Meta's compliance AI bans thousands of ad accounts daily due to misconfigured Business Managers. This masterclass provides the exact administrative and technical setup required to maintain an enterprise-level, ban-proof advertising backend.",
+        theoryPoints: [
+          "<strong>Enterprise BM Verification:</strong> Step-by-step submission of business registration, domain verification, and utility proofs for verified green-shield status.",
+          "<strong>GST 18% Tax Exemption:</strong> Correct configuration of GSTIN in payment settings to legally save 18% tax surcharge on all ad spend.",
+          "<strong>Meta Conversions API (CAPI):</strong> Server-side event tracking via webhooks and Digistore to bypass iOS 14.5+ cookie restrictions and record 100% of purchase conversions.",
+          "<strong>4-Step Emergency Recovery Protocol:</strong> The exact internal appeal templates and escalation channels to unban disabled Facebook profiles and ad accounts within 48 hours."
+        ]
+      },
+      3: {
+        id: 3,
+        badge: "Option 03 • Scaling & ROAS",
+        title: "Advantage+ AI Campaigns, Slashing CPL & 6.4X ROAS Scaling",
+        price: "₹499",
+        introVideo: "../assets/intro_option3.mp4",
+        introPoster: "../assets/poster_option3.jpg",
+        realVideo: "https://archive.org/download/short-video.jpg/short%20video%203.jpg.mp4",
+        realPoster: "../assets/poster_option3.jpg",
+        theoryOverview: "Scaling ad spend without blowing up your Cost Per Lead requires machine learning synergy. This masterclass demonstrates how to harness Meta Advantage+ shopping and lead campaigns to scale budgets horizontally while locking in high ROAS.",
+        theoryPoints: [
+          "<strong>Advantage+ AI Audience Targeting:</strong> Letting Meta's machine learning find high-intent buyers rather than boxing campaigns into narrow, restrictive manual interests.",
+          "<strong>Slashing CPL to ₹2.60:</strong> Leveraging instant lead form micro-surveys with auto-fill fields to maximize lead completion rates at pennies per acquisition.",
+          "<strong>The 20% Budget Scaling Law:</strong> How and when to increase campaign budgets by 15-20% every 48 hours without triggering the algorithm's learning reset.",
+          "<strong>Attribution & ROAS Mathematics:</strong> Calculating True ROAS vs Blended ROAS across Facebook and Instagram to know exactly which ad sets are generating pure profit."
+        ]
+      }
+    };
+
+    let currentOptionId = 1;
+
+    // Open Option Modal
+    function openOptionModal(optId) {
+      currentOptionId = optId;
+      const opt = optionsData[optId];
+      if (!opt) return;
+
+      document.getElementById('modalOptionBadge').textContent = opt.badge;
+      document.getElementById('modalOptionTitle').textContent = opt.title;
+      document.getElementById('paymentModuleLabel').textContent = `${opt.badge}: ${opt.title}`;
+      document.getElementById('modalTheoryOverview').textContent = opt.theoryOverview;
+
+      // Populate Theory points
+      const listEl = document.getElementById('modalTheoryList');
+      listEl.innerHTML = '';
+      opt.theoryPoints.forEach(pt => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="theory-check-icon">✓</span><span>${pt}</span>`;
+        listEl.appendChild(li);
+      });
+
+      // Check if user has already unlocked this option
+      const isUnlocked = localStorage.getItem(`unlocked_option_${optId}`) === 'true';
+      const player = document.getElementById('modalVideoPlayer');
+      const source = document.getElementById('modalVideoSource');
+      const banner = document.getElementById('unlockedBanner');
+      const actionBtn = document.getElementById('btnUnlockOption');
+      const btnText = document.getElementById('unlockBtnText');
+
+      if (isUnlocked) {
+        // Show real video
+        banner.style.display = 'flex';
+        player.poster = opt.realPoster;
+        source.src = opt.realVideo;
+        actionBtn.style.background = 'linear-gradient(135deg, #0284c7, #2563eb)';
+        btnText.innerHTML = '▶ Real Masterclass Unlocked (Playing Above)';
+        actionBtn.onclick = function() { player.scrollIntoView({ behavior: 'smooth' }); player.play(); };
+      } else {
+        // Show intro video
+        banner.style.display = 'none';
+        player.poster = opt.introPoster;
+        source.src = opt.introVideo;
+        actionBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+        btnText.innerHTML = `💳 Unlock Full Masterclass (Watch Real Video) — ${opt.price}`;
+        actionBtn.onclick = openPaymentGateway;
+      }
+
+      player.load();
+      document.getElementById('optionModal').style.display = 'flex';
+    }
+
+    function closeOptionModal() {
+      const player = document.getElementById('modalVideoPlayer');
+      player.pause();
+      document.getElementById('optionModal').style.display = 'none';
+    }
+
+    // Payment Gateway Flow
+    function openPaymentGateway() {
+      const opt = optionsData[currentOptionId];
+      document.getElementById('paymentModuleLabel').textContent = `${opt.badge}: ${opt.title}`;
+      document.getElementById('paymentGatewayModal').style.display = 'flex';
+    }
+
+    function closePaymentGateway() {
+      document.getElementById('paymentGatewayModal').style.display = 'none';
+    }
+
+    // Simulate Payment Success
+    function simulatePaymentSuccess() {
+      const opt = optionsData[currentOptionId];
+      // Save unlock status in localStorage
+      localStorage.setItem(`unlocked_option_${currentOptionId}`, 'true');
+
+      // Update card badge in dashboard
+      updateDashboardBadges();
+
+      // Close payment modal
+      closePaymentGateway();
+
+      // Update Option Modal to show Real Video
+      const banner = document.getElementById('unlockedBanner');
+      const player = document.getElementById('modalVideoPlayer');
+      const source = document.getElementById('modalVideoSource');
+      const actionBtn = document.getElementById('btnUnlockOption');
+      const btnText = document.getElementById('unlockBtnText');
+
+      banner.style.display = 'flex';
+      banner.scrollIntoView({ behavior: 'smooth' });
+
+      player.poster = opt.realPoster;
+      source.src = opt.realVideo;
+      player.load();
+      player.play();
+
+      actionBtn.style.background = 'linear-gradient(135deg, #0284c7, #2563eb)';
+      btnText.innerHTML = '▶ Real Masterclass Unlocked (Playing Above)';
+      actionBtn.onclick = function() { player.scrollIntoView({ behavior: 'smooth' }); player.play(); };
+    }
+
+    // Update Dashboard Card Badges
+    function updateDashboardBadges() {
+      for (let i = 1; i <= 3; i++) {
+        const badgeEl = document.getElementById(`cardStatusBadge${i}`);
+        if (!badgeEl) continue;
+        const isUnlocked = localStorage.getItem(`unlocked_option_${i}`) === 'true';
+        if (isUnlocked) {
+          badgeEl.className = 'option-status-badge status-unlocked';
+          badgeEl.innerHTML = '<span>✅ Unlocked & Ready</span>';
+        } else {
+          badgeEl.className = 'option-status-badge status-locked';
+          badgeEl.innerHTML = '<span>🔒 Click to Preview</span>';
+        }
+      }
+    }
+
+    // Logout Handler
+    function handleLogout() {
+      localStorage.removeItem('userId');
+      localStorage.removeItem('accessGranted');
+      window.location.href = 'LoginPage.html';
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      updateDashboardBadges();
+
+      // Check query param (e.g. ?option=1) from demo links
+      const urlParams = new URLSearchParams(window.location.search);
+      const optParam = urlParams.get('option');
+      if (optParam && optionsData[optParam]) {
+        openOptionModal(parseInt(optParam, 10));
+      }
+    });
+  </script>
+</body>
+</html>

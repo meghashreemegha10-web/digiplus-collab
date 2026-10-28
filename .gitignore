@@ -1,0 +1,133 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# Misc
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Ignore coverage reports
+coverage/
+
+# Ignore test output
+/test-output/
+
+# Ignore local database
+*.sqlite
+*.db
+
+# Ignore package-lock
+package-lock.json
+yarn.lock
+
+# Ignore static files
+/public/
+
+# Ignore serverless
+.serverless/
+
+# Ignore next.js
+.next/
+
+# Ignore SvelteKit
+.svelte-kit/
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore backup files
+*.bak
+
+# Ignore old files
+*.old
+
+# Ignore error dumps
+*.stackdump
+
+# Ignore npm cache
+.npm/
+
+# Ignore pip cache
+__pycache__/
+
+# Ignore Python virtualenv
+venv/
+
+# Ignore Jupyter notebooks
+.ipynb_checkpoints/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore IntelliJ IDEA settings
+.idea/
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+
+# Ignore all video files
+ui/images/*.mp4
+*.mp4
+*.JPG
+*.jpg
+
+# Ignore video and large image files
+*.mp4
+*.jpg
+*.jpeg
+*.png
+*.mov
+*.avi
+*.mkv
+*.webm
+*.gif
+*.bmp
+*.tiff
+*.svg
+*.psd
+*.ico
+*.heic
+*.raw
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+*.exe
+*.dll
+*.iso
+*.dmg
+*.DS_Store
+Thumbs.db
+
+# EXCEPTIONS: Allow images used in login page
+!ui/html/usericon.jpg
+!ui/html/eye.jpg
+!ui/html/lock.jpg
+!ui/html/detail-brain-animation-hd-8k-wallpaper-background-stock-photographic-image_915071-23473.jpg
+!ui/images/lock.jpg
+!ui/images/detail-brain-animation-hd-8k-wallpaper-background-stock-photographic-image_915071-23473.jpg
+!ui/html/favicon.svg

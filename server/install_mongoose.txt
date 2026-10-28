@@ -1,0 +1,5 @@
+Run the following command in PowerShell to install mongoose:
+
+npm install mongoose
+
+This will allow your backend to use mongoose for MongoDB connection and schema management.

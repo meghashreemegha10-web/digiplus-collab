@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>window.location.replace("IntroPage.html");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOBAL DIGI PULSE</title>
+    <link rel="stylesheet" href="campaign.css">
+    <link rel="icon" type="image/png" href="../images/icon-7797704_640.JPG">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        body {
+            background-color: #f7f7fa;
+        }
+        .header-section {
+            padding: 40px 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(46, 154, 208, 0.18);
+            background: rgba(255,255,255,0.92);
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1.main-title {
+            color: #2e9ad0;
+            font-size: 2.6rem;
+            text-shadow: 2px 2px 12px #ffe066, 0 2px 8px #2e9ad0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .sub-title {
+            font-size: 1.2rem;
+            color: #ff4e50;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .button-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-left: 48px;
+            margin-top: 32px; /* was 80px, now moved further up */
+            align-items: stretch;
+        }
+        .btn-group {
+            width: 100%;
+            max-width: 380px;
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 24px #2e9ad0a0, 0 2px 8px #ffe066a0;
+            border-radius: 28px;
+            background: rgba(255,255,255,0.92);
+            position: relative;
+            overflow: visible;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .btn-group::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 32px;
+            background: linear-gradient(120deg, #ffe066 0%, #2e9ad0 100%);
+            filter: blur(8px);
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .btn-group:hover {
+            box-shadow: 0 12px 36px #ffe066, 0 4px 24px #2e9ad0;
+            transform: scale(1.035);
+        }
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            border-radius: 50%;
+            background: #fff;
+            margin-right: 16px;
+            box-shadow: 0 2px 8px #2e9ad0a0;
+        }
+        .label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #232946;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .video-preview {
+            width: 100%;
+            max-width: 420px;
+            margin-bottom: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #2e9ad0;
+            overflow: hidden;
+            background: rgba(255,255,255,0.92);
+            padding: 24px;
+        }
+        .main-action-btn {
+            background: linear-gradient(90deg, #2e9ad0 0%, #ffe066 100%);
+            color: #232946;
+            border: none;
+            border-radius: 32px;
+            padding: 16px 40px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 24px #2e9ad0a0, 0 2px 8px #ffe066a0;
+            margin-top: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.18s, box-shadow 0.18s;
+            outline: none;
+            z-index: 1;
+            animation: pulseGlow 1.8s infinite;
+        }
+        .main-action-btn::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border-radius: 36px;
+            background: linear-gradient(120deg, #ffe066 0%, #2e9ad0 100%);
+            filter: blur(8px);
+            opacity: 0.5;
+            z-index: -1;
+            transition: opacity 0.2s;
+        }
+        .main-action-btn:hover, .main-action-btn:focus {
+            transform: scale(1.04);
+            box-shadow: 0 8px 32px #ffe066, 0 2px 16px #2e9ad0;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 4px 24px #2e9ad0a0, 0 2px 8px #ffe066a0; }
+            50% { box-shadow: 0 8px 40px #ffe066, 0 2px 16px #2e9ad0; }
+        }
+        @media (max-width: 900px) {
+            .main-content { flex-direction: column !important; align-items: center !important; }
+            .button-sidebar { margin-left: 0; margin-top: 32px; }
+        }
+        @media (max-width: 600px) {
+            .main-content {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                width: 100vw !important;
+                max-width: 100vw !important;
+                min-width: 100vw !important;
+                box-sizing: border-box !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: flex !important;
+            }
+            .header-section {
+                min-width: 100vw !important;
+                max-width: 100vw !important;
+                width: 100vw !important;
+                box-sizing: border-box !important;
+                padding: 8px 0 0 0 !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 0 !important;
+            }
+            h1.main-title { font-size: 1.2rem !important; }
+            .main-content { flex-direction: column !important; gap: 12px !important; align-items: center !important; }
+            .button-sidebar {
+                min-width: unset !important;
+                margin-top: 18px !important;
+                gap: 16px !important;
+                align-items: center !important;
+                width: 100vw !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                text-align: center !important;
+            }
+            .btn-group {
+                min-height: 48px;
+                max-width: 98vw;
+                border-radius: 16px;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                justify-content: center !important;
+            }
+        }
+        .footer-line {
+            font-size: 16px;
+            text-align: center;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100vw;
+            position: fixed;
+            bottom: 0;
+            padding: 6px 0; /* make the footer height a little shorter */
+            color: #fff;
+            text-shadow: 1px 1px 4px #2e9ad0;
+            background: rgba(46,154,208,0.85);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .creative-bg {
+          position: fixed;
+          top: 0; left: 0; width: 100vw; height: 100vh;
+          z-index: 0;
+          pointer-events: none;
+          background: linear-gradient(120deg, #2e9ad0 0%, #ffe066 40%, #ff4e50 80%, #6dd5ed 100%);
+          background-size: 200% 200%;
+          animation: bgMove 12s ease-in-out infinite;
+          opacity: 0.93;
+          overflow: hidden;
+        }
+        @keyframes bgMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .creative-bg, body > .gradient-overlay { display: none !important; }
+        body {
+          background: linear-gradient(180deg, rgba(10, 16, 35, 0.12) 0%, rgba(12, 18, 40, 0.22) 50%, rgba(8, 13, 28, 0.45) 100%),
+                      url('../assets/ads_youtube_campaign.jpg?v=7.0') no-repeat center top fixed !important;
+          background-size: cover !important;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/magical-world.css?v=14.0">
+</head>
+<body class="page-campaign">
+  <div class="creative-bg"></div>
+  <main class="container" style="display:flex;flex-direction:row;align-items:center;justify-content:center;min-height:100vh;position:relative;z-index:1;padding:24px 16px 40px;">
+    <section class="content-left" style="width:100%;max-width:1140px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <div class="welcome-box campaign-box" style="display:flex;flex-direction:row;align-items:flex-start;justify-content:center;width:100%;max-width:1140px;gap:32px;padding:30px 28px;">
+        
+        <!-- Left Column: Video & Actions -->
+        <div style="flex:1;min-width:280px;max-width:440px;display:flex;flex-direction:column;align-items:center;">
+          <div class="magical-nav-badge" style="margin-bottom:12px;font-size:0.90rem;padding:5px 12px;">🚀 GOOGLE & YOUTUBE CAMPAIGNS: ROI SCALING 🚀</div>
+          <h1 class="main-title" style="margin-bottom:16px;font-size:2.1rem;text-align:center;">WELCOME TO GLOBAL DIGI PULSE</h1>
+          <div class="video-container" style="width:100%;max-width:440px;margin-bottom:16px;border-radius:16px;overflow:hidden;">
+            <video width="100%" height="220" controls style="border-radius:14px;max-height:220px;display:block;">
+              <source src="https://archive.org/download/short-video.jpg/short%20video%203.jpg.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div style="margin-top:14px;display:flex;justify-content:center;gap:14px;width:100%;">
+            <button class="welcome-btn" id="goToBusinessBtn" style="padding:12px 24px;font-size:1.05rem;">
+              <svg style="vertical-align:middle;margin-right:8px;" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="10" stroke="#2e9ad0" stroke-width="2" fill="#ffe066"/><path d="M9 8l5 3-5 3V8z" fill="#2e9ad0"/></svg>
+              Next Page
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: 4 YouTube & Google Campaign Modules (Covering the space!) -->
+        <aside class="button-sidebar" style="flex:1.2;min-width:300px;max-width:520px;display:flex;flex-direction:column;gap:14px;margin:0;align-items:stretch;padding-right:6px;">
+          <div class="btn-group" onclick="showYoutubeCampaignPopup()">
+            <div class="icon-circle" style="background:#ff0000 !important; border:none !important; box-shadow:0 0 12px rgba(255,0,0,0.5) !important;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><rect width="24" height="24" rx="12" fill="#ff0000"/><path d="M10 8.5l5.5 3.5-5.5 3.5V8.5z" fill="#ffffff"/></svg>
+            </div>
+            <div class="pill-bg blue-grad">
+              <button>HOW TO SETUP YOUR FIRST YOUTUBE CAMPAIGN</button>
+            </div>
+          </div>
+
+          <div class="btn-group" onclick="showCampaignSetupPopup()">
+            <div class="icon-circle" style="background:#0284c7 !important; border:none !important; box-shadow:0 0 12px rgba(2,132,199,0.5) !important;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2"/><path d="M8 12l2.5 2.5L16 9" stroke="#ffffff" stroke-width="2"/></svg>
+            </div>
+            <div class="pill-bg pink-grad">
+              <button>ENTIRE CAMPAIGN SETUP VIDEO</button>
+            </div>
+          </div>
+
+          <div class="btn-group" onclick="showBillingPopup()">
+            <div class="icon-circle" style="background:#f59e0b !important; border:none !important; box-shadow:0 0 12px rgba(245,158,11,0.5) !important;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><rect x="3" y="7" width="18" height="10" rx="2" stroke="#ffffff" stroke-width="2"/><path d="M7 11h2" stroke="#ffffff" stroke-width="2"/><path d="M15 11h2" stroke="#ffffff" stroke-width="2"/></svg>
+            </div>
+            <div class="pill-bg orange-grad">
+              <button>HOW TO ADD BILLING TO SETUP ADS</button>
+            </div>
+          </div>
+
+          <div class="btn-group" onclick="showAnalyzeDataPopup()">
+            <div class="icon-circle" style="background:#10b981 !important; border:none !important; box-shadow:0 0 12px rgba(16,185,129,0.5) !important;">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><rect x="3" y="13" width="3" height="8" rx="1.5" fill="#ffffff"/><rect x="9" y="9" width="3" height="12" rx="1.5" fill="#ffffff"/><rect x="15" y="5" width="3" height="16" rx="1.5" fill="#ffffff"/></svg>
+            </div>
+            <div class="pill-bg blue-grad">
+              <button>HOW TO ANALYSE YOUR DATA</button>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+    <footer class="footer-line" style="position:fixed;left:0;bottom:0;width:100vw;text-align:center;padding:12px 0;color:#fff;font-size:16px;font-weight:700;text-shadow:1px 1px 4px #2e9ad0;background:rgba(10,16,38,0.95);z-index:10;display:flex;justify-content:center;align-items:center;">All rights reserved</footer>
+    <!-- Loading spinner -->
+    <div id="loadingSpinner" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(255,255,255,0.7);z-index:999;justify-content:center;align-items:center;">
+        <div style="border:8px solid #2e9ad0;border-top:8px solid #ffe066;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;"></div>
+    </div>
+    <script>
+    function showSpinner() {
+        document.getElementById('loadingSpinner').style.display = 'flex';
+    }
+    function hideSpinner() {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }
+    function showYoutubeCampaignPopup() {
+      document.getElementById('youtube-campaign-popup').style.display = 'flex';
+      var vid = document.getElementById('youtube-campaign-video');
+      vid.currentTime = 0;
+      vid.pause(); // Do not autoplay
+    }
+    function closeYoutubeCampaignPopup() {
+      document.getElementById('youtube-campaign-popup').style.display = 'none';
+      var vid = document.getElementById('youtube-campaign-video');
+      vid.pause();
+    }
+    function showCampaignSetupPopup() {
+      document.getElementById('campaign-setup-popup').style.display = 'flex';
+      var vid = document.getElementById('campaign-setup-video');
+      vid.currentTime = 0;
+      vid.pause(); // Do not autoplay
+    }
+    function closeCampaignSetupPopup() {
+      document.getElementById('campaign-setup-popup').style.display = 'none';
+      var vid = document.getElementById('campaign-setup-video');
+      vid.pause();
+    }
+    function showBillingPopup() {
+      document.getElementById('billing-popup').style.display = 'flex';
+      var vid = document.getElementById('billing-video');
+      vid.currentTime = 0;
+      vid.pause(); // Do not autoplay
+    }
+    function closeBillingPopup() {
+      document.getElementById('billing-popup').style.display = 'none';
+      var vid = document.getElementById('billing-video');
+      vid.pause();
+    }
+    function showAnalyzeDataPopup() {
+      document.getElementById('analyze-data-popup').style.display = 'flex';
+      var vid = document.getElementById('analyze-data-video');
+      vid.currentTime = 0;
+      vid.pause(); // Do not autoplay
+    }
+    function closeAnalyzeDataPopup() {
+      document.getElementById('analyze-data-popup').style.display = 'none';
+      var vid = document.getElementById('analyze-data-video');
+      vid.pause();
+    }
+    // Disable all sidebar buttons and Next button until payment is successful
+    const sidebarBtns = document.querySelectorAll('.button-sidebar .btn-group');
+    const nextBtn = document.getElementById('goToBusinessBtn');
+    const payYoutubeBtn = document.getElementById('payYoutubeBtn');
+    sidebarBtns.forEach(btn => btn.setAttribute('disabled', 'disabled'));
+    sidebarBtns.forEach(btn => {
+      btn.style.pointerEvents = 'none';
+      btn.style.opacity = '0.5';
+      btn.style.filter = 'grayscale(0.7)';
+    });
+    // Disable Next button by default
+    if (nextBtn) {
+      nextBtn.setAttribute('disabled', 'disabled');
+      nextBtn.style.pointerEvents = 'none';
+      nextBtn.style.opacity = '0.5';
+      nextBtn.style.filter = 'grayscale(0.7)';
+    }
+
+    // Check localStorage for payment status
+    let campaignPaid = localStorage.getItem('campaignPaid') === 'true';
+    if (campaignPaid) {
+      enableSidebarButtons();
+      enableNextButton();
+      disablePayYoutubeBtn();
+    }
+
+    // If user has already paid for campaign, redirect to BusinessAccount.html
+    if (localStorage.getItem('campaignPaid') === 'true') {
+      window.location.href = 'BusinessAccount.html';
+    }
+
+    // Enforce backend payment status check on page load
+    (async function() {
+      try {
+        const res = await fetch('/user-access-status', { credentials: 'include' });
+        if (res.ok) {
+          const status = await res.json();
+          if (status.campaignPaid) {
+            localStorage.setItem('campaignPaid', 'true');
+            enableSidebarButtons();
+            enableNextButton();
+            disablePayYoutubeBtn();
+            // Optionally redirect if you want to skip this page
+            // window.location.href = 'BusinessAccount.html';
+          } else {
+            localStorage.removeItem('campaignPaid');
+          }
+        }
+      } catch (e) {
+        // Optionally show error or fallback
+      }
+    })();
+
+    function enableSidebarButtons() {
+      sidebarBtns.forEach(btn => btn.removeAttribute('disabled'));
+      sidebarBtns.forEach(btn => {
+        btn.style.pointerEvents = '';
+        btn.style.opacity = '';
+        btn.style.filter = '';
+      });
+    }
+    function enableNextButton() {
+      if (nextBtn) {
+        nextBtn.removeAttribute('disabled');
+        nextBtn.style.pointerEvents = '';
+        nextBtn.style.opacity = '';
+        nextBtn.style.filter = '';
+      }
+    }
+    function disablePayYoutubeBtn() {
+      if (payYoutubeBtn) {
+        payYoutubeBtn.disabled = true;
+        payYoutubeBtn.textContent = 'Already Paid';
+        payYoutubeBtn.style.opacity = '0.6';
+        payYoutubeBtn.style.pointerEvents = 'none';
+        payYoutubeBtn.style.filter = 'grayscale(0.7)';
+      }
+    }
+
+    document.getElementById("goToBusinessBtn")?.addEventListener("click", function() {
+      window.location.href = "BusinessAccount.html";
+    });
+    document.getElementById("payYoutubeBtn")?.addEventListener("click", function() {
+      const userId = localStorage.getItem('userId');
+      const email = localStorage.getItem('email') || '';
+      const name = localStorage.getItem('name') || '';
+      fetch("/create-order", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, amount: 149900, purpose: 'campaign' }) // ₹1499 in paise, purpose added
+      })
+        .then(res => res.json())
+        .then(order => {
+          if (order && order.id) {
+            const options = {
+              key: 'rzp_live_SgVjOOUUHbzBIS', // Razorpay live key
+              amount: order.amount,
+              currency: order.currency,
+              name: 'GLOBAL DIGI PULSE',
+              description: 'Unlock YouTube Campaign Videos',
+              order_id: order.id,
+              handler: function (response) {
+                // Verify payment on backend before granting access
+                fetch('/verify-payment', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    razorpay_payment_id: response.razorpay_payment_id,
+                    razorpay_order_id: response.razorpay_order_id,
+                    razorpay_signature: response.razorpay_signature,
+                    userId: userId
+                  })
+                })
+                  .then(res => res.json())
+                  .then(data => {
+                    if (data.success) {
+                      localStorage.setItem('campaignPaid', 'true');
+                      enableSidebarButtons();
+                      enableNextButton();
+                      disablePayYoutubeBtn();
+                    } else {
+                      alert('Payment verification failed. Please contact support.');
+                    }
+                  })
+                  .catch(() => {
+                    alert('Server error during payment verification.');
+                  });
+              },
+              prefill: {
+                name: name,
+                email: email
+              },
+              theme: {
+                color: '#ff4e50'
+              },
+              modal: {
+                ondismiss: function() {
+                  // Optionally handle modal close
+                }
+              }
+            };
+            const rzp = new Razorpay(options);
+            rzp.open();
+          } else {
+            alert('Failed to create order.');
+          }
+        })
+        .catch(() => {
+          alert('Server error. Please try again or contact support.');
+        });
+    });
+    // Payment logic for persistent access control
+function checkPaymentStatus() {
+    const paymentStatus = localStorage.getItem('paymentStatus');
+    const paymentSection = document.getElementById('payment-section');
+    // Hide payment section if already paid
+    if (paymentStatus === '999' || paymentStatus === '1499') {
+        if (paymentSection) paymentSection.style.display = 'none';
+        // Enable features/buttons based on tier
+        if (paymentStatus === '1499') {
+            document.body.classList.add('premium');
+            // Enable all campaign buttons
+            document.querySelectorAll('.campaign-btn').forEach(btn => btn.disabled = false);
+        } else {
+            document.body.classList.add('basic');
+            // Disable advanced campaign buttons
+            document.querySelectorAll('.premium-only').forEach(btn => btn.disabled = true);
+        }
+    } else {
+        if (paymentSection) paymentSection.style.display = '';
+        // Restrict all campaign features
+        document.querySelectorAll('.campaign-btn').forEach(btn => btn.disabled = true);
+        document.body.classList.add('no-access');
+    }
+}
+document.addEventListener('DOMContentLoaded', checkPaymentStatus);
+    </script>
+    <!-- YouTube Campaign Video Popup -->
+    <div id="youtube-campaign-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;">
+      <div style="background:none;padding:0;border-radius:0;box-shadow:none;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <video id="youtube-campaign-video" width="100%" height="100%" controls style="border-radius:0;max-width:100vw;max-height:100vh;background:#000;">
+          <source src="https://archive.org/download/bonus-video-2.jpg/1.%20How%20to%20setup%20your%20first%20youtube%20campaign.jpg.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button onclick="closeYoutubeCampaignPopup()" style="position:absolute;top:32px;right:32px;background:#ff4e50;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:18px;font-weight:bold;cursor:pointer;z-index:1001;">Close</button>
+      </div>
+    </div>
+    <!-- Campaign Setup Video Popup -->
+    <div id="campaign-setup-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;">
+      <div style="background:none;padding:0;border-radius:0;box-shadow:none;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <video id="campaign-setup-video" width="100%" height="100%" controls style="border-radius:0;max-width:100vw;max-height:100vh;background:#000;">
+          <source src="https://archive.org/download/bonus-video-2.jpg/2.%20Entire%20campaign%20setup%20video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button onclick="closeCampaignSetupPopup()" style="position:absolute;top:32px;right:32px;background:#ff4e50;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:18px;font-weight:bold;cursor:pointer;z-index:1001;">Close</button>
+      </div>
+    </div>
+    <!-- Billing Video Popup -->
+    <div id="billing-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;">
+      <div style="background:none;padding:0;border-radius:0;box-shadow:none;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <video id="billing-video" width="100%" height="100%" controls style="border-radius:0;max-width:100vw;max-height:100vh;background:#000;">
+          <source src="https://archive.org/download/bonus-video-2.jpg/3.%20How%20to%20add%20billing%20in%20to%20setup%20ads.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button onclick="closeBillingPopup()" style="position:absolute;top:32px;right:32px;background:#ff4e50;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:18px;font-weight:bold;cursor:pointer;z-index:1001;">Close</button>
+      </div>
+    </div>
+    <!-- Analyze Data Video Popup -->
+    <div id="analyze-data-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;">
+      <div style="background:none;padding:0;border-radius:0;box-shadow:none;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <video id="analyze-data-video" width="100%" height="100%" controls style="border-radius:0;max-width:100vw;max-height:100vh;background:#000;">
+          <source src="https://archive.org/download/bonus-video-2.jpg/4.%20How%20to%20analyse%20your%20data.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button onclick="closeAnalyzeDataPopup()" style="position:absolute;top:32px;right:32px;background:#ff4e50;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:18px;font-weight:bold;cursor:pointer;z-index:1001;">Close</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

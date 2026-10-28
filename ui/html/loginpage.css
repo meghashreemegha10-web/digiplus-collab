@@ -1,0 +1,225 @@
+header {
+text-align: center;
+padding: 20px;
+}
+
+header h1 {
+    color:white;
+    font-size: 35px;
+    padding-bottom: 10px;
+    text-shadow: 20px;
+    text-decoration: underline whitesmoke solid 1px;
+}
+/* Background */
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url("./brainimage2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+/* Login Section */
+.login-container {
+
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 80px;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.9);
+    width: 250px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    height: 350px;;
+}
+
+/* Profile circle */
+.profile-icon {
+    image=url;
+    width: 80px;
+    height: 80px;
+    background: #ddd;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Login text */
+.login-box h2 {
+    margin-top: 10px;
+    color: black;
+    font-weight: 900;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+/* Inputs */
+.login-box input {
+    width: 100%;
+    padding: 13px 16px;
+    margin: 10px 0;
+    border-radius: 20px;
+    border: none;
+    background: #eee;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+/* Button */
+.login-box button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border-radius: 25px;
+    border: none;
+    background: #2e9ad0;
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+}
+
+/* Forgot text */
+.forgot {
+    font-size: 15px;
+    font-weight: 600;
+    color: gray;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: white;
+    padding: 10px;
+    border-top: 0px solid white;
+}
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.input-box {
+    display: flex;
+    align-items: center;
+    background: #e0e0e0;
+    border-radius: 25px;
+    padding: 12px 20px;
+    margin: 15px 0;
+}
+icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+.input-box input {
+    border: none;
+    background:none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+}
+.input-box img {
+    width: 18px;
+    margin-right: 10px;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e6c785; /* Gold background */
+}
+.landing-page {
+  display: flex;
+  padding: 50px;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+.content-left {
+  flex: 1.5;
+}
+
+.video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: url('your-image.jpg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid white;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right Column (The Pill Buttons) */
+.button-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.custom-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #3b82f6;
+  border: 3px solid #00d2ff;
+  z-index: 2;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.btn-text {
+  background: linear-gradient(to right, #00d2ff, #9d00ff);
+  color: white;
+  padding: 10px 20px 10px 40px;
+  margin-left: -30px; /* Overlaps the circle */
+  border-radius: 10px 50px 50px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.h1 {
+    color:black;
+}

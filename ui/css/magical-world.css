@@ -1,0 +1,670 @@
+/* ==========================================================================
+   MAGICAL DISNEY WORLD THEME — GLOBAL DIGI PULSE POST-LOGIN ACADEMY
+   Celestial Starlight, Enchanted Nebula Aurora, Crystal Glassmorphism, 
+   Pixie Dust Glow & Fairy-Tale Elegance
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --magic-bg-deep: #060918;
+  --magic-bg-indigo: #0d1433;
+  --magic-starlight: #fef08a;
+  --magic-cyan: #38bdf8;
+  --magic-purple: #c084fc;
+  --magic-pink: #f472b6;
+  --magic-gold: #facc15;
+  --magic-emerald: #34d399;
+  --font-magic: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  font-size: 16px !important;
+}
+
+/* Universal Reset & Base for Magical Pages */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-magic) !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  background-color: #070c1a !important;
+  background-image: 
+    linear-gradient(180deg, rgba(10, 16, 35, 0.12) 0%, rgba(12, 18, 40, 0.22) 50%, rgba(8, 13, 28, 0.45) 100%),
+    url('../assets/ads_social_matrix.jpg?v=7.0') !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  color: #f8fafc !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Distinct Magical Advertising Background for Each Post-Login Page */
+body.page-intro {
+  background-image: 
+    linear-gradient(180deg, rgba(8, 12, 28, 0.04) 0%, rgba(10, 15, 34, 0.12) 50%, rgba(6, 10, 24, 0.35) 100%),
+    url('../assets/ads_magical_apps.jpg?v=14.0') !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+}
+
+body.page-welcome {
+  background-image: 
+    linear-gradient(180deg, rgba(10, 16, 35, 0.12) 0%, rgba(12, 18, 40, 0.22) 50%, rgba(8, 13, 28, 0.45) 100%),
+    url('../assets/ads_meta_command.jpg?v=7.0') !important;
+}
+
+body.page-campaign {
+  background-image: 
+    linear-gradient(180deg, rgba(10, 16, 35, 0.12) 0%, rgba(12, 18, 40, 0.22) 50%, rgba(8, 13, 28, 0.45) 100%),
+    url('../assets/ads_youtube_campaign.jpg?v=7.0') !important;
+}
+
+body.page-business {
+  background-image: 
+    linear-gradient(180deg, rgba(8, 12, 28, 0.06) 0%, rgba(10, 15, 34, 0.16) 50%, rgba(6, 10, 24, 0.40) 100%),
+    url('../assets/ads_social_matrix.jpg?v=14.0') !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+}
+
+body.page-business .content-left,
+body.page-intro .content-left,
+body.page-welcome .content-left,
+body.page-campaign .content-left {
+  max-width: 1140px !important;
+  width: 92% !important;
+}
+
+body.page-business .welcome-box,
+body.page-business .business-box,
+body.page-intro .intro-box,
+body.page-welcome .welcome-box,
+body.page-campaign .welcome-box,
+body.page-campaign .campaign-box {
+  max-width: 1140px !important;
+  padding: 30px 28px !important;
+  gap: 32px !important;
+  background: rgba(10, 16, 38, 0.45) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(56, 189, 248, 0.25) !important;
+}
+
+body.page-business h1,
+body.page-intro h1,
+body.page-welcome h1,
+body.page-campaign h1,
+body.page-business .main-title,
+body.page-intro .main-title,
+body.page-welcome .main-title,
+body.page-campaign .main-title {
+  font-size: 2.1rem !important;
+  line-height: 1.2 !important;
+  margin-bottom: 16px !important;
+  letter-spacing: 0.02em !important;
+}
+
+body.page-business .magical-nav-badge,
+body.page-intro .magical-nav-badge,
+body.page-welcome .magical-nav-badge,
+body.page-campaign .magical-nav-badge {
+  font-size: 0.90rem !important;
+  padding: 5px 12px !important;
+  margin-bottom: 12px !important;
+}
+
+body.page-business .video-container,
+body.page-intro .video-container,
+body.page-welcome .video-container,
+body.page-campaign .video-container {
+  max-width: 440px !important;
+  margin-bottom: 16px !important;
+}
+
+body.page-business .video-container video,
+body.page-intro .video-container video,
+body.page-welcome .video-container video,
+body.page-campaign .video-container video {
+  height: 220px !important;
+  max-height: 220px !important;
+}
+
+body.page-business .welcome-btn,
+body.page-intro .intro-btn,
+body.page-welcome .welcome-btn,
+body.page-campaign .welcome-btn,
+body.page-business #goToThankYouBtn,
+body.page-intro #goToWelcomeBtn,
+body.page-welcome #goToCampaignBtn,
+body.page-campaign #goToBusinessBtn {
+  padding: 12px 24px !important;
+  font-size: 1.05rem !important;
+  border-radius: 26px !important;
+  min-height: 46px !important;
+  line-height: 1.2 !important;
+  gap: 8px !important;
+  white-space: nowrap !important;
+}
+
+body.page-business .button-sidebar,
+body.page-intro .button-sidebar,
+body.page-welcome .button-sidebar,
+body.page-campaign .button-sidebar {
+  max-width: 520px !important;
+  gap: 14px !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  align-items: stretch !important;
+}
+
+body.page-business .btn-group,
+body.page-intro .btn-group,
+body.page-welcome .btn-group,
+body.page-campaign .btn-group {
+  min-height: 64px !important;
+  padding: 8px 16px !important;
+  border-radius: 22px !important;
+}
+
+body.page-business .icon-circle,
+body.page-intro .icon-circle,
+body.page-welcome .icon-circle,
+body.page-campaign .icon-circle {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  margin-right: 16px !important;
+}
+
+body.page-business .icon-circle svg,
+body.page-intro .icon-circle svg,
+body.page-welcome .icon-circle svg,
+body.page-campaign .icon-circle svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+body.page-scanpay {
+  background-image: 
+    linear-gradient(180deg, rgba(10, 16, 35, 0.12) 0%, rgba(12, 18, 40, 0.22) 50%, rgba(8, 13, 28, 0.45) 100%),
+    url('../assets/ads_global_ecosystem.jpg?v=7.0') !important;
+}
+
+body.page-thankyou {
+  background-image: 
+    linear-gradient(180deg, rgba(10, 16, 35, 0.12) 0%, rgba(12, 18, 40, 0.22) 50%, rgba(8, 13, 28, 0.45) 100%),
+    url('../assets/ads_strategy_victory.jpg?v=7.0') !important;
+}
+
+/* Ethereal Floating Stardust Particles (Pure CSS) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fef08a, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, #38bdf8, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #c084fc, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 230px 190px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 290px 80px, #fef08a, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 340px 150px, #38bdf8, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 410px 220px, #c084fc, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 480px 60px, #f472b6, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+  animation: stardustTwinkle 8s ease-in-out infinite alternate;
+}
+
+@keyframes stardustTwinkle {
+  0% { opacity: 0.35; transform: translateY(0); }
+  50% { opacity: 0.65; transform: translateY(-5px); }
+  100% { opacity: 0.45; transform: translateY(-10px); }
+}
+
+/* Hide legacy bright rainbow backgrounds */
+.creative-bg, .gradient-overlay {
+  display: none !important;
+}
+
+/* Magical Top Navigation / Brand Banner */
+.magical-nav-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px clamp(20px, 4vw, 50px);
+  background: rgba(13, 21, 48, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+.magical-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.magical-sparkle-icon {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 10px #fef08a);
+  animation: sparkleRotate 4s ease-in-out infinite;
+}
+
+@keyframes sparkleRotate {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.18) rotate(15deg); }
+}
+
+.magical-brand-text {
+  font-size: 1.6rem !important;
+  font-weight: 900 !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 40%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.01em;
+}
+
+.magical-nav-badge {
+  background: rgba(56, 189, 248, 0.18);
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  padding: 10px 24px !important;
+  border-radius: 9999px;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.04em !important;
+}
+
+/* Magical Crystal Main Card / Box */
+.intro-box, .welcome-box, .header-section, .video-preview, .scanpay-card, .thankyou-box, .business-box, .campaign-box {
+  background: rgba(12, 19, 44, 0.62) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.50) !important;
+  border-radius: 24px !important;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(56, 189, 248, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+  color: #f8fafc !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Shimmering Ethereal Top Border Reflection */
+.intro-box::before, .welcome-box::before, .header-section::before, .scanpay-card::before, .thankyou-box::before, .business-box::before, .campaign-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #38bdf8 25%, #fef08a 50%, #c084fc 75%, transparent 100%);
+  animation: magicAurora 6s ease-in-out infinite alternate;
+}
+
+@keyframes magicAurora {
+  0% { opacity: 0.5; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.4); }
+  100% { opacity: 0.5; filter: brightness(1); }
+}
+
+/* Bold High-Impact Marketing Headings (Matching Website Design) */
+h1, .main-title, h1.main-title {
+  font-family: var(--font-magic) !important;
+  font-size: clamp(2.6rem, 4.5vw, 3.6rem) !important;
+  font-weight: 900 !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 35%, #38bdf8 70%, #c084fc 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.2 !important;
+  margin-bottom: 20px !important;
+  text-align: center !important;
+  text-shadow: none !important;
+  filter: drop-shadow(0 0 24px rgba(56, 189, 248, 0.6)) !important;
+}
+
+p, .sub-title, .instruction {
+  font-family: var(--font-magic) !important;
+  font-size: 1.32rem !important;
+  color: #e2e8f0 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  line-height: 1.65 !important;
+  margin-bottom: 24px !important;
+  text-align: center !important;
+}
+
+/* Magical Crystal Video Container */
+.video-container, .video-preview {
+  position: relative;
+  width: 100%;
+  max-width: 460px !important;
+  border-radius: 18px !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(56, 189, 248, 0.3) !important;
+  overflow: hidden !important;
+  background: #000000 !important;
+  margin-bottom: 20px !important;
+}
+
+.video-container video, .video-preview video {
+  width: 100% !important;
+  border-radius: 16px !important;
+  border: none !important;
+  display: block;
+}
+
+/* Bold High-Converting Next Page / Action Buttons */
+.intro-btn, .welcome-btn, #goToCampaignBtn, #goToWelcomeBtn, #goToThankYouBtn, #payBtn, #goWelcomeBtn {
+  font-family: var(--font-magic) !important;
+  background: linear-gradient(135deg, #0284c7 0%, #00f2fe 30%, #a855f7 70%, #facc15 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 18px 48px !important;
+  font-size: 1.4rem !important;
+  font-weight: 900 !important;
+  cursor: pointer !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: 
+    0 8px 25px rgba(2, 132, 199, 0.45),
+    0 0 25px rgba(168, 85, 247, 0.35) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+.intro-btn:hover, .welcome-btn:hover, #goToCampaignBtn:hover, #goToWelcomeBtn:hover, #payBtn:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 
+    0 14px 35px rgba(2, 132, 199, 0.6),
+    0 0 35px rgba(250, 204, 21, 0.5) !important;
+}
+
+/* Shimmer ray on button */
+.shimmer {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  animation: magicShimmer 2.4s infinite;
+}
+
+@keyframes magicShimmer {
+  0% { left: -100%; }
+  60%, 100% { left: 140%; }
+}
+
+/* Logout Button */
+#logoutBtn {
+  background: rgba(239, 68, 68, 0.25) !important;
+  border: 1.5px solid rgba(239, 68, 68, 0.5) !important;
+  color: #fca5a5 !important;
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  padding: 16px 36px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25) !important;
+}
+
+#logoutBtn:hover {
+  background: rgba(239, 68, 68, 0.5) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5) !important;
+}
+
+/* Magical Sidebar Module Buttons (The Enchanted Scrolls) */
+.button-sidebar {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  margin-left: clamp(20px, 3.5vw, 48px) !important;
+  margin-top: 0 !important;
+  align-items: stretch !important;
+  z-index: 2;
+}
+
+.button-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+.button-sidebar::-webkit-scrollbar-track {
+  background: rgba(10, 16, 35, 0.4);
+  border-radius: 9999px;
+}
+.button-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.4);
+  border-radius: 9999px;
+}
+.button-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.8);
+}
+
+.btn-group {
+  width: 100% !important;
+  max-width: 540px !important;
+  min-height: 72px !important;
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(14, 22, 50, 0.78) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.35) !important;
+  border-radius: 9999px !important;
+  padding: 10px 22px 10px 14px !important;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(56, 189, 248, 0.15) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-group::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(192, 132, 252, 0.3), rgba(254, 240, 138, 0.2));
+  opacity: 0;
+  transition: opacity 0.25s;
+  z-index: 0;
+}
+
+.btn-group:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  border-color: rgba(56, 189, 248, 0.7) !important;
+  box-shadow: 
+    0 14px 35px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(56, 189, 248, 0.4),
+    0 0 15px rgba(254, 240, 138, 0.25) !important;
+}
+
+.btn-group:hover::before {
+  opacity: 1;
+}
+
+/* Icon Medallion */
+.icon-circle {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #fef08a 0%, #38bdf8 50%, #c084fc 100%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 0 15px rgba(254, 240, 138, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #0f172a !important;
+  font-size: 1.5rem !important;
+  margin-right: 18px !important;
+  flex-shrink: 0 !important;
+  z-index: 1;
+}
+
+.icon-circle svg {
+  width: 26px !important;
+  height: 26px !important;
+  fill: #0f172a !important;
+}
+
+/* Pill Content Area */
+.pill-bg {
+  flex: 1 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  z-index: 1;
+  overflow: hidden !important;
+}
+
+.pill-bg button, .label {
+  font-family: var(--font-magic) !important;
+  background: none !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-size: 1.22rem !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  text-align: left !important;
+  letter-spacing: 0.03em !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  padding: 0 6px !important;
+  text-transform: uppercase !important;
+  width: 100% !important;
+  line-height: 1.4 !important;
+  transition: color 0.2s !important;
+}
+
+.btn-group:hover .pill-bg button, .btn-group:hover .label {
+  color: #fef08a !important;
+}
+
+/* Subtitle styling for multi-line items (Bonus Videos, etc.) */
+.btn-group .pill-bg div div:first-child {
+  font-size: 1.22rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.3 !important;
+}
+
+.btn-group .pill-bg div div:last-child {
+  font-size: 0.98rem !important;
+  font-weight: 600 !important;
+  color: #e2e8f0 !important;
+  line-height: 1.35 !important;
+  margin-top: 2px !important;
+}
+
+/* Magical Video Modal Popups (Theater Experience) */
+[id$="-popup"] {
+  background: rgba(6, 9, 24, 0.92) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  z-index: 1000 !important;
+}
+
+[id$="-popup"] video {
+  border: 2px solid rgba(56, 189, 248, 0.5) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 0 50px rgba(56, 189, 248, 0.4), 0 25px 70px rgba(0,0,0,0.8) !important;
+  max-width: 90vw !important;
+  max-height: 85vh !important;
+}
+
+[id$="-popup"] button {
+  background: linear-gradient(135deg, #ef4444, #f43f5e) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 9999px !important;
+  padding: 12px 28px !important;
+  color: #ffffff !important;
+  font-family: var(--font-magic) !important;
+  font-weight: 800 !important;
+  font-size: 1.08rem !important;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4) !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+[id$="-popup"] button:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 25px rgba(239, 68, 68, 0.6) !important;
+}
+
+/* Magical Footer Line */
+.footer-line, footer {
+  background: rgba(10, 16, 38, 0.9) !important;
+  border-top: 1px solid rgba(56, 189, 248, 0.25) !important;
+  backdrop-filter: blur(12px) !important;
+  color: #cbd5e1 !important;
+  font-family: var(--font-magic) !important;
+  font-size: 1.08rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-shadow: none !important;
+  padding: 16px 0 !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Mobile & Responsive Adaptations */
+@media (max-width: 900px) {
+  .container, .main-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding: 30px 16px 80px !important;
+  }
+  .button-sidebar {
+    margin-left: 0 !important;
+    margin-top: 28px !important;
+    width: 100% !important;
+    max-width: 440px !important;
+  }
+  .intro-box, .welcome-box, .header-section {
+    padding: 24px 18px !important;
+    min-width: unset !important;
+    width: 100% !important;
+    max-width: 440px !important;
+  }
+}

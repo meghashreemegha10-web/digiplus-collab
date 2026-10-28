@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "f00f074e5a62c3a8b1a1d24e",
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "$2b$10$Ka9skJvmbZa3Q5u40cBaQeSf4q.3fgvdWO4mSDsjEAlMZnqxfMxUm",
+    "scanPaid": false,
+    "campaignPaid": false,
+    "accessGranted": false,
+    "createdAt": "2026-10-23T04:55:25.638Z"
+  },
+  {
+    "_id": "admin_root_id_01",
+    "username": "admin",
+    "email": "admin@globaldigipulse.com",
+    "password": "$2b$10$zaQekY7xAobOLp6Zf1HWuOy1GDUwrVMu57M6Qi.vWNEORph6UiZw.",
+    "scanPaid": true,
+    "campaignPaid": true,
+    "accessGranted": true,
+    "createdAt": "2026-10-23T04:59:29.142Z"
+  },
+  {
+    "_id": "shriya_user_01",
+    "username": "shriya",
+    "email": "shriya@globaldigipulse.com",
+    "password": "$2b$10$jt0mr0pk9FdOk7If4i3AL.QW0GqpK/XR6NtV6ApkTrjYD17wue89S",
+    "scanPaid": true,
+    "campaignPaid": true,
+    "accessGranted": true,
+    "createdAt": "2026-10-23T06:08:30.512Z"
+  }
+]

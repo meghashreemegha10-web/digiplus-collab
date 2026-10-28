@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.6",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongodb": "^7.2.0",
+    "mongoose": "^9.3.0",
+    "nodemailer": "^8.0.2",
+    "puppeteer-core": "^24.43.1",
+    "qrcode": "^1.5.4",
+    "razorpay": "^2.9.6",
+    "stripe": "^20.4.1",
+    "twilio": "^5.12.2"
+  },
+  "scripts": {
+    "start": "node server/paymentServer.js"
+  }
+}

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>window.location.replace("IntroPage.html");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOBAL DIGI PULSE</title>
+    <link rel="stylesheet" href="businessPage.css">
+    <link rel="icon" type="image/png" href="../images/icon-7797704_640.JPG">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        body {
+            background-color: #f7f7fa;
+        }
+        .header-section {
+            padding: 40px 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(46, 154, 208, 0.18);
+            background: rgba(255,255,255,0.92);
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1.main-title {
+            color: #2e9ad0;
+            font-size: 2.6rem;
+            text-shadow: 2px 2px 12px #ffe066, 0 2px 8px #2e9ad0;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .button-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-left: 16px; /* was 48px, now moved left */
+            margin-top: 48px;  /* was 180px, now moved up */
+            align-items: stretch;
+        }
+        .btn-group {
+            width: 100%;
+            max-width: 700px; /* was 520px, now even wider */
+            min-width: 340px;
+            min-height: 100px;  /* was 80px, now even bigger */
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 24px #2e9ad0a0, 0 2px 8px #ffe066a0;
+            border-radius: 40px; /* was 32px, now even bigger */
+            background: rgba(255,255,255,0.92);
+            position: relative;
+            overflow: visible;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .btn-group::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 32px;
+            background: linear-gradient(120deg, #ffe066 0%, #2e9ad0 100%);
+            filter: blur(8px);
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .btn-group:hover {
+            box-shadow: 0 12px 36px #ffe066, 0 4px 24px #2e9ad0;
+            transform: scale(1.035);
+        }
+        .icon-circle {
+            width: 72px; /* was 56px, now even bigger */
+            height: 72px; /* was 56px, now even bigger */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px; /* was 26px, now even bigger */
+            border-radius: 50%;
+            background: #fff;
+            margin-right: 28px; /* was 20px, now even bigger */
+            box-shadow: 0 2px 8px #2e9ad0a0;
+        }
+        .label {
+            font-size: 1.7rem; /* was 1.3rem, now even bigger */
+            font-weight: 700;
+            color: #232946;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .video-preview {
+            width: 100%;
+            max-width: 420px;
+            margin-bottom: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #2e9ad0;
+            overflow: hidden;
+            background: rgba(255,255,255,0.92);
+            padding: 24px;
+            margin-left: 350px; /* move video box further right */
+            margin-top: 34px; /* move video box a little down */
+        }
+        .main-action-btn {
+            background: linear-gradient(90deg, #2e9ad0 0%, #ffe066 100%);
+            color: #232946;
+            border: none;
+            border-radius: 32px;
+            padding: 16px 40px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 24px #2e9ad0a0, 0 2px 8px #ffe066a0;
+            margin-top: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.18s, box-shadow 0.18s;
+            outline: none;
+            z-index: 1;
+            animation: pulseGlow 1.8s infinite;
+        }
+        .main-action-btn::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border-radius: 36px;
+            background: linear-gradient(120deg, #ffe066 0%, #2e9ad0 100%);
+            filter: blur(8px);
+            opacity: 0.5;
+            z-index: -1;
+            transition: opacity 0.2s;
+        }
+        .main-action-btn:hover, .main-action-btn:focus {
+            transform: scale(1.04);
+            box-shadow: 0 8px 32px #ffe066, 0 2px 16px #2e9ad0;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 4px 24px #2e9ad0a0, 0 2px 8px #ffe066a0; }
+            50% { box-shadow: 0 8px 40px #ffe066, 0 2px 16px #2e9ad0; }
+        }
+        @media (max-width: 900px) {
+            .main-content { flex-direction: column !important; align-items: center !important; gap: 0 !important; }
+            .button-sidebar { margin-left: 0 !important; margin-top: 32px !important; }
+            .video-preview { margin-left: 0 !important; margin-top: 24px !important; }
+        }
+        @media (max-width: 600px) {
+            .header-section {
+                min-width: 100vw !important;
+                max-width: 100vw !important;
+                width: 100vw !important;
+                box-sizing: border-box !important;
+                padding: 8px 0 0 0 !important;
+                flex-direction: column !important;
+                align-items: stretch !important;
+                gap: 0 !important;
+            }
+            .main-content {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                width: 100vw !important;
+                max-width: 100vw !important;
+                min-width: 100vw !important;
+                box-sizing: border-box !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: flex !important;
+            }
+            h1.main-title { font-size: 1.2rem !important; }
+            .button-sidebar { min-width: unset !important; margin-top: 24px !important; gap: 16px !important; }
+            .btn-group { min-height: 48px !important; max-width: 100vw !important; min-width: unset !important; border-radius: 28px !important; }
+            .icon-circle { width: 48px !important; height: 48px !important; font-size: 22px !important; margin-right: 12px !important; }
+            .label { font-size: 1.1rem !important; }
+            .video-preview { max-width: 100vw !important; padding: 12px !important; margin-left: 0 !important; margin-top: 18px !important; }
+        }
+        .footer-line {
+            font-size: 16px !important;
+            text-align: center;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100vw;
+            position: fixed;
+            bottom: 0;
+            padding: 6px 0 !important;
+            color: #fff;
+            text-shadow: 1px 1px 4px #2e9ad0;
+            background: rgba(46,154,208,0.85);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .creative-bg {
+          position: fixed;
+          top: 0; left: 0; width: 100vw; height: 100vh;
+          z-index: 0;
+          pointer-events: none;
+          background: linear-gradient(120deg, #2e9ad0 0%, #ffe066 40%, #ff4e50 80%, #6dd5ed 100%);
+          background-size: 200% 200%;
+          animation: bgMove 12s ease-in-out infinite;
+          opacity: 0.93;
+          overflow: hidden;
+        }
+        @keyframes bgMove {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .creative-bg, body > .gradient-overlay { display: none !important; }
+        body {
+          background: linear-gradient(180deg, rgba(8, 12, 28, 0.06) 0%, rgba(10, 15, 34, 0.16) 50%, rgba(6, 10, 24, 0.40) 100%),
+                      url('../assets/ads_social_matrix.jpg?v=14.0') no-repeat center center fixed !important;
+          background-size: cover !important;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/magical-world.css?v=14.0">
+</head>
+<body class="page-business">
+  <div class="creative-bg"></div>
+  <main class="container" style="display:flex;flex-direction:row;align-items:center;justify-content:center;min-height:100vh;position:relative;z-index:1;padding:24px 16px 40px;">
+    <section class="content-left" style="width:100%;max-width:1140px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <div class="welcome-box business-box" style="display:flex;flex-direction:row;align-items:flex-start;justify-content:center;width:100%;max-width:1140px;gap:32px;padding:30px 28px;">
+        
+        <!-- Left Column: Video & Actions -->
+        <div style="flex:1;min-width:280px;max-width:440px;display:flex;flex-direction:column;align-items:center;">
+          <div class="magical-nav-badge" style="margin-bottom:12px;font-size:0.90rem;padding:5px 12px;">💼 ENTERPRISE SCALING: BUSINESS ARCHITECTURE & CRM 💼</div>
+          <h1 class="main-title" style="margin-bottom:16px;font-size:2.1rem;text-align:center;">WELCOME TO GLOBAL DIGI PULSE</h1>
+          <div class="video-container" style="width:100%;max-width:440px;margin-bottom:16px;border-radius:16px;overflow:hidden;">
+            <video width="100%" height="220" controls style="border-radius:14px;max-height:220px;display:block;">
+              <source src="https://archive.org/download/short-video.jpg/short%20video%204.jpg.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div style="margin-top:14px;display:flex;justify-content:center;gap:14px;width:100%;">
+            <button class="welcome-btn" id="goToThankYouBtn" style="background:linear-gradient(135deg, #10b981 0%, #06b6d4 100%) !important;padding:12px 24px;font-size:1.05rem;">
+              <svg style="vertical-align:middle;margin-right:8px;" width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Complete Masterclass
+            </button>
+            <button class="welcome-btn" onclick="window.location.href='LoginPage.html'" style="background:linear-gradient(135deg, #ef4444, #dc2626) !important;padding:12px 24px;font-size:1.05rem;">
+              Logout
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: 3 Bonus Masterclass Videos -->
+        <aside class="button-sidebar" style="flex:1.2;min-width:300px;max-width:520px;display:flex;flex-direction:column;gap:14px;margin:0;align-items:stretch;">
+          <div class="magical-nav-badge" style="align-self:flex-start;margin-bottom:6px;background:rgba(250,204,21,0.18);border-color:rgba(250,204,21,0.5);color:#fde047;font-size:1.05rem !important;padding:4px 12px;">🎁 EXCLUSIVE BONUS MASTERCLASSES</div>
+          
+          <div class="btn-group" onclick="showBonusVideoPopup()" style="min-height:64px;padding:8px 16px;border-radius:22px;">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#38bdf8,#0284c7) !important; border:none !important; box-shadow:0 0 12px rgba(56,189,248,0.5) !important; width:48px; height:48px; min-width:48px; margin-right:16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="#ffffff"/></svg>
+            </div>
+            <div class="pill-bg blue-grad">
+              <div>
+                <div style="font-size:1.15rem;font-weight:800;color:#ffffff;letter-spacing:0.02em;">BONUS VIDEO 1</div>
+                <div style="font-size:0.90rem;color:#e2e8f0;font-weight:600;margin-top:2px;">High-Converting Ad Templates & Copywriting Secrets</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group" onclick="showBonusVideo2Popup()" style="min-height:64px;padding:8px 16px;border-radius:22px;">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#f472b6,#db2777) !important; border:none !important; box-shadow:0 0 12px rgba(244,114,182,0.5) !important; width:48px; height:48px; min-width:48px; margin-right:16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="3" stroke="#ffffff" stroke-width="2"/><polygon points="10 9 15 12 10 15 10 9" fill="#ffffff"/></svg>
+            </div>
+            <div class="pill-bg pink-grad">
+              <div>
+                <div style="font-size:1.15rem;font-weight:800;color:#ffffff;letter-spacing:0.02em;">BONUS VIDEO 2</div>
+                <div style="font-size:0.90rem;color:#e2e8f0;font-weight:600;margin-top:2px;">Organic Sales Funnels & Scaling Strategies</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group" onclick="showBonusVideo3Popup()" style="min-height:64px;padding:8px 16px;border-radius:22px;">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#34d399,#059669) !important; border:none !important; box-shadow:0 0 12px rgba(52,211,153,0.5) !important; width:48px; height:48px; min-width:48px; margin-right:16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="13" width="4" height="8" rx="1.5" fill="#ffffff"/><rect x="10" y="9" width="4" height="12" rx="1.5" fill="#ffffff"/><rect x="17" y="5" width="4" height="16" rx="1.5" fill="#ffffff"/></svg>
+            </div>
+            <div class="pill-bg orange-grad">
+              <div>
+                <div style="font-size:1.15rem;font-weight:800;color:#ffffff;letter-spacing:0.02em;">BONUS VIDEO 3</div>
+                <div style="font-size:0.90rem;color:#e2e8f0;font-weight:600;margin-top:2px;">Advanced Analytics, ROAS Mastery & Scaling</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+    <!-- Loading spinner -->
+    <div id="loadingSpinner" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(255,255,255,0.7);z-index:999;justify-content:center;align-items:center;">
+        <div style="border:8px solid #2e9ad0;border-top:8px solid #ffe066;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;"></div>
+    </div>
+    <footer class="footer-line" style="position:fixed;left:0;bottom:0;width:100vw;text-align:center;padding:12px 0;color:#fff;font-size:16px;font-weight:700;text-shadow:1px 1px 4px #2e9ad0;background:rgba(10,16,38,0.95);z-index:10;">ALL RIGHTS RESERVED</footer>
+    <script>
+    function showBonusVideoPopup() {
+      document.getElementById('bonus-video-popup').style.display = 'flex';
+      var vid = document.getElementById('bonus-video');
+      vid.currentTime = 0;
+      vid.pause(); // Do not autoplay
+    }
+    function closeBonusVideoPopup() {
+      document.getElementById('bonus-video-popup').style.display = 'none';
+      var vid = document.getElementById('bonus-video');
+      vid.pause();
+    }
+    function showBonusVideo2Popup() {
+      document.getElementById('bonus-video2-popup').style.display = 'flex';
+      var vid = document.getElementById('bonus-video2');
+      vid.currentTime = 0;
+      vid.pause(); // Do not autoplay
+    }
+    function closeBonusVideo2Popup() {
+      document.getElementById('bonus-video2-popup').style.display = 'none';
+      var vid = document.getElementById('bonus-video2');
+      vid.pause();
+    }
+    function showBonusVideo3Popup() {
+      document.getElementById('bonus-video3-popup').style.display = 'flex';
+      var vid = document.getElementById('bonus-video3');
+      vid.currentTime = 0;
+      vid.pause(); // Do not autoplay
+    }
+    function closeBonusVideo3Popup() {
+      document.getElementById('bonus-video3-popup').style.display = 'none';
+      var vid = document.getElementById('bonus-video3');
+      vid.pause();
+    }
+    document.getElementById("goToThankYouBtn")?.addEventListener("click", function() {
+      window.location.href = "ThankYouPage.html";
+    });
+    // Payment logic for persistent access control
+    function checkPaymentStatus() {
+        const paymentStatus = localStorage.getItem('paymentStatus');
+        const paymentSection = document.getElementById('payment-section');
+        if (paymentStatus === '999' || paymentStatus === '1499') {
+            if (paymentSection) paymentSection.style.display = 'none';
+            if (paymentStatus === '1499') {
+                document.body.classList.add('premium');
+            } else {
+                document.body.classList.add('basic');
+            }
+        } else {
+            if (paymentSection) paymentSection.style.display = '';
+            document.body.classList.add('no-access');
+        }
+    }
+    document.addEventListener('DOMContentLoaded', checkPaymentStatus);
+    </script>
+    <!-- Bonus Video Popup -->
+    <div id="bonus-video-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;">
+      <div style="background:none;padding:0;border-radius:0;box-shadow:none;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <video id="bonus-video" width="100%" height="100%" controls style="border-radius:0;max-width:100vw;max-height:100vh;background:#000;">
+          <source src="https://archive.org/download/bonus-video-2.jpg/BONUS%20VIDEO.jpg.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button onclick="closeBonusVideoPopup()" style="position:absolute;top:32px;right:32px;background:#ff4e50;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:18px;font-weight:bold;cursor:pointer;z-index:1001;">Close</button>
+      </div>
+    </div>
+    <!-- Bonus Video 2 Popup -->
+    <div id="bonus-video2-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;">
+      <div style="background:none;padding:0;border-radius:0;box-shadow:none;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <video id="bonus-video2" width="100%" height="100%" controls style="border-radius:0;max-width:100vw;max-height:100vh;background:#000;">
+          <source src="https://archive.org/download/bonus-video-2.mp-4/Bonus%20Video%202.mp4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button onclick="closeBonusVideo2Popup()" style="position:absolute;top:32px;right:32px;background:#ff4e50;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:18px;font-weight:bold;cursor:pointer;z-index:1001;">Close</button>
+      </div>
+    </div>
+    <!-- Bonus Video 3 Popup -->
+    <div id="bonus-video3-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;">
+      <div style="background:none;padding:0;border-radius:0;box-shadow:none;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <video id="bonus-video3" width="100%" height="100%" controls style="border-radius:0;max-width:100vw;max-height:100vh;background:#000;">
+          <source src="https://archive.org/download/bonus-video-2.jpg/bonus%20video%203.jpg.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button onclick="closeBonusVideo3Popup()" style="position:absolute;top:32px;right:32px;background:#ff4e50;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:18px;font-weight:bold;cursor:pointer;z-index:1001;">Close</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

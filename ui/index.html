@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Digi Pulse | Complete Social Media Video Ads & Marketing Masterclass</title>
+  <meta name="description" content="Learn how to sell your products online like a pro. Master high-converting Facebook, Instagram, and YouTube video ads with Global Digi Pulse.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=21.0">
+</head>
+<body>
+
+  <!-- ========================================================================
+       HERO SHOWCASE SECTION: FEATURING THE COMPLETE ADVERTISING ECOSYSTEM
+       ======================================================================== -->
+  <main>
+    <section class="hero-showcase-section" id="hero">
+      
+      <!-- Top Floating Navigation Bar -->
+      <header class="hero-navbar">
+        <a href="#hero" class="brand-logo">
+          <div class="pulse-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <div class="brand-text-stacked">
+            <span class="brand-sub">Global Digi</span>
+            <span class="brand-main">pulse</span>
+          </div>
+        </a>
+
+        <nav class="nav-menu">
+          <a href="#hero" class="nav-item">Home</a>
+          <a href="#about-surprise" class="nav-item">Modules</a>
+          <a href="#transformation" class="nav-item">Why Us</a>
+          <a href="#curriculum" class="nav-item">Curriculum</a>
+          <a href="#calculator" class="nav-item">ROAS</a>
+          <a href="#pricing" class="nav-item">Pricing</a>
+          <a href="#footerContact" class="nav-item">Contact</a>
+        </nav>
+
+        <div class="nav-cta-wrapper">
+          <button class="btn-member-login" id="navLoginBtn">Member Login</button>
+        </div>
+      </header>
+
+      <!-- Center Hero Showcase Frame: Edge-to-Edge 100vh Complete Frame -->
+      <div class="hero-banner-viewport">
+        <div class="hero-banner-wrapper">
+          <img src="assets/natural_presenter_bg.jpg?v=4.0" alt="Global Digi Pulse - Learn Create Run Ads Grow - Standing Marketing Instructor" class="hero-main-banner-img">
+          
+          <!-- Left Column Content: Headline & 4 Feature Pills from Frontend Design -->
+          <div class="hero-left-content">
+            <h1 class="hero-main-title">
+              Learn. Create.<br>
+              Run Ads. <span class="gradient-text">Grow.</span>
+            </h1>
+            <p class="hero-main-subtitle">
+              Your advertising ecosystem for skills, strategy & results.
+            </p>
+
+            <div class="hero-left-pills">
+              <div class="hero-pill-item" onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})">
+                <span class="hero-pill-icon pillar-cyan-icon">🎓</span>
+                <span class="hero-pill-text">Expert-Led Masterclasses</span>
+              </div>
+              <div class="hero-pill-item" onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})">
+                <span class="hero-pill-icon pillar-purple-icon">🛠️</span>
+                <span class="hero-pill-text">Campaign Tools & Resources</span>
+              </div>
+              <div class="hero-pill-item" onclick="document.getElementById('transformation').scrollIntoView({behavior:'smooth'})">
+                <span class="hero-pill-icon pillar-teal-icon">🛡️</span>
+                <span class="hero-pill-text">Exclusive Enterprise Access</span>
+              </div>
+              <div class="hero-pill-item" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+                <span class="hero-pill-icon pillar-pink-icon">♾️</span>
+                <span class="hero-pill-text">Lifetime Learning</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Authentic White Login Card Matching Frontend Mockup -->
+          <div class="hero-login-overlay-card">
+            <div class="login-card-header">
+              <h2 class="login-card-title">Welcome Back!</h2>
+              <p class="login-card-subtitle">Sign in to continue your journey</p>
+            </div>
+
+            <form id="heroOverlayLoginForm">
+              <div class="card-input-field">
+                <span class="card-input-icon">👤</span>
+                <input type="text" id="heroOverlayUsername" placeholder="Email or Username" value="Shriya" required>
+              </div>
+
+              <div class="card-input-field" style="position: relative;">
+                <span class="card-input-icon">🔒</span>
+                <input type="password" id="heroOverlayPassword" placeholder="Password" value="Megha@14" required style="padding-right: 125px;">
+                <button type="button" id="heroOverlayTogglePwd" style="position: absolute; right: 94px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #64748b; font-size: 0.9rem; padding: 2px;" title="Show/Hide Password" aria-label="Toggle password visibility">👁️</button>
+                <a href="#" class="card-forgot-link" onclick="openModal('forgotModal'); return false;">Forgot password?</a>
+              </div>
+
+              <button type="submit" class="card-login-btn">
+                <span>Login →</span>
+              </button>
+
+              <div class="card-or-divider">
+                <span>or continue with</span>
+              </div>
+
+              <div class="card-social-row">
+                <button type="button" class="card-social-btn google-btn" onclick="quickLoginAsShriya()" title="Continue with Google">
+                  <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.2c0 2.9.7 5.5 1.9 7.9l3.7-2.9z"/><path fill="#34A853" d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2-6.4-4.8L1.9 16.9C3.7 20.6 7.5 23.5 12 23.5z"/></svg>
+                </button>
+                <button type="button" class="card-social-btn facebook-btn" onclick="quickLoginAsShriya()" title="Continue with Facebook">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </button>
+              </div>
+
+              <div class="card-quick-access" onclick="quickLoginAsShriya()">
+                <span>⚡ 1-Click Access as Shriya (Megha@14)</span>
+              </div>
+
+              <div class="card-signup-prompt">
+                <span>Don't have an account?</span>
+                <a href="#" onclick="openModal('registerModal'); return false;">Sign Up</a>
+              </div>
+            </form>
+          </div>
+
+          <!-- Bottom Left Tagline on Hero (Matching Reference Image) -->
+          <div class="hero-bottom-tagline">
+            <span class="trend-arrow">↗</span>
+            <span>Better Skills &nbsp;|&nbsp; Better Campaigns &nbsp;|&nbsp; Bigger Growth</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Floating Scroll Indicator -->
+      <a href="#about-surprise" class="scroll-indicator-surprise" id="heroScrollDown">
+        <span>Scroll to Explore Modules & Information</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+
+    </section>
+
+    <!-- ========================================================================
+         PAGE 2: COMPLETE PLATFORM ECOSYSTEM & SURPRISE DISCOVERY
+         ======================================================================== -->
+    <section class="section-surprise-about" id="about-surprise">
+      <div class="section-container">
+
+      <!-- 4 Core Ecosystem Pillars (Matching Frontend Design Pills) -->
+      <div class="ecosystem-pillars-grid" style="margin-bottom: 3.5rem;">
+        
+        <div class="ecosystem-pillar-card" onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
+          <div class="pillar-icon-box" style="background:rgba(56,189,248,0.12); color:#38bdf8; border-color:rgba(56,189,248,0.3);">🎓</div>
+          <h3 class="pillar-title">Expert-Led Masterclasses</h3>
+          <p class="pillar-desc">Over 18 hands-on video walkthroughs filmed inside live ad accounts demonstrating how to construct campaigns from zero to scale.</p>
+        </div>
+
+        <div class="ecosystem-pillar-card" onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
+          <div class="pillar-icon-box" style="background:rgba(192,132,252,0.12); color:#c084fc; border-color:rgba(192,132,252,0.3);">🛠️</div>
+          <h3 class="pillar-title">Campaign Tools & Resources</h3>
+          <p class="pillar-desc">Get plug-and-play high-CTR ad scripts, 3-second psychological hooks, and buyer intent audience targeting lists.</p>
+        </div>
+
+        <div class="ecosystem-pillar-card" onclick="document.getElementById('transformation').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
+          <div class="pillar-icon-box" style="background:rgba(45,212,191,0.12); color:#2dd4bf; border-color:rgba(45,212,191,0.3);">🛡️</div>
+          <h3 class="pillar-title">Exclusive Enterprise Access</h3>
+          <p class="pillar-desc">Step-by-step setup for verified Facebook Business Managers, GST tax exemptions, and 4 proven methods to recover disabled accounts.</p>
+        </div>
+
+        <div class="ecosystem-pillar-card" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
+          <div class="pillar-icon-box" style="background:rgba(244,114,182,0.12); color:#f472b6; border-color:rgba(244,114,182,0.3);">♾️</div>
+          <h3 class="pillar-title">Lifetime Learning</h3>
+          <p class="pillar-desc">Single one-time enrollment of ₹1,499 grants permanent access to all 4 video portals with zero monthly subscriptions.</p>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;">
+        <div class="surprise-glow-badge">
+          <span>⚡ Surprise Discovery • The Ultimate Growth Engine</span>
+        </div>
+        <h2 class="surprise-main-title">
+          What is <span class="gradient-text">Global Digi Pulse</span>?<br>
+          And Why Will It Transform Your Business?
+        </h2>
+        <p class="surprise-intro-lead">
+          Stop burning hard-earned money on ads that get zero sales. Global Digi Pulse is the definitive, 
+          battle-tested Video Advertising & Social Media Sales Academy built specifically for entrepreneurs, 
+          creators, e-commerce stores, and agency owners who want predictable, high-ROAS revenue.
+        </p>
+      </div>
+
+      <!-- 3 Pillar Core Cards -->
+      <div class="surprise-grid">
+        
+        <!-- Pillar 1: What is Global Digi Pulse? -->
+        <div class="surprise-card card-blue">
+          <div class="card-icon-box" style="color:var(--cyan-pulse);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="23 7 16 12 23 17 23 7"></polygon>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+          </div>
+          <span class="card-tag">01 • What Is This Website?</span>
+          <h3 class="card-title">An Elite Video Ads Mastery Academy</h3>
+          <p class="card-desc">
+            Global Digi Pulse is not an outdated PDF or generic theory. It is an all-inclusive video masterclass with over 18 hands-on lessons demonstrating real ad campaigns, targeting hacks, and creative frameworks recorded directly inside active Ads Managers.
+          </p>
+          <ul class="card-features-list">
+            <li><span class="check-icon">✓</span> 18+ high-definition video walkthroughs in YouTube & Meta</li>
+            <li><span class="check-icon">✓</span> Taught by certified Indian performance marketing instructors</li>
+            <li><span class="check-icon">✓</span> Real campaigns shown with actual spending and revenue metrics</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2: How is it Useful? -->
+        <div class="surprise-card card-purple">
+          <div class="card-icon-box" style="color:#a855f7;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+          </div>
+          <span class="card-tag">02 • How Is It Useful To You?</span>
+          <h3 class="card-title">Eliminate Ad Waste & Multiply Sales 10x</h3>
+          <p class="card-desc">
+            Most businesses fail with paid ads because they don't know the 3-second hook psychological formula. We teach you how to film scroll-stopping videos on an everyday smartphone, write high-CTR scripts, and convert total strangers into eager paying buyers.
+          </p>
+          <ul class="card-features-list">
+            <li><span class="check-icon">✓</span> Stop paying ₹25,000/month to unresponsive marketing agencies</li>
+            <li><span class="check-icon">✓</span> Achieve 3.8x to 6.5x Return On Ad Spend (ROAS) consistently</li>
+            <li><span class="check-icon">✓</span> Cut Cost-Per-Lead (CPL) down to as low as ₹2.60 per inquiry</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3: The Big Surprise Factor -->
+        <div class="surprise-card card-amber">
+          <div class="card-icon-box" style="color:#f59e0b;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <span class="card-tag">03 • The Big Surprise Factor</span>
+          <h3 class="card-title">Ban-Proof Backend & Scaling Systems</h3>
+          <p class="card-desc">
+            Here's the secret most courses never reveal: how to survive Meta's strict automated compliance. We give you the exact blueprint to setup verified Business Managers, configure GST tax exemptions, maintain credit lines, and scale ad spend without getting banned.
+          </p>
+          <ul class="card-features-list">
+            <li><span class="check-icon">✓</span> Complete Business Account setup & threshold security</li>
+            <li><span class="check-icon">✓</span> Plug-and-play ad copy templates, scripts & targeting lists</li>
+            <li><span class="check-icon">✓</span> 100% Lifetime Access for a single one-time fee of ₹1,499</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;">
+        <button class="btn-enroll-gradient" style="margin:0 auto;" onclick="openPaymentModal()">
+          <span>Unlock Full Access for ₹1499 Today</span>
+        </button>
+      </div>
+    
+      </div></section>
+
+    <!-- ========================================================================
+         SURPRISE COMPARISON: THE OLD WAY VS GLOBAL DIGI PULSE
+         ======================================================================== -->
+    <section class="section-transformation" id="transformation">
+      <div class="section-container">
+        <div style="text-align:center; max-width:720px; margin:0 auto;">
+          <span class="surprise-glow-badge" style="border-color:rgba(16,185,129,0.5); color:var(--emerald-green); background:rgba(16,185,129,0.1);">
+            🔄 The Transformation
+          </span>
+          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem); font-weight:800; color:#fff; margin-bottom:1rem;">
+            Why Traditional Ads Fail vs. How Global Digi Pulse Wins
+          </h2>
+          <p style="color:var(--text-muted); font-size:1.05rem;">
+            See the exact difference between throwing money at the wall and running an engineered performance marketing machine.
+          </p>
+        </div>
+
+        <div class="transformation-grid">
+          
+          <!-- Old Painful Way -->
+          <div class="transform-card card-pain">
+            <div class="transform-card-header">
+              <span class="transform-badge">The Struggle</span>
+              <h3 class="transform-title">Without Global Digi Pulse</h3>
+            </div>
+            <ul class="transform-list">
+              <li>
+                <span class="icon-cross">✕</span>
+                <span>Clicking the "Boost Post" button and burning ₹5,000+ for meaningless likes with 0 orders.</span>
+              </li>
+              <li>
+                <span class="icon-cross">✕</span>
+                <span>Waking up to find your Facebook Ad Account disabled with zero human support or explanation.</span>
+              </li>
+              <li>
+                <span class="icon-cross">✕</span>
+                <span>Paying thousands to freelancers who make boring videos nobody watches past the first 2 seconds.</span>
+              </li>
+              <li>
+                <span class="icon-cross">✕</span>
+                <span>Staring at confusing Ads Manager dashboards wondering which numbers actually matter.</span>
+              </li>
+              <li>
+                <span class="icon-cross">✕</span>
+                <span>Running out of cash flow because high acquisition costs eat up all your profit margins.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- New Global Digi Pulse Way -->
+          <div class="transform-card card-gain">
+            <div class="transform-card-header">
+              <span class="transform-badge">The Solution</span>
+              <h3 class="transform-title">With Global Digi Pulse</h3>
+            </div>
+            <ul class="transform-list">
+              <li>
+                <span class="icon-tick">✓</span>
+                <span><strong>Predictable 4.2x to 6.5x ROAS:</strong> Turn ₹1,000 in ad spend into ₹4,200+ in trackable online revenue.</span>
+              </li>
+              <li>
+                <span class="icon-tick">✓</span>
+                <span><strong>Ban-Proof Business Setup:</strong> Verified Meta & Google setups with official GST invoicing & payment safeguards.</span>
+              </li>
+              <li>
+                <span class="icon-tick">✓</span>
+                <span><strong>3-Second Scroll-Stopping Hooks:</strong> Film compelling video creatives on your smartphone in under 20 minutes.</span>
+              </li>
+              <li>
+                <span class="icon-tick">✓</span>
+                <span><strong>Data Clarity & Mathematical Scaling:</strong> Know your exact CPA, CTR, and ROAS so you only scale winning ads.</span>
+              </li>
+              <li>
+                <span class="icon-tick">✓</span>
+                <span><strong>Direct Member Portal:</strong> Instant lifetime video access, bonus guides, and continuous updates for just ₹1,499.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         HERO TRUST METRICS BAR
+         ======================================================================== -->
+    <section class="trust-metrics-section">
+      <div class="trust-container">
+        <div class="trust-stat-box">
+          <span class="trust-stat-number">12,400+</span>
+          <span class="trust-stat-label">Active Marketers Enrolled</span>
+        </div>
+        <div class="trust-stat-box">
+          <span class="trust-stat-number">4.9 ★★★★★</span>
+          <span class="trust-stat-label">Average Student Rating</span>
+        </div>
+        <div class="trust-stat-box">
+          <span class="trust-stat-number">₹14.8 Cr+</span>
+          <span class="trust-stat-label">Client Ad Revenue Scaled</span>
+        </div>
+        <div class="trust-stat-box">
+          <span class="trust-stat-number">Lifetime</span>
+          <span class="trust-stat-label">Instant Video Access</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CURRICULUM & REAL VIDEO MODULES (ACCORDING TO REAL WEBSITE AFTER LOGIN)
+         ======================================================================== -->
+    <!-- ========================================================================
+         OFFICIAL AI INTRODUCTION & META ADS OVERVIEW VIDEO
+         ======================================================================== -->
+    <section class="section-curriculum" id="curriculum" style="padding: 4.5rem 0; background: radial-gradient(circle at 50% 20%, rgba(56,189,248,0.06), transparent 70%);">
+      <div class="section-container" style="max-width: 1040px; margin: 0 auto; padding: 0 1.5rem;">
+        
+        <div class="section-header" style="text-align: center; margin-bottom: 2.5rem;">
+          <span class="section-badge" style="background: rgba(56,189,248,0.15); color: #38bdf8; border: 1px solid rgba(56,189,248,0.3); padding: 0.4rem 1rem; border-radius: 9999px; font-weight: 600; font-size: 0.9rem; display: inline-block; margin-bottom: 0.8rem;">
+            🎬 Official Introduction • Watch Before Joining
+          </span>
+          <h2 class="section-title" style="font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.8rem; line-height: 1.25;">
+            What is <span class="gradient-text">Global Digi Pulse</span>?
+          </h2>
+          <p class="section-desc" style="font-size: 1.05rem; color: #94a3b8; max-width: 720px; margin: 0 auto; line-height: 1.6;">
+            Watch this 80-second official walkthrough to learn what is inside our platform, why ambitious brands use it, and how to scale your Meta Ads with consistent 3.8X to 6.5X ROAS.
+          </p>
+        </div>
+
+        <!-- Video Player Wrapper -->
+        <div class="official-intro-video-wrapper" style="position: relative; border-radius: 20px; padding: 6px; background: linear-gradient(135deg, rgba(56,189,248,0.4), rgba(168,85,247,0.4), rgba(56,189,248,0.1)); box-shadow: 0 25px 60px rgba(0,0,0,0.65);">
+          <div style="position: relative; border-radius: 16px; overflow: hidden; background: #060913; line-height: 0;">
+            <video id="officialIntroVideo" controls preload="metadata" poster="assets/intro_video_poster.jpg" playsinline style="width: 100%; height: auto; display: block; border-radius: 16px;">
+              <source src="assets/global_digi_pulse_official_intro.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <!-- 4 Key Highlights Row -->
+        <div class="video-highlights-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 2.5rem;">
+          <div class="highlight-item-card" style="background: rgba(15,23,42,0.65); border: 1px solid rgba(56,189,248,0.2); border-radius: 14px; padding: 1.2rem; backdrop-filter: blur(10px);">
+            <div style="font-size: 1.4rem; margin-bottom: 0.4rem;">🎓</div>
+            <h4 style="color: #ffffff; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem;">18+ Live Masterclasses</h4>
+            <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin: 0;">Recorded directly inside real Meta Ads accounts with real spending and revenue.</p>
+          </div>
+
+          <div class="highlight-item-card" style="background: rgba(15,23,42,0.65); border: 1px solid rgba(168,85,247,0.2); border-radius: 14px; padding: 1.2rem; backdrop-filter: blur(10px);">
+            <div style="font-size: 1.4rem; margin-bottom: 0.4rem;">⚡</div>
+            <h4 style="color: #ffffff; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem;">3-Second Hook Formulas</h4>
+            <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin: 0;">Scroll-stopping Reel and Feed templates with plug-and-play psychological copy.</p>
+          </div>
+
+          <div class="highlight-item-card" style="background: rgba(15,23,42,0.65); border: 1px solid rgba(45,212,191,0.2); border-radius: 14px; padding: 1.2rem; backdrop-filter: blur(10px);">
+            <div style="font-size: 1.4rem; margin-bottom: 0.4rem;">🛡️</div>
+            <h4 style="color: #ffffff; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem;">Ban-Proof Backend</h4>
+            <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin: 0;">Verified Facebook Business Manager setup, GST exemptions, and account recovery.</p>
+          </div>
+
+          <div class="highlight-item-card" style="background: rgba(15,23,42,0.65); border: 1px solid rgba(244,114,182,0.2); border-radius: 14px; padding: 1.2rem; backdrop-filter: blur(10px);">
+            <div style="font-size: 1.4rem; margin-bottom: 0.4rem;">♾️</div>
+            <h4 style="color: #ffffff; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem;">₹1,499 Lifetime Access</h4>
+            <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin: 0;">One-time enrollment for permanent access to all portals with zero monthly fees.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         INTERACTIVE DEMO & OPTIMIZATION WORKFLOW (MADGICX-STYLE WALKTHROUGH)
+         ======================================================================== -->
+    <section class="section-interactive-demo" id="demo-walkthrough" style="padding: 5rem 0; background: linear-gradient(180deg, rgba(7,12,24,0.95) 0%, rgba(11,19,43,0.98) 50%, rgba(7,12,24,0.95) 100%); position: relative; overflow: hidden;">
+      
+      <!-- Ambient Glow Blobs -->
+      <div style="position: absolute; top: 15%; left: 10%; width: 450px; height: 450px; background: radial-gradient(circle, rgba(56,189,248,0.12), transparent 70%); filter: blur(50px); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: 15%; right: 10%; width: 450px; height: 450px; background: radial-gradient(circle, rgba(168,85,247,0.12), transparent 70%); filter: blur(50px); pointer-events: none;"></div>
+
+      <div class="section-container" style="max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 2;">
+        
+        <!-- Header -->
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(56,189,248,0.12); border: 1px solid rgba(56,189,248,0.3); padding: 0.4rem 1.1rem; border-radius: 9999px; font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-bottom: 1rem;">
+            <span>⚡ Interactive Optimization Engine • Step-by-Step Demo</span>
+          </div>
+          <h2 style="font-size: 2.5rem; font-weight: 800; color: #ffffff; margin-bottom: 0.8rem; line-height: 1.25;">
+            How It Works: <span class="gradient-text">Your Step-by-Step Optimization Path</span>
+          </h2>
+          <p style="font-size: 1.05rem; color: #94a3b8; max-width: 760px; margin: 0 auto; line-height: 1.6;">
+            Experience the live interactive walkthrough. Learn the exact 4 steps our members use inside this platform to craft viral 3-second hooks, ban-proof their accounts, and scale Meta Ads to 6.4X ROAS.
+          </p>
+
+          <!-- ========================================================================
+               MADGICX-STYLE CONNECTED ARROW PIPELINE (HORIZONTAL CHEVRON FLOW)
+               ======================================================================== -->
+          <div class="arrow-pipeline-wrapper" style="margin-top: 2.2rem; margin-bottom: 2.8rem;">
+            <div class="madgicx-arrow-pipeline" id="madgicxArrowPipeline">
+              
+              <!-- Arrow Step 01 -->
+              <button type="button" class="pipeline-arrow-step active-arrow-step" id="pipelineArrow1" onclick="switchDemoStep(1)">
+                <div class="arrow-step-badge">01</div>
+                <div class="arrow-step-info">
+                  <span class="arrow-step-phase">STEP 01 • ACCESS</span>
+                  <span class="arrow-step-title">1-Click Fast Pass</span>
+                </div>
+                <div class="arrow-step-pointer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </button>
+
+              <!-- Connected Horizontal Arrow Divider 1-2 -->
+              <div class="pipeline-connector-arrow active-connector" id="pipelineConnector12">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+
+              <!-- Arrow Step 02 -->
+              <button type="button" class="pipeline-arrow-step" id="pipelineArrow2" onclick="switchDemoStep(2)">
+                <div class="arrow-step-badge">02</div>
+                <div class="arrow-step-info">
+                  <span class="arrow-step-phase">STEP 02 • CREATIVE</span>
+                  <span class="arrow-step-title">3-Sec Hook Studio</span>
+                </div>
+                <div class="arrow-step-pointer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </button>
+
+              <!-- Connected Horizontal Arrow Divider 2-3 -->
+              <div class="pipeline-connector-arrow" id="pipelineConnector23">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+
+              <!-- Arrow Step 03 -->
+              <button type="button" class="pipeline-arrow-step" id="pipelineArrow3" onclick="switchDemoStep(3)">
+                <div class="arrow-step-badge">03</div>
+                <div class="arrow-step-info">
+                  <span class="arrow-step-phase">STEP 03 • COMPLIANCE</span>
+                  <span class="arrow-step-title">Ban-Proof BM & GST</span>
+                </div>
+                <div class="arrow-step-pointer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </button>
+
+              <!-- Connected Horizontal Arrow Divider 3-4 -->
+              <div class="pipeline-connector-arrow" id="pipelineConnector34">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </div>
+
+              <!-- Arrow Step 04 -->
+              <button type="button" class="pipeline-arrow-step" id="pipelineArrow4" onclick="switchDemoStep(4)">
+                <div class="arrow-step-badge">04</div>
+                <div class="arrow-step-info">
+                  <span class="arrow-step-phase">STEP 04 • SCALING</span>
+                  <span class="arrow-step-title">6.4X ROAS Multiplier</span>
+                </div>
+                <div class="arrow-step-pointer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Interactive Demo Showcase -->
+        <div style="display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 2.2rem; align-items: start;">
+          
+          <!-- LEFT: Animated Screen with Rotating Conic Border & Live Interactive Widgets -->
+          <div class="demo-screen-container" style="position: relative; position: sticky; top: 100px;">
+            
+            <!-- Madgicx-style Glowing Rotating Border Frame -->
+            <div style="padding: 2px; border-radius: 22px; background: linear-gradient(135deg, #0284c7, #a855f7, #10b981); box-shadow: 0 25px 60px rgba(0,0,0,0.7);">
+              <div style="background: #090e1e; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+                
+                <!-- Mock Browser / Terminal Top Bar -->
+                <div style="background: #0d152b; padding: 0.85rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between;">
+                  <div style="display: flex; gap: 0.45rem;">
+                    <span style="width: 11px; height: 11px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                    <span style="width: 11px; height: 11px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                    <span style="width: 11px; height: 11px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+                  </div>
+                  <div style="background: rgba(15,23,42,0.8); border: 1px solid rgba(255,255,255,0.08); padding: 0.25rem 1.2rem; border-radius: 6px; font-size: 0.78rem; color: #94a3b8; font-family: monospace;">
+                    https://localhost:3000/<span id="demoScreenUrl">html/IntroPage.html#step-1-access</span>
+                  </div>
+                  <span style="font-size: 0.75rem; color: #38bdf8; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                    <span style="width: 6px; height: 6px; border-radius: 50%; background: #38bdf8; display: inline-block; animation: blink 1.2s infinite;"></span> LIVE DEMO
+                  </span>
+                </div>
+
+                <!-- Screen Interactive Body -->
+                <div style="padding: 1.8rem; min-height: 440px; position: relative;">
+                  
+                  <!-- Pop-up Animation Badge (Dynamically triggers on step change) -->
+                  <div id="demoPopupAlert" class="popup-alert-anim" style="position: absolute; top: 16px; right: 16px; background: rgba(16,185,129,0.18); border: 1px solid #10b981; border-radius: 10px; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.6rem; color: #34d399; font-size: 0.85rem; font-weight: 700; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 10; animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+                    <span id="demoPopupIcon">⚡</span>
+                    <span id="demoPopupText">1-Click Fast Pass Active: Access Granted as Shriya</span>
+                  </div>
+
+                  <!-- Dynamic Screen Content: STEP 1 -->
+                  <div id="screenStep1" class="demo-screen-panel">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
+                      <div>
+                        <h4 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem;">Authorized Member Authentication</h4>
+                        <p style="color: #94a3b8; font-size: 0.85rem;">One-click password validation bypassing manual credential entry.</p>
+                      </div>
+                      <span style="background: rgba(56,189,248,0.15); color: #38bdf8; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 700;">USER VERIFIED</span>
+                    </div>
+
+                    <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(56,189,248,0.25); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.2rem;">
+                      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+                        <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #0284c7, #9333ea); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #fff;">👤</div>
+                        <div>
+                          <div style="font-weight: 700; color: #fff; font-size: 1.05rem;">Shriya (Authorized Student Account)</div>
+                          <div style="color: #94a3b8; font-size: 0.82rem;">Credential Key: <code style="color:#38bdf8;">Megha@14</code> • Single Session Token</div>
+                        </div>
+                      </div>
+                      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+                        <div style="background: rgba(30,41,59,0.7); padding: 0.8rem; border-radius: 8px;">
+                          <div style="font-size: 0.75rem; color: #94a3b8;">Access Level</div>
+                          <div style="font-size: 0.95rem; font-weight: 700; color: #34d399;">All 3 Masterclasses</div>
+                        </div>
+                        <div style="background: rgba(30,41,59,0.7); padding: 0.8rem; border-radius: 8px;">
+                          <div style="font-size: 0.75rem; color: #94a3b8;">Session Security</div>
+                          <div style="font-size: 0.95rem; font-weight: 700; color: #38bdf8;">100% Encrypted</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a href="html/IntroPage.html" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; text-decoration: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; box-shadow: 0 8px 20px rgba(2,132,199,0.35);">
+                      <span>⚡ Open Live Member Dashboard (IntroPage.html) →</span>
+                    </a>
+                  </div>
+
+                  <!-- Dynamic Screen Content: STEP 2 -->
+                  <div id="screenStep2" class="demo-screen-panel" style="display: none;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
+                      <div>
+                        <h4 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem;">3-Second Hook & Dynamic Creative Studio</h4>
+                        <p style="color: #94a3b8; font-size: 0.85rem;">Interactive testing for Instagram Reels & Facebook Feed mockups.</p>
+                      </div>
+                      <span style="background: rgba(168,85,247,0.15); color: #c084fc; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 700;">84.5% HOOK RATE</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
+                      <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(168,85,247,0.3); border-radius: 12px; padding: 1.2rem;">
+                        <span style="font-size: 0.75rem; color: #c084fc; font-weight: 700;">REEL FORMULA A</span>
+                        <div style="font-size: 1rem; font-weight: 700; color: #fff; margin: 0.4rem 0;">Curiosity Gap Hook</div>
+                        <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.4;">"Stop running Meta ads until you fix this single 3-second setting..."</p>
+                        <div style="margin-top: 0.8rem; font-size: 0.85rem; font-weight: 700; color: #34d399;">CTR: 5.2% • Conv: 3.8%</div>
+                      </div>
+                      <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(56,189,248,0.3); border-radius: 12px; padding: 1.2rem;">
+                        <span style="font-size: 0.75rem; color: #38bdf8; font-weight: 700;">REEL FORMULA B</span>
+                        <div style="font-size: 1rem; font-weight: 700; color: #fff; margin: 0.4rem 0;">Problem / Solution Hook</div>
+                        <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.4;">"Here is how we slashed our Cost-Per-Lead to ₹2.60 in 48 hours..."</p>
+                        <div style="margin-top: 0.8rem; font-size: 0.85rem; font-weight: 700; color: #34d399;">CTR: 4.8% • Conv: 4.1%</div>
+                      </div>
+                    </div>
+
+                    <button type="button" onclick="openOptionModalDemo(1)" style="width: 100%; background: linear-gradient(135deg, #9333ea, #2563eb); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer;">
+                      <span>▶ Watch Option 01 Creative Intro Video & Theory →</span>
+                    </button>
+                  </div>
+
+                  <!-- Dynamic Screen Content: STEP 3 -->
+                  <div id="screenStep3" class="demo-screen-panel" style="display: none;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
+                      <div>
+                        <h4 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem;">Ban-Proof Backend & Compliance Shield</h4>
+                        <p style="color: #94a3b8; font-size: 0.85rem;">Verified Business Manager setup & official GST tax exemption.</p>
+                      </div>
+                      <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 700;">SHIELD 100% SECURE</span>
+                    </div>
+
+                    <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 1.4rem; margin-bottom: 1.2rem;">
+                      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.8rem; margin-bottom: 0.8rem;">
+                        <span style="color: #fff; font-weight: 600; font-size: 0.92rem;">Meta Business Manager Status</span>
+                        <span style="color: #34d399; font-weight: 700; font-size: 0.85rem;">✓ Authenticated & Verified</span>
+                      </div>
+                      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.8rem; margin-bottom: 0.8rem;">
+                        <span style="color: #fff; font-weight: 600; font-size: 0.92rem;">GST 18% Surcharge Exemption</span>
+                        <span style="color: #38bdf8; font-weight: 700; font-size: 0.85rem;">✓ GSTIN Configured (Saving 18%)</span>
+                      </div>
+                      <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <span style="color: #fff; font-weight: 600; font-size: 0.92rem;">Server-Side CAPI Webhooks</span>
+                        <span style="color: #a855f7; font-weight: 700; font-size: 0.85rem;">✓ 100% Events Captured</span>
+                      </div>
+                    </div>
+
+                    <button type="button" onclick="openOptionModalDemo(2)" style="width: 100%; background: linear-gradient(135deg, #10b981, #0284c7); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer;">
+                      <span>▶ Watch Option 02 BM & GST Intro Video & Theory →</span>
+                    </button>
+                  </div>
+
+                  <!-- Dynamic Screen Content: STEP 4 -->
+                  <div id="screenStep4" class="demo-screen-panel" style="display: none;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
+                      <div>
+                        <h4 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem;">Advantage+ AI Scaling & 6.4X ROAS Multiplier</h4>
+                        <p style="color: #94a3b8; font-size: 0.85rem;">Daily spend allocation, lead cost reduction, and live conversion math.</p>
+                      </div>
+                      <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 700;">6.4X ROAS</span>
+                    </div>
+
+                    <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(56,189,248,0.3); border-radius: 12px; padding: 1.4rem; margin-bottom: 1.2rem;">
+                      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                        <div>
+                          <div style="font-size: 0.75rem; color: #94a3b8;">Total Revenue Scaled</div>
+                          <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">$215,840.12 <span style="font-size: 0.85rem; color: #34d399;">(↑ 74.2%)</span></div>
+                        </div>
+                        <div style="text-align: right;">
+                          <div style="font-size: 0.75rem; color: #94a3b8;">Average Lead Cost</div>
+                          <div style="font-size: 1.5rem; font-weight: 800; color: #38bdf8;">₹2.60 <span style="font-size: 0.85rem; color: #34d399;">/ lead</span></div>
+                        </div>
+                      </div>
+                      <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.08); border-radius: 9999px; overflow: hidden;">
+                        <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #0284c7, #10b981);"></div>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; margin-top: 0.5rem;">
+                        <span>Facebook Feed (60%)</span>
+                        <span>Instagram Reels (30%)</span>
+                        <span>Audience Network (10%)</span>
+                      </div>
+                    </div>
+
+                    <button type="button" onclick="openOptionModalDemo(3)" style="width: 100%; background: linear-gradient(135deg, #2563eb, #10b981); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer;">
+                      <span>▶ Watch Option 03 Scaling Intro Video & Theory →</span>
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Step-by-Step Instructions Connected by Dynamic Arrows -->
+          <div class="demo-instructions-column" style="display: flex; flex-direction: column;">
+            
+            <!-- Step 1 Card -->
+            <div class="demo-instruction-card active-card" id="demoCard1" onclick="switchDemoStep(1)">
+              <div class="card-arrow-header">
+                <span class="card-arrow-tag tag-cyan">
+                  <span>STEP 01</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  <span>INSTANT CREDENTIAL ACCESS</span>
+                </span>
+                <span class="card-status-dot dot-cyan"></span>
+              </div>
+              <h3 class="card-instruction-title">1-Click Fast Pass Authentication</h3>
+              <p class="card-instruction-desc">
+                Bypass complex registration. Tap the 1-click access button to immediately load authenticated student credentials (<code style="color:#38bdf8;">Shriya / Megha@14</code>) and open the complete video training system.
+              </p>
+              <div class="card-arrow-cta">
+                <span>View Screen Demo</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </div>
+            </div>
+
+            <!-- Vertical Arrow Bridge: 1 -> 2 -->
+            <div class="vertical-arrow-bridge active-bridge" id="verticalBridge12">
+              <div class="bridge-line"></div>
+              <div class="bridge-arrow-pill">
+                <span class="bridge-arrow-icon">⬇</span>
+                <span class="bridge-arrow-text">PASS CREDENTIALS TO HOOK STUDIO</span>
+              </div>
+              <div class="bridge-line"></div>
+            </div>
+
+            <!-- Step 2 Card -->
+            <div class="demo-instruction-card" id="demoCard2" onclick="switchDemoStep(2)">
+              <div class="card-arrow-header">
+                <span class="card-arrow-tag tag-purple">
+                  <span>STEP 02</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  <span>3-SECOND HOOK MASTERCLASS</span>
+                </span>
+                <span class="card-status-dot dot-purple"></span>
+              </div>
+              <h3 class="card-instruction-title">Select & Test Viral Creative Hooks</h3>
+              <p class="card-instruction-desc">
+                Access plug-and-play Reel and Feed scripts designed to freeze the thumb in 3 seconds. Test multiple hooks to stop ad fatigue and achieve 5.2% CTR.
+              </p>
+              <div class="card-arrow-cta">
+                <span>View Screen Demo</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </div>
+            </div>
+
+            <!-- Vertical Arrow Bridge: 2 -> 3 -->
+            <div class="vertical-arrow-bridge" id="verticalBridge23">
+              <div class="bridge-line"></div>
+              <div class="bridge-arrow-pill">
+                <span class="bridge-arrow-icon">⬇</span>
+                <span class="bridge-arrow-text">CONNECT CREATIVE TO COMPLIANCE SHIELD</span>
+              </div>
+              <div class="bridge-line"></div>
+            </div>
+
+            <!-- Step 3 Card -->
+            <div class="demo-instruction-card" id="demoCard3" onclick="switchDemoStep(3)">
+              <div class="card-arrow-header">
+                <span class="card-arrow-tag tag-emerald">
+                  <span>STEP 03</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  <span>BAN-PROOF ASSET PROTECTION</span>
+                </span>
+                <span class="card-status-dot dot-emerald"></span>
+              </div>
+              <h3 class="card-instruction-title">Setup Verified BM & Claim GST 18% Savings</h3>
+              <p class="card-instruction-desc">
+                Configure enterprise Facebook Business Manager verification, set up Conversions API webhooks, claim 18% GST tax exemptions, and unban accounts.
+              </p>
+              <div class="card-arrow-cta">
+                <span>View Screen Demo</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </div>
+            </div>
+
+            <!-- Vertical Arrow Bridge: 3 -> 4 -->
+            <div class="vertical-arrow-bridge" id="verticalBridge34">
+              <div class="bridge-line"></div>
+              <div class="bridge-arrow-pill">
+                <span class="bridge-arrow-icon">⬇</span>
+                <span class="bridge-arrow-text">FEED DATA INTO ADVANTAGE+ 6.4X SCALER</span>
+              </div>
+              <div class="bridge-line"></div>
+            </div>
+
+            <!-- Step 4 Card -->
+            <div class="demo-instruction-card" id="demoCard4" onclick="switchDemoStep(4)">
+              <div class="card-arrow-header">
+                <span class="card-arrow-tag tag-blue">
+                  <span>STEP 04</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  <span>REVENUE SCALING SIMULATOR</span>
+                </span>
+                <span class="card-status-dot dot-blue"></span>
+              </div>
+              <h3 class="card-instruction-title">Scale Winning Ad Sets to 6.4X ROAS</h3>
+              <p class="card-instruction-desc">
+                Use the 20% budget scaling law to grow ad spend without resetting the algorithm. Cut lead costs to ₹2.60 and scale revenue profitably.
+              </p>
+              <div class="card-arrow-cta">
+                <span>View Screen Demo</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Arrow Pipeline & Glowing Connectors Style -->
+      <style>
+        /* Horizontal Arrow Pipeline Container */
+        .arrow-pipeline-wrapper {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          overflow-x: auto;
+          padding: 6px 4px;
+        }
+        .madgicx-arrow-pipeline {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: rgba(11, 19, 43, 0.75);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 0.55rem;
+          border-radius: 9999px;
+          backdrop-filter: blur(16px);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        .pipeline-arrow-step {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.7rem;
+          background: rgba(15, 23, 42, 0.6);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: #94a3b8;
+          padding: 0.65rem 1.25rem;
+          border-radius: 9999px;
+          cursor: pointer;
+          font-family: inherit;
+          transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+        }
+        .pipeline-arrow-step:hover {
+          color: #fff;
+          border-color: rgba(56, 189, 248, 0.4);
+          transform: translateY(-2px);
+          background: rgba(30, 41, 59, 0.8);
+        }
+        .pipeline-arrow-step.active-arrow-step {
+          background: linear-gradient(135deg, #0284c7, #2563eb) !important;
+          border-color: #38bdf8 !important;
+          color: #ffffff !important;
+          box-shadow: 0 0 25px rgba(56, 189, 248, 0.45), 0 8px 18px rgba(2, 132, 199, 0.35);
+          transform: scale(1.03);
+        }
+        .arrow-step-badge {
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.12);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.78rem;
+          font-weight: 800;
+          color: inherit;
+        }
+        .active-arrow-step .arrow-step-badge {
+          background: #ffffff;
+          color: #0284c7;
+        }
+        .arrow-step-info {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+        .arrow-step-phase {
+          font-size: 0.68rem;
+          font-weight: 800;
+          letter-spacing: 0.05em;
+          opacity: 0.8;
+          text-transform: uppercase;
+        }
+        .arrow-step-title {
+          font-size: 0.88rem;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+        .arrow-step-pointer {
+          display: flex;
+          align-items: center;
+          opacity: 0.6;
+          transition: transform 0.25s;
+        }
+        .active-arrow-step .arrow-step-pointer {
+          opacity: 1;
+          color: #ffffff;
+          transform: translateX(3px);
+        }
+
+        /* Horizontal Connector Arrow */
+        .pipeline-connector-arrow {
+          display: flex;
+          align-items: center;
+          color: rgba(255, 255, 255, 0.25);
+          transition: all 0.3s;
+          padding: 0 0.1rem;
+        }
+        .pipeline-connector-arrow.active-connector {
+          color: #38bdf8;
+          filter: drop-shadow(0 0 8px #38bdf8);
+          animation: pulseConnector 1.6s infinite ease-in-out;
+        }
+
+        @keyframes pulseConnector {
+          0%, 100% { transform: translateX(0); opacity: 0.7; }
+          50% { transform: translateX(4px); opacity: 1; }
+        }
+
+        /* Instruction Cards on Right Column */
+        .demo-instruction-card {
+          background: rgba(15, 23, 42, 0.6);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 18px;
+          padding: 1.4rem 1.6rem;
+          cursor: pointer;
+          transition: all 0.25s ease;
+          position: relative;
+        }
+        .demo-instruction-card:hover {
+          border-color: rgba(56, 189, 248, 0.4);
+          transform: translateX(4px);
+          background: rgba(15, 23, 42, 0.85);
+        }
+        .demo-instruction-card.active-card {
+          border-color: #38bdf8 !important;
+          background: rgba(15, 23, 42, 0.96) !important;
+          box-shadow: 0 10px 30px rgba(2, 132, 199, 0.22), 0 0 0 1px rgba(56, 189, 248, 0.4);
+          transform: translateX(6px);
+        }
+
+        .card-arrow-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 0.6rem;
+        }
+        .card-arrow-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          font-size: 0.75rem;
+          font-weight: 800;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+        }
+        .tag-cyan { color: #38bdf8; }
+        .tag-purple { color: #c084fc; }
+        .tag-emerald { color: #34d399; }
+        .tag-blue { color: #60a5fa; }
+
+        .card-status-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          opacity: 0.4;
+          transition: all 0.25s;
+        }
+        .active-card .card-status-dot {
+          opacity: 1;
+          box-shadow: 0 0 10px currentColor;
+          transform: scale(1.3);
+        }
+        .dot-cyan { background: #38bdf8; color: #38bdf8; }
+        .dot-purple { background: #c084fc; color: #c084fc; }
+        .dot-emerald { background: #34d399; color: #34d399; }
+        .dot-blue { background: #60a5fa; color: #60a5fa; }
+
+        .card-instruction-title {
+          font-size: 1.15rem;
+          font-weight: 700;
+          color: #ffffff;
+          margin-bottom: 0.4rem;
+        }
+        .card-instruction-desc {
+          font-size: 0.88rem;
+          color: #94a3b8;
+          line-height: 1.5;
+          margin: 0;
+        }
+        .card-arrow-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          color: #38bdf8;
+          font-size: 0.82rem;
+          font-weight: 700;
+          margin-top: 0.85rem;
+          transition: gap 0.2s;
+        }
+        .demo-instruction-card:hover .card-arrow-cta {
+          gap: 0.65rem;
+          color: #7dd3fc;
+        }
+
+        /* Vertical Glowing Arrow Bridge Between Cards */
+        .vertical-arrow-bridge {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.6rem 0;
+          gap: 0.75rem;
+          position: relative;
+        }
+        .bridge-line {
+          flex: 1;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+        }
+        .bridge-arrow-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          background: rgba(15, 23, 42, 0.8);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 9999px;
+          padding: 0.25rem 0.9rem;
+          font-size: 0.72rem;
+          font-weight: 800;
+          color: #94a3b8;
+          letter-spacing: 0.05em;
+          transition: all 0.3s ease;
+        }
+        .bridge-arrow-icon {
+          font-size: 0.85rem;
+          transition: transform 0.25s ease;
+        }
+        .vertical-arrow-bridge.active-bridge .bridge-arrow-pill {
+          background: rgba(2, 132, 199, 0.18);
+          border-color: #38bdf8;
+          color: #38bdf8;
+          box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+        }
+        .vertical-arrow-bridge.active-bridge .bridge-arrow-icon {
+          animation: bounceArrow 1.4s infinite ease-in-out;
+        }
+        .vertical-arrow-bridge.active-bridge .bridge-line {
+          background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), transparent);
+        }
+
+        @keyframes bounceArrow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(3px); }
+        }
+
+        @keyframes bounceIn {
+          0% { opacity: 0; transform: scale(0.8) translateY(-10px); }
+          60% { opacity: 1; transform: scale(1.04) translateY(2px); }
+          100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.3; }
+        }
+
+        @media (max-width: 900px) {
+          .arrow-pipeline-wrapper {
+            justify-content: flex-start;
+          }
+          .pipeline-arrow-step {
+            padding: 0.55rem 0.9rem;
+          }
+          .arrow-step-title {
+            font-size: 0.8rem;
+          }
+        }
+      </style>
+
+      <script>
+        const demoStepsData = {
+          1: {
+            url: "html/IntroPage.html#step-1-access",
+            icon: "⚡",
+            alertText: "1-Click Fast Pass Active: Access Granted as Shriya",
+            alertBorder: "#38bdf8",
+            alertColor: "#38bdf8"
+          },
+          2: {
+            url: "html/IntroPage.html#step-2-hooks",
+            icon: "🎬",
+            alertText: "High-CTR Hook Activated: 84.5% Scroll-Stopping Rate",
+            alertBorder: "#c084fc",
+            alertColor: "#c084fc"
+          },
+          3: {
+            url: "html/IntroPage.html#step-3-bm-gst",
+            icon: "🛡️",
+            alertText: "Compliance Shield Verified: 18% GST Surcharge Saved",
+            alertBorder: "#10b981",
+            alertColor: "#34d399"
+          },
+          4: {
+            url: "html/IntroPage.html#step-4-scaling",
+            icon: "📈",
+            alertText: "Advantage+ Scaling Law: 6.4X ROAS Target Locked",
+            alertBorder: "#38bdf8",
+            alertColor: "#38bdf8"
+          }
+        };
+
+        function switchDemoStep(step) {
+          // Update URL in Mock Terminal
+          document.getElementById('demoScreenUrl').textContent = demoStepsData[step].url;
+
+          // Update popup alert with pop-in animation
+          const popup = document.getElementById('demoPopupAlert');
+          popup.style.animation = 'none';
+          void popup.offsetWidth; // trigger reflow
+          popup.style.animation = 'bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+          
+          document.getElementById('demoPopupIcon').textContent = demoStepsData[step].icon;
+          document.getElementById('demoPopupText').textContent = demoStepsData[step].alertText;
+          popup.style.borderColor = demoStepsData[step].alertBorder;
+          popup.style.color = demoStepsData[step].alertColor;
+
+          // Update Arrow Pipeline Buttons & Connector Arrows
+          for (let i = 1; i <= 4; i++) {
+            const screen = document.getElementById(`screenStep${i}`);
+            const arrowStep = document.getElementById(`pipelineArrow${i}`);
+            const card = document.getElementById(`demoCard${i}`);
+
+            if (i === step) {
+              screen.style.display = 'block';
+              arrowStep.classList.add('active-arrow-step');
+              card.classList.add('active-card');
+            } else {
+              screen.style.display = 'none';
+              arrowStep.classList.remove('active-arrow-step');
+              card.classList.remove('active-card');
+            }
+          }
+
+          // Update horizontal connector arrows
+          const conn12 = document.getElementById('pipelineConnector12');
+          const conn23 = document.getElementById('pipelineConnector23');
+          const conn34 = document.getElementById('pipelineConnector34');
+
+          if (conn12) conn12.className = step >= 2 ? 'pipeline-connector-arrow active-connector' : 'pipeline-connector-arrow';
+          if (conn23) conn23.className = step >= 3 ? 'pipeline-connector-arrow active-connector' : 'pipeline-connector-arrow';
+          if (conn34) conn34.className = step >= 4 ? 'pipeline-connector-arrow active-connector' : 'pipeline-connector-arrow';
+
+          // Update vertical bridges
+          const bridge12 = document.getElementById('verticalBridge12');
+          const bridge23 = document.getElementById('verticalBridge23');
+          const bridge34 = document.getElementById('verticalBridge34');
+
+          if (bridge12) bridge12.className = step >= 2 ? 'vertical-arrow-bridge active-bridge' : 'vertical-arrow-bridge';
+          if (bridge23) bridge23.className = step >= 3 ? 'vertical-arrow-bridge active-bridge' : 'vertical-arrow-bridge';
+          if (bridge34) bridge34.className = step >= 4 ? 'vertical-arrow-bridge active-bridge' : 'vertical-arrow-bridge';
+        }
+
+        // Helper to launch option modal in IntroPage
+        function openOptionModalDemo(optId) {
+          window.location.href = `html/IntroPage.html?option=${optId}`;
+        }
+      </script>
+
+    </section>
+
+    <!-- ========================================================================
+         INTERACTIVE LIVE ROAS & AD REVENUE CALCULATOR
+         ======================================================================== -->
+    <section class="section-calculator" id="calculator">
+      <div class="section-container">
+      <div class="calc-card">
+        <div class="calc-info">
+          <span class="section-badge">Live Performance Engine</span>
+          <h3>Interactive ROAS & Sales Simulator</h3>
+          <p>Drag the slider to your planned monthly ad spend to calculate your projected reach, leads, customer orders, and revenue return.</p>
+          
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <span class="slider-label">Your Planned Monthly Ad Budget:</span>
+              <span class="slider-value-display" id="budgetDisplay">₹10,000</span>
+            </div>
+            <input type="range" min="1000" max="100000" step="1000" value="10000" class="custom-range-slider" id="adBudgetSlider">
+          </div>
+
+          <button class="btn-enroll-gradient" onclick="openPaymentModal()" style="width:fit-content;">
+            <span>Scale With These Numbers Today</span>
+          </button>
+        </div>
+
+        <div class="calc-results-box">
+          <div class="calc-stat-item">
+            <span class="stat-header">Projected Video Views</span>
+            <span class="stat-figure cyan" id="calcViews">125,000+</span>
+          </div>
+
+          <div class="calc-stat-item">
+            <span class="stat-header">Qualified Leads / Visitors</span>
+            <span class="stat-figure" id="calcLeads">3,850+</span>
+          </div>
+
+          <div class="calc-stat-item">
+            <span class="stat-header">Projected Revenue (4.2x ROAS)</span>
+            <span class="stat-figure highlight" id="calcRevenue">₹42,000</span>
+          </div>
+
+          <div class="calc-stat-item">
+            <span class="stat-header">Average Cost Per Lead</span>
+            <span class="stat-figure" id="calcCPA">₹2.60</span>
+          </div>
+        </div>
+      </div>
+    
+      </div></section>
+
+    <!-- ========================================================================
+         SPECIAL OFFER & ENROLLMENT BANNER
+         ======================================================================== -->
+    <section class="section-pricing-banner" id="pricing">
+      <div class="section-container">
+      <div class="pricing-box">
+        <div class="countdown-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>Grab this introductory offer within: <strong id="countdownTimer">06:59</strong></span>
+        </div>
+
+        <h2 style="font-size:2.8rem; font-weight:800; color:#fff; margin-bottom:1rem;">
+          Get Lifetime Access to the Complete Video Course
+        </h2>
+        <p style="color:var(--text-muted); max-width:640px; margin:0 auto 2rem auto; font-size:1.1rem;">
+          Unlock all 4 video modules, ad templates, campaign checklists, and community support today for a single one-time payment.
+        </p>
+
+        <div style="margin-bottom:2.5rem;">
+          <span class="price-strike">₹4,999</span>
+          <span class="price-active"><span>₹</span>1,499</span>
+          <span style="background:rgba(16,185,129,0.2); color:var(--emerald-green); padding:0.4rem 0.8rem; border-radius:9999px; font-weight:700; margin-left:1rem; font-size:0.9rem;">70% OFF</span>
+        </div>
+
+        <button class="btn-enroll-gradient" style="padding:1.2rem 3.5rem; font-size:1.15rem; margin:0 auto;" onclick="openPaymentModal()">
+          <span>Unlock All Videos Instantly • Pay ₹1499</span>
+        </button>
+
+        <p style="color:var(--text-dim); font-size:0.85rem; margin-top:1.5rem;">
+          Instant Access Guaranteed • Supported via UPI, Cards, NetBanking, Razorpay • 100% Secure Checkout
+        </p>
+      </div>
+    
+      </div></section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" id="footerContact">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="pulse-icon-box" style="width:32px; height:32px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px; height:18px;">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <span>GLOBAL DIGI PULSE</span>
+        </div>
+
+        <div style="display:flex; gap:2rem; font-weight:500;">
+          <a href="#about-surprise" style="color:var(--text-muted); text-decoration:none;">About</a>
+          <a href="#curriculum" style="color:var(--text-muted); text-decoration:none;">Courses</a>
+          <a href="#calculator" style="color:var(--text-muted); text-decoration:none;">ROAS Calculator</a>
+          <a href="#pricing" style="color:var(--text-muted); text-decoration:none;">Pricing</a>
+          <a href="/LoginPage.html" id="footerLoginLink" style="color:var(--cyan-pulse); text-decoration:none;">Member Portal</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 GLOBAL DIGI PULSE. ALL RIGHTS RESERVED.</span>
+        <span>Empowering Digital Marketers & Entrepreneurs Worldwide.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODAL 1: AUTHORIZED MEMBER LOGIN MODAL (FROSTED GLASSMORPHISM)
+       ======================================================================== -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-card modal-login-card" style="background:#ffffff !important; color:#0f172a !important; border-radius:20px !important; padding:1.6rem 1.6rem !important; max-width:340px !important; width:92% !important; box-shadow:0 25px 65px rgba(0,0,0,0.5) !important; border:1px solid rgba(226,232,240,0.9) !important; position:relative !important;">
+      <button class="modal-close-btn" onclick="closeModal('loginModal')" style="color:#64748b !important; background:#f1f5f9 !important; width:30px; height:30px; border-radius:50%; position:absolute; top:12px; right:12px; border:none; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center;" aria-label="Close modal">&times;</button>
+      
+      <div class="login-card-header" style="margin-bottom:0.85rem; text-align:left;">
+        <h2 class="login-card-title" style="font-size:1.45rem; font-weight:900; color:#0f172a; margin:0 0 3px 0; letter-spacing:-0.02em;">Welcome Back!</h2>
+        <p class="login-card-subtitle" style="font-size:0.82rem; color:#64748b; font-weight:500; margin:0;">Sign in to continue your journey</p>
+      </div>
+
+      <form id="heroLoginForm" autocomplete="off">
+        <div class="card-input-field" style="position:relative; margin-bottom:0.75rem;">
+          <span class="card-input-icon" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:0.95rem; opacity:0.65;">👤</span>
+          <input type="text" id="heroUsername" placeholder="Email or Username" value="Shriya" required style="width:100%; padding:10px 12px 10px 38px; border-radius:10px; background:#f8fafc; border:1.5px solid #e2e8f0; font-size:0.86rem; font-family:inherit; color:#0f172a; font-weight:600; box-sizing:border-box; outline:none;">
+        </div>
+
+        <div class="card-input-field" style="position:relative; margin-bottom:0.75rem;">
+          <span class="card-input-icon" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:0.95rem; opacity:0.65;">🔒</span>
+          <input type="password" id="heroPassword" placeholder="Password" value="Megha@14" required style="width:100%; padding:10px 125px 10px 38px; border-radius:10px; background:#f8fafc; border:1.5px solid #e2e8f0; font-size:0.86rem; font-family:inherit; color:#0f172a; font-weight:600; box-sizing:border-box; outline:none;">
+          <button type="button" id="heroTogglePwd" style="position:absolute; right:94px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; color:#64748b; font-size:0.85rem; padding:2px;" title="Show/Hide Password" aria-label="Toggle password visibility">👁️</button>
+          <a href="#" class="card-forgot-link" onclick="closeModal('loginModal'); openModal('forgotModal'); return false;" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:0.76rem; color:#0284c7; font-weight:700; text-decoration:none;">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="card-login-btn" style="width:100%; padding:10.5px 18px; border-radius:10px; background:linear-gradient(135deg, #0284c7 0%, #0099ff 35%, #9333ea 100%); border:none; color:#ffffff; font-size:0.94rem; font-weight:800; cursor:pointer; box-shadow:0 6px 18px rgba(2, 132, 199, 0.38); display:flex; align-items:center; justify-content:center; margin-top:0.5rem; letter-spacing:0.01em;">
+          <span>Login →</span>
+        </button>
+
+        <div class="card-or-divider" style="display:flex; align-items:center; margin:0.65rem 0; text-align:center; color:#64748b; font-size:0.74rem; font-weight:600;">
+          <span style="padding:0 8px;">or continue with</span>
+        </div>
+
+        <div class="card-social-row" style="display:flex; justify-content:center; gap:12px; margin-bottom:0.6rem;">
+          <button type="button" class="card-social-btn google-btn" onclick="quickLoginAsShriya()" title="Continue with Google" style="width:36px; height:36px; border-radius:50%; border:1.5px solid #cbd5e1; background:#ffffff; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.2c0 2.9.7 5.5 1.9 7.9l3.7-2.9z"/><path fill="#34A853" d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2-6.4-4.8L1.9 16.9C3.7 20.6 7.5 23.5 12 23.5z"/></svg>
+          </button>
+          <button type="button" class="card-social-btn facebook-btn" onclick="quickLoginAsShriya()" title="Continue with Facebook" style="width:36px; height:36px; border-radius:50%; border:1.5px solid #cbd5e1; background:#ffffff; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </button>
+        </div>
+
+        <div class="card-quick-access" onclick="quickLoginAsShriya()" style="text-align:center; font-size:0.76rem; color:#0284c7; font-weight:800; cursor:pointer; padding:6px 8px; border-radius:8px; background:rgba(2,132,199,0.08); border:1px dashed rgba(2,132,199,0.35);">
+          <span>⚡ 1-Click Access as Shriya (Megha@14)</span>
+        </div>
+
+        <div class="card-signup-prompt" style="text-align:center; font-size:0.85rem; color:#475569; font-weight:600; margin-top:0.5rem;">
+          <span>Don't have an account?</span>
+          <a href="#" onclick="closeModal('loginModal'); openModal('registerModal'); return false;" style="color:#0284c7; font-weight:800; text-decoration:none; margin-left:5px;">Sign Up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: VIDEO PREVIEW MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="videoPreviewModal">
+    <div class="modal-card modal-video-card">
+      <button class="modal-close-btn" onclick="closeModal('videoPreviewModal')">&times;</button>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <div>
+          <h3 id="videoModalTitle" style="color:#fff; font-size:1.4rem;">Masterclass Preview</h3>
+          <p id="videoModalDesc" style="color:var(--text-muted); font-size:0.9rem;">Instructor Walkthrough & Core Strategies</p>
+        </div>
+        <span class="live-status-tag" style="position:static;">🔴 1080p Preview</span>
+      </div>
+
+      <div style="position:relative; width:100%; height:450px; border-radius:18px; overflow:hidden; background:#000;">
+        <video id="samplePreviewVideo" width="100%" height="100%" controls poster="assets/presenter_chart.jpg" style="width:100%; height:100%; object-fit:cover;">
+          <source src="https://archive.org/download/short-video.jpg/short%20video2.jpg.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div style="margin-top:1.25rem; display:flex; justify-content:space-between; align-items:center;">
+        <span style="color:var(--gold-amber); font-weight:600;">Full 4-Module Course: ₹1,499 Only</span>
+        <button class="btn-enroll-gradient" onclick="closeModal('videoPreviewModal'); openPaymentModal();">
+          Unlock Full Masterclass
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 3: REGISTRATION MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('registerModal')">&times;</button>
+      <h3 style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:0.5rem;">Create Your Account</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">Join 12,000+ digital marketers mastering social media ads.</p>
+
+      <form id="modalRegisterForm">
+        <div class="input-group">
+          <label class="input-label" for="regUsername">Username</label>
+          <input type="text" id="regUsername" class="login-input" placeholder="Choose a username" required>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="login-input" placeholder="you@domain.com" required>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label" for="regPassword">Password</label>
+          <input type="password" id="regPassword" class="login-input" placeholder="Create strong password" required>
+        </div>
+
+        <button type="submit" class="btn-submit-login">
+          <span>Complete Registration</span>
+        </button>
+      </form>
+
+      <div id="regMessage" style="text-align:center; font-size:0.9rem; margin-top:0.75rem; min-height:24px;"></div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 4: FORGOT PASSWORD MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="forgotModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('forgotModal')">&times;</button>
+      <h3 style="color:#fff; font-size:1.5rem; font-weight:800; margin-bottom:0.5rem;">Reset Credentials</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">Enter your registered email to receive instant account recovery instructions.</p>
+
+      <form id="modalForgotForm">
+        <div class="input-group">
+          <label class="input-label" for="forgotEmail">Registered Email</label>
+          <input type="email" id="forgotEmail" class="login-input" placeholder="you@domain.com" required>
+        </div>
+
+        <button type="submit" class="btn-submit-login">
+          <span>Send Recovery Link</span>
+        </button>
+      </form>
+
+      <div id="forgotMessage" style="text-align:center; font-size:0.9rem; margin-top:0.75rem; min-height:24px;"></div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 5: INSTANT CHECKOUT / PAYMENT MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal-card" style="text-align:center;">
+      <button class="modal-close-btn" onclick="closeModal('paymentModal')">&times;</button>
+      
+      <div style="width:64px; height:64px; border-radius:50%; background:rgba(0,242,254,0.15); border:1px solid var(--cyan-pulse); display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem auto;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-pulse)" stroke-width="2">
+          <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+          <line x1="2" y1="10" x2="22" y2="10"></line>
+        </svg>
+      </div>
+
+      <h3 style="color:#fff; font-size:1.6rem; font-weight:800; margin-bottom:0.5rem;">Unlock Course Access</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">Complete Social Media Marketing Video Masterclass (Lifetime Access)</p>
+
+      <div style="background:rgba(7,10,19,0.8); border:1px solid rgba(255,255,255,0.1); border-radius:18px; padding:1.25rem; margin-bottom:1.5rem; text-align:left;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; color:#cbd5e1;">
+          <span>Course Fee:</span>
+          <span>₹4,999</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; color:var(--emerald-green);">
+          <span>Introductory Discount:</span>
+          <span>- ₹3,500</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-weight:800; font-size:1.2rem; color:#fff; padding-top:0.5rem; border-top:1px solid rgba(255,255,255,0.1);">
+          <span>Total Payable:</span>
+          <span style="color:var(--cyan-pulse);">₹1,499</span>
+        </div>
+      </div>
+
+      <button class="btn-enroll-gradient" style="width:100%; justify-content:center; margin:0 auto;" id="simulatePayBtn">
+        <span>Proceed to Pay ₹1499 (Razorpay / UPI)</span>
+      </button>
+
+      <div id="paymentStatus" style="margin-top:1rem; font-size:0.9rem; min-height:24px;"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
