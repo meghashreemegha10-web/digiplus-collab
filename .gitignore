@@ -131,3 +131,9 @@ Thumbs.db
 !ui/images/lock.jpg
 !ui/images/detail-brain-animation-hd-8k-wallpaper-background-stock-photographic-image_915071-23473.jpg
 !ui/html/favicon.svg
+
+# EXCEPTIONS: Allow essential media and videos in ui/assets
+!ui/assets/
+!ui/assets/*
+!ui/assets/**
+
