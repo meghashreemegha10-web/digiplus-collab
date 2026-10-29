@@ -186,7 +186,7 @@ body {
 }
 
 .brand-sub {
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #ffffff;
@@ -195,7 +195,7 @@ body {
 }
 
 .brand-main {
-  font-size: 1.55rem;
+  font-size: 1.35rem;
   font-weight: 900;
   letter-spacing: -0.01em;
   background: linear-gradient(135deg, #00f2fe 10%, #c084fc 100%);
@@ -207,16 +207,16 @@ body {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .nav-item {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 0.88rem;
+  font-weight: 700;
   transition: all 0.22s ease;
-  padding: 9px 18px;
+  padding: 7px 15px;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);
@@ -240,9 +240,9 @@ body {
   background: linear-gradient(135deg, #00a8ff 0%, #a855f7 100%);
   border: 1.5px solid rgba(255, 255, 255, 0.45);
   color: #ffffff;
-  font-size: 1.05rem;
+  font-size: 0.88rem;
   font-weight: 800;
-  padding: 11px 24px;
+  padding: 8px 18px;
   border-radius: 12px;
   cursor: pointer;
   box-shadow: 0 4px 18px rgba(0, 168, 255, 0.45);
@@ -259,22 +259,22 @@ body {
 /* Left Column Content on Hero (Headline & Frontend Mockup Pills) */
 .hero-left-content {
   position: absolute;
-  top: clamp(130px, 19vh, 185px);
+  top: clamp(124px, 17vh, 165px);
   left: clamp(28px, 4.8vw, 72px);
-  max-width: clamp(540px, 48vw, 720px);
+  max-width: clamp(480px, 45vw, 640px);
   z-index: 22;
   display: flex;
   flex-direction: column;
 }
 
 .hero-main-title {
-  font-size: clamp(3.4rem, 5vw, 4.8rem);
-  font-weight: 900;
+  font-size: clamp(2.05rem, 3.2vw, 2.85rem);
+  font-weight: 850;
   color: #0f172a;
-  line-height: 1.12;
-  margin-bottom: 0.95rem;
-  letter-spacing: 0.025em;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 25px rgba(255, 255, 255, 0.5);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.015em;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 20px rgba(255, 255, 255, 0.5);
   white-space: nowrap;
 }
 
@@ -283,35 +283,35 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  font-weight: 900;
+  font-weight: 850;
   filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.9));
 }
 
 .hero-main-subtitle {
-  max-width: 440px;
-  font-size: clamp(1.08rem, 1.3vw, 1.25rem);
-  font-weight: 700;
+  max-width: 420px;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 600;
   color: #1e293b;
-  margin-bottom: 1.45rem;
-  line-height: 1.45;
+  margin-bottom: 1.1rem;
+  line-height: 1.4;
   text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
 }
 
 .hero-left-pills {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 
 .hero-pill-item {
   background: #ffffff;
   border-radius: 9999px;
-  padding: 11px 24px 11px 12px;
+  padding: 7px 18px 7px 9px;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.06);
   transition: all 0.22s ease;
   width: fit-content;
   border: 1.5px solid rgba(0, 0, 0, 0.08);
@@ -325,13 +325,13 @@ body {
 }
 
 .hero-pill-icon {
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1rem;
   flex-shrink: 0;
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -357,8 +357,8 @@ body {
 }
 
 .hero-pill-text {
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: #0f172a;
   letter-spacing: -0.01em;
 }
@@ -382,30 +382,30 @@ body {
   top: 50%;
   right: clamp(24px, 4.5vw, 68px);
   transform: translateY(-50%);
-  width: clamp(290px, 24vw, 360px);
+  width: clamp(275px, 22vw, 325px);
   background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36), 0 3px 12px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem 1.75rem;
+  border-radius: 18px;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.32), 0 3px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem 1.45rem;
   z-index: 25;
   color: #0f172a;
   box-sizing: border-box;
 }
 
 .login-card-header {
-  margin-bottom: 0.95rem;
+  margin-bottom: 0.75rem;
 }
 
 .login-card-title {
-  font-size: 1.65rem;
-  font-weight: 900;
+  font-size: 1.35rem;
+  font-weight: 850;
   color: #0f172a;
-  margin: 0 0 4px 0;
+  margin: 0 0 3px 0;
   letter-spacing: -0.02em;
 }
 
 .login-card-subtitle {
-  font-size: 0.95rem;
+  font-size: 0.84rem;
   color: #64748b;
   font-weight: 600;
   margin: 0;
@@ -413,25 +413,25 @@ body {
 
 .card-input-field {
   position: relative;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.7rem;
 }
 
 .card-input-icon {
   position: absolute;
-  left: 12px;
+  left: 11px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   opacity: 0.65;
 }
 
 .card-input-field input {
   width: 100%;
-  padding: 11px 12px 11px 40px;
-  border-radius: 10px;
+  padding: 9px 10px 9px 36px;
+  border-radius: 9px;
   background: #f8fafc;
   border: 1.5px solid #e2e8f0;
-  font-size: 1.0rem;
+  font-size: 0.88rem;
   font-family: inherit;
   color: #0f172a;
   font-weight: 600;
@@ -446,37 +446,42 @@ body {
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
 }
 
+.card-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.25rem;
+  margin-bottom: 0.65rem;
+}
+
 .card-forgot-link {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   color: #0284c7;
   font-weight: 700;
   text-decoration: none;
+  transition: color 0.15s;
 }
 
 .card-forgot-link:hover {
   text-decoration: underline;
+  color: #0369a1;
 }
 
 .card-login-btn {
   width: 100%;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 9px 18px;
+  border-radius: 9px;
   background: linear-gradient(135deg, #0284c7 0%, #0099ff 35%, #9333ea 100%);
   border: none;
   color: #ffffff;
-  font-size: 1.12rem;
+  font-size: 0.95rem;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.38);
+  box-shadow: 0 5px 15px rgba(2, 132, 199, 0.35);
   transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
   letter-spacing: 0.01em;
 }
 
@@ -488,10 +493,10 @@ body {
 .card-or-divider {
   display: flex;
   align-items: center;
-  margin: 0.75rem 0;
+  margin: 0.6rem 0;
   text-align: center;
   color: #64748b;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   font-weight: 600;
 }
 
@@ -508,13 +513,13 @@ body {
 .card-social-row {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 0.7rem;
+  gap: 10px;
+  margin-bottom: 0.55rem;
 }
 
 .card-social-btn {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 1.5px solid #cbd5e1;
   background: #ffffff;
@@ -523,7 +528,7 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
 }
 
 .card-social-btn:hover {
@@ -534,11 +539,11 @@ body {
 
 .card-quick-access {
   text-align: center;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   color: #0284c7;
   font-weight: 800;
   cursor: pointer;
-  padding: 5px 0;
+  padding: 4px 0;
   border-radius: 6px;
   transition: background 0.15s;
 }
@@ -550,10 +555,10 @@ body {
 
 .card-signup-prompt {
   text-align: center;
-  font-size: 0.98rem;
+  font-size: 0.84rem;
   color: #475569;
   font-weight: 600;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .card-signup-prompt a {
@@ -602,19 +607,19 @@ body {
 /* Bottom Tagline on Hero */
 .hero-bottom-tagline {
   position: absolute;
-  bottom: 24px;
+  bottom: 20px;
   left: clamp(28px, 4.8vw, 72px);
   z-index: 25;
-  font-size: 1.12rem;
+  font-size: 0.92rem;
   color: #0f172a;
-  font-weight: 800;
+  font-weight: 750;
   display: flex;
   align-items: center;
   gap: 8px;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 10px 22px;
+  padding: 7px 18px;
   border-radius: 9999px;
   border: 1.5px solid rgba(255, 255, 255, 0.95);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
@@ -624,27 +629,27 @@ body {
 .trend-arrow {
   color: #0099ff;
   font-weight: 900;
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   filter: drop-shadow(0 0 6px rgba(0, 153, 255, 0.5));
 }
 
 /* Floating Scroll Indicator */
 .scroll-indicator-surprise {
   position: absolute;
-  bottom: 20px;
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 25;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   background: rgba(6, 11, 23, 0.88);
   border: 1.5px solid rgba(0, 242, 254, 0.55);
   color: #ffffff;
-  padding: 10px 24px;
+  padding: 7px 20px;
   border-radius: 9999px;
-  font-size: 1.02rem;
-  font-weight: 800;
+  font-size: 0.88rem;
+  font-weight: 750;
   text-decoration: none;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -809,13 +814,15 @@ body {
 .surprise-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 2rem;
+  gap: 14px;
+  max-width: 980px;
+  margin: 0 auto 2rem auto;
 }
 
 @media (max-width: 860px) {
   .surprise-grid {
     grid-template-columns: 1fr;
+    max-width: 440px;
   }
 }
 
@@ -824,9 +831,9 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(0, 242, 254, 0.24);
-  border-radius: 16px;
-  padding: 1.4rem 1.55rem;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   transition: all 0.25s ease;
   position: relative;
 }
@@ -838,43 +845,44 @@ body {
 }
 
 .card-icon-box {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.65rem;
 }
 
 .card-icon-box svg {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
 }
 
 .card-tag {
   display: inline-block;
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
   color: #00f2fe;
   letter-spacing: 0.06em;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #ffffff;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.45rem;
+  line-height: 1.3;
 }
 
 .card-desc {
-  font-size: 0.95rem;
+  font-size: 0.84rem;
   color: #94a3b8;
-  line-height: 1.5;
-  margin-bottom: 0.9rem;
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
 }
 
 .card-features-list {
@@ -884,13 +892,13 @@ body {
 }
 
 .card-features-list li {
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   color: #cbd5e1;
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 0.5rem;
-  line-height: 1.45;
+  gap: 6px;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
   font-weight: 500;
 }
 

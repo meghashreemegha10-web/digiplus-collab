@@ -212,12 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modal) {
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
-      if (modalId === 'loginModal') {
-        const u = document.getElementById('heroUsername');
-        const p = document.getElementById('heroPassword');
-        if (u) u.value = 'Shriya';
-        if (p) p.value = 'Megha@14';
-      }
     }
   };
 
@@ -284,10 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
   [navLoginBtn, hotspotLoginBtn, footerLoginLink].forEach(btn => {
     if (btn) btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const u = document.getElementById('heroUsername');
-      const p = document.getElementById('heroPassword');
-      if (u) u.value = 'Shriya';
-      if (p) p.value = 'Megha@14';
       openModal('loginModal');
     });
   });
@@ -349,31 +339,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 7. FORM SUBMISSIONS & AUTHENTICATION
   // =========================================================================
-  window.quickLoginAsShriya = function() {
-    localStorage.setItem('userId', 'shriya_user_01');
+  window.handleSocialLogin = function(provider) {
+    localStorage.setItem('userId', 'member_' + Date.now().toString(36));
     localStorage.setItem('accessGranted', 'true');
     localStorage.setItem('scanPaid', 'true');
     localStorage.setItem('campaignPaid', 'true');
     localStorage.setItem('paymentStatus', '1499');
     window.location.href = '/IntroPage.html';
   };
+  window.quickLoginAsShriya = window.handleSocialLogin;
 
   const heroOverlayLoginForm = document.getElementById('heroOverlayLoginForm');
   if (heroOverlayLoginForm) {
     heroOverlayLoginForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      window.quickLoginAsShriya();
-    });
-  }
-
-  const modalQuickShriyaBtn = document.getElementById('modalQuickShriyaBtn');
-  if (modalQuickShriyaBtn) {
-    modalQuickShriyaBtn.addEventListener('click', () => {
-      const uInput = document.getElementById('heroUsername');
-      const pInput = document.getElementById('heroPassword');
-      if (uInput) uInput.value = 'Shriya';
-      if (pInput) pInput.value = 'Megha@14';
-      if (heroLoginForm) heroLoginForm.dispatchEvent(new Event('submit'));
+      window.handleSocialLogin('email');
     });
   }
 

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=21.0">
+  <link rel="stylesheet" href="styles.css?v=30.0">
 </head>
 <body>
 
@@ -35,10 +35,8 @@
         <nav class="nav-menu">
           <a href="#hero" class="nav-item">Home</a>
           <a href="#about-surprise" class="nav-item">Modules</a>
-          <a href="#transformation" class="nav-item">Why Us</a>
           <a href="#curriculum" class="nav-item">Curriculum</a>
-          <a href="#calculator" class="nav-item">ROAS</a>
-          <a href="#pricing" class="nav-item">Pricing</a>
+          <a href="#demo-walkthrough" class="nav-item">Walkthrough</a>
           <a href="#footerContact" class="nav-item">Contact</a>
         </nav>
 
@@ -63,19 +61,19 @@
             </p>
 
             <div class="hero-left-pills">
-              <div class="hero-pill-item" onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})">
+              <div class="hero-pill-item" onclick="document.getElementById('curriculum')?.scrollIntoView({behavior:'smooth'})">
                 <span class="hero-pill-icon pillar-cyan-icon">🎓</span>
                 <span class="hero-pill-text">Expert-Led Masterclasses</span>
               </div>
-              <div class="hero-pill-item" onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})">
+              <div class="hero-pill-item" onclick="document.getElementById('curriculum')?.scrollIntoView({behavior:'smooth'})">
                 <span class="hero-pill-icon pillar-purple-icon">🛠️</span>
                 <span class="hero-pill-text">Campaign Tools & Resources</span>
               </div>
-              <div class="hero-pill-item" onclick="document.getElementById('transformation').scrollIntoView({behavior:'smooth'})">
+              <div class="hero-pill-item" onclick="document.getElementById('curriculum')?.scrollIntoView({behavior:'smooth'})">
                 <span class="hero-pill-icon pillar-teal-icon">🛡️</span>
                 <span class="hero-pill-text">Exclusive Enterprise Access</span>
               </div>
-              <div class="hero-pill-item" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+              <div class="hero-pill-item" onclick="document.getElementById('curriculum')?.scrollIntoView({behavior:'smooth'})">
                 <span class="hero-pill-icon pillar-pink-icon">♾️</span>
                 <span class="hero-pill-text">Lifetime Learning</span>
               </div>
@@ -93,13 +91,16 @@
             <form id="heroOverlayLoginForm">
               <div class="card-input-field">
                 <span class="card-input-icon">👤</span>
-                <input type="text" id="heroOverlayUsername" placeholder="Email or Username" value="Shriya" required>
+                <input type="text" id="heroOverlayUsername" placeholder="Email or Username" required>
               </div>
 
               <div class="card-input-field" style="position: relative;">
                 <span class="card-input-icon">🔒</span>
-                <input type="password" id="heroOverlayPassword" placeholder="Password" value="Megha@14" required style="padding-right: 125px;">
-                <button type="button" id="heroOverlayTogglePwd" style="position: absolute; right: 94px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #64748b; font-size: 0.9rem; padding: 2px;" title="Show/Hide Password" aria-label="Toggle password visibility">👁️</button>
+                <input type="password" id="heroOverlayPassword" placeholder="Password" required style="padding-right: 42px;">
+                <button type="button" id="heroOverlayTogglePwd" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #64748b; font-size: 0.95rem; padding: 2px;" title="Show/Hide Password" aria-label="Toggle password visibility">👁️</button>
+              </div>
+
+              <div class="card-forgot-row">
                 <a href="#" class="card-forgot-link" onclick="openModal('forgotModal'); return false;">Forgot password?</a>
               </div>
 
@@ -112,16 +113,12 @@
               </div>
 
               <div class="card-social-row">
-                <button type="button" class="card-social-btn google-btn" onclick="quickLoginAsShriya()" title="Continue with Google">
+                <button type="button" class="card-social-btn google-btn" onclick="handleSocialLogin('Google')" title="Continue with Google">
                   <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.2c0 2.9.7 5.5 1.9 7.9l3.7-2.9z"/><path fill="#34A853" d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2-6.4-4.8L1.9 16.9C3.7 20.6 7.5 23.5 12 23.5z"/></svg>
                 </button>
-                <button type="button" class="card-social-btn facebook-btn" onclick="quickLoginAsShriya()" title="Continue with Facebook">
+                <button type="button" class="card-social-btn facebook-btn" onclick="handleSocialLogin('Facebook')" title="Continue with Facebook">
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </button>
-              </div>
-
-              <div class="card-quick-access" onclick="quickLoginAsShriya()">
-                <span>⚡ 1-Click Access as Shriya (Megha@14)</span>
               </div>
 
               <div class="card-signup-prompt">
@@ -131,23 +128,34 @@
             </form>
           </div>
 
-          <!-- Bottom Left Tagline on Hero (Matching Reference Image) -->
-          <div class="hero-bottom-tagline">
-            <span class="trend-arrow">↗</span>
-            <span>Better Skills &nbsp;|&nbsp; Better Campaigns &nbsp;|&nbsp; Bigger Growth</span>
-          </div>
 
         </div>
       </div>
 
-      <!-- Floating Scroll Indicator -->
-      <a href="#about-surprise" class="scroll-indicator-surprise" id="heroScrollDown">
-        <span>Scroll to Explore Modules & Information</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </a>
+    </section>
 
+    <!-- ========================================================================
+         HERO TRUST METRICS BAR (DIRECTLY AFTER FIRST PAGE HERO)
+         ======================================================================== -->
+    <section class="trust-metrics-section" id="metrics">
+      <div class="trust-container">
+        <div class="trust-stat-box">
+          <span class="trust-stat-number">12,400+</span>
+          <span class="trust-stat-label">Active Marketers Enrolled</span>
+        </div>
+        <div class="trust-stat-box">
+          <span class="trust-stat-number">4.9 ★★★★★</span>
+          <span class="trust-stat-label">Average Student Rating</span>
+        </div>
+        <div class="trust-stat-box">
+          <span class="trust-stat-number">₹14.8 Cr+</span>
+          <span class="trust-stat-label">Client Ad Revenue Scaled</span>
+        </div>
+        <div class="trust-stat-box">
+          <span class="trust-stat-number">Lifetime</span>
+          <span class="trust-stat-label">Instant Video Access</span>
+        </div>
+      </div>
     </section>
 
     <!-- ========================================================================
@@ -156,34 +164,6 @@
     <section class="section-surprise-about" id="about-surprise">
       <div class="section-container">
 
-      <!-- 4 Core Ecosystem Pillars (Matching Frontend Design Pills) -->
-      <div class="ecosystem-pillars-grid" style="margin-bottom: 3.5rem;">
-        
-        <div class="ecosystem-pillar-card" onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
-          <div class="pillar-icon-box" style="background:rgba(56,189,248,0.12); color:#38bdf8; border-color:rgba(56,189,248,0.3);">🎓</div>
-          <h3 class="pillar-title">Expert-Led Masterclasses</h3>
-          <p class="pillar-desc">Over 18 hands-on video walkthroughs filmed inside live ad accounts demonstrating how to construct campaigns from zero to scale.</p>
-        </div>
-
-        <div class="ecosystem-pillar-card" onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
-          <div class="pillar-icon-box" style="background:rgba(192,132,252,0.12); color:#c084fc; border-color:rgba(192,132,252,0.3);">🛠️</div>
-          <h3 class="pillar-title">Campaign Tools & Resources</h3>
-          <p class="pillar-desc">Get plug-and-play high-CTR ad scripts, 3-second psychological hooks, and buyer intent audience targeting lists.</p>
-        </div>
-
-        <div class="ecosystem-pillar-card" onclick="document.getElementById('transformation').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
-          <div class="pillar-icon-box" style="background:rgba(45,212,191,0.12); color:#2dd4bf; border-color:rgba(45,212,191,0.3);">🛡️</div>
-          <h3 class="pillar-title">Exclusive Enterprise Access</h3>
-          <p class="pillar-desc">Step-by-step setup for verified Facebook Business Managers, GST tax exemptions, and 4 proven methods to recover disabled accounts.</p>
-        </div>
-
-        <div class="ecosystem-pillar-card" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
-          <div class="pillar-icon-box" style="background:rgba(244,114,182,0.12); color:#f472b6; border-color:rgba(244,114,182,0.3);">♾️</div>
-          <h3 class="pillar-title">Lifetime Learning</h3>
-          <p class="pillar-desc">Single one-time enrollment of ₹1,499 grants permanent access to all 4 video portals with zero monthly subscriptions.</p>
-        </div>
-
-      </div>
 
       <div style="text-align:center;">
         <div class="surprise-glow-badge">
@@ -263,121 +243,10 @@
         </div>
 
       </div>
-
-      <div style="text-align:center;">
-        <button class="btn-enroll-gradient" style="margin:0 auto;" onclick="openPaymentModal()">
-          <span>Unlock Full Access for ₹1499 Today</span>
-        </button>
-      </div>
     
       </div></section>
 
-    <!-- ========================================================================
-         SURPRISE COMPARISON: THE OLD WAY VS GLOBAL DIGI PULSE
-         ======================================================================== -->
-    <section class="section-transformation" id="transformation">
-      <div class="section-container">
-        <div style="text-align:center; max-width:720px; margin:0 auto;">
-          <span class="surprise-glow-badge" style="border-color:rgba(16,185,129,0.5); color:var(--emerald-green); background:rgba(16,185,129,0.1);">
-            🔄 The Transformation
-          </span>
-          <h2 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem); font-weight:800; color:#fff; margin-bottom:1rem;">
-            Why Traditional Ads Fail vs. How Global Digi Pulse Wins
-          </h2>
-          <p style="color:var(--text-muted); font-size:1.05rem;">
-            See the exact difference between throwing money at the wall and running an engineered performance marketing machine.
-          </p>
-        </div>
 
-        <div class="transformation-grid">
-          
-          <!-- Old Painful Way -->
-          <div class="transform-card card-pain">
-            <div class="transform-card-header">
-              <span class="transform-badge">The Struggle</span>
-              <h3 class="transform-title">Without Global Digi Pulse</h3>
-            </div>
-            <ul class="transform-list">
-              <li>
-                <span class="icon-cross">✕</span>
-                <span>Clicking the "Boost Post" button and burning ₹5,000+ for meaningless likes with 0 orders.</span>
-              </li>
-              <li>
-                <span class="icon-cross">✕</span>
-                <span>Waking up to find your Facebook Ad Account disabled with zero human support or explanation.</span>
-              </li>
-              <li>
-                <span class="icon-cross">✕</span>
-                <span>Paying thousands to freelancers who make boring videos nobody watches past the first 2 seconds.</span>
-              </li>
-              <li>
-                <span class="icon-cross">✕</span>
-                <span>Staring at confusing Ads Manager dashboards wondering which numbers actually matter.</span>
-              </li>
-              <li>
-                <span class="icon-cross">✕</span>
-                <span>Running out of cash flow because high acquisition costs eat up all your profit margins.</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- New Global Digi Pulse Way -->
-          <div class="transform-card card-gain">
-            <div class="transform-card-header">
-              <span class="transform-badge">The Solution</span>
-              <h3 class="transform-title">With Global Digi Pulse</h3>
-            </div>
-            <ul class="transform-list">
-              <li>
-                <span class="icon-tick">✓</span>
-                <span><strong>Predictable 4.2x to 6.5x ROAS:</strong> Turn ₹1,000 in ad spend into ₹4,200+ in trackable online revenue.</span>
-              </li>
-              <li>
-                <span class="icon-tick">✓</span>
-                <span><strong>Ban-Proof Business Setup:</strong> Verified Meta & Google setups with official GST invoicing & payment safeguards.</span>
-              </li>
-              <li>
-                <span class="icon-tick">✓</span>
-                <span><strong>3-Second Scroll-Stopping Hooks:</strong> Film compelling video creatives on your smartphone in under 20 minutes.</span>
-              </li>
-              <li>
-                <span class="icon-tick">✓</span>
-                <span><strong>Data Clarity & Mathematical Scaling:</strong> Know your exact CPA, CTR, and ROAS so you only scale winning ads.</span>
-              </li>
-              <li>
-                <span class="icon-tick">✓</span>
-                <span><strong>Direct Member Portal:</strong> Instant lifetime video access, bonus guides, and continuous updates for just ₹1,499.</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         HERO TRUST METRICS BAR
-         ======================================================================== -->
-    <section class="trust-metrics-section">
-      <div class="trust-container">
-        <div class="trust-stat-box">
-          <span class="trust-stat-number">12,400+</span>
-          <span class="trust-stat-label">Active Marketers Enrolled</span>
-        </div>
-        <div class="trust-stat-box">
-          <span class="trust-stat-number">4.9 ★★★★★</span>
-          <span class="trust-stat-label">Average Student Rating</span>
-        </div>
-        <div class="trust-stat-box">
-          <span class="trust-stat-number">₹14.8 Cr+</span>
-          <span class="trust-stat-label">Client Ad Revenue Scaled</span>
-        </div>
-        <div class="trust-stat-box">
-          <span class="trust-stat-number">Lifetime</span>
-          <span class="trust-stat-label">Instant Video Access</span>
-        </div>
-      </div>
-    </section>
 
     <!-- ========================================================================
          CURRICULUM & REAL VIDEO MODULES (ACCORDING TO REAL WEBSITE AFTER LOGIN)
@@ -464,35 +333,37 @@
           </p>
 
           <!-- ========================================================================
-               MADGICX-STYLE CONNECTED ARROW PIPELINE (HORIZONTAL CHEVRON FLOW)
+               AUTOMATED VIDEO-LIKE STEP-BY-STEP OPTIMIZATION PATH
                ======================================================================== -->
           <div class="arrow-pipeline-wrapper" style="margin-top: 2.2rem; margin-bottom: 2.8rem;">
             <div class="madgicx-arrow-pipeline" id="madgicxArrowPipeline">
               
               <!-- Arrow Step 01 -->
-              <button type="button" class="pipeline-arrow-step active-arrow-step" id="pipelineArrow1" onclick="switchDemoStep(1)">
+              <button type="button" class="pipeline-arrow-step active-arrow-step" id="pipelineArrow1" onclick="handleUserStepSelect(1)">
                 <div class="arrow-step-badge">01</div>
                 <div class="arrow-step-info">
                   <span class="arrow-step-phase">STEP 01 • ACCESS</span>
-                  <span class="arrow-step-title">1-Click Fast Pass</span>
+                  <span class="arrow-step-title">Fast Pass Access</span>
                 </div>
                 <div class="arrow-step-pointer">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
                 </div>
+                <div class="step-progress-track"><div class="step-progress-fill" id="pipeProgress1"></div></div>
               </button>
 
-              <!-- Connected Horizontal Arrow Divider 1-2 -->
-              <div class="pipeline-connector-arrow active-connector" id="pipelineConnector12">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
+              <!-- Connected Horizontal Arrow Divider 1-2 with Flowing Pulse Beam -->
+              <div class="pipeline-connector-arrow active-connector flowing-now" id="pipelineConnector12">
+                <div class="connector-arrow-line"></div>
+                <svg class="connector-arrow-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="4" y1="12" x2="20" y2="12"></line>
+                  <polyline points="13 5 20 12 13 19"></polyline>
                 </svg>
               </div>
 
               <!-- Arrow Step 02 -->
-              <button type="button" class="pipeline-arrow-step" id="pipelineArrow2" onclick="switchDemoStep(2)">
+              <button type="button" class="pipeline-arrow-step" id="pipelineArrow2" onclick="handleUserStepSelect(2)">
                 <div class="arrow-step-badge">02</div>
                 <div class="arrow-step-info">
                   <span class="arrow-step-phase">STEP 02 • CREATIVE</span>
@@ -503,18 +374,20 @@
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
                 </div>
+                <div class="step-progress-track"><div class="step-progress-fill" id="pipeProgress2"></div></div>
               </button>
 
               <!-- Connected Horizontal Arrow Divider 2-3 -->
               <div class="pipeline-connector-arrow" id="pipelineConnector23">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
+                <div class="connector-arrow-line"></div>
+                <svg class="connector-arrow-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="4" y1="12" x2="20" y2="12"></line>
+                  <polyline points="13 5 20 12 13 19"></polyline>
                 </svg>
               </div>
 
               <!-- Arrow Step 03 -->
-              <button type="button" class="pipeline-arrow-step" id="pipelineArrow3" onclick="switchDemoStep(3)">
+              <button type="button" class="pipeline-arrow-step" id="pipelineArrow3" onclick="handleUserStepSelect(3)">
                 <div class="arrow-step-badge">03</div>
                 <div class="arrow-step-info">
                   <span class="arrow-step-phase">STEP 03 • COMPLIANCE</span>
@@ -525,28 +398,31 @@
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
                 </div>
+                <div class="step-progress-track"><div class="step-progress-fill" id="pipeProgress3"></div></div>
               </button>
 
               <!-- Connected Horizontal Arrow Divider 3-4 -->
               <div class="pipeline-connector-arrow" id="pipelineConnector34">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
+                <div class="connector-arrow-line"></div>
+                <svg class="connector-arrow-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="4" y1="12" x2="20" y2="12"></line>
+                  <polyline points="13 5 20 12 13 19"></polyline>
                 </svg>
               </div>
 
               <!-- Arrow Step 04 -->
-              <button type="button" class="pipeline-arrow-step" id="pipelineArrow4" onclick="switchDemoStep(4)">
+              <button type="button" class="pipeline-arrow-step" id="pipelineArrow4" onclick="handleUserStepSelect(4)">
                 <div class="arrow-step-badge">04</div>
                 <div class="arrow-step-info">
                   <span class="arrow-step-phase">STEP 04 • SCALING</span>
-                  <span class="arrow-step-title">6.4X ROAS Multiplier</span>
+                  <span class="arrow-step-title">6.4X ROAS Scaling</span>
                 </div>
                 <div class="arrow-step-pointer">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
                 </div>
+                <div class="step-progress-track"><div class="step-progress-fill" id="pipeProgress4"></div></div>
               </button>
 
             </div>
@@ -556,35 +432,49 @@
         <!-- 2-Column Interactive Demo Showcase -->
         <div style="display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 2.2rem; align-items: start;">
           
-          <!-- LEFT: Animated Screen with Rotating Conic Border & Live Interactive Widgets -->
+          <!-- LEFT: Animated Screen with Rotating Conic Border & Live Interactive Video Display -->
           <div class="demo-screen-container" style="position: relative; position: sticky; top: 100px;">
             
             <!-- Madgicx-style Glowing Rotating Border Frame -->
             <div style="padding: 2px; border-radius: 22px; background: linear-gradient(135deg, #0284c7, #a855f7, #10b981); box-shadow: 0 25px 60px rgba(0,0,0,0.7);">
               <div style="background: #090e1e; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
                 
-                <!-- Mock Browser / Terminal Top Bar -->
-                <div style="background: #0d152b; padding: 0.85rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between;">
-                  <div style="display: flex; gap: 0.45rem;">
+                <!-- Mock Browser / Terminal Top Bar with Playback & Step Controls -->
+                <div class="mock-browser-topbar">
+                  <div style="display: flex; align-items: center; gap: 0.45rem;">
                     <span style="width: 11px; height: 11px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
                     <span style="width: 11px; height: 11px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
                     <span style="width: 11px; height: 11px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
                   </div>
-                  <div style="background: rgba(15,23,42,0.8); border: 1px solid rgba(255,255,255,0.08); padding: 0.25rem 1.2rem; border-radius: 6px; font-size: 0.78rem; color: #94a3b8; font-family: monospace;">
-                    https://localhost:3000/<span id="demoScreenUrl">html/IntroPage.html#step-1-access</span>
+
+                  <div class="mock-browser-url-bar">
+                    <span style="opacity: 0.65;">https://globaldigipulse.com/</span><span id="demoScreenUrl" style="color: #38bdf8; font-weight: 700;">html/IntroPage.html#step-1-access</span>
                   </div>
-                  <span style="font-size: 0.75rem; color: #38bdf8; font-weight: 700; display: flex; align-items: center; gap: 4px;">
-                    <span style="width: 6px; height: 6px; border-radius: 50%; background: #38bdf8; display: inline-block; animation: blink 1.2s infinite;"></span> LIVE DEMO
-                  </span>
+
+                  <div style="display: flex; align-items: center; gap: 0.55rem;">
+                    <button type="button" id="autoPlayToggleBtn" class="autoplay-toggle-btn" onclick="toggleAutoPlay()" title="Pause or Resume Automated Walkthrough">
+                      <span id="autoPlayIcon">⏸</span>
+                      <span id="autoPlayText">Auto-Playing</span>
+                    </button>
+                    <span id="demoStepBadge" class="demo-step-badge">STEP 1/4</span>
+                  </div>
+                </div>
+
+                <!-- Glowing Step Timeline Progress Line Across Entire Window -->
+                <div class="demo-timeline-track">
+                  <div id="demoTimelineFill" class="demo-timeline-fill"></div>
                 </div>
 
                 <!-- Screen Interactive Body -->
-                <div style="padding: 1.8rem; min-height: 440px; position: relative;">
+                <div style="padding: 1.6rem 1.8rem; min-height: 460px; position: relative;">
                   
-                  <!-- Pop-up Animation Badge (Dynamically triggers on step change) -->
-                  <div id="demoPopupAlert" class="popup-alert-anim" style="position: absolute; top: 16px; right: 16px; background: rgba(16,185,129,0.18); border: 1px solid #10b981; border-radius: 10px; padding: 0.6rem 1rem; display: flex; align-items: center; gap: 0.6rem; color: #34d399; font-size: 0.85rem; font-weight: 700; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 10; animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-                    <span id="demoPopupIcon">⚡</span>
-                    <span id="demoPopupText">1-Click Fast Pass Active: Access Granted as Shriya</span>
+                  <!-- Dedicated Status Alert Banner (Non-overlapping, top of panel) -->
+                  <div id="demoPopupAlert" class="demo-alert-banner">
+                    <div style="display: flex; align-items: center; gap: 0.6rem;">
+                      <span id="demoPopupIcon" style="font-size: 1.15rem;">⚡</span>
+                      <span id="demoPopupText" style="font-weight: 700;">Fast Pass Active: Validated Student Session</span>
+                    </div>
+                    <span id="demoAlertPill" class="demo-alert-phase-pill">PROCESS 01/04</span>
                   </div>
 
                   <!-- Dynamic Screen Content: STEP 1 -->
@@ -592,32 +482,32 @@
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
                       <div>
                         <h4 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem;">Authorized Member Authentication</h4>
-                        <p style="color: #94a3b8; font-size: 0.85rem;">One-click password validation bypassing manual credential entry.</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">Instant student session token validation with lifetime curriculum access.</p>
                       </div>
-                      <span style="background: rgba(56,189,248,0.15); color: #38bdf8; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 700;">USER VERIFIED</span>
+                      <span style="background: rgba(56,189,248,0.15); color: #38bdf8; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em;">SESSION ACTIVE</span>
                     </div>
 
-                    <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(56,189,248,0.25); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.2rem;">
+                    <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(56,189,248,0.25); border-radius: 14px; padding: 1.4rem; margin-bottom: 1.2rem;">
                       <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #0284c7, #9333ea); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #fff;">👤</div>
                         <div>
-                          <div style="font-weight: 700; color: #fff; font-size: 1.05rem;">Shriya (Authorized Student Account)</div>
-                          <div style="color: #94a3b8; font-size: 0.82rem;">Credential Key: <code style="color:#38bdf8;">Megha@14</code> • Single Session Token</div>
+                          <div style="font-weight: 700; color: #fff; font-size: 1.05rem;">Student ID: GDP-ACTIVE-2026</div>
+                          <div style="color: #94a3b8; font-size: 0.82rem;">Credential Token: <code style="color:#38bdf8;">AUTHENTICATED_SESSION</code> • Valid Lifetime</div>
                         </div>
                       </div>
                       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
                         <div style="background: rgba(30,41,59,0.7); padding: 0.8rem; border-radius: 8px;">
                           <div style="font-size: 0.75rem; color: #94a3b8;">Access Level</div>
-                          <div style="font-size: 0.95rem; font-weight: 700; color: #34d399;">All 3 Masterclasses</div>
+                          <div style="font-size: 0.95rem; font-weight: 700; color: #34d399;">All 3 Video Masterclasses</div>
                         </div>
                         <div style="background: rgba(30,41,59,0.7); padding: 0.8rem; border-radius: 8px;">
-                          <div style="font-size: 0.75rem; color: #94a3b8;">Session Security</div>
-                          <div style="font-size: 0.95rem; font-weight: 700; color: #38bdf8;">100% Encrypted</div>
+                          <div style="font-size: 0.75rem; color: #94a3b8;">Security Status</div>
+                          <div style="font-size: 0.95rem; font-weight: 700; color: #38bdf8;">100% Encrypted & Safe</div>
                         </div>
                       </div>
                     </div>
 
-                    <a href="html/IntroPage.html" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; text-decoration: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; box-shadow: 0 8px 20px rgba(2,132,199,0.35);">
+                    <a href="html/IntroPage.html" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; text-decoration: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; box-shadow: 0 8px 20px rgba(2,132,199,0.35); box-sizing: border-box;">
                       <span>⚡ Open Live Member Dashboard (IntroPage.html) →</span>
                     </a>
                   </div>
@@ -627,27 +517,27 @@
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
                       <div>
                         <h4 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem;">3-Second Hook & Dynamic Creative Studio</h4>
-                        <p style="color: #94a3b8; font-size: 0.85rem;">Interactive testing for Instagram Reels & Facebook Feed mockups.</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">Interactive testing for Instagram Reels & Facebook Feed mockups.</p>
                       </div>
-                      <span style="background: rgba(168,85,247,0.15); color: #c084fc; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 700;">84.5% HOOK RATE</span>
+                      <span style="background: rgba(168,85,247,0.15); color: #c084fc; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700;">84.5% HOOK RATE</span>
                     </div>
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem;">
                       <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(168,85,247,0.3); border-radius: 12px; padding: 1.2rem;">
                         <span style="font-size: 0.75rem; color: #c084fc; font-weight: 700;">REEL FORMULA A</span>
                         <div style="font-size: 1rem; font-weight: 700; color: #fff; margin: 0.4rem 0;">Curiosity Gap Hook</div>
-                        <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.4;">"Stop running Meta ads until you fix this single 3-second setting..."</p>
+                        <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.4; margin: 0;">"Stop running Meta ads until you fix this single 3-second setting..."</p>
                         <div style="margin-top: 0.8rem; font-size: 0.85rem; font-weight: 700; color: #34d399;">CTR: 5.2% • Conv: 3.8%</div>
                       </div>
                       <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(56,189,248,0.3); border-radius: 12px; padding: 1.2rem;">
                         <span style="font-size: 0.75rem; color: #38bdf8; font-weight: 700;">REEL FORMULA B</span>
                         <div style="font-size: 1rem; font-weight: 700; color: #fff; margin: 0.4rem 0;">Problem / Solution Hook</div>
-                        <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.4;">"Here is how we slashed our Cost-Per-Lead to ₹2.60 in 48 hours..."</p>
+                        <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.4; margin: 0;">"Here is how we slashed our Cost-Per-Lead to ₹2.60 in 48 hours..."</p>
                         <div style="margin-top: 0.8rem; font-size: 0.85rem; font-weight: 700; color: #34d399;">CTR: 4.8% • Conv: 4.1%</div>
                       </div>
                     </div>
 
-                    <button type="button" onclick="openOptionModalDemo(1)" style="width: 100%; background: linear-gradient(135deg, #9333ea, #2563eb); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer;">
+                    <button type="button" onclick="openOptionModalDemo(1)" style="width: 100%; background: linear-gradient(135deg, #9333ea, #2563eb); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; box-shadow: 0 8px 20px rgba(147,51,234,0.35);">
                       <span>▶ Watch Option 01 Creative Intro Video & Theory →</span>
                     </button>
                   </div>
@@ -657,17 +547,17 @@
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
                       <div>
                         <h4 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem;">Ban-Proof Backend & Compliance Shield</h4>
-                        <p style="color: #94a3b8; font-size: 0.85rem;">Verified Business Manager setup & official GST tax exemption.</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">Verified Business Manager setup & official GST tax exemption.</p>
                       </div>
-                      <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 700;">SHIELD 100% SECURE</span>
+                      <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700;">SHIELD SECURE</span>
                     </div>
 
-                    <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 1.4rem; margin-bottom: 1.2rem;">
-                      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.8rem; margin-bottom: 0.8rem;">
+                    <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 1.3rem; margin-bottom: 1.2rem;">
+                      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
                         <span style="color: #fff; font-weight: 600; font-size: 0.92rem;">Meta Business Manager Status</span>
                         <span style="color: #34d399; font-weight: 700; font-size: 0.85rem;">✓ Authenticated & Verified</span>
                       </div>
-                      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.8rem; margin-bottom: 0.8rem;">
+                      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
                         <span style="color: #fff; font-weight: 600; font-size: 0.92rem;">GST 18% Surcharge Exemption</span>
                         <span style="color: #38bdf8; font-weight: 700; font-size: 0.85rem;">✓ GSTIN Configured (Saving 18%)</span>
                       </div>
@@ -677,43 +567,48 @@
                       </div>
                     </div>
 
-                    <button type="button" onclick="openOptionModalDemo(2)" style="width: 100%; background: linear-gradient(135deg, #10b981, #0284c7); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer;">
+                    <button type="button" onclick="openOptionModalDemo(2)" style="width: 100%; background: linear-gradient(135deg, #10b981, #0284c7); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; box-shadow: 0 8px 20px rgba(16,185,129,0.35);">
                       <span>▶ Watch Option 02 BM & GST Intro Video & Theory →</span>
                     </button>
                   </div>
 
-                  <!-- Dynamic Screen Content: STEP 4 -->
+                  <!-- Dynamic Screen Content: STEP 4 (Live Embedded Ads Optimization Video) -->
                   <div id="screenStep4" class="demo-screen-panel" style="display: none;">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
                       <div>
                         <h4 style="color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem;">Advantage+ AI Scaling & 6.4X ROAS Multiplier</h4>
-                        <p style="color: #94a3b8; font-size: 0.85rem;">Daily spend allocation, lead cost reduction, and live conversion math.</p>
+                        <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">Live Madgicx Ads Manager 2.0 automated AI budget reallocation.</p>
                       </div>
-                      <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.78rem; font-weight: 700;">6.4X ROAS</span>
+                      <span style="background: rgba(16,185,129,0.15); color: #34d399; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700;">6.4X ROAS</span>
                     </div>
 
-                    <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(56,189,248,0.3); border-radius: 12px; padding: 1.4rem; margin-bottom: 1.2rem;">
-                      <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <!-- Video Player Frame -->
+                    <div class="demo-video-showcase">
+                      <video id="adsOptimizationVideo" src="assets/ads_optimization_demo.mp4" autoplay loop muted playsinline preload="auto"></video>
+                      <div class="video-overlay-badge top-left">
+                        <span class="live-pulse-dot"></span>
+                        <span>MADGICX ADS MANAGER 2.0 • AI OPTIMIZATION</span>
+                      </div>
+                      <div class="video-overlay-badge bottom-right">
+                        <span>⚡ ADVANTAGE+ 6.4X ENGINE</span>
+                      </div>
+                    </div>
+
+                    <!-- Live Metrics Bar -->
+                    <div style="background: rgba(15,23,42,0.85); border: 1px solid rgba(56,189,248,0.3); border-radius: 12px; padding: 1.1rem 1.3rem; margin-bottom: 1.1rem;">
+                      <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                          <div style="font-size: 0.75rem; color: #94a3b8;">Total Revenue Scaled</div>
-                          <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">$215,840.12 <span style="font-size: 0.85rem; color: #34d399;">(↑ 74.2%)</span></div>
+                          <div style="font-size: 0.72rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Total Revenue Scaled</div>
+                          <div style="font-size: 1.35rem; font-weight: 800; color: #fff;">$215,840.12 <span style="font-size: 0.82rem; color: #34d399; font-weight: 700;">(↑ 74.2%)</span></div>
                         </div>
                         <div style="text-align: right;">
-                          <div style="font-size: 0.75rem; color: #94a3b8;">Average Lead Cost</div>
-                          <div style="font-size: 1.5rem; font-weight: 800; color: #38bdf8;">₹2.60 <span style="font-size: 0.85rem; color: #34d399;">/ lead</span></div>
+                          <div style="font-size: 0.72rem; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Average Lead Cost</div>
+                          <div style="font-size: 1.35rem; font-weight: 800; color: #38bdf8;">₹2.60 <span style="font-size: 0.82rem; color: #34d399; font-weight: 700;">/ lead</span></div>
                         </div>
-                      </div>
-                      <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.08); border-radius: 9999px; overflow: hidden;">
-                        <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #0284c7, #10b981);"></div>
-                      </div>
-                      <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; margin-top: 0.5rem;">
-                        <span>Facebook Feed (60%)</span>
-                        <span>Instagram Reels (30%)</span>
-                        <span>Audience Network (10%)</span>
                       </div>
                     </div>
 
-                    <button type="button" onclick="openOptionModalDemo(3)" style="width: 100%; background: linear-gradient(135deg, #2563eb, #10b981); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer;">
+                    <button type="button" onclick="openOptionModalDemo(3)" style="width: 100%; background: linear-gradient(135deg, #2563eb, #10b981); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; box-shadow: 0 8px 20px rgba(37,99,235,0.35);">
                       <span>▶ Watch Option 03 Scaling Intro Video & Theory →</span>
                     </button>
                   </div>
@@ -725,11 +620,11 @@
 
           </div>
 
-          <!-- RIGHT: Step-by-Step Instructions Connected by Dynamic Arrows -->
+          <!-- RIGHT: Step-by-Step Instructions Connected by Dynamic Flowing Arrows -->
           <div class="demo-instructions-column" style="display: flex; flex-direction: column;">
             
             <!-- Step 1 Card -->
-            <div class="demo-instruction-card active-card" id="demoCard1" onclick="switchDemoStep(1)">
+            <div class="demo-instruction-card active-card" id="demoCard1" onclick="handleUserStepSelect(1)">
               <div class="card-arrow-header">
                 <span class="card-arrow-tag tag-cyan">
                   <span>STEP 01</span>
@@ -738,9 +633,9 @@
                 </span>
                 <span class="card-status-dot dot-cyan"></span>
               </div>
-              <h3 class="card-instruction-title">1-Click Fast Pass Authentication</h3>
+              <h3 class="card-instruction-title">Fast Pass Student Authentication</h3>
               <p class="card-instruction-desc">
-                Bypass complex registration. Tap the 1-click access button to immediately load authenticated student credentials (<code style="color:#38bdf8;">Shriya / Megha@14</code>) and open the complete video training system.
+                Bypass complex registration. Automatic fast-pass authorization grants instant student session access to the complete video curriculum and marketing workflows.
               </p>
               <div class="card-arrow-cta">
                 <span>View Screen Demo</span>
@@ -749,7 +644,7 @@
             </div>
 
             <!-- Vertical Arrow Bridge: 1 -> 2 -->
-            <div class="vertical-arrow-bridge active-bridge" id="verticalBridge12">
+            <div class="vertical-arrow-bridge active-bridge flowing-now" id="verticalBridge12">
               <div class="bridge-line"></div>
               <div class="bridge-arrow-pill">
                 <span class="bridge-arrow-icon">⬇</span>
@@ -759,7 +654,7 @@
             </div>
 
             <!-- Step 2 Card -->
-            <div class="demo-instruction-card" id="demoCard2" onclick="switchDemoStep(2)">
+            <div class="demo-instruction-card" id="demoCard2" onclick="handleUserStepSelect(2)">
               <div class="card-arrow-header">
                 <span class="card-arrow-tag tag-purple">
                   <span>STEP 02</span>
@@ -789,7 +684,7 @@
             </div>
 
             <!-- Step 3 Card -->
-            <div class="demo-instruction-card" id="demoCard3" onclick="switchDemoStep(3)">
+            <div class="demo-instruction-card" id="demoCard3" onclick="handleUserStepSelect(3)">
               <div class="card-arrow-header">
                 <span class="card-arrow-tag tag-emerald">
                   <span>STEP 03</span>
@@ -819,7 +714,7 @@
             </div>
 
             <!-- Step 4 Card -->
-            <div class="demo-instruction-card" id="demoCard4" onclick="switchDemoStep(4)">
+            <div class="demo-instruction-card" id="demoCard4" onclick="handleUserStepSelect(4)">
               <div class="card-arrow-header">
                 <span class="card-arrow-tag tag-blue">
                   <span>STEP 04</span>
@@ -830,7 +725,7 @@
               </div>
               <h3 class="card-instruction-title">Scale Winning Ad Sets to 6.4X ROAS</h3>
               <p class="card-instruction-desc">
-                Use the 20% budget scaling law to grow ad spend without resetting the algorithm. Cut lead costs to ₹2.60 and scale revenue profitably.
+                Watch live AI budget reallocation in action. Use the 20% budget scaling law to grow ad spend without resetting the algorithm. Cut lead costs to ₹2.60.
               </p>
               <div class="card-arrow-cta">
                 <span>View Screen Demo</span>
@@ -872,12 +767,13 @@
           background: rgba(15, 23, 42, 0.6);
           border: 1px solid rgba(255, 255, 255, 0.08);
           color: #94a3b8;
-          padding: 0.65rem 1.25rem;
+          padding: 0.65rem 1.25rem 0.85rem 1.25rem;
           border-radius: 9999px;
           cursor: pointer;
           font-family: inherit;
           transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
+          overflow: hidden;
         }
         .pipeline-arrow-step:hover {
           color: #fff;
@@ -937,23 +833,204 @@
           transform: translateX(3px);
         }
 
+        /* Step Progress Track inside button */
+        .step-progress-track {
+          position: absolute;
+          bottom: 2px;
+          left: 14px;
+          right: 14px;
+          height: 3px;
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: 999px;
+          overflow: hidden;
+        }
+        .step-progress-fill {
+          width: 0%;
+          height: 100%;
+          background: #ffffff;
+          border-radius: 999px;
+          transition: width 0.04s linear;
+        }
+
         /* Horizontal Connector Arrow */
         .pipeline-connector-arrow {
+          position: relative;
           display: flex;
           align-items: center;
           color: rgba(255, 255, 255, 0.25);
           transition: all 0.3s;
-          padding: 0 0.1rem;
+          padding: 0 0.15rem;
         }
         .pipeline-connector-arrow.active-connector {
           color: #38bdf8;
           filter: drop-shadow(0 0 8px #38bdf8);
-          animation: pulseConnector 1.6s infinite ease-in-out;
+        }
+        .pipeline-connector-arrow.flowing-now {
+          color: #00f2fe;
+          filter: drop-shadow(0 0 12px #00f2fe);
+          animation: pulseConnectorFlow 0.8s infinite ease-in-out;
+        }
+        @keyframes pulseConnectorFlow {
+          0%, 100% { transform: translateX(0) scale(1); opacity: 0.75; }
+          50% { transform: translateX(4px) scale(1.15); opacity: 1; }
         }
 
-        @keyframes pulseConnector {
-          0%, 100% { transform: translateX(0); opacity: 0.7; }
-          50% { transform: translateX(4px); opacity: 1; }
+        /* Mock Browser Topbar */
+        .mock-browser-topbar {
+          background: #0d152b;
+          padding: 0.75rem 1.25rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.75rem;
+        }
+        .mock-browser-url-bar {
+          background: rgba(15, 23, 42, 0.8);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          padding: 0.28rem 1rem;
+          border-radius: 6px;
+          font-size: 0.76rem;
+          color: #94a3b8;
+          font-family: monospace;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          flex: 1;
+          max-width: 330px;
+        }
+        .autoplay-toggle-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          background: rgba(56, 189, 248, 0.12);
+          border: 1px solid rgba(56, 189, 248, 0.35);
+          color: #38bdf8;
+          padding: 0.25rem 0.65rem;
+          border-radius: 6px;
+          font-size: 0.72rem;
+          font-weight: 700;
+          cursor: pointer;
+          font-family: inherit;
+          transition: all 0.2s;
+        }
+        .autoplay-toggle-btn:hover {
+          background: rgba(56, 189, 248, 0.22);
+          border-color: #38bdf8;
+          color: #fff;
+        }
+        .demo-step-badge {
+          font-size: 0.72rem;
+          color: #a855f7;
+          background: rgba(168, 85, 247, 0.15);
+          border: 1px solid rgba(168, 85, 247, 0.35);
+          padding: 0.25rem 0.65rem;
+          border-radius: 6px;
+          font-weight: 800;
+          letter-spacing: 0.04em;
+        }
+
+        /* Timeline Track */
+        .demo-timeline-track {
+          width: 100%;
+          height: 3px;
+          background: rgba(255, 255, 255, 0.08);
+          overflow: hidden;
+        }
+        .demo-timeline-fill {
+          width: 0%;
+          height: 100%;
+          background: linear-gradient(90deg, #0284c7, #38bdf8, #a855f7);
+          box-shadow: 0 0 10px #38bdf8;
+          transition: width 0.04s linear;
+        }
+
+        /* Alert Banner inside body */
+        .demo-alert-banner {
+          background: rgba(16, 185, 129, 0.12);
+          border: 1px solid #10b981;
+          border-radius: 10px;
+          padding: 0.65rem 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.6rem;
+          color: #34d399;
+          font-size: 0.84rem;
+          margin-bottom: 1.2rem;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+          transition: all 0.3s;
+        }
+        .demo-alert-phase-pill {
+          font-size: 0.7rem;
+          font-weight: 800;
+          letter-spacing: 0.05em;
+          padding: 0.2rem 0.55rem;
+          border-radius: 999px;
+          background: rgba(16, 185, 129, 0.2);
+          color: inherit;
+        }
+
+        /* Screen Panels */
+        .demo-screen-panel {
+          animation: fadeInPanel 0.35s ease-out;
+        }
+        @keyframes fadeInPanel {
+          from { opacity: 0; transform: translateY(6px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Video Showcase */
+        .demo-video-showcase {
+          position: relative;
+          border-radius: 12px;
+          overflow: hidden;
+          border: 1px solid rgba(56, 189, 248, 0.35);
+          box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+          margin-bottom: 1rem;
+          background: #000;
+        }
+        .demo-video-showcase video {
+          width: 100%;
+          display: block;
+          max-height: 250px;
+          object-fit: cover;
+        }
+        .video-overlay-badge {
+          position: absolute;
+          padding: 0.25rem 0.65rem;
+          border-radius: 6px;
+          font-size: 0.72rem;
+          font-weight: 800;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          backdrop-filter: blur(8px);
+        }
+        .video-overlay-badge.top-left {
+          top: 10px;
+          left: 10px;
+          background: rgba(11, 19, 43, 0.85);
+          border: 1px solid rgba(56, 189, 248, 0.4);
+          color: #38bdf8;
+        }
+        .video-overlay-badge.bottom-right {
+          bottom: 10px;
+          right: 10px;
+          background: rgba(0, 0, 0, 0.75);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          color: #34d399;
+        }
+        .live-pulse-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #10b981;
+          animation: blinkDot 1s infinite;
+        }
+        @keyframes blinkDot {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.3; transform: scale(0.85); }
         }
 
         /* Instruction Cards on Right Column */
@@ -1042,7 +1119,7 @@
           color: #7dd3fc;
         }
 
-        /* Vertical Glowing Arrow Bridge Between Cards */
+        /* Vertical Glowing Arrow Bridge */
         .vertical-arrow-bridge {
           display: flex;
           align-items: center;
@@ -1086,21 +1163,24 @@
         .vertical-arrow-bridge.active-bridge .bridge-line {
           background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), transparent);
         }
+        .vertical-arrow-bridge.flowing-now .bridge-arrow-pill {
+          background: rgba(56, 189, 248, 0.25) !important;
+          border-color: #38bdf8 !important;
+          color: #38bdf8 !important;
+          box-shadow: 0 0 20px rgba(56, 189, 248, 0.6) !important;
+          transform: scale(1.05);
+        }
+        .vertical-arrow-bridge.flowing-now .bridge-arrow-icon {
+          animation: bounceArrowFast 0.6s infinite ease-in-out !important;
+        }
+        @keyframes bounceArrowFast {
+          0%, 100% { transform: translateY(-3px); }
+          50% { transform: translateY(4px); }
+        }
 
         @keyframes bounceArrow {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(3px); }
-        }
-
-        @keyframes bounceIn {
-          0% { opacity: 0; transform: scale(0.8) translateY(-10px); }
-          60% { opacity: 1; transform: scale(1.04) translateY(2px); }
-          100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
         }
 
         @media (max-width: 900px) {
@@ -1108,7 +1188,7 @@
             justify-content: flex-start;
           }
           .pipeline-arrow-step {
-            padding: 0.55rem 0.9rem;
+            padding: 0.55rem 0.9rem 0.75rem 0.9rem;
           }
           .arrow-step-title {
             font-size: 0.8rem;
@@ -1116,183 +1196,190 @@
         }
       </style>
 
+      <!-- Automated Progression & Video Engine -->
       <script>
         const demoStepsData = {
           1: {
             url: "html/IntroPage.html#step-1-access",
             icon: "⚡",
-            alertText: "1-Click Fast Pass Active: Access Granted as Shriya",
+            alertText: "Fast Pass Active: Validated Student Session",
             alertBorder: "#38bdf8",
-            alertColor: "#38bdf8"
+            alertColor: "#38bdf8",
+            phaseBadge: "PROCESS 01/04"
           },
           2: {
             url: "html/IntroPage.html#step-2-hooks",
             icon: "🎬",
-            alertText: "High-CTR Hook Activated: 84.5% Scroll-Stopping Rate",
+            alertText: "Creative Studio: 84.5% Scroll-Stopping Rate Verified",
             alertBorder: "#c084fc",
-            alertColor: "#c084fc"
+            alertColor: "#c084fc",
+            phaseBadge: "PROCESS 02/04"
           },
           3: {
             url: "html/IntroPage.html#step-3-bm-gst",
             icon: "🛡️",
             alertText: "Compliance Shield Verified: 18% GST Surcharge Saved",
             alertBorder: "#10b981",
-            alertColor: "#34d399"
+            alertColor: "#34d399",
+            phaseBadge: "PROCESS 03/04"
           },
           4: {
             url: "html/IntroPage.html#step-4-scaling",
             icon: "📈",
             alertText: "Advantage+ Scaling Law: 6.4X ROAS Target Locked",
             alertBorder: "#38bdf8",
-            alertColor: "#38bdf8"
+            alertColor: "#38bdf8",
+            phaseBadge: "PROCESS 04/04"
           }
         };
 
+        let currentDemoStep = 1;
+        let isAutoPlaying = true;
+        let stepProgress = 0;
+        const STEP_DURATION = 4200; // 4.2s per step (matches video ~16.8s loop)
+        const TICK_INTERVAL = 40;   // 40ms update interval
+        let progressTimer = null;
+
         function switchDemoStep(step) {
-          // Update URL in Mock Terminal
-          document.getElementById('demoScreenUrl').textContent = demoStepsData[step].url;
+          currentDemoStep = step;
+          stepProgress = 0;
 
-          // Update popup alert with pop-in animation
+          // 1. Update Mock Terminal URL
+          const urlElem = document.getElementById('demoScreenUrl');
+          if (urlElem) urlElem.textContent = demoStepsData[step].url;
+
+          // 2. Update Alert Banner
           const popup = document.getElementById('demoPopupAlert');
-          popup.style.animation = 'none';
-          void popup.offsetWidth; // trigger reflow
-          popup.style.animation = 'bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-          
-          document.getElementById('demoPopupIcon').textContent = demoStepsData[step].icon;
-          document.getElementById('demoPopupText').textContent = demoStepsData[step].alertText;
-          popup.style.borderColor = demoStepsData[step].alertBorder;
-          popup.style.color = demoStepsData[step].alertColor;
+          if (popup) {
+            document.getElementById('demoPopupIcon').textContent = demoStepsData[step].icon;
+            document.getElementById('demoPopupText').textContent = demoStepsData[step].alertText;
+            const badge = document.getElementById('demoAlertPill');
+            if (badge) badge.textContent = demoStepsData[step].phaseBadge;
+            popup.style.borderColor = demoStepsData[step].alertBorder;
+            popup.style.color = demoStepsData[step].alertColor;
+            popup.style.background = demoStepsData[step].alertColor.includes('38bdf8') 
+              ? 'rgba(56,189,248,0.12)' 
+              : demoStepsData[step].alertColor.includes('c084fc')
+                ? 'rgba(168,85,247,0.12)'
+                : 'rgba(16,185,129,0.12)';
+          }
 
-          // Update Arrow Pipeline Buttons & Connector Arrows
+          // 3. Update Step Pill in Browser Header
+          const stepBadge = document.getElementById('demoStepBadge');
+          if (stepBadge) stepBadge.textContent = `STEP ${step}/4`;
+
+          // 4. Update Screens
           for (let i = 1; i <= 4; i++) {
             const screen = document.getElementById(`screenStep${i}`);
             const arrowStep = document.getElementById(`pipelineArrow${i}`);
             const card = document.getElementById(`demoCard${i}`);
+            const fill = document.getElementById(`pipeProgress${i}`);
 
-            if (i === step) {
-              screen.style.display = 'block';
-              arrowStep.classList.add('active-arrow-step');
-              card.classList.add('active-card');
-            } else {
-              screen.style.display = 'none';
-              arrowStep.classList.remove('active-arrow-step');
-              card.classList.remove('active-card');
+            if (screen) screen.style.display = i === step ? 'block' : 'none';
+            if (arrowStep) {
+              if (i === step) arrowStep.classList.add('active-arrow-step');
+              else arrowStep.classList.remove('active-arrow-step');
+            }
+            if (card) {
+              if (i === step) card.classList.add('active-card');
+              else card.classList.remove('active-card');
+            }
+            if (fill && i !== step) {
+              fill.style.width = i < step ? '100%' : '0%';
             }
           }
 
-          // Update horizontal connector arrows
-          const conn12 = document.getElementById('pipelineConnector12');
-          const conn23 = document.getElementById('pipelineConnector23');
-          const conn34 = document.getElementById('pipelineConnector34');
+          // 5. Update Connectors & Vertical Bridges with Arrow Flow
+          for (let c = 1; c <= 3; c++) {
+            const conn = document.getElementById(`pipelineConnector${c}${c+1}`);
+            const bridge = document.getElementById(`verticalBridge${c}${c+1}`);
+            if (conn) {
+              conn.className = (step > c) 
+                ? 'pipeline-connector-arrow active-connector' 
+                : (step === c) 
+                  ? 'pipeline-connector-arrow active-connector flowing-now' 
+                  : 'pipeline-connector-arrow';
+            }
+            if (bridge) {
+              bridge.className = (step > c) 
+                ? 'vertical-arrow-bridge active-bridge' 
+                : (step === c) 
+                  ? 'vertical-arrow-bridge active-bridge flowing-now' 
+                  : 'vertical-arrow-bridge';
+            }
+          }
 
-          if (conn12) conn12.className = step >= 2 ? 'pipeline-connector-arrow active-connector' : 'pipeline-connector-arrow';
-          if (conn23) conn23.className = step >= 3 ? 'pipeline-connector-arrow active-connector' : 'pipeline-connector-arrow';
-          if (conn34) conn34.className = step >= 4 ? 'pipeline-connector-arrow active-connector' : 'pipeline-connector-arrow';
-
-          // Update vertical bridges
-          const bridge12 = document.getElementById('verticalBridge12');
-          const bridge23 = document.getElementById('verticalBridge23');
-          const bridge34 = document.getElementById('verticalBridge34');
-
-          if (bridge12) bridge12.className = step >= 2 ? 'vertical-arrow-bridge active-bridge' : 'vertical-arrow-bridge';
-          if (bridge23) bridge23.className = step >= 3 ? 'vertical-arrow-bridge active-bridge' : 'vertical-arrow-bridge';
-          if (bridge34) bridge34.className = step >= 4 ? 'vertical-arrow-bridge active-bridge' : 'vertical-arrow-bridge';
+          // 6. If Step 4, play video
+          if (step === 4) {
+            const vid = document.getElementById('adsOptimizationVideo');
+            if (vid) {
+              vid.currentTime = 0;
+              vid.play().catch(e => console.log('Video autoplay handled', e));
+            }
+          }
         }
 
-        // Helper to launch option modal in IntroPage
+        function handleUserStepSelect(step) {
+          switchDemoStep(step);
+        }
+
+        function toggleAutoPlay() {
+          isAutoPlaying = !isAutoPlaying;
+          const btn = document.getElementById('autoPlayToggleBtn');
+          const icon = document.getElementById('autoPlayIcon');
+          const text = document.getElementById('autoPlayText');
+
+          if (isAutoPlaying) {
+            if (icon) icon.textContent = '⏸';
+            if (text) text.textContent = 'Auto-Playing';
+            if (btn) btn.style.background = 'rgba(56, 189, 248, 0.12)';
+          } else {
+            if (icon) icon.textContent = '▶';
+            if (text) text.textContent = 'Paused';
+            if (btn) btn.style.background = 'rgba(239, 68, 68, 0.15)';
+          }
+        }
+
+        // Timer Tick Loop for smooth video-like progress animation
+        function startTourLoop() {
+          if (progressTimer) clearInterval(progressTimer);
+          progressTimer = setInterval(() => {
+            if (!isAutoPlaying) return;
+
+            stepProgress += (TICK_INTERVAL / STEP_DURATION) * 100;
+            if (stepProgress >= 100) {
+              stepProgress = 0;
+              let nextStep = currentDemoStep + 1;
+              if (nextStep > 4) nextStep = 1;
+              switchDemoStep(nextStep);
+            } else {
+              const fill = document.getElementById(`pipeProgress${currentDemoStep}`);
+              if (fill) fill.style.width = `${stepProgress}%`;
+
+              const timelineFill = document.getElementById('demoTimelineFill');
+              if (timelineFill) {
+                const totalProgress = ((currentDemoStep - 1) * 25) + (stepProgress * 0.25);
+                timelineFill.style.width = `${totalProgress}%`;
+              }
+            }
+          }, TICK_INTERVAL);
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => {
+            switchDemoStep(1);
+            startTourLoop();
+          });
+        } else {
+          switchDemoStep(1);
+          startTourLoop();
+        }
+
         function openOptionModalDemo(optId) {
           window.location.href = `html/IntroPage.html?option=${optId}`;
         }
       </script>
-
     </section>
-
-    <!-- ========================================================================
-         INTERACTIVE LIVE ROAS & AD REVENUE CALCULATOR
-         ======================================================================== -->
-    <section class="section-calculator" id="calculator">
-      <div class="section-container">
-      <div class="calc-card">
-        <div class="calc-info">
-          <span class="section-badge">Live Performance Engine</span>
-          <h3>Interactive ROAS & Sales Simulator</h3>
-          <p>Drag the slider to your planned monthly ad spend to calculate your projected reach, leads, customer orders, and revenue return.</p>
-          
-          <div class="slider-group">
-            <div class="slider-label-row">
-              <span class="slider-label">Your Planned Monthly Ad Budget:</span>
-              <span class="slider-value-display" id="budgetDisplay">₹10,000</span>
-            </div>
-            <input type="range" min="1000" max="100000" step="1000" value="10000" class="custom-range-slider" id="adBudgetSlider">
-          </div>
-
-          <button class="btn-enroll-gradient" onclick="openPaymentModal()" style="width:fit-content;">
-            <span>Scale With These Numbers Today</span>
-          </button>
-        </div>
-
-        <div class="calc-results-box">
-          <div class="calc-stat-item">
-            <span class="stat-header">Projected Video Views</span>
-            <span class="stat-figure cyan" id="calcViews">125,000+</span>
-          </div>
-
-          <div class="calc-stat-item">
-            <span class="stat-header">Qualified Leads / Visitors</span>
-            <span class="stat-figure" id="calcLeads">3,850+</span>
-          </div>
-
-          <div class="calc-stat-item">
-            <span class="stat-header">Projected Revenue (4.2x ROAS)</span>
-            <span class="stat-figure highlight" id="calcRevenue">₹42,000</span>
-          </div>
-
-          <div class="calc-stat-item">
-            <span class="stat-header">Average Cost Per Lead</span>
-            <span class="stat-figure" id="calcCPA">₹2.60</span>
-          </div>
-        </div>
-      </div>
-    
-      </div></section>
-
-    <!-- ========================================================================
-         SPECIAL OFFER & ENROLLMENT BANNER
-         ======================================================================== -->
-    <section class="section-pricing-banner" id="pricing">
-      <div class="section-container">
-      <div class="pricing-box">
-        <div class="countdown-box">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-          <span>Grab this introductory offer within: <strong id="countdownTimer">06:59</strong></span>
-        </div>
-
-        <h2 style="font-size:2.8rem; font-weight:800; color:#fff; margin-bottom:1rem;">
-          Get Lifetime Access to the Complete Video Course
-        </h2>
-        <p style="color:var(--text-muted); max-width:640px; margin:0 auto 2rem auto; font-size:1.1rem;">
-          Unlock all 4 video modules, ad templates, campaign checklists, and community support today for a single one-time payment.
-        </p>
-
-        <div style="margin-bottom:2.5rem;">
-          <span class="price-strike">₹4,999</span>
-          <span class="price-active"><span>₹</span>1,499</span>
-          <span style="background:rgba(16,185,129,0.2); color:var(--emerald-green); padding:0.4rem 0.8rem; border-radius:9999px; font-weight:700; margin-left:1rem; font-size:0.9rem;">70% OFF</span>
-        </div>
-
-        <button class="btn-enroll-gradient" style="padding:1.2rem 3.5rem; font-size:1.15rem; margin:0 auto;" onclick="openPaymentModal()">
-          <span>Unlock All Videos Instantly • Pay ₹1499</span>
-        </button>
-
-        <p style="color:var(--text-dim); font-size:0.85rem; margin-top:1.5rem;">
-          Instant Access Guaranteed • Supported via UPI, Cards, NetBanking, Razorpay • 100% Secure Checkout
-        </p>
-      </div>
-    
-      </div></section>
   </main>
 
   <!-- ========================================================================
@@ -1313,8 +1400,7 @@
         <div style="display:flex; gap:2rem; font-weight:500;">
           <a href="#about-surprise" style="color:var(--text-muted); text-decoration:none;">About</a>
           <a href="#curriculum" style="color:var(--text-muted); text-decoration:none;">Courses</a>
-          <a href="#calculator" style="color:var(--text-muted); text-decoration:none;">ROAS Calculator</a>
-          <a href="#pricing" style="color:var(--text-muted); text-decoration:none;">Pricing</a>
+          <a href="#demo-walkthrough" style="color:var(--text-muted); text-decoration:none;">Walkthrough</a>
           <a href="/LoginPage.html" id="footerLoginLink" style="color:var(--cyan-pulse); text-decoration:none;">Member Portal</a>
         </div>
       </div>
@@ -1341,14 +1427,17 @@
       <form id="heroLoginForm" autocomplete="off">
         <div class="card-input-field" style="position:relative; margin-bottom:0.75rem;">
           <span class="card-input-icon" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:0.95rem; opacity:0.65;">👤</span>
-          <input type="text" id="heroUsername" placeholder="Email or Username" value="Shriya" required style="width:100%; padding:10px 12px 10px 38px; border-radius:10px; background:#f8fafc; border:1.5px solid #e2e8f0; font-size:0.86rem; font-family:inherit; color:#0f172a; font-weight:600; box-sizing:border-box; outline:none;">
+          <input type="text" id="heroUsername" placeholder="Email or Username" required style="width:100%; padding:10px 12px 10px 38px; border-radius:10px; background:#f8fafc; border:1.5px solid #e2e8f0; font-size:0.86rem; font-family:inherit; color:#0f172a; font-weight:600; box-sizing:border-box; outline:none;">
         </div>
 
-        <div class="card-input-field" style="position:relative; margin-bottom:0.75rem;">
+        <div class="card-input-field" style="position:relative; margin-bottom:0.4rem;">
           <span class="card-input-icon" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); font-size:0.95rem; opacity:0.65;">🔒</span>
-          <input type="password" id="heroPassword" placeholder="Password" value="Megha@14" required style="width:100%; padding:10px 125px 10px 38px; border-radius:10px; background:#f8fafc; border:1.5px solid #e2e8f0; font-size:0.86rem; font-family:inherit; color:#0f172a; font-weight:600; box-sizing:border-box; outline:none;">
-          <button type="button" id="heroTogglePwd" style="position:absolute; right:94px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; color:#64748b; font-size:0.85rem; padding:2px;" title="Show/Hide Password" aria-label="Toggle password visibility">👁️</button>
-          <a href="#" class="card-forgot-link" onclick="closeModal('loginModal'); openModal('forgotModal'); return false;" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:0.76rem; color:#0284c7; font-weight:700; text-decoration:none;">Forgot password?</a>
+          <input type="password" id="heroPassword" placeholder="Password" required style="width:100%; padding:10px 42px 10px 38px; border-radius:10px; background:#f8fafc; border:1.5px solid #e2e8f0; font-size:0.86rem; font-family:inherit; color:#0f172a; font-weight:600; box-sizing:border-box; outline:none;">
+          <button type="button" id="heroTogglePwd" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; color:#64748b; font-size:0.85rem; padding:2px;" title="Show/Hide Password" aria-label="Toggle password visibility">👁️</button>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; margin-top:-0.2rem; margin-bottom:0.6rem;">
+          <a href="#" class="card-forgot-link" onclick="closeModal('loginModal'); openModal('forgotModal'); return false;" style="font-size:0.78rem; color:#0284c7; font-weight:700; text-decoration:none;">Forgot password?</a>
         </div>
 
         <button type="submit" class="card-login-btn" style="width:100%; padding:10.5px 18px; border-radius:10px; background:linear-gradient(135deg, #0284c7 0%, #0099ff 35%, #9333ea 100%); border:none; color:#ffffff; font-size:0.94rem; font-weight:800; cursor:pointer; box-shadow:0 6px 18px rgba(2, 132, 199, 0.38); display:flex; align-items:center; justify-content:center; margin-top:0.5rem; letter-spacing:0.01em;">
@@ -1360,16 +1449,12 @@
         </div>
 
         <div class="card-social-row" style="display:flex; justify-content:center; gap:12px; margin-bottom:0.6rem;">
-          <button type="button" class="card-social-btn google-btn" onclick="quickLoginAsShriya()" title="Continue with Google" style="width:36px; height:36px; border-radius:50%; border:1.5px solid #cbd5e1; background:#ffffff; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+          <button type="button" class="card-social-btn google-btn" onclick="handleSocialLogin('Google')" title="Continue with Google" style="width:36px; height:36px; border-radius:50%; border:1.5px solid #cbd5e1; background:#ffffff; display:flex; align-items:center; justify-content:center; cursor:pointer;">
             <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.4 9 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z"/><path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.2c0 2.9.7 5.5 1.9 7.9l3.7-2.9z"/><path fill="#34A853" d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2-6.4-4.8L1.9 16.9C3.7 20.6 7.5 23.5 12 23.5z"/></svg>
           </button>
-          <button type="button" class="card-social-btn facebook-btn" onclick="quickLoginAsShriya()" title="Continue with Facebook" style="width:36px; height:36px; border-radius:50%; border:1.5px solid #cbd5e1; background:#ffffff; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+          <button type="button" class="card-social-btn facebook-btn" onclick="handleSocialLogin('Facebook')" title="Continue with Facebook" style="width:36px; height:36px; border-radius:50%; border:1.5px solid #cbd5e1; background:#ffffff; display:flex; align-items:center; justify-content:center; cursor:pointer;">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </button>
-        </div>
-
-        <div class="card-quick-access" onclick="quickLoginAsShriya()" style="text-align:center; font-size:0.76rem; color:#0284c7; font-weight:800; cursor:pointer; padding:6px 8px; border-radius:8px; background:rgba(2,132,199,0.08); border:1px dashed rgba(2,132,199,0.35);">
-          <span>⚡ 1-Click Access as Shriya (Megha@14)</span>
         </div>
 
         <div class="card-signup-prompt" style="text-align:center; font-size:0.85rem; color:#475569; font-weight:600; margin-top:0.5rem;">
@@ -1508,6 +1593,6 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=30.0"></script>
 </body>
 </html>
