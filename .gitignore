@@ -137,3 +137,6 @@ Thumbs.db
 !ui/assets/*
 !ui/assets/**
 
+
+# Scratch / temporary development files
+scratch/

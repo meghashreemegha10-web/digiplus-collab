@@ -259,21 +259,21 @@ body {
 /* Left Column Content on Hero (Headline & Frontend Mockup Pills) */
 .hero-left-content {
   position: absolute;
-  top: clamp(124px, 17vh, 165px);
+  top: clamp(110px, 15vh, 155px);
   left: clamp(28px, 4.8vw, 72px);
-  max-width: clamp(480px, 45vw, 640px);
+  max-width: clamp(560px, 52vw, 840px);
   z-index: 22;
   display: flex;
   flex-direction: column;
 }
 
 .hero-main-title {
-  font-size: clamp(2.05rem, 3.2vw, 2.85rem);
-  font-weight: 850;
+  font-size: clamp(2.85rem, 4.4vw, 4.15rem);
+  font-weight: 900;
   color: #0f172a;
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.015em;
+  line-height: 1.12;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.012em;
   text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 20px rgba(255, 255, 255, 0.5);
   white-space: nowrap;
 }
@@ -283,17 +283,18 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  font-weight: 850;
-  filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.9));
+  font-weight: 900;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 6px rgba(124, 58, 237, 0.3));
 }
 
 .hero-main-subtitle {
-  max-width: 420px;
-  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  max-width: 520px;
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
   font-weight: 600;
   color: #1e293b;
-  margin-bottom: 1.1rem;
-  line-height: 1.4;
+  margin-bottom: 1.25rem;
+  line-height: 1.45;
   text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
 }
 
@@ -365,8 +366,11 @@ body {
 
 @media (max-width: 992px) {
   .hero-left-content {
-    max-width: 380px;
-    top: 110px;
+    max-width: 440px;
+    top: 100px;
+  }
+  .hero-main-title {
+    font-size: clamp(2.1rem, 3.6vw, 2.75rem);
   }
 }
 

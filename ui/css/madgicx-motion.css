@@ -1,0 +1,964 @@
+/* ==========================================================================
+   MADGICX MOTION & ANIMATION SYSTEM
+   Inspired by Madgicx.com's high-conversion SaaS AI design language.
+   Preserves all existing colors, design patterns, and information intact.
+   ========================================================================== */
+
+/* 1. CSS Houdini Properties for Conic-Gradient Rotating Border Beams */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --angleScreen {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --angleScreenTwo {
+  syntax: "<angle>";
+  initial-value: 360deg;
+  inherits: false;
+}
+
+/* 2. Core Keyframe Animations */
+@keyframes spin {
+  from { --angle: 0deg; }
+  to { --angle: 360deg; }
+}
+
+@keyframes spinScreen {
+  from { --angleScreen: 0deg; }
+  to { --angleScreen: 360deg; }
+}
+
+@keyframes spinScreenTwo {
+  from { --angleScreenTwo: 360deg; }
+  to { --angleScreenTwo: 0deg; }
+}
+
+@keyframes mxShimmer {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  35%, 100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+@keyframes mxFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mxModalPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes mxFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes mxPulseRing {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.6);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 14px rgba(56, 189, 248, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+  }
+}
+
+@keyframes mxPulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.75;
+  }
+}
+
+@keyframes mxGlowBreathing {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.85));
+  }
+}
+
+/* 3. Madgicx Animated Conic Border Beam Cards & Containers */
+.animated-screen,
+.option-card,
+.hero-login-overlay-card,
+.pro-checkout-box,
+.login-box,
+.welcome-box,
+.header-section {
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+/* Card Hover Lift & Deep Soft Glow */
+.option-card:hover {
+  transform: translateY(-7px) scale(1.006) !important;
+  box-shadow: 0 28px 65px -10px rgba(0, 0, 0, 0.85),
+              0 0 35px -5px rgba(56, 189, 248, 0.28) !important;
+}
+
+.trust-stat-box:hover,
+.hero-pill-item:hover,
+.curriculum-module-card:hover {
+  transform: translateY(-5px) scale(1.01) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 18px 45px -8px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* 4. Madgicx Animated Buttons & Dynamic Shimmer Effect */
+.btn-card-pay,
+.pro-btn-checkout,
+.btn-modal-unlock,
+.btn-member-login,
+.welcome-btn,
+#btnSubmit,
+#heroOverlayLoginBtn,
+#loginBtn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.22s ease;
+  will-change: transform, box-shadow;
+}
+
+.btn-card-pay:hover,
+.pro-btn-checkout:hover,
+.btn-modal-unlock:hover,
+.btn-member-login:hover,
+.welcome-btn:hover,
+#btnSubmit:hover,
+#heroOverlayLoginBtn:hover,
+#loginBtn:hover {
+  transform: translateY(-2.5px) !important;
+  filter: brightness(1.08);
+}
+
+.btn-card-pay:active,
+.pro-btn-checkout:active,
+.btn-modal-unlock:active,
+.btn-member-login:active,
+.welcome-btn:active,
+#btnSubmit:active,
+#heroOverlayLoginBtn:active,
+#loginBtn:active {
+  transform: translateY(0.5px) scale(0.985) !important;
+  transition-duration: 0.08s;
+}
+
+/* Signature Ambient Shimmer Light Sweep across CTA buttons */
+.btn-card-pay::before,
+.pro-btn-checkout::before,
+.btn-modal-unlock::before,
+.btn-member-login::before,
+#heroOverlayLoginBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  animation: mxShimmer 4.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 5. Smooth Scroll-Reveal Classes (Madgicx Viewport Reveal) */
+.mx-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.mx-reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.mx-reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.mx-reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* When In-View */
+.mx-reveal.mx-in-view,
+.mx-reveal-left.mx-in-view,
+.mx-reveal-right.mx-in-view,
+.mx-reveal-scale.mx-in-view {
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
+}
+
+/* Stagger Delays for Grid Cascades */
+.mx-delay-1 { transition-delay: 0.08s !important; }
+.mx-delay-2 { transition-delay: 0.16s !important; }
+.mx-delay-3 { transition-delay: 0.24s !important; }
+.mx-delay-4 { transition-delay: 0.32s !important; }
+
+/* 6. Modal Spring Pop Entrance */
+.modal-overlay[style*="display: flex"],
+.modal-overlay.active {
+  animation: mxFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+}
+
+.modal-overlay[style*="display: flex"] .pro-checkout-box,
+.modal-overlay[style*="display: flex"] .opt-modal-container {
+  animation: mxModalPop 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 7. Subtle Ambient Floating Indicators & Play Buttons */
+.card-play-btn,
+.play-btn-circle {
+  animation: mxPulseRing 2.6s infinite ease-out;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-video-preview-frame:hover .card-play-btn,
+.video-preview-box:hover .play-btn-circle {
+  transform: scale(1.14) !important;
+}
+
+/* Video Poster Image Subtle Zoom on Card Hover */
+.card-video-preview-frame img,
+.video-preview-box img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-video-preview-frame:hover img,
+.video-preview-box:hover img {
+  transform: scale(1.035);
+}
+
+/* 8. Pulsing Status Pills & Live Badges */
+.card-status-badge,
+.checkout-guarantee-pill,
+.input-verified-tag,
+.card-payment-details-box span[style*="color: #34d399"],
+.card-payment-details-box span[style*="color: #10b981"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.card-status-badge::before,
+.checkout-guarantee-pill::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: mxPulseDot 1.8s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+/* 9. Interactive Micro-Motion for Tabs, Inputs, and Links */
+.checkout-opt-btn,
+.method-tab,
+.upi-app-btn,
+.bank-pill,
+.checkout-back-btn,
+.nav-item,
+.hero-pill-item {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.checkout-opt-btn:active,
+.method-tab:active,
+.upi-app-btn:active,
+.bank-pill:active {
+  transform: scale(0.96);
+}
+
+.pro-input,
+.card-input-field input {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.pro-input:focus,
+.card-input-field input:focus {
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25) !important;
+}
+
+/* 10. Performance & Accessibility Compliance (Madgicx Pattern) */
+html.mx-motion-paused * {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ==========================================================================
+   11. Madgicx Optimization Showcase Engine (1:1 Match with madgicx.com/optimization)
+   ========================================================================== */
+
+.additional-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(202, 183, 255, 0.28);
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  height: 2.15rem;
+  color: #cab7ff;
+  background-color: rgba(202, 183, 255, 0.07);
+  padding: 0 1.25rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 24px -4px rgba(145, 122, 255, 0.28);
+}
+
+.opt-tab-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  margin-bottom: 2.25rem;
+}
+
+.opt-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.45rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.925rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.opt-tab-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.opt-tab-btn.is-active {
+  background: #ffffff;
+  color: #070419;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), 0 0 14px rgba(255, 255, 255, 0.45);
+}
+
+.features-screen_component {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.animated-screen {
+  background-color: #cab7ff03;
+  position: relative;
+  border-radius: 40px;
+  margin: 0 auto;
+  max-width: 1120px;
+  width: 100%;
+}
+
+.animated-screen::after,
+.animated-screen::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 2px;
+  border-radius: 40px;
+}
+
+.animated-screen::after {
+  background-image: conic-gradient(from var(--angleScreen), transparent 95%, #cab7ff);
+  animation: 9s spinScreen linear infinite;
+}
+
+.animated-screen::before {
+  background-image: conic-gradient(from var(--angleScreenTwo), #917aff, transparent 5%);
+  animation: 9s spinScreenTwo linear infinite;
+}
+
+.screen_component {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(circle at 50% 0%, rgba(30, 20, 60, 0.95), rgba(7, 4, 25, 0.98));
+  border-radius: 40px;
+  padding: 0.65rem;
+  overflow: hidden;
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.8),
+              0 0 50px -10px rgba(145, 122, 255, 0.25);
+  position: relative;
+}
+
+.screen_video {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 32px;
+}
+
+.screen_video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 32px;
+  background: #050512;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.screen-badge_component {
+  position: absolute;
+  top: -24px;
+  right: -20px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.screen-badge_bage {
+  border-radius: 999px;
+  background-color: #0d0926;
+  width: 8rem;
+  height: 8rem;
+  color: #fff;
+  text-align: center;
+  background-image: linear-gradient(#fff0, #ffffff25), linear-gradient(#5525da80, #5525da80);
+  border: 1px solid #7c5cff;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+  font-size: 0.775rem;
+  font-weight: 700;
+  line-height: 1.25;
+  display: flex;
+  transform: rotate(-12deg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(124, 92, 255, 0.5);
+  animation: mxFloat 4s ease-in-out infinite;
+}
+
+.features-screen_features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  border: 1px solid rgba(202, 183, 255, 0.12);
+  border-radius: 28px;
+  background-color: rgba(202, 183, 255, 0.02);
+  padding: 0.85rem;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.features-screen_slot {
+  display: flex;
+  flex-direction: column;
+}
+
+.features-screen_feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.025);
+  padding: 2.25rem 1.4rem 2.25rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.features-screen_feature:hover {
+  transform: translateY(-6px);
+  background-color: rgba(202, 183, 255, 0.06);
+  border-color: rgba(202, 183, 255, 0.35);
+  box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.55),
+              0 0 30px -5px rgba(145, 122, 255, 0.25);
+}
+
+.features-screen_wrap {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.features-screen_title {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.features-screen_desc {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.features-screen_line-wrap {
+  position: absolute;
+  inset: auto 0% 0%;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.features-screen_line {
+  transform: translateY(20.75%);
+  max-width: 100%;
+  opacity: 0.85;
+}
+
+.animated-button {
+  position: relative;
+  display: inline-flex;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+.animated-button::after,
+.animated-button::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), transparent 50%, #917aff);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 1.5px;
+  border-radius: 999px;
+  animation: 3s spin linear infinite;
+}
+
+.animated-button::before {
+  filter: blur(1.5rem);
+  opacity: 0.6;
+}
+
+.animated-button .btn-opt-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.05rem 2.5rem;
+  border-radius: 999px;
+  background: #0d0a21;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: all 0.25s ease;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.animated-button .btn-opt-cta:hover {
+  background: #17113a;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(202, 183, 255, 0.4),
+              0 0 35px rgba(145, 122, 255, 0.45);
+}
+
+.separator_component {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4.5rem;
+  pointer-events: none;
+}
+
+.separator_img {
+  width: 100%;
+  max-width: 1600px;
+  height: auto;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .features-screen_features {
+    grid-template-columns: 1fr;
+  }
+  .animated-screen, .screen_component {
+    border-radius: 24px;
+  }
+  .animated-screen::before, .animated-screen::after {
+    border-radius: 24px;
+  }
+  .screen_video video {
+    border-radius: 18px;
+  }
+  .screen-badge_component {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   12. Step-by-Step Workflow Navigation & Controls (Madgicx Multi-Step Engine)
+   ========================================================================== */
+.opt-steps-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 6px 12px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  margin: 0 auto 2.5rem;
+  max-width: 1040px;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.opt-steps-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.opt-step-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.opt-step-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.opt-step-num {
+  font-size: 0.725rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.25s ease;
+}
+
+.opt-step-btn.is-active {
+  background: #ffffff;
+  color: #070419;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 16px rgba(255, 255, 255, 0.5);
+}
+
+.opt-step-btn.is-active .opt-step-num {
+  background: #7c5cff;
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(124, 92, 255, 0.6);
+}
+
+.opt-step-arrow {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+.opt-nav-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+}
+
+.opt-nav-prev-btn,
+.opt-nav-next-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.opt-nav-prev-btn:hover,
+.opt-nav-next-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(202, 183, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(124, 92, 255, 0.25);
+}
+
+.opt-nav-next-btn {
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.25), rgba(56, 189, 248, 0.25));
+  border-color: rgba(145, 122, 255, 0.4);
+}
+
+.opt-step-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.opt-step-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.opt-step-dot.is-active {
+  width: 24px;
+  background: #7c5cff;
+  box-shadow: 0 0 10px rgba(124, 92, 255, 0.7);
+}
+
+@media (max-width: 900px) {
+  .opt-steps-bar {
+    justify-content: flex-start;
+    border-radius: 20px;
+    padding: 8px 12px;
+  }
+}
+
+/* ==========================================================================
+   13. Website User Journey Demo Stage (Madgicx Animated Screen Frame)
+   ========================================================================== */
+.mock-browser-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(13, 9, 34, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-inter, 'Inter', -apple-system, sans-serif);
+  font-size: 0.825rem;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
+}
+
+.mock-browser-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mock-browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mock-browser-url-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 1.25rem;
+  border-radius: 999px;
+  color: #94a3b8;
+  font-family: monospace;
+  font-size: 0.8rem;
+  max-width: 540px;
+  width: 100%;
+}
+
+.mock-screen-stage {
+  padding: 1.75rem 2rem;
+  min-height: 480px;
+  background: radial-gradient(circle at 50% 20%, rgba(20, 14, 46, 0.95), rgba(7, 4, 22, 0.98));
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen-step-view {
+  display: none;
+  width: 100%;
+  animation: mxFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.screen-step-view.is-active {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .mock-browser-topbar {
+    padding: 0.65rem 1rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .mock-browser-url-bar {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.75rem;
+  }
+  .mock-screen-stage {
+    padding: 1.25rem 1rem;
+    min-height: 380px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+/* ==========================================================================
+   14. Video Overlay Step HUD (Like Before Format with Video Integration)
+   ========================================================================== */
+.video-step-hud {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  right: 20px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(13, 9, 34, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 999px;
+  padding: 0.55rem 1.35rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+.video-hud-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 10px #34d399;
+  animation: mxPulseDot 1.6s infinite ease-in-out;
+  display: inline-block;
+}
+
+@media (max-width: 900px) {
+  .video-step-hud {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 0.4rem 0.85rem;
+  }
+}

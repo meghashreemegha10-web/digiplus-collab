@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=25.0">
+  <link rel="stylesheet" href="../css/madgicx-motion.css?v=1.0">
   <style>
     :root {
       --bg-dark: #070c18;
@@ -181,133 +182,382 @@
       line-height: 1.6;
     }
 
-    /* 3 Options Grid */
+    /* =========================================================================
+       UNIQUE FUTURISTIC MASTERCLASS ARCHITECTURE & PIPELINE
+       ========================================================================= */
+    .portal-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* 3 Options in One Unified Segment Bar */
+    .track-filter-bar {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(13, 20, 38, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 0.35rem;
+      border-radius: 9999px;
+      margin: 1.4rem auto 2.4rem auto;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #94a3b8;
+      padding: 0.6rem 1.4rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
+    .filter-btn-instagram:hover {
+      color: #ffffff;
+      background: rgba(225, 48, 108, 0.22);
+      border-color: rgba(225, 48, 108, 0.55);
+      box-shadow: 0 0 18px rgba(225, 48, 108, 0.35);
+      transform: translateY(-2px);
+    }
+    .filter-btn-facebook:hover {
+      color: #ffffff;
+      background: rgba(24, 119, 242, 0.22);
+      border-color: rgba(24, 119, 242, 0.55);
+      box-shadow: 0 0 18px rgba(24, 119, 242, 0.35);
+      transform: translateY(-2px);
+    }
+    .filter-btn-youtube:hover {
+      color: #ffffff;
+      background: rgba(239, 68, 68, 0.22);
+      border-color: rgba(239, 68, 68, 0.55);
+      box-shadow: 0 0 18px rgba(239, 68, 68, 0.35);
+      transform: translateY(-2px);
+    }
+
+    /* Unique 3 Options Grid */
     .options-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.8rem;
+      gap: 2rem;
+      perspective: 1200px;
     }
 
-    @media (max-width: 1024px) {
-      .options-grid { grid-template-columns: 1fr; max-width: 650px; margin: 0 auto; }
+    @media (max-width: 1080px) {
+      .options-grid { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; }
       .portal-nav-center { display: none; }
     }
 
+    /* Holographic Card Container */
     .option-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
+      background: rgba(11, 18, 35, 0.88);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-      cursor: pointer;
       position: relative;
+      cursor: pointer;
+      backdrop-filter: blur(20px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
     }
 
-    .option-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--cyan-glow);
-      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.15);
+    /* Platform-Specific Signatures (Instagram, Facebook, YouTube) */
+    .option-card.card-platform-instagram, .option-card.card-track-1 {
+      border-color: rgba(225, 48, 108, 0.35);
+      background: radial-gradient(circle at 10% 0%, rgba(225, 48, 108, 0.16), transparent 50%), rgba(11, 18, 35, 0.94);
+    }
+    .option-card.card-platform-instagram:hover, .option-card.card-track-1:hover {
+      transform: translateY(-8px) scale(1.015);
+      border-color: #e1306c;
+      box-shadow: 0 24px 50px rgba(225, 48, 108, 0.35), 0 0 35px rgba(225, 48, 108, 0.2);
     }
 
+    .option-card.card-platform-facebook, .option-card.card-track-2 {
+      border-color: rgba(24, 119, 242, 0.35);
+      background: radial-gradient(circle at 10% 0%, rgba(24, 119, 242, 0.16), transparent 50%), rgba(11, 18, 35, 0.94);
+    }
+    .option-card.card-platform-facebook:hover, .option-card.card-track-2:hover {
+      transform: translateY(-8px) scale(1.015);
+      border-color: #1877f2;
+      box-shadow: 0 24px 50px rgba(24, 119, 242, 0.35), 0 0 35px rgba(24, 119, 242, 0.2);
+    }
+
+    .option-card.card-platform-youtube, .option-card.card-track-3 {
+      border-color: rgba(239, 68, 68, 0.35);
+      background: radial-gradient(circle at 10% 0%, rgba(239, 68, 68, 0.16), transparent 50%), rgba(11, 18, 35, 0.94);
+    }
+    .option-card.card-platform-youtube:hover, .option-card.card-track-3:hover {
+      transform: translateY(-8px) scale(1.015);
+      border-color: #ef4444;
+      box-shadow: 0 24px 50px rgba(239, 68, 68, 0.35), 0 0 35px rgba(239, 68, 68, 0.2);
+    }
+
+    /* Giant Platform Watermarks */
+    .card-watermark {
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      font-size: 6.5rem;
+      font-weight: 900;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.05;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: opacity 0.3s;
+    }
+    .card-platform-instagram .card-watermark, .card-track-1 .card-watermark { color: #e1306c; }
+    .card-platform-facebook .card-watermark, .card-track-2 .card-watermark { color: #1877f2; }
+    .card-platform-youtube .card-watermark, .card-track-3 .card-watermark { color: #ef4444; }
+    .option-card:hover .card-watermark { opacity: 0.14; }
+
+    /* Top Unified Metadata Box (One Box with 2 Sections Inside) */
+    .card-top-meta-row {
+      display: flex;
+      padding: 1rem 1.25rem 0.65rem 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .unified-meta-box {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 10px;
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(10, 16, 30, 0.88);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    .card-platform-instagram .unified-meta-box, .card-track-1 .unified-meta-box {
+      border-color: rgba(225, 48, 108, 0.38);
+      background: linear-gradient(90deg, rgba(225, 48, 108, 0.18) 0%, rgba(15, 23, 42, 0.88) 100%);
+    }
+    .card-platform-facebook .unified-meta-box, .card-track-2 .unified-meta-box {
+      border-color: rgba(24, 119, 242, 0.38);
+      background: linear-gradient(90deg, rgba(24, 119, 242, 0.18) 0%, rgba(15, 23, 42, 0.88) 100%);
+    }
+    .card-platform-youtube .unified-meta-box, .card-track-3 .unified-meta-box {
+      border-color: rgba(239, 68, 68, 0.38);
+      background: linear-gradient(90deg, rgba(239, 68, 68, 0.18) 0%, rgba(15, 23, 42, 0.88) 100%);
+    }
+
+    .meta-section-left {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.42rem 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+    }
+    .card-platform-instagram .meta-section-left, .card-track-1 .meta-section-left { color: #fb7185; }
+    .card-platform-facebook .meta-section-left, .card-track-2 .meta-section-left { color: #38bdf8; }
+    .card-platform-youtube .meta-section-left, .card-track-3 .meta-section-left { color: #f87171; }
+
+    .meta-section-divider {
+      width: 1px;
+      height: 18px;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+    }
+
+    .meta-section-right {
+      font-size: 0.71rem;
+      font-weight: 700;
+      padding: 0.42rem 0.75rem;
+      color: #f1f5f9;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* Video Viewport Frame */
     .option-thumb-wrapper {
       position: relative;
-      width: 100%;
+      width: calc(100% - 2rem);
+      margin: 0 auto;
       height: 200px;
       background: #000;
       overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
     }
 
     .option-thumb-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.5s ease;
+    }
+    .option-card:hover .option-thumb-img {
+      transform: scale(1.08);
     }
 
-    .option-card:hover .option-thumb-img {
-      transform: scale(1.05);
+    /* HUD Corner Reticles */
+    .hud-reticle-tl, .hud-reticle-tr, .hud-reticle-bl, .hud-reticle-br {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      pointer-events: none;
+      z-index: 3;
     }
+    .hud-reticle-tl { top: 6px; left: 6px; border-top: 2px solid rgba(255, 255, 255, 0.4); border-left: 2px solid rgba(255, 255, 255, 0.4); }
+    .hud-reticle-tr { top: 6px; right: 6px; border-top: 2px solid rgba(255, 255, 255, 0.4); border-right: 2px solid rgba(255, 255, 255, 0.4); }
+    .hud-reticle-bl { bottom: 6px; left: 6px; border-bottom: 2px solid rgba(255, 255, 255, 0.4); border-left: 2px solid rgba(255, 255, 255, 0.4); }
+    .hud-reticle-br { bottom: 6px; right: 6px; border-bottom: 2px solid rgba(255, 255, 255, 0.4); border-right: 2px solid rgba(255, 255, 255, 0.4); }
 
     .option-overlay-play {
       position: absolute;
       inset: 0;
-      background: rgba(7, 12, 24, 0.45);
+      background: rgba(7, 12, 24, 0.42);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.2s;
+      transition: background 0.25s;
     }
-
     .option-card:hover .option-overlay-play {
       background: rgba(7, 12, 24, 0.2);
+    }
+
+    /* Radar Pulse behind Play Button */
+    .radar-pulse-ring {
+      position: absolute;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(225, 48, 108, 0.6);
+      animation: radarPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      pointer-events: none;
+    }
+    .card-platform-instagram .radar-pulse-ring, .card-track-1 .radar-pulse-ring { border-color: rgba(225, 48, 108, 0.6); }
+    .card-platform-facebook .radar-pulse-ring, .card-track-2 .radar-pulse-ring { border-color: rgba(24, 119, 242, 0.6); }
+    .card-platform-youtube .radar-pulse-ring, .card-track-3 .radar-pulse-ring { border-color: rgba(239, 68, 68, 0.6); }
+
+    @keyframes radarPing {
+      75%, 100% {
+        transform: scale(1.6);
+        opacity: 0;
+      }
     }
 
     .play-btn-circle {
       width: 54px;
       height: 54px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #0284c7, #9333ea);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
-      transition: transform 0.2s;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      z-index: 2;
     }
-
+    .card-platform-instagram .play-btn-circle, .card-track-1 .play-btn-circle {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d 60%, #fcb045 100%);
+      box-shadow: 0 0 24px rgba(225, 48, 108, 0.7);
+    }
+    .card-platform-facebook .play-btn-circle, .card-track-2 .play-btn-circle {
+      background: linear-gradient(135deg, #1877f2, #0099ff);
+      box-shadow: 0 0 24px rgba(24, 119, 242, 0.7);
+    }
+    .card-platform-youtube .play-btn-circle, .card-track-3 .play-btn-circle {
+      background: linear-gradient(135deg, #dc2626, #ef4444);
+      box-shadow: 0 0 24px rgba(239, 68, 68, 0.7);
+    }
     .option-card:hover .play-btn-circle {
-      transform: scale(1.1);
+      transform: scale(1.12);
     }
 
-    .option-tag-pill {
+    /* Video Duration Tag */
+    .thumb-duration-pill {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(7, 12, 24, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      bottom: 10px;
+      left: 10px;
+      background: rgba(7, 12, 24, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(8px);
-      padding: 0.3rem 0.75rem;
+      padding: 0.2rem 0.55rem;
       border-radius: 6px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      z-index: 2;
     }
 
     .option-status-badge {
       position: absolute;
-      bottom: 12px;
-      right: 12px;
-      background: rgba(7, 12, 24, 0.85);
+      bottom: 10px;
+      right: 10px;
+      background: rgba(7, 12, 24, 0.88);
       backdrop-filter: blur(8px);
       padding: 0.25rem 0.65rem;
       border-radius: 9999px;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       font-weight: 600;
       display: flex;
       align-items: center;
       gap: 0.3rem;
+      z-index: 2;
     }
     .status-locked { border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; }
     .status-unlocked { border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; }
 
+    /* Card Content Body */
     .option-body {
-      padding: 1.5rem;
+      padding: 1.4rem 1.4rem 1.6rem 1.4rem;
       display: flex;
       flex-direction: column;
       flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .module-stage-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
     }
 
     .option-module-label {
-      font-size: 0.8rem;
-      color: var(--cyan-glow);
-      font-weight: 700;
+      font-size: 0.78rem;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+    .card-platform-instagram .option-module-label, .card-track-1 .option-module-label { color: #fb7185; }
+    .card-platform-facebook .option-module-label, .card-track-2 .option-module-label { color: #38bdf8; }
+    .card-platform-youtube .option-module-label, .card-track-3 .option-module-label { color: #f87171; }
+
+    .level-indicator {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
     }
 
     .option-card-title {
@@ -315,11 +565,11 @@
       font-weight: 700;
       line-height: 1.35;
       color: #ffffff;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.65rem;
     }
 
     .option-card-desc {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-sub);
       line-height: 1.55;
       margin-bottom: 1.2rem;
@@ -334,34 +584,167 @@
     }
 
     .feature-chip {
-      background: rgba(30, 41, 59, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 0.25rem 0.6rem;
-      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.3rem 0.65rem;
+      border-radius: 8px;
       font-size: 0.75rem;
-      color: #cbd5e1;
+      font-weight: 500;
+      color: #e2e8f0;
+      transition: all 0.2s ease;
+    }
+    .card-platform-instagram:hover .feature-chip, .card-track-1:hover .feature-chip {
+      border-color: rgba(225, 48, 108, 0.35);
+      background: rgba(225, 48, 108, 0.08);
+    }
+    .card-platform-facebook:hover .feature-chip, .card-track-2:hover .feature-chip {
+      border-color: rgba(24, 119, 242, 0.35);
+      background: rgba(24, 119, 242, 0.08);
+    }
+    .card-platform-youtube:hover .feature-chip, .card-track-3:hover .feature-chip {
+      border-color: rgba(239, 68, 68, 0.35);
+      background: rgba(239, 68, 68, 0.08);
     }
 
-    .btn-open-option {
+    /* Platform Dual-Action Button Group for All 3 Options */
+    .card-action-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-top: 1.1rem;
       width: 100%;
-      background: linear-gradient(135deg, #0284c7, #2563eb);
-      border: none;
-      color: #ffffff;
-      padding: 0.85rem;
-      border-radius: 10px;
-      font-size: 0.95rem;
+    }
+    .btn-card-intro {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #e2e8f0;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      font-size: 0.88rem;
       font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      transition: all 0.2s;
+      transition: all 0.22s ease;
+      font-family: inherit;
+      backdrop-filter: blur(8px);
+    }
+    .btn-card-intro:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .btn-card-pay {
+      width: 100%;
+      padding: 0.95rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      transition: all 0.25s ease;
+      font-family: inherit;
+      border: none;
+      color: #ffffff;
+      margin-top: 0.85rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+    .btn-card-pay:hover {
+      transform: translateY(-2px);
+    }
+    .btn-pay-instagram {
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%);
+      box-shadow: 0 4px 18px rgba(225, 48, 108, 0.4);
+    }
+    .btn-pay-instagram:hover {
+      background: linear-gradient(135deg, #6c2f97 0%, #e01616 60%, #e69c3a 100%);
+      box-shadow: 0 8px 25px rgba(225, 48, 108, 0.6);
+    }
+    .btn-pay-facebook {
+      background: linear-gradient(135deg, #1877f2 0%, #0099ff 100%);
+      box-shadow: 0 4px 18px rgba(24, 119, 242, 0.4);
+    }
+    .btn-pay-facebook:hover {
+      background: linear-gradient(135deg, #125ec4 0%, #007ecc 100%);
+      box-shadow: 0 8px 25px rgba(24, 119, 242, 0.6);
+    }
+    .btn-pay-youtube {
+      background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+      box-shadow: 0 4px 18px rgba(239, 68, 68, 0.4);
+    }
+    .btn-pay-youtube:hover {
+      background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
     }
 
-    .btn-open-option:hover {
-      background: linear-gradient(135deg, #0369a1, #1d4ed8);
-      box-shadow: 0 4px 18px rgba(2, 132, 199, 0.4);
+    /* Unique Platform Action Buttons */
+    .btn-open-option {
+      width: 100%;
+      border: none;
+      color: #ffffff;
+      padding: 0.9rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.94rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      font-family: inherit;
+    }
+    .btn-arrow-icon {
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+    .btn-open-option:hover .btn-arrow-icon {
+      transform: translateX(4px);
+    }
+
+    .btn-instagram, .btn-theme-1 {
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%);
+      box-shadow: 0 4px 18px rgba(225, 48, 108, 0.4);
+    }
+    .btn-instagram:hover, .btn-theme-1:hover {
+      background: linear-gradient(135deg, #6c2f97 0%, #e01616 60%, #e69c3a 100%);
+      box-shadow: 0 8px 24px rgba(225, 48, 108, 0.55);
+    }
+
+    .btn-facebook, .btn-theme-2 {
+      background: linear-gradient(135deg, #1877f2 0%, #0099ff 100%);
+      box-shadow: 0 4px 18px rgba(24, 119, 242, 0.4);
+    }
+    .btn-facebook:hover, .btn-theme-2:hover {
+      background: linear-gradient(135deg, #125ec4 0%, #007ecc 100%);
+      box-shadow: 0 8px 24px rgba(24, 119, 242, 0.55);
+    }
+
+    .btn-youtube, .btn-theme-3 {
+      background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+      box-shadow: 0 4px 18px rgba(239, 68, 68, 0.4);
+    }
+    .btn-youtube:hover, .btn-theme-3:hover {
+      background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.55);
+    }
+
+    /* Highlight pulse animation when jumping from pipeline */
+    @keyframes cardJumpPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); filter: brightness(1.2); }
+    }
+    .highlight-pulse {
+      animation: cardJumpPulse 0.9s ease;
     }
 
     /* Modal Backdrop */
@@ -543,79 +926,536 @@
       color: var(--text-sub);
     }
 
-    /* Payment Gateway Modal */
-    .payment-modal-box {
-      background: #0b1329;
-      border: 1px solid rgba(16, 185, 129, 0.4);
-      border-radius: 20px;
-      max-width: 520px;
-      width: 100%;
-      padding: 2rem;
-      position: relative;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
-      text-align: center;
+    /* =========================================================================
+       CARD & MODAL COMPACT PAYMENT DETAILS PRESENTATION
+       ========================================================================= */
+    .card-payment-details-box {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.45rem 0.85rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.1rem;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
     }
-
-    .payment-badge {
-      display: inline-block;
-      background: rgba(16, 185, 129, 0.15);
+    .card-payment-details-box:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      background: rgba(15, 23, 42, 0.9);
+    }
+    .pay-details-compact {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pay-details-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+    .pay-amount-main {
+      font-size: 1.22rem;
+      font-weight: 900;
       color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      padding: 0.3rem 0.8rem;
-      border-radius: 9999px;
-      font-size: 0.82rem;
+      letter-spacing: -0.01em;
+    }
+    .pay-amount-original {
+      font-size: 0.78rem;
+      color: #64748b;
+      text-decoration: line-through;
+      font-weight: 600;
+    }
+    .pay-discount-pill {
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 0.12rem 0.38rem;
+      border-radius: 4px;
+      background: rgba(239, 68, 68, 0.16);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.28);
+    }
+    .pay-status-pill {
+      font-size: 0.72rem;
       font-weight: 700;
-      margin-bottom: 0.8rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      white-space: nowrap;
+    }
+    .pay-status-unlocked {
+      background: rgba(16, 185, 129, 0.16);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .pay-status-locked {
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.25);
     }
 
-    .payment-title {
+    /* Modal Payment Details Box */
+    .modal-payment-details-box {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .modal-pay-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .modal-pay-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .modal-pay-price {
       font-size: 1.5rem;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 0.3rem;
+      font-weight: 900;
+      color: #34d399;
+    }
+    .modal-pay-badges-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+      padding-top: 0.6rem;
+      font-size: 0.76rem;
+      color: #94a3b8;
     }
 
-    .payment-price-row {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #10b981;
-      margin: 1rem 0;
+    /* Professional Ad World & SaaS Checkout Gateway */
+    .pro-checkout-box {
+      background: #0d1527;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 18px;
+      max-width: 530px;
+      width: 95%;
+      max-height: 94vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
     }
 
-    .qr-container {
-      background: #ffffff;
-      padding: 12px;
-      border-radius: 14px;
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 1.2rem auto;
+    .pro-checkout-header {
+      padding: 0.75rem 1.25rem;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .checkout-back-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .checkout-back-btn:hover {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: #38bdf8;
+      color: #38bdf8;
+      transform: translateX(-2px);
+    }
+
+    .checkout-brand-lock {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: #34d399;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    .checkout-cancel-back-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+      font-family: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .checkout-cancel-back-btn:hover {
+      color: #fff;
+      text-decoration-color: #38bdf8;
+    }
+
+    .pro-checkout-body {
+      padding: 1.15rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    /* 3 Masterclass Options Segment Selector in Checkout */
+    .checkout-option-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.45rem;
+      background: rgba(15, 23, 42, 0.75);
+      padding: 0.3rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .checkout-opt-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: #94a3b8;
+      padding: 0.5rem 0.35rem;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 0.3rem;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      white-space: nowrap;
     }
-
-    .qr-placeholder {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    .btn-confirm-pay {
-      width: 100%;
-      background: linear-gradient(135deg, #10b981, #0284c7);
-      border: none;
+    .checkout-opt-btn:hover {
       color: #fff;
-      padding: 0.95rem;
-      border-radius: 10px;
-      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .checkout-opt-btn.active-opt-1 {
+      background: rgba(225, 48, 108, 0.22);
+      border-color: rgba(225, 48, 108, 0.6);
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(225, 48, 108, 0.35);
+    }
+    .checkout-opt-btn.active-opt-2 {
+      background: rgba(24, 119, 242, 0.22);
+      border-color: rgba(24, 119, 242, 0.6);
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(24, 119, 242, 0.35);
+    }
+    .checkout-opt-btn.active-opt-3 {
+      background: rgba(239, 68, 68, 0.22);
+      border-color: rgba(239, 68, 68, 0.6);
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+    }
+
+    /* Compact Order Summary Card (Clean & Valid Info) */
+    .checkout-summary-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 0.65rem 0.95rem;
+    }
+
+    .summary-compact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+
+    .summary-info-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .summary-badge-line {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .checkout-platform-pill {
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 0.18rem 0.5rem;
+      border-radius: 5px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .checkout-guarantee-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #34d399;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .checkout-product-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #ffffff;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .summary-price-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+
+    .price-original-striked {
+      font-size: 0.72rem;
+      text-decoration: line-through;
+      color: #64748b;
+      line-height: 1;
+      margin-bottom: 0.15rem;
+    }
+
+    .price-final-pay {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #34d399;
+      line-height: 1.1;
+    }
+
+    .price-discount-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #f43f5e;
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      margin-top: 0.15rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* Payment Methods Segment */
+    .checkout-payment-methods {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 1.1rem;
+    }
+
+    .methods-tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.75rem;
+    }
+
+    .method-tab {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-sub);
+      padding: 0.55rem 0.5rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
+      font-family: inherit;
+      text-align: center;
+    }
+    .method-tab:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .method-tab.active {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(2, 132, 199, 0.3));
+      border-color: #38bdf8;
+      color: #fff;
     }
 
-    .btn-confirm-pay:hover {
-      opacity: 0.95;
+    .panel-instruction {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-bottom: 0.75rem;
+    }
+
+    .upi-apps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
+    }
+    .upi-app-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f1f5f9;
+      padding: 0.5rem 0.4rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+    .upi-app-btn:hover, .upi-app-btn.active {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    .checkout-input-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+    .pro-input {
+      width: 100%;
+      background: rgba(11, 18, 35, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-size: 0.88rem;
+      color: #fff;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .pro-input:focus {
+      border-color: #38bdf8;
+    }
+    .input-verified-tag {
+      position: absolute;
+      right: 12px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #34d399;
+      letter-spacing: 0.05em;
+      pointer-events: none;
+    }
+
+    .card-dual-row {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .banks-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+    .bank-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f1f5f9;
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .bank-pill:hover, .bank-pill.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    /* Checkout Action Button */
+    .pro-btn-checkout {
+      width: 100%;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border: none;
+      color: #ffffff;
+      padding: 1rem 1.4rem;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all 0.25s;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      font-family: inherit;
+    }
+    .pro-btn-checkout:hover {
       transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(16, 185, 129, 0.55);
+    }
+
+    /* Trust Footer */
+    .checkout-trust-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      text-align: center;
+    }
+    .trust-icons-strip {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #94a3b8;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .trust-disclaimer {
+      font-size: 0.72rem;
+      color: #64748b;
+      line-height: 1.4;
+      margin: 0;
     }
 
     /* Unlocked State View in Modal */
@@ -648,10 +1488,11 @@
     </a>
 
     <nav class="portal-nav-center">
-      <a href="IntroPage.html" class="portal-nav-item active">Masterclasses (3 Tracks)</a>
-      <a href="#optionsSection" class="portal-nav-item">Theory Blueprints</a>
-      <a href="#optionsSection" class="portal-nav-item">Real Videos</a>
-      <a href="mailto:support@globaldigipulse.com" class="portal-nav-item">Support</a>
+      <a href="../index.html#hero" class="portal-nav-item">Home</a>
+      <a href="../index.html#about-surprise" class="portal-nav-item">Modules</a>
+      <a href="../index.html#curriculum" class="portal-nav-item">Curriculum</a>
+      <a href="../index.html#demo-walkthrough" class="portal-nav-item">Walkthrough</a>
+      <a href="../index.html#footerContact" class="portal-nav-item">Contact</a>
     </nav>
 
     <div class="portal-nav-right">
@@ -668,109 +1509,235 @@
     
     <div class="portal-header">
       <div class="portal-badge">
-        <span>⚡ Member Masterclass Portal</span>
+        <span>⚡ Member Masterclass Platform</span>
       </div>
-      <h1 class="portal-title">Select Your Meta Advertising Track</h1>
+      <h1 class="portal-title">Targeted Video Masterclass Vault</h1>
       <p class="portal-subtitle">
-        Click any option below to watch its specialized orientation video, examine the step-by-step strategy theory, and unlock the full masterclass.
+        Select any platform below to preview its specialized intro video, review targeted strategy theory, and unlock the full original masterclass video.
       </p>
+
+      <!-- 3 Options In One Unified Bar -->
+      <div style="display: flex; justify-content: center;">
+        <div class="track-filter-bar">
+          <button type="button" class="filter-btn filter-btn-instagram" onclick="openOptionModal(1)">
+            <span>📸 Instagram Ads</span>
+          </button>
+          <button type="button" class="filter-btn filter-btn-facebook" onclick="openOptionModal(2)">
+            <span>🌐 Facebook Ads</span>
+          </button>
+          <button type="button" class="filter-btn filter-btn-youtube" onclick="openOptionModal(3)">
+            <span>▶️ YouTube Campaigns</span>
+          </button>
+          <button type="button" class="filter-btn" onclick="openPaymentGateway(currentOptionId)" style="background: rgba(16, 185, 129, 0.18); border-color: rgba(16, 185, 129, 0.5); color: #34d399; font-weight: 800; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);">
+            <span>💳 Payment Gateway (All 3 Options)</span>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <!-- 3 Video Options Grid -->
-    <div class="options-grid">
+    <!-- 3 Target Video Platform Boxes Inside Page -->
+    <div class="options-grid" id="mainOptionsGrid">
 
-      <!-- ================= OPTION 1 ================= -->
-      <div class="option-card" onclick="openOptionModal(1)">
+      <!-- ================= BOX 1: INSTAGRAM ================= -->
+      <div class="option-card card-platform-instagram card-track-1" id="trackCard1" onclick="openOptionModal(1)">
+        <div class="card-watermark">INSTA</div>
+        
+        <div class="card-top-meta-row">
+          <div class="unified-meta-box">
+            <span class="meta-section-left">📸 INSTAGRAM • REELS & VIDEO ADS</span>
+            <span class="meta-section-divider"></span>
+            <span class="meta-section-right">⚡ 68%+ 3-Sec Hook Rate</span>
+          </div>
+        </div>
+
         <div class="option-thumb-wrapper">
-          <img src="../assets/poster_option1.jpg" alt="Option 1 Creative Mastery" class="option-thumb-img">
+          <div class="hud-reticle-tl"></div>
+          <div class="hud-reticle-tr"></div>
+          <div class="hud-reticle-bl"></div>
+          <div class="hud-reticle-br"></div>
+
+          <img src="../assets/poster_option1.jpg" alt="Instagram Video Ads Masterclass" class="option-thumb-img">
+          
           <div class="option-overlay-play">
+            <div class="radar-pulse-ring"></div>
             <div class="play-btn-circle">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
             </div>
           </div>
-          <span class="option-tag-pill">Option 01 • Creative</span>
+
+          <span class="thumb-duration-pill">⏱️ 14:20 MINS • HD</span>
           <div class="option-status-badge status-locked" id="cardStatusBadge1">
             <span>🔒 Click to Preview</span>
           </div>
         </div>
+
         <div class="option-body">
-          <span class="option-module-label">Module 01 • Creative Mastery</span>
-          <h2 class="option-card-title">3-Second Hook Formulas & High-Converting Video Ads</h2>
+          <div class="module-stage-row">
+            <span class="option-module-label">INSTAGRAM MASTERCLASS</span>
+            <span class="level-indicator">REELS & CREATIVE</span>
+          </div>
+          <h2 class="option-card-title">Instagram 3-Second Hook Formulas & High-Converting Video Ads</h2>
           <p class="option-card-desc">
-            Stop the scroll on Instagram Reels and Facebook Feed. Access psychological hook formulas, UGC templates, and dynamic creative variations to eliminate ad fatigue.
+            Stop the scroll on Instagram Reels and Stories. Access psychological hook formulas, creator UGC templates, and dynamic creative variations to eliminate ad fatigue.
           </p>
           <div class="option-features-tags">
-            <span class="feature-chip">3-Second Hooks</span>
-            <span class="feature-chip">Reel Mockups</span>
-            <span class="feature-chip">High-CTR Copy</span>
-            <span class="feature-chip">UGC Formats</span>
+            <span class="feature-chip">3-Sec Hooks</span>
+            <span class="feature-chip">Reels Formats</span>
+            <span class="feature-chip">Creator UGC</span>
+            <span class="feature-chip">High CTR</span>
           </div>
-          <button type="button" class="btn-open-option">
-            <span>Watch Intro & Study Theory →</span>
+
+          <!-- Compact Payment Box for Instagram -->
+          <div class="card-payment-details-box" id="cardPayDetails1">
+            <div class="pay-details-compact">
+              <div class="pay-details-price">
+                <span class="pay-amount-main" id="payAmountMain1">₹499</span>
+                <span class="pay-amount-original">₹2,499</span>
+                <span class="pay-discount-pill">80% OFF</span>
+              </div>
+              <span class="pay-status-pill pay-status-locked" id="payStatusPill1">🛡️ 18% GST Waived</span>
+            </div>
+          </div>
+
+          <!-- Single Direct Payment / Stream Button -->
+          <button type="button" class="btn-card-pay btn-pay-instagram" id="cardPayBtn1" onclick="event.stopPropagation(); handleCardPaymentAction(1)">
+            <span>💳 Pay ₹499 & Unlock Instagram Masterclass</span>
           </button>
         </div>
       </div>
 
-      <!-- ================= OPTION 2 ================= -->
-      <div class="option-card" onclick="openOptionModal(2)">
+      <!-- ================= BOX 2: FACEBOOK ================= -->
+      <div class="option-card card-platform-facebook card-track-2" id="trackCard2" onclick="openOptionModal(2)">
+        <div class="card-watermark">META</div>
+
+        <div class="card-top-meta-row">
+          <div class="unified-meta-box">
+            <span class="meta-section-left">🌐 FACEBOOK • BM & ADS SETUP</span>
+            <span class="meta-section-divider"></span>
+            <span class="meta-section-right">🛡️ 18% GST Exemption & Ban Shield</span>
+          </div>
+        </div>
+
         <div class="option-thumb-wrapper">
-          <img src="../assets/poster_option2.jpg" alt="Option 2 Backend & Business Setup" class="option-thumb-img">
+          <div class="hud-reticle-tl"></div>
+          <div class="hud-reticle-tr"></div>
+          <div class="hud-reticle-bl"></div>
+          <div class="hud-reticle-br"></div>
+
+          <img src="../assets/poster_option2.jpg" alt="Facebook Ads & Business Manager Setup" class="option-thumb-img">
+          
           <div class="option-overlay-play">
+            <div class="radar-pulse-ring"></div>
             <div class="play-btn-circle">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
             </div>
           </div>
-          <span class="option-tag-pill">Option 02 • Foundation</span>
+
+          <span class="thumb-duration-pill">⏱️ 18:45 MINS • HD</span>
           <div class="option-status-badge status-locked" id="cardStatusBadge2">
             <span>🔒 Click to Preview</span>
           </div>
         </div>
+
         <div class="option-body">
-          <span class="option-module-label">Module 02 • Asset Protection</span>
-          <h2 class="option-card-title">Verified Business Manager, GST Exemption & Account Recovery</h2>
+          <div class="module-stage-row">
+            <span class="option-module-label">FACEBOOK MASTERCLASS</span>
+            <span class="level-indicator">BUSINESS MANAGER & CAPI</span>
+          </div>
+          <h2 class="option-card-title">Verified Facebook Business Manager, GST Exemption & Account Recovery</h2>
           <p class="option-card-desc">
-            Configure enterprise Facebook Business Managers, sync Pixel and Conversions API (CAPI), set up official GST tax exemptions, and recover disabled accounts.
+            Configure enterprise Facebook Business Managers, sync Pixel and Conversions API (CAPI), set up official 18% GST tax exemptions, and recover disabled accounts.
           </p>
           <div class="option-features-tags">
             <span class="feature-chip">Verified BM</span>
             <span class="feature-chip">GST Exemption</span>
-            <span class="feature-chip">Account Recovery</span>
-            <span class="feature-chip">Conversions API</span>
+            <span class="feature-chip">Meta CAPI</span>
+            <span class="feature-chip">Account Shield</span>
           </div>
-          <button type="button" class="btn-open-option">
-            <span>Watch Intro & Study Theory →</span>
+
+          <!-- Compact Payment Box for Facebook -->
+          <div class="card-payment-details-box" id="cardPayDetails2">
+            <div class="pay-details-compact">
+              <div class="pay-details-price">
+                <span class="pay-amount-main" id="payAmountMain2">₹499</span>
+                <span class="pay-amount-original">₹2,499</span>
+                <span class="pay-discount-pill">80% OFF</span>
+              </div>
+              <span class="pay-status-pill pay-status-locked" id="payStatusPill2">🛡️ 18% GST Waived</span>
+            </div>
+          </div>
+
+          <!-- Single Direct Payment / Stream Button -->
+          <button type="button" class="btn-card-pay btn-pay-facebook" id="cardPayBtn2" onclick="event.stopPropagation(); handleCardPaymentAction(2)">
+            <span>💳 Pay ₹499 & Unlock Facebook Masterclass</span>
           </button>
         </div>
       </div>
 
-      <!-- ================= OPTION 3 ================= -->
-      <div class="option-card" onclick="openOptionModal(3)">
+      <!-- ================= BOX 3: YOUTUBE ================= -->
+      <div class="option-card card-platform-youtube card-track-3" id="trackCard3" onclick="openOptionModal(3)">
+        <div class="card-watermark">YOUTUBE</div>
+
+        <div class="card-top-meta-row">
+          <div class="unified-meta-box">
+            <span class="meta-section-left">▶️ YOUTUBE • VIDEO CAMPAIGNS</span>
+            <span class="meta-section-divider"></span>
+            <span class="meta-section-right">📈 6.4X ROAS & Smart Bidding</span>
+          </div>
+        </div>
+
         <div class="option-thumb-wrapper">
-          <img src="../assets/poster_option3.jpg" alt="Option 3 Campaign Scaling" class="option-thumb-img">
+          <div class="hud-reticle-tl"></div>
+          <div class="hud-reticle-tr"></div>
+          <div class="hud-reticle-bl"></div>
+          <div class="hud-reticle-br"></div>
+
+          <img src="../assets/ads_youtube_campaign.jpg" alt="YouTube Ads & Campaign Setup" class="option-thumb-img">
+          
           <div class="option-overlay-play">
+            <div class="radar-pulse-ring"></div>
             <div class="play-btn-circle">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
             </div>
           </div>
-          <span class="option-tag-pill">Option 03 • Scaling</span>
+
+          <span class="thumb-duration-pill">⏱️ 22:10 MINS • HD</span>
           <div class="option-status-badge status-locked" id="cardStatusBadge3">
             <span>🔒 Click to Preview</span>
           </div>
         </div>
+
         <div class="option-body">
-          <span class="option-module-label">Module 03 • Revenue Scaling</span>
-          <h2 class="option-card-title">Advantage+ AI Campaigns, Slashing CPL & 6.4X ROAS Scaling</h2>
+          <div class="module-stage-row">
+            <span class="option-module-label">YOUTUBE MASTERCLASS</span>
+            <span class="level-indicator">VIDEO ROI SCALING</span>
+          </div>
+          <h2 class="option-card-title">YouTube Skippable Ads Setup, Slashing CPL & Scaled Conversions</h2>
           <p class="option-card-desc">
-            Master Meta's Advantage+ AI bidding, scale winning ad sets with horizontal budget allocation, slash lead costs down to ₹2.60, and achieve predictable 6.4X ROAS.
+            Master YouTube skippable in-stream and in-feed campaigns, target high-intent search audience segments, cut lead acquisition costs, and scale video budgets with maximum ROAS.
           </p>
           <div class="option-features-tags">
-            <span class="feature-chip">Advantage+ AI</span>
-            <span class="feature-chip">₹2.60 CPL</span>
+            <span class="feature-chip">YouTube Ads</span>
+            <span class="feature-chip">Intent Audience</span>
+            <span class="feature-chip">CPL Reduction</span>
             <span class="feature-chip">6.4X ROAS</span>
-            <span class="feature-chip">Budget Scaling</span>
           </div>
-          <button type="button" class="btn-open-option">
-            <span>Watch Intro & Study Theory →</span>
+
+          <!-- Compact Payment Box for YouTube -->
+          <div class="card-payment-details-box" id="cardPayDetails3">
+            <div class="pay-details-compact">
+              <div class="pay-details-price">
+                <span class="pay-amount-main" id="payAmountMain3">₹499</span>
+                <span class="pay-amount-original">₹2,499</span>
+                <span class="pay-discount-pill">80% OFF</span>
+              </div>
+              <span class="pay-status-pill pay-status-locked" id="payStatusPill3">🛡️ 18% GST Waived</span>
+            </div>
+          </div>
+
+          <!-- Single Direct Payment / Stream Button -->
+          <button type="button" class="btn-card-pay btn-pay-youtube" id="cardPayBtn3" onclick="event.stopPropagation(); handleCardPaymentAction(3)">
+            <span>💳 Pay ₹499 & Unlock YouTube Masterclass</span>
           </button>
         </div>
       </div>
@@ -822,10 +1789,34 @@
           </ul>
         </div>
 
+        <!-- Modal Payment Details Summary -->
+        <div class="modal-payment-details-box" id="modalPaymentDetailsBox">
+          <div class="modal-pay-row">
+            <div>
+              <span class="modal-pay-label">Masterclass Enrollment Fee</span>
+              <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
+                <span class="modal-pay-price" id="modalPayPrice">₹499</span>
+                <span style="font-size: 0.85rem; color: #64748b; text-decoration: line-through;">₹2,499</span>
+                <span style="font-size: 0.72rem; color: #34d399; font-weight: 700; background: rgba(16,185,129,0.15); padding: 0.15rem 0.5rem; border-radius: 4px;">Save 80% • One-time</span>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <span class="pay-status-pill pay-status-locked" id="modalPayStatusPill">🔒 Payment Required</span>
+              <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.25rem;">Includes 18% GST Exemption</div>
+            </div>
+          </div>
+          <div class="modal-pay-badges-row">
+            <span>⚡ Instant Full HD Stream</span>
+            <span>🛡️ 18% GST Exemption Included</span>
+            <span>💳 UPI / Card / NetBanking</span>
+            <span>🔒 256-Bit SSL Checkout</span>
+          </div>
+        </div>
+
         <!-- Action / Payment Button Section -->
         <div class="modal-action-bar" id="modalActionBar">
-          <button type="button" class="btn-modal-unlock" id="btnUnlockOption" onclick="openPaymentGateway()">
-            <span id="unlockBtnText">💳 Unlock Full Masterclass (Watch Real Video) — ₹499</span>
+          <button type="button" class="btn-modal-unlock" id="btnUnlockOption" onclick="openPaymentGateway(currentOptionId)">
+            <span id="unlockBtnText">💳 Payment Gateway — Unlock Masterclass Video (₹499)</span>
           </button>
           <span class="unlock-subtext">Instant Access • Secure 256-bit Encrypted Checkout • UPI, Cards & NetBanking</span>
         </div>
@@ -836,36 +1827,144 @@
   </div>
 
   <!-- =========================================================================
-       POPUP 2: PAYMENT GATEWAY MODAL
+       POPUP 2: PROFESSIONAL ADS & SAAS CHECKOUT GATEWAY (FOR ALL 3 OPTIONS)
        ========================================================================= -->
   <div class="modal-overlay" id="paymentGatewayModal" style="z-index: 1100;">
-    <div class="payment-modal-box">
-      <button class="modal-close-btn" onclick="closePaymentGateway()" style="position: absolute; top: 16px; right: 16px;">×</button>
-      
-      <span class="payment-badge">🔒 SECURE CHECKOUT</span>
-      <h3 class="payment-title">Unlock Full Masterclass Video</h3>
-      <p style="color: var(--text-sub); font-size: 0.92rem;" id="paymentModuleLabel">Option 01: Creative Mastery</p>
-      
-      <div class="payment-price-row">
-        <span>₹499</span>
-        <span style="font-size: 0.95rem; color: #94a3b8; font-weight: 500;">/ one-time lifetime</span>
+    <div class="pro-checkout-box">
+      <!-- Top Bar: Back Button, Trust Badge & Close -->
+      <div class="pro-checkout-header">
+        <button type="button" class="checkout-back-btn" onclick="closePaymentGateway()" title="Return to masterclass overview">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          <span>← Back</span>
+        </button>
+        <div class="checkout-brand-lock">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <span>256-BIT SSL ENCRYPTED GATEWAY</span>
+        </div>
+        <button class="modal-close-btn" onclick="closePaymentGateway()" aria-label="Close checkout">×</button>
       </div>
 
-      <!-- Dynamic UPI QR Code for instant payment -->
-      <div class="qr-container">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=globaldigipulse@upi%26pn=GlobalDigiPulse%26am=499%26cu=INR" alt="UPI Payment QR" class="qr-placeholder" id="qrImg">
+      <div class="pro-checkout-body">
+        <!-- 3 Options Segment Selector inside Checkout -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.1rem;">
+          <span style="font-size: 0.74rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">⚡ Payment Gateway • Choose Target Platform:</span>
+          <span style="font-size: 0.72rem; color: #38bdf8; font-weight: 700;">All 3 Available</span>
+        </div>
+        <div class="checkout-option-selector">
+          <button type="button" class="checkout-opt-btn" id="checkoutOptBtn1" onclick="switchCheckoutOption(1)">
+            <span>📸 Option 1: Instagram (₹499)</span>
+          </button>
+          <button type="button" class="checkout-opt-btn" id="checkoutOptBtn2" onclick="switchCheckoutOption(2)">
+            <span>🌐 Option 2: Facebook (₹499)</span>
+          </button>
+          <button type="button" class="checkout-opt-btn" id="checkoutOptBtn3" onclick="switchCheckoutOption(3)">
+            <span>▶️ Option 3: YouTube (₹499)</span>
+          </button>
+        </div>
+
+        <!-- Compact Order Summary Card (Clean & Valid Info for all 3 Options) -->
+        <div class="checkout-summary-card">
+          <div class="summary-compact-row">
+            <div class="summary-info-left">
+              <div class="summary-badge-line">
+                <span class="checkout-platform-pill" id="checkoutPlatformBadge">📸 INSTAGRAM MASTERCLASS</span>
+                <span class="checkout-guarantee-pill">🛡️ 18% GST Waived • Lifetime Access</span>
+              </div>
+              <h3 class="checkout-product-title" id="checkoutProductTitle">Instagram 3-Second Hook Formulas & High-Converting Video Ads</h3>
+            </div>
+            <div class="summary-price-right">
+              <div class="price-original-striked">₹2,499</div>
+              <div class="price-final-pay" id="checkoutTotalAmount">₹499</div>
+              <span class="price-discount-badge">80% OFF</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Method Tabs -->
+        <div class="checkout-payment-methods">
+          <div class="methods-tab-bar">
+            <button type="button" class="method-tab active" id="tabUpi" onclick="switchPaymentTab('upi')">
+              <span>⚡ Instant UPI</span>
+            </button>
+            <button type="button" class="method-tab" id="tabCard" onclick="switchPaymentTab('card')">
+              <span>💳 Card / Debit</span>
+            </button>
+            <button type="button" class="method-tab" id="tabNet" onclick="switchPaymentTab('net')">
+              <span>🏦 NetBanking</span>
+            </button>
+          </div>
+
+          <!-- Panel 1: UPI Pay -->
+          <div class="method-panel" id="panelUpi">
+            <p class="panel-instruction">Select your preferred UPI App or enter your UPI ID:</p>
+            <div class="upi-apps-row">
+              <button type="button" class="upi-app-btn active" onclick="selectUpiApp(this, 'gpay')">
+                <span>🟢</span> GPay
+              </button>
+              <button type="button" class="upi-app-btn" onclick="selectUpiApp(this, 'phonepe')">
+                <span>🟣</span> PhonePe
+              </button>
+              <button type="button" class="upi-app-btn" onclick="selectUpiApp(this, 'paytm')">
+                <span>🔵</span> Paytm
+              </button>
+              <button type="button" class="upi-app-btn" onclick="selectUpiApp(this, 'bhim')">
+                <span>🟠</span> BHIM
+              </button>
+            </div>
+            <div class="checkout-input-group">
+              <input type="text" id="upiIdInput" placeholder="username@okhdfcbank / mobile@upi" value="shriya@okhdfcbank" class="pro-input">
+              <span class="input-verified-tag">✓ VERIFIED</span>
+            </div>
+          </div>
+
+          <!-- Panel 2: Card Pay -->
+          <div class="method-panel" id="panelCard" style="display: none;">
+            <div class="checkout-input-group">
+              <input type="text" placeholder="Card Number (4242 •••• •••• 4242)" value="4532 8912 3421 9814" class="pro-input">
+              <span class="input-verified-tag">💳 VISA</span>
+            </div>
+            <div class="card-dual-row">
+              <input type="text" placeholder="MM / YY" value="12/28" class="pro-input" style="flex: 1;">
+              <input type="password" placeholder="CVV" value="882" class="pro-input" style="width: 100px;">
+            </div>
+          </div>
+
+          <!-- Panel 3: NetBanking -->
+          <div class="method-panel" id="panelNet" style="display: none;">
+            <p class="panel-instruction">Choose your bank for instant authorization:</p>
+            <div class="banks-grid">
+              <button type="button" class="bank-pill active" onclick="selectBank(this)">HDFC Bank</button>
+              <button type="button" class="bank-pill" onclick="selectBank(this)">ICICI Bank</button>
+              <button type="button" class="bank-pill" onclick="selectBank(this)">State Bank of India</button>
+              <button type="button" class="bank-pill" onclick="selectBank(this)">Axis Bank</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkout Action Button -->
+        <button type="button" class="pro-btn-checkout" id="proCheckoutSubmitBtn" onclick="simulatePaymentSuccess()">
+          <span style="font-size: 1.15rem;">🔒</span>
+          <span id="checkoutSubmitBtnText">Complete Payment (₹499) & Unlock Video</span>
+        </button>
+
+        <!-- Secondary Back Option -->
+        <div style="display: flex; justify-content: center; margin-top: -0.25rem;">
+          <button type="button" class="checkout-cancel-back-btn" onclick="closePaymentGateway()">
+            <span>← Back to Video Overview</span>
+          </button>
+        </div>
+
+        <!-- Trust Badges & Guarantee Row -->
+        <div class="checkout-trust-footer">
+          <div class="trust-icons-strip">
+            <span class="trust-item">🔒 PCI-DSS Certified</span>
+            <span class="trust-item">⚡ Instant Access</span>
+            <span class="trust-item">🛡️ 100% Secure Checkout</span>
+          </div>
+          <p class="trust-disclaimer">By clicking Complete Payment, you receive immediate unhindered stream access to this masterclass video. Official receipt generated automatically.</p>
+        </div>
+
       </div>
-      <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 1.2rem;">
-        Scan with Google Pay, PhonePe, Paytm, or any UPI app
-      </p>
-
-      <button type="button" class="btn-confirm-pay" onclick="simulatePaymentSuccess()">
-        <span>⚡ 1-Click Complete Payment & Reveal Real Video</span>
-      </button>
-
-      <p style="font-size: 0.78rem; color: #64748b; margin-top: 1rem;">
-        Guaranteed instant delivery • Receipt sent to registered email
-      </p>
     </div>
   </div>
 
@@ -875,64 +1974,64 @@
   </footer>
 
   <script>
-    // Module Data Store (Intro Video, Theory Info, Real Video)
+    // Platform Targeted Video Store (Instagram, Facebook, YouTube)
     const optionsData = {
       1: {
         id: 1,
-        badge: "Option 01 • Creative Mastery",
-        title: "3-Second Hook Formulas & High-Converting Video Ads",
+        platform: "Instagram",
+        badge: "📸 INSTAGRAM MASTERCLASS",
+        title: "Instagram 3-Second Hook Formulas & High-Converting Video Ads",
         price: "₹499",
         introVideo: "../assets/intro_option1.mp4",
         introPoster: "../assets/poster_option1.jpg",
         realVideo: "https://archive.org/download/bonus-video-2.mp-4/Bonus%20Video%202.mp4.mp4",
         realPoster: "../assets/poster_option1.jpg",
-        theoryOverview: "Over 80% of paid ad performance depends directly on your creative. If you cannot stop cold users within their first 3 seconds of scrolling, your ad spend is wasted. This masterclass breaks down the exact psychological framework behind scroll-stopping video ads.",
+        theoryOverview: "Over 80% of paid performance on Instagram depends directly on your creative. If you cannot stop cold users within their first 3 seconds of scrolling through Reels, ad spend is wasted. This masterclass provides the exact psychological framework behind scroll-stopping Instagram video ads.",
         theoryPoints: [
-          "<strong>The 3-Second Rule:</strong> Visual pattern interrupts (rapid motion, bold text overlays, direct camera callouts) that freeze thumb movement.",
+          "<strong>The 3-Second Rule:</strong> Visual pattern interrupts (rapid motion, bold text overlays, direct camera callouts) that freeze thumb movement on Reels and Stories.",
           "<strong>The 4-Part Creative Anatomy:</strong> 0-3s Hook → 4-12s Agitation of the core pain point → 13-25s Solution & Social Proof → 26-30s Clear Call-To-Action.",
-          "<strong>Dynamic Creative Testing (DCT):</strong> Uploading 3 hooks, 2 bodies, and 2 CTAs into a single Meta ad set to let the algorithm pinpoint the lowest CPA combination.",
-          "<strong>Smartphone UGC Production:</strong> How to shoot 5 scroll-stopping Reels on an everyday phone without expensive cameras or production studios."
+          "<strong>Dynamic Creative Testing (DCT):</strong> Uploading 3 hooks, 2 bodies, and 2 CTAs into a single Meta ad set to let the algorithm pinpoint the lowest CPA combination."
         ]
       },
       2: {
         id: 2,
-        badge: "Option 02 • Foundation & Protection",
-        title: "Verified Business Manager, GST Exemption & Account Recovery",
+        platform: "Facebook",
+        badge: "🌐 FACEBOOK MASTERCLASS",
+        title: "Verified Facebook Business Manager, GST Exemption & Account Recovery",
         price: "₹499",
         introVideo: "../assets/intro_option2.mp4",
         introPoster: "../assets/poster_option2.jpg",
-        realVideo: "https://archive.org/download/short-video.jpg/short%20video.jpg.mp4",
+        realVideo: "https://archive.org/download/bonus-video-2.jpg/2.%20create%20your%20facebook%20business%20manager%20account.jpg%20%282%29.mp4",
         realPoster: "../assets/poster_option2.jpg",
-        theoryOverview: "Meta's compliance AI bans thousands of ad accounts daily due to misconfigured Business Managers. This masterclass provides the exact administrative and technical setup required to maintain an enterprise-level, ban-proof advertising backend.",
+        theoryOverview: "Meta's compliance AI bans thousands of ad accounts daily due to misconfigured Business Managers. This masterclass provides the exact administrative and technical setup required to maintain an enterprise-level, ban-proof advertising backend on Facebook.",
         theoryPoints: [
           "<strong>Enterprise BM Verification:</strong> Step-by-step submission of business registration, domain verification, and utility proofs for verified green-shield status.",
-          "<strong>GST 18% Tax Exemption:</strong> Correct configuration of GSTIN in payment settings to legally save 18% tax surcharge on all ad spend.",
-          "<strong>Meta Conversions API (CAPI):</strong> Server-side event tracking via webhooks and Digistore to bypass iOS 14.5+ cookie restrictions and record 100% of purchase conversions.",
-          "<strong>4-Step Emergency Recovery Protocol:</strong> The exact internal appeal templates and escalation channels to unban disabled Facebook profiles and ad accounts within 48 hours."
+          "<strong>18% GST Tax Exemption:</strong> Correct configuration of GSTIN in payment settings to legally save 18% tax surcharge on all ad spend.",
+          "<strong>Meta Conversions API (CAPI):</strong> Server-side event tracking via webhooks and Digistore to bypass iOS restrictions and record 100% of purchase conversions."
         ]
       },
       3: {
         id: 3,
-        badge: "Option 03 • Scaling & ROAS",
-        title: "Advantage+ AI Campaigns, Slashing CPL & 6.4X ROAS Scaling",
+        platform: "YouTube",
+        badge: "▶️ YOUTUBE MASTERCLASS",
+        title: "YouTube Skippable Ads Setup, Slashing CPL & Scaled Conversions",
         price: "₹499",
         introVideo: "../assets/intro_option3.mp4",
-        introPoster: "../assets/poster_option3.jpg",
-        realVideo: "https://archive.org/download/short-video.jpg/short%20video%203.jpg.mp4",
-        realPoster: "../assets/poster_option3.jpg",
-        theoryOverview: "Scaling ad spend without blowing up your Cost Per Lead requires machine learning synergy. This masterclass demonstrates how to harness Meta Advantage+ shopping and lead campaigns to scale budgets horizontally while locking in high ROAS.",
+        introPoster: "../assets/ads_youtube_campaign.jpg",
+        realVideo: "https://archive.org/download/bonus-video-2.jpg/1.%20How%20to%20setup%20your%20first%20youtube%20campaign.jpg.mp4",
+        realPoster: "../assets/ads_youtube_campaign.jpg",
+        theoryOverview: "YouTube campaigns offer unparalleled high-intent buyer acquisition through Google search synergy. This masterclass demonstrates how to launch profitable skippable in-stream and in-feed video ads while slashing cost per lead and scaling budgets horizontally.",
         theoryPoints: [
-          "<strong>Advantage+ AI Audience Targeting:</strong> Letting Meta's machine learning find high-intent buyers rather than boxing campaigns into narrow, restrictive manual interests.",
-          "<strong>Slashing CPL to ₹2.60:</strong> Leveraging instant lead form micro-surveys with auto-fill fields to maximize lead completion rates at pennies per acquisition.",
-          "<strong>The 20% Budget Scaling Law:</strong> How and when to increase campaign budgets by 15-20% every 48 hours without triggering the algorithm's learning reset.",
-          "<strong>Attribution & ROAS Mathematics:</strong> Calculating True ROAS vs Blended ROAS across Facebook and Instagram to know exactly which ad sets are generating pure profit."
+          "<strong>High-Intent Search Targeting:</strong> Targeting users based on exact Google and YouTube search queries using Custom Intent Segments.",
+          "<strong>5-Second Anti-Waste Hook:</strong> Calling out your ideal customer immediately to ensure unqualified clicks skip before you are billed.",
+          "<strong>Conversion Tracking & Smart Bidding:</strong> Configuring Google tag conversion actions and leveraging Target CPA to lock in high ROAS."
         ]
       }
     };
 
     let currentOptionId = 1;
 
-    // Open Option Modal
+    // Open Option Modal (Step 2: Show Intro Video, Theory, and Unlock Button)
     function openOptionModal(optId) {
       currentOptionId = optId;
       const opt = optionsData[optId];
@@ -940,7 +2039,6 @@
 
       document.getElementById('modalOptionBadge').textContent = opt.badge;
       document.getElementById('modalOptionTitle').textContent = opt.title;
-      document.getElementById('paymentModuleLabel').textContent = `${opt.badge}: ${opt.title}`;
       document.getElementById('modalTheoryOverview').textContent = opt.theoryOverview;
 
       // Populate Theory points
@@ -953,30 +2051,48 @@
       });
 
       // Check if user has already unlocked this option
-      const isUnlocked = localStorage.getItem(`unlocked_option_${optId}`) === 'true';
+      const isUnlocked = localStorage.getItem(`unlocked_option_${optId}`) === 'true' || 
+                         localStorage.getItem(`unlocked_platform_${optId}`) === 'true';
       const player = document.getElementById('modalVideoPlayer');
       const source = document.getElementById('modalVideoSource');
       const banner = document.getElementById('unlockedBanner');
       const actionBtn = document.getElementById('btnUnlockOption');
       const btnText = document.getElementById('unlockBtnText');
 
+      // Update Modal Payment Details
+      const modalPayPrice = document.getElementById('modalPayPrice');
+      const modalPayStatusPill = document.getElementById('modalPayStatusPill');
+      if (modalPayPrice) modalPayPrice.textContent = opt.price;
+      if (modalPayStatusPill) {
+        if (isUnlocked) {
+          modalPayStatusPill.className = 'pay-status-pill pay-status-unlocked';
+          modalPayStatusPill.innerHTML = `<span>✅ ${opt.price} Paid in Full • Active</span>`;
+        } else {
+          modalPayStatusPill.className = 'pay-status-pill pay-status-locked';
+          modalPayStatusPill.innerHTML = '<span>🔒 Payment Required</span>';
+        }
+      }
+
       if (isUnlocked) {
-        // Show real video
+        // Show real targeted video (Step 4)
         banner.style.display = 'flex';
+        banner.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>🎉 Payment Complete! Real Targeted ${opt.platform} Video Unlocked & Streaming Below.</span>`;
         player.poster = opt.realPoster;
         source.src = opt.realVideo;
-        actionBtn.style.background = 'linear-gradient(135deg, #0284c7, #2563eb)';
-        btnText.innerHTML = '▶ Real Masterclass Unlocked (Playing Above)';
-        actionBtn.onclick = function() { player.scrollIntoView({ behavior: 'smooth' }); player.play(); };
       } else {
-        // Show intro video
+        // Show intro video & payment unlock option
         banner.style.display = 'none';
         player.poster = opt.introPoster;
         source.src = opt.introVideo;
-        actionBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-        btnText.innerHTML = `💳 Unlock Full Masterclass (Watch Real Video) — ${opt.price}`;
-        actionBtn.onclick = openPaymentGateway;
       }
+
+      // Always keep Payment Gateway button here
+      actionBtn.style.background = opt.id === 1 
+        ? 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%)' 
+        : (opt.id === 2 ? 'linear-gradient(135deg, #1877f2 0%, #0099ff 100%)' : 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)');
+      btnText.innerHTML = `💳 Payment Gateway — Unlock ${opt.platform} Video (${opt.price})`;
+      actionBtn.onclick = function() { openPaymentGateway(optId); };
 
       player.load();
       document.getElementById('optionModal').style.display = 'flex';
@@ -988,30 +2104,143 @@
       document.getElementById('optionModal').style.display = 'none';
     }
 
-    // Payment Gateway Flow
-    function openPaymentGateway() {
-      const opt = optionsData[currentOptionId];
-      document.getElementById('paymentModuleLabel').textContent = `${opt.badge}: ${opt.title}`;
+    // Step 3: Professional Payment Gateway Flow (For all 3 options)
+    function switchCheckoutOption(optId) {
+      currentOptionId = optId;
+      const opt = optionsData[optId];
+      if (!opt) return;
+
+      // Update button active state
+      for (let i = 1; i <= 3; i++) {
+        const btn = document.getElementById(`checkoutOptBtn${i}`);
+        if (btn) {
+          btn.className = `checkout-opt-btn${i === optId ? ' active-opt-' + i : ''}`;
+        }
+      }
+
+      const badgeEl = document.getElementById('checkoutPlatformBadge');
+      if (badgeEl) {
+        badgeEl.textContent = opt.badge;
+        if (opt.id === 1) {
+          badgeEl.style.color = '#fb7185';
+          badgeEl.style.borderColor = 'rgba(225, 48, 108, 0.4)';
+          badgeEl.style.background = 'rgba(225, 48, 108, 0.15)';
+        } else if (opt.id === 2) {
+          badgeEl.style.color = '#38bdf8';
+          badgeEl.style.borderColor = 'rgba(24, 119, 242, 0.4)';
+          badgeEl.style.background = 'rgba(24, 119, 242, 0.15)';
+        } else {
+          badgeEl.style.color = '#f87171';
+          badgeEl.style.borderColor = 'rgba(239, 68, 68, 0.4)';
+          badgeEl.style.background = 'rgba(239, 68, 68, 0.15)';
+        }
+      }
+
+      const titleEl = document.getElementById('checkoutProductTitle');
+      if (titleEl) titleEl.textContent = opt.title;
+
+      const descEl = document.getElementById('checkoutProductDesc');
+      if (descEl) descEl.textContent = `Original HD ${opt.platform} Masterclass Video • Theoretical Strategy Blueprint • Lifetime Video Access`;
+
+      const subtotalEl = document.getElementById('checkoutPriceSubtotal');
+      if (subtotalEl) subtotalEl.textContent = opt.price;
+
+      const totalEl = document.getElementById('checkoutTotalAmount');
+      if (totalEl) totalEl.textContent = opt.price;
+
+      const submitTextEl = document.getElementById('checkoutSubmitBtnText');
+      if (submitTextEl) {
+        submitTextEl.textContent = `Pay ${opt.price} & Unlock ${opt.platform} Masterclass`;
+      }
+
+      const submitBtn = document.getElementById('proCheckoutSubmitBtn');
+      if (submitBtn) {
+        if (opt.id === 1) {
+          submitBtn.style.background = 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%)';
+          submitBtn.style.boxShadow = '0 6px 20px rgba(225, 48, 108, 0.45)';
+        } else if (opt.id === 2) {
+          submitBtn.style.background = 'linear-gradient(135deg, #1877f2 0%, #0099ff 100%)';
+          submitBtn.style.boxShadow = '0 6px 20px rgba(24, 119, 242, 0.45)';
+        } else {
+          submitBtn.style.background = 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)';
+          submitBtn.style.boxShadow = '0 6px 20px rgba(239, 68, 68, 0.45)';
+        }
+      }
+    }
+
+    function openPaymentGateway(optId) {
+      if (optId) {
+        currentOptionId = optId;
+      }
+      switchCheckoutOption(currentOptionId);
+      switchPaymentTab('upi');
       document.getElementById('paymentGatewayModal').style.display = 'flex';
+    }
+
+    function switchPaymentTab(tabName) {
+      document.querySelectorAll('.method-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.method-panel').forEach(p => p.style.display = 'none');
+
+      if (tabName === 'upi') {
+        document.getElementById('tabUpi')?.classList.add('active');
+        const p = document.getElementById('panelUpi');
+        if (p) p.style.display = 'block';
+      } else if (tabName === 'card') {
+        document.getElementById('tabCard')?.classList.add('active');
+        const p = document.getElementById('panelCard');
+        if (p) p.style.display = 'block';
+      } else if (tabName === 'net') {
+        document.getElementById('tabNet')?.classList.add('active');
+        const p = document.getElementById('panelNet');
+        if (p) p.style.display = 'block';
+      }
+    }
+
+    function selectUpiApp(btn, app) {
+      document.querySelectorAll('.upi-app-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const input = document.getElementById('upiIdInput');
+      if (input) {
+        input.value = `shriya@${app === 'gpay' ? 'okhdfcbank' : (app === 'phonepe' ? 'ybl' : (app === 'paytm' ? 'paytm' : 'upi'))}`;
+      }
+    }
+
+    function selectBank(btn) {
+      document.querySelectorAll('.bank-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     }
 
     function closePaymentGateway() {
       document.getElementById('paymentGatewayModal').style.display = 'none';
     }
 
-    // Simulate Payment Success
+    // Step 4: After Payment is done -> Show Original Targeted Video
     function simulatePaymentSuccess() {
       const opt = optionsData[currentOptionId];
       // Save unlock status in localStorage
       localStorage.setItem(`unlocked_option_${currentOptionId}`, 'true');
+      localStorage.setItem(`unlocked_platform_${currentOptionId}`, 'true');
 
-      // Update card badge in dashboard
+      // Update card badge and buttons in dashboard
       updateDashboardBadges();
 
       // Close payment modal
       closePaymentGateway();
 
-      // Update Option Modal to show Real Video
+      // Populate Option Modal to show Real Video
+      document.getElementById('modalOptionBadge').textContent = opt.badge;
+      document.getElementById('modalOptionTitle').textContent = opt.title;
+      document.getElementById('modalTheoryOverview').textContent = opt.theoryOverview;
+      const listEl = document.getElementById('modalTheoryList');
+      if (listEl) {
+        listEl.innerHTML = '';
+        opt.theoryPoints.forEach(pt => {
+          const li = document.createElement('li');
+          li.innerHTML = `<span class="theory-check-icon">✓</span><span>${pt}</span>`;
+          listEl.appendChild(li);
+        });
+      }
+
       const banner = document.getElementById('unlockedBanner');
       const player = document.getElementById('modalVideoPlayer');
       const source = document.getElementById('modalVideoSource');
@@ -1019,30 +2248,137 @@
       const btnText = document.getElementById('unlockBtnText');
 
       banner.style.display = 'flex';
-      banner.scrollIntoView({ behavior: 'smooth' });
-
+      banner.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <span>🎉 Payment Complete! Real Targeted ${opt.platform} Video Unlocked & Streaming Below.</span>`;
+      
       player.poster = opt.realPoster;
       source.src = opt.realVideo;
       player.load();
       player.play();
 
-      actionBtn.style.background = 'linear-gradient(135deg, #0284c7, #2563eb)';
-      btnText.innerHTML = '▶ Real Masterclass Unlocked (Playing Above)';
-      actionBtn.onclick = function() { player.scrollIntoView({ behavior: 'smooth' }); player.play(); };
+      // Keep Payment Gateway button here
+      actionBtn.style.background = opt.id === 1 
+        ? 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%)' 
+        : (opt.id === 2 ? 'linear-gradient(135deg, #1877f2 0%, #0099ff 100%)' : 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)');
+      btnText.innerHTML = `💳 Payment Gateway — Unlock ${opt.platform} Video (${opt.price})`;
+      actionBtn.onclick = function() { openPaymentGateway(currentOptionId); };
+
+      // Ensure Option Modal is open so video streams immediately
+      document.getElementById('optionModal').style.display = 'flex';
+      banner.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Update Dashboard Card Badges
+    // Update Dashboard Card Badges, Payment Details & Buttons for All 3 Options
     function updateDashboardBadges() {
       for (let i = 1; i <= 3; i++) {
         const badgeEl = document.getElementById(`cardStatusBadge${i}`);
-        if (!badgeEl) continue;
-        const isUnlocked = localStorage.getItem(`unlocked_option_${i}`) === 'true';
-        if (isUnlocked) {
-          badgeEl.className = 'option-status-badge status-unlocked';
-          badgeEl.innerHTML = '<span>✅ Unlocked & Ready</span>';
-        } else {
-          badgeEl.className = 'option-status-badge status-locked';
-          badgeEl.innerHTML = '<span>🔒 Click to Preview</span>';
+        const payBtn = document.getElementById(`cardPayBtn${i}`);
+        const payStatusPill = document.getElementById(`payStatusPill${i}`);
+        const payMetaLines = document.getElementById(`payMetaLines${i}`);
+        const payAmountMain = document.getElementById(`payAmountMain${i}`);
+        const opt = optionsData[i];
+        const isUnlocked = localStorage.getItem(`unlocked_option_${i}`) === 'true' || 
+                           localStorage.getItem(`unlocked_platform_${i}`) === 'true';
+
+        // 1. Update Preview Card Badge
+        if (badgeEl) {
+          if (isUnlocked) {
+            badgeEl.className = 'option-status-badge status-unlocked';
+            badgeEl.innerHTML = '<span>✅ Unlocked & Ready</span>';
+          } else {
+            badgeEl.className = 'option-status-badge status-locked';
+            badgeEl.innerHTML = '<span>🔒 Click to Preview</span>';
+          }
+        }
+
+        // 2. Update Card Payment Details Box (Compact)
+        if (payStatusPill) {
+          if (isUnlocked) {
+            payStatusPill.className = 'pay-status-pill pay-status-unlocked';
+            payStatusPill.innerHTML = '<span>✅ Paid & Active</span>';
+            if (payAmountMain) payAmountMain.style.color = '#34d399';
+          } else {
+            payStatusPill.className = 'pay-status-pill pay-status-locked';
+            payStatusPill.innerHTML = '<span>🛡️ 18% GST Waived</span>';
+          }
+        }
+
+        // 3. Update Single Payment / Stream Button
+        if (payBtn) {
+          if (isUnlocked) {
+            payBtn.style.background = 'linear-gradient(135deg, #059669 0%, #10b981 100%)';
+            payBtn.style.boxShadow = '0 6px 20px rgba(16, 185, 129, 0.4)';
+            payBtn.innerHTML = `<span>▶️ Stream Full ${opt.platform} Masterclass</span>`;
+            payBtn.onclick = function(e) { e.stopPropagation(); openOptionModal(i); };
+          } else {
+            if (i === 1) {
+              payBtn.style.background = 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%)';
+              payBtn.style.boxShadow = '0 4px 18px rgba(225, 48, 108, 0.4)';
+            } else if (i === 2) {
+              payBtn.style.background = 'linear-gradient(135deg, #1877f2 0%, #0099ff 100%)';
+              payBtn.style.boxShadow = '0 4px 18px rgba(24, 119, 242, 0.4)';
+            } else {
+              payBtn.style.background = 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)';
+              payBtn.style.boxShadow = '0 4px 18px rgba(239, 68, 68, 0.4)';
+            }
+            payBtn.innerHTML = `<span>💳 Pay ${opt.price} & Unlock ${opt.platform} Masterclass</span>`;
+            payBtn.onclick = function(e) { e.stopPropagation(); openPaymentGateway(i); };
+          }
+        }
+      }
+    }
+
+    // Direct Card Payment Handler
+    function handleCardPaymentAction(optId) {
+      const isUnlocked = localStorage.getItem(`unlocked_option_${optId}`) === 'true' || 
+                         localStorage.getItem(`unlocked_platform_${optId}`) === 'true';
+      if (isUnlocked) {
+        openOptionModal(optId);
+      } else {
+        openPaymentGateway(optId);
+      }
+    }
+
+    // Interactive Pipeline Jump
+    function jumpToTrack(trackId) {
+      filterTrack('all');
+      const card = document.getElementById(`trackCard${trackId}`);
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        card.classList.remove('highlight-pulse');
+        void card.offsetWidth;
+        card.classList.add('highlight-pulse');
+      }
+    }
+
+    // Interactive Track Filter
+    function filterTrack(trackId) {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => btn.classList.remove('active'));
+
+      if (trackId === 'all') {
+        const btnAll = document.getElementById('filterBtnAll');
+        if (btnAll) btnAll.classList.add('active');
+        for (let i = 1; i <= 3; i++) {
+          const card = document.getElementById(`trackCard${i}`);
+          if (card) {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+          }
+        }
+      } else {
+        const activeBtn = document.getElementById(`filterBtn${trackId}`);
+        if (activeBtn) activeBtn.classList.add('active');
+        for (let i = 1; i <= 3; i++) {
+          const card = document.getElementById(`trackCard${i}`);
+          if (card) {
+            if (i === trackId) {
+              card.style.display = 'flex';
+              card.style.opacity = '1';
+            } else {
+              card.style.display = 'none';
+            }
+          }
         }
       }
     }
@@ -1066,5 +2402,6 @@
       }
     });
   </script>
+  <script src="../js/madgicx-motion.js?v=1.0"></script>
 </body>
 </html>

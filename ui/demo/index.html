@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Digi Pulse — Interactive Complete User Journey Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+
+  <!-- Ambient Glowing Blobs -->
+  <div class="ambient-glow-wrapper">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+
+  <!-- Top Sticky Demo Header -->
+  <header class="demo-header">
+    <div class="demo-header-inner">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="/index.html" class="demo-brand">
+          <div class="demo-brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <span class="demo-brand-title">GLOBAL DIGI PULSE</span>
+        </a>
+        <span class="demo-badge-pill">Interactive Product Walkthrough</span>
+      </div>
+
+      <!-- Step Progress Widget -->
+      <div class="demo-progress-widget">
+        <span class="progress-text-label" id="progressStepText">Step <strong>1</strong> of 10</span>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+        <a href="/index.html" class="btn-exit-demo">Exit to Live Site ✕</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Horizontal Step-by-Step Navigation Bar -->
+  <nav class="journey-timeline-bar">
+    <div class="journey-steps-track" id="timelineStepsTrack">
+      <!-- Generated dynamically by demo.js -->
+    </div>
+  </nav>
+
+  <!-- Main Demo Canvas Container -->
+  <main class="demo-stage-container">
+    
+    <!-- Stage Header Text -->
+    <div style="text-align: center; max-width: 860px; margin: 0 auto;">
+      <div class="additional-heading" id="stageStepBadge">
+        <span>⚡ STEP 01 • WEBSITE ENTRY & VALUE DISCOVERY</span>
+      </div>
+      <h1 class="stage-main-title" id="stageMainTitle">
+        Land on Global Digi Pulse & Discover the Ecosystem
+      </h1>
+      <p class="stage-main-desc" id="stageMainDesc">
+        The visitor arrives on the official homepage. They are greeted by the flagship headline, verified social proof metrics, and three specialized learning tracks designed to scale digital advertising.
+      </p>
+
+      <!-- Primary Action CTA Button -->
+      <div style="display: flex; justify-content: center; margin-bottom: 2.5rem;">
+        <div class="animated-button">
+          <button type="button" class="btn-primary-action" id="stagePrimaryBtn" onclick="navigateStep(1)">
+            <span id="stagePrimaryBtnText">Explore Available Masterclasses →</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Madgicx Animated Screen Container with Dual Rotating Conic Beams -->
+    <div class="animated-screen">
+      
+      <!-- Exclusive Floating Badge for Step 9/10 -->
+      <div id="demoFloatingBadge" class="screen-badge_component" style="display: none;">
+        <div class="screen-badge_bage">
+          <div>AI Bidding - 6.4X ROAS Verified!</div>
+        </div>
+      </div>
+
+      <div class="screen_component">
+        
+        <!-- Screen Top HUD Bar -->
+        <div class="screen-hud-bar">
+          <div class="screen-hud-dots">
+            <span class="screen-hud-dot" style="background: #ef4444;"></span>
+            <span class="screen-hud-dot" style="background: #f59e0b;"></span>
+            <span class="screen-hud-dot" style="background: #10b981;"></span>
+          </div>
+
+          <div class="screen-hud-url" id="screenHudUrl">
+            https://globaldigipulse.com/index.html
+          </div>
+
+          <div class="screen-hud-step-tag" id="screenHudTag">
+            LANDING PAGE • HERO ECOSYSTEM
+          </div>
+        </div>
+
+        <!-- Dynamic Step Screen Stage -->
+        <div class="screen-stage-content">
+
+          <!-- ========================================================
+               STAGE VIEW 0: Step 1 – Website Entry & Landing
+               ======================================================== -->
+          <div class="journey-step-view is-active" id="journeyView0">
+            <div style="text-align: center; max-width: 780px; margin: 0 auto;">
+              <span style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 0.78rem; font-weight: 700; padding: 0.35rem 0.95rem; border-radius: 999px; display: inline-flex; align-items: center; gap: 0.45rem; margin-bottom: 1.25rem;">
+                <span class="video-hud-pulse"></span>
+                <span>GLOBAL DIGI PULSE — OFFICIAL MARKETING PORTAL</span>
+              </span>
+
+              <h2 style="font-family: var(--font-heading); font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 900; line-height: 1.12; color: #fff; margin-bottom: 1.25rem; letter-spacing: -0.03em;">
+                Learn. Create.<br>
+                Run Ads. <span style="background: linear-gradient(135deg, #38bdf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Grow.</span>
+              </h2>
+
+              <p style="font-size: 1.15rem; color: #94a3b8; line-height: 1.6; margin-bottom: 2rem;">
+                Your complete advertising ecosystem for skills, strategy, and verified campaign scaling. Master 3-second viral hooks, ban-proof Facebook Business Managers, and autonomous Meta optimization.
+              </p>
+
+              <!-- Hero Feature Pills -->
+              <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-bottom: 2.25rem;">
+                <span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.85rem; color: #fff;">🎓 Expert-Led Masterclasses</span>
+                <span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.85rem; color: #fff;">🛠️ Campaign Tools & Resources</span>
+                <span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.85rem; color: #fff;">🛡️ Exclusive Enterprise Access</span>
+                <span style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.85rem; color: #fff;">♾️ Lifetime Learning</span>
+              </div>
+
+              <!-- Trust Stats Row -->
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 18px; padding: 1.25rem; margin-top: 1.5rem;">
+                <div>
+                  <div style="font-size: 1.4rem; font-weight: 800; color: #38bdf8;">12,400+</div>
+                  <div style="font-size: 0.75rem; color: #94a3b8;">Active Marketers</div>
+                </div>
+                <div>
+                  <div style="font-size: 1.4rem; font-weight: 800; color: #f59e0b;">4.9 ★★★★★</div>
+                  <div style="font-size: 0.75rem; color: #94a3b8;">Student Rating</div>
+                </div>
+                <div>
+                  <div style="font-size: 1.4rem; font-weight: 800; color: #34d399;">₹14.8 Cr+</div>
+                  <div style="font-size: 0.75rem; color: #94a3b8;">Ad Revenue Scaled</div>
+                </div>
+                <div>
+                  <div style="font-size: 1.4rem; font-weight: 800; color: #c084fc;">Lifetime</div>
+                  <div style="font-size: 0.75rem; color: #94a3b8;">Instant Access</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               STAGE VIEW 1: Step 2 – Service / Curriculum Selection
+               ======================================================== -->
+          <div class="journey-step-view" id="journeyView1">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+              <span style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; text-transform: uppercase;">Step 2: Interactive Catalog Selection</span>
+              <h3 style="color: #fff; font-size: 1.5rem; font-weight: 800; margin-top: 0.35rem;">Choose Your Specialized Social Media Track</h3>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;">
+              <!-- Track 1 -->
+              <div class="features-screen_feature course-select-card is-selected" onclick="selectCourseTrack(1)" style="text-align: left; align-items: flex-start; padding: 1.5rem; border: 2px solid #ec4899; background: rgba(236, 72, 153, 0.08);">
+                <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 0.65rem;">
+                  <span style="background: rgba(236, 72, 153, 0.2); color: #f472b6; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 999px;">TRACK 01 • VIRAL REELS</span>
+                  <span style="background: #ec4899; color: #fff; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 999px;">80% OFF</span>
+                </div>
+                <h4 style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem;">Instagram 3-Sec Hook Formulas & Video Ads</h4>
+                <p style="color: #94a3b8; font-size: 0.825rem; line-height: 1.45; margin-bottom: 1rem;">Stop the mindless scroll on Reels and Stories. Access tested psychological hook scripts and UGC architectures.</p>
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: auto; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                  <div>
+                    <span style="font-size: 1.35rem; font-weight: 900; color: #34d399;">₹499</span>
+                    <span style="font-size: 0.8rem; color: #64748b; text-decoration: line-through; margin-left: 0.35rem;">₹2,499</span>
+                  </div>
+                  <span style="color: #f472b6; font-size: 0.85rem; font-weight: 700;">✓ Selected</span>
+                </div>
+              </div>
+
+              <!-- Track 2 -->
+              <div class="features-screen_feature course-select-card" onclick="selectCourseTrack(2)" style="text-align: left; align-items: flex-start; padding: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 0.65rem;">
+                  <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 999px;">TRACK 02 • COMPLIANCE</span>
+                  <span style="background: #0284c7; color: #fff; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 999px;">80% OFF</span>
+                </div>
+                <h4 style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem;">Verified BM, 18% GST Exemption & Recovery</h4>
+                <p style="color: #94a3b8; font-size: 0.825rem; line-height: 1.45; margin-bottom: 1rem;">Configure enterprise Business Managers, sync CAPI webhooks, and legally waive 18% GST ad tax on invoices.</p>
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: auto; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                  <div>
+                    <span style="font-size: 1.35rem; font-weight: 900; color: #34d399;">₹499</span>
+                    <span style="font-size: 0.8rem; color: #64748b; text-decoration: line-through; margin-left: 0.35rem;">₹2,499</span>
+                  </div>
+                  <span style="color: #38bdf8; font-size: 0.85rem; font-weight: 700;">Click to Choose</span>
+                </div>
+              </div>
+
+              <!-- Track 3 -->
+              <div class="features-screen_feature course-select-card" onclick="selectCourseTrack(3)" style="text-align: left; align-items: flex-start; padding: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 0.65rem;">
+                  <span style="background: rgba(239, 68, 68, 0.2); color: #f87171; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 999px;">TRACK 03 • YOUTUBE SCALING</span>
+                  <span style="background: #dc2626; color: #fff; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 999px;">80% OFF</span>
+                </div>
+                <h4 style="color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem;">YouTube Skippable In-Stream Ads & ROAS</h4>
+                <p style="color: #94a3b8; font-size: 0.825rem; line-height: 1.45; margin-bottom: 1rem;">Master YouTube skippable ads, target high-intent search audience segments, and scale conversions profitably.</p>
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: auto; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08);">
+                  <div>
+                    <span style="font-size: 1.35rem; font-weight: 900; color: #34d399;">₹499</span>
+                    <span style="font-size: 0.8rem; color: #64748b; text-decoration: line-through; margin-left: 0.35rem;">₹2,499</span>
+                  </div>
+                  <span style="color: #f87171; font-size: 0.85rem; font-weight: 700;">Click to Choose</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               STAGE VIEW 2: Step 3 – Order Summary & Price Breakdown
+               ======================================================== -->
+          <div class="journey-step-view" id="journeyView2">
+            <div style="max-width: 640px; margin: 0 auto; background: rgba(13, 9, 34, 0.85); border: 1px solid rgba(202, 183, 255, 0.25); border-radius: 20px; padding: 1.75rem; box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+              <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.85rem; margin-bottom: 1.25rem;">
+                <div>
+                  <span style="font-size: 0.725rem; color: #c084fc; font-weight: 800; text-transform: uppercase;">SELECTED CURRICULUM</span>
+                  <h4 id="checkoutSelectedCourseTitle" style="color: #fff; font-size: 1.15rem; font-weight: 800; margin-top: 0.2rem;">Instagram 3-Sec Hook Formulas & Reels</h4>
+                </div>
+                <span style="background: rgba(52, 211, 153, 0.15); color: #34d399; font-weight: 800; font-size: 0.75rem; padding: 0.3rem 0.7rem; border-radius: 999px;">80% DISCOUNT</span>
+              </div>
+
+              <!-- Price Breakdown Table -->
+              <div style="display: grid; grid-template-columns: 1fr auto; gap: 0.65rem; font-size: 0.875rem; color: #cbd5e1; margin-bottom: 1.25rem;">
+                <div>Standard Course Value:</div>
+                <div style="text-decoration: line-through; color: #64748b;">₹2,499</div>
+                
+                <div>Introductory Member Discount:</div>
+                <div style="color: #38bdf8; font-weight: 700;">- ₹2,000</div>
+                
+                <div>18% GST Exemption Benefit:</div>
+                <div style="color: #34d399; font-weight: 700;">Waived (Official GSTIN)</div>
+                
+                <div style="font-weight: 800; color: #fff; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.65rem; font-size: 1.05rem;">Total Amount Payable:</div>
+                <div style="font-weight: 900; color: #34d399; font-size: 1.35rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.65rem;">₹499.00</div>
+              </div>
+
+              <!-- Payment Method Selector Tabs -->
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem;">
+                <button type="button" class="gateway-tab-btn is-active" id="tabGateway_upi" onclick="selectGateway('upi')" style="flex: 1; padding: 0.65rem; border-radius: 10px; border: 1px solid #38bdf8; background: rgba(56, 189, 248, 0.15); color: #fff; font-size: 0.825rem; font-weight: 700; cursor: pointer;">⚡ Instant UPI</button>
+                <button type="button" class="gateway-tab-btn" id="tabGateway_card" onclick="selectGateway('card')" style="flex: 1; padding: 0.65rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.825rem; font-weight: 600; cursor: pointer;">💳 Card / Debit</button>
+                <button type="button" class="gateway-tab-btn" id="tabGateway_net" onclick="selectGateway('net')" style="flex: 1; padding: 0.65rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.825rem; font-weight: 600; cursor: pointer;">🏛️ NetBanking</button>
+              </div>
+
+              <!-- UPI Details Pane -->
+              <div id="gatewayPaneUPI">
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                  <span style="flex: 1; text-align: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0.45rem; font-size: 0.8rem; color: #fff;">🟢 GPay</span>
+                  <span style="flex: 1; text-align: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0.45rem; font-size: 0.8rem; color: #fff;">🟣 PhonePe</span>
+                  <span style="flex: 1; text-align: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0.45rem; font-size: 0.8rem; color: #fff;">🔵 Paytm</span>
+                  <span style="flex: 1; text-align: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0.45rem; font-size: 0.8rem; color: #fff;">🟠 BHIM</span>
+                </div>
+
+                <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.65rem 1rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+                  <span style="color: #fff; font-family: monospace; font-size: 0.9rem;">shriya@okhdfcbank</span>
+                  <span style="color: #34d399; font-size: 0.78rem; font-weight: 800;">✓ VERIFIED</span>
+                </div>
+              </div>
+
+              <!-- Card Pane -->
+              <div id="gatewayPaneCard" style="display: none; padding: 1rem 0;">
+                <p style="color: #94a3b8; font-size: 0.85rem; text-align: center;">Direct 256-bit SSL encrypted card clearance supports Visa, MasterCard, RuPay, and Amex.</p>
+              </div>
+
+              <!-- NetBanking Pane -->
+              <div id="gatewayPaneNet" style="display: none; padding: 1rem 0;">
+                <p style="color: #94a3b8; font-size: 0.85rem; text-align: center;">Supports HDFC, ICICI, SBI, Axis, Kotak, and 50+ Indian commercial banks.</p>
+              </div>
+
+              <button type="button" onclick="goToStep(3)" style="width: 100%; background: linear-gradient(135deg, #f97316, #ef4444); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-size: 0.95rem; font-weight: 800; cursor: pointer; box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);">
+                🔒 Proceed to Pay ₹499 & Open Dynamic QR Code →
+              </button>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               STAGE VIEW 3: Step 4 – Secure Dynamic UPI QR & Clearance
+               ======================================================== -->
+          <div class="journey-step-view" id="journeyView3">
+            <div style="max-width: 540px; margin: 0 auto; text-align: center; background: rgba(13, 9, 34, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 20px; padding: 2rem; box-shadow: 0 25px 60px rgba(0,0,0,0.7);">
+              <span style="color: #38bdf8; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">REAL-TIME GATEWAY SETTLEMENT</span>
+              <h3 style="color: #fff; font-size: 1.35rem; font-weight: 800; margin: 0.35rem 0 1.25rem;">Scan & Pay with Any UPI App</h3>
+
+              <!-- Holographic Dynamic QR Code Frame -->
+              <div style="width: 180px; height: 180px; margin: 0 auto 1.25rem; background: #ffffff; border-radius: 18px; padding: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 35px rgba(56, 189, 248, 0.4);">
+                <svg width="156" height="156" viewBox="0 0 100 100" fill="#0f172a">
+                  <rect x="5" y="5" width="28" height="28" rx="4" fill="#0f172a"></rect>
+                  <rect x="9" y="9" width="20" height="20" rx="2" fill="#fff"></rect>
+                  <rect x="13" y="13" width="12" height="12" rx="2" fill="#0f172a"></rect>
+                  <rect x="67" y="5" width="28" height="28" rx="4" fill="#0f172a"></rect>
+                  <rect x="71" y="9" width="20" height="20" rx="2" fill="#fff"></rect>
+                  <rect x="75" y="13" width="12" height="12" rx="2" fill="#0f172a"></rect>
+                  <rect x="5" y="67" width="28" height="28" rx="4" fill="#0f172a"></rect>
+                  <rect x="9" y="71" width="20" height="20" rx="2" fill="#fff"></rect>
+                  <rect x="13" y="75" width="12" height="12" rx="2" fill="#0f172a"></rect>
+                  <circle cx="50" cy="50" r="14" fill="#0284c7"></circle>
+                  <text x="50" y="54" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">UPI</text>
+                  <rect x="38" y="10" width="8" height="8" fill="#0f172a"></rect>
+                  <rect x="50" y="15" width="6" height="12" fill="#0f172a"></rect>
+                  <rect x="38" y="75" width="10" height="6" fill="#0f172a"></rect>
+                  <rect x="75" y="45" width="14" height="6" fill="#0f172a"></rect>
+                  <rect x="42" y="85" width="18" height="6" fill="#0f172a"></rect>
+                </svg>
+              </div>
+
+              <div style="font-size: 1.4rem; font-weight: 900; color: #34d399; margin-bottom: 0.25rem;">Amount: ₹499.00</div>
+              <div style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1rem;">
+                Payment window expires in: <strong id="qrCountdownText" style="color:#f59e0b;">04:59</strong>
+              </div>
+
+              <!-- Webhook Status Pill -->
+              <div id="qrWebhookStatusBadge" style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 10px; padding: 0.75rem; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 0.6rem; color: #38bdf8; font-size: 0.85rem; font-weight: 700;">
+                <span class="video-hud-pulse"></span>
+                <span>Listening for UPI Webhook Clearance...</span>
+              </div>
+
+              <!-- Simulation Button -->
+              <button type="button" id="btnSimulatePayment" onclick="simulatePaymentWebhook()" style="width: 100%; background: linear-gradient(135deg, #10b981, #0284c7); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-size: 0.92rem; font-weight: 800; cursor: pointer; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);">
+                <span>⚡ Simulate Live Bank Payment Confirmation (Instant) →</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               STAGE VIEW 4: Step 5 – Automated Fast-Pass Activation
+               ======================================================== -->
+          <div class="journey-step-view" id="journeyView4">
+            <div style="max-width: 600px; margin: 0 auto; background: rgba(13, 9, 34, 0.9); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 20px; padding: 2rem; text-align: center; box-shadow: 0 25px 60px rgba(0,0,0,0.7);">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(52, 211, 153, 0.15); border: 2px solid #34d399; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; color: #34d399; font-size: 1.75rem;">
+                ✓
+              </div>
+              <span style="color: #34d399; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">PAYMENT CONFIRMED • ORDER #GDP-8824</span>
+              <h3 style="color: #fff; font-size: 1.45rem; font-weight: 800; margin: 0.35rem 0 0.75rem;">Your Fast-Pass Student ID is Ready</h3>
+              <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 1.5rem;">Your official credentials have been provisioned in the student database with lifetime curriculum access.</p>
+
+              <!-- Student Credential Badge Card -->
+              <div style="background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 14px; padding: 1.4rem; text-align: left; margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem;">
+                  <span style="color: #94a3b8; font-size: 0.85rem;">Student ID:</span>
+                  <span style="color: #38bdf8; font-weight: 700; font-family: monospace;">GDP-2026-8842</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem;">
+                  <span style="color: #94a3b8; font-size: 0.85rem;">Assigned Username:</span>
+                  <span style="color: #fff; font-weight: 700; font-size: 1rem; font-family: monospace;">Shriya</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem;">
+                  <span style="color: #94a3b8; font-size: 0.85rem;">Generated Password:</span>
+                  <span style="color: #c084fc; font-weight: 700; font-size: 1rem; font-family: monospace;">Megha@14</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="color: #94a3b8; font-size: 0.85rem;">License Status:</span>
+                  <span style="color: #34d399; font-weight: 800; font-size: 0.85rem;">✓ Active Lifetime Masterclass Access</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem;">
+                <button type="button" onclick="copyCredentials()" style="flex: 1; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 0.75rem; border-radius: 10px; font-weight: 700; font-size: 0.88rem; cursor: pointer;">
+                  📋 Copy Credentials
+                </button>
+                <button type="button" onclick="goToStep(5)" style="flex: 1.5; background: linear-gradient(135deg, #8b5cf6, #3b82f6); color: #fff; border: none; padding: 0.75rem; border-radius: 10px; font-weight: 800; font-size: 0.92rem; cursor: pointer; box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);">
+                  Sign In to Member Portal →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               STAGE VIEW 5: Step 6 – Member Portal Login & SSO
+               ======================================================== -->
+          <div class="journey-step-view" id="journeyView5">
+            <div style="max-width: 480px; margin: 0 auto; background: #ffffff; color: #0f172a; border-radius: 20px; padding: 2.2rem; box-shadow: 0 25px 60px rgba(0,0,0,0.8);">
+              <div style="text-align: center; margin-bottom: 1.5rem;">
+                <div style="width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, #0284c7, #7c5cff); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem auto; color: #fff;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+                <h3 style="font-size: 1.45rem; font-weight: 900; color: #0f172a; margin-bottom: 0.25rem;">Welcome Back!</h3>
+                <p style="color: #64748b; font-size: 0.875rem;">Sign in with your verified Fast-Pass credentials</p>
+              </div>
+
+              <form onsubmit="return handleLoginSubmit(event)">
+                <div style="margin-bottom: 1rem; text-align: left;">
+                  <label style="display: block; font-size: 0.825rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Username or Email</label>
+                  <input type="text" id="loginDemoUsername" value="Shriya" required style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; font-family: inherit; outline: none;">
+                </div>
+
+                <div style="margin-bottom: 1rem; text-align: left; position: relative;">
+                  <label style="display: block; font-size: 0.825rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Password</label>
+                  <input type="password" id="loginDemoPassword" value="Megha@14" required style="width: 100%; padding: 0.75rem 2.8rem 0.75rem 1rem; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.95rem; font-family: inherit; outline: none;">
+                  <button type="button" onclick="togglePasswordVisibility('loginDemoPassword', this)" style="position: absolute; right: 12px; top: 32px; background: none; border: none; font-size: 1rem; cursor: pointer; color: #64748b;">👁️</button>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.825rem; color: #64748b; margin-bottom: 1.25rem;">
+                  <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+                    <input type="checkbox" checked style="accent-color: #7c5cff;">
+                    <span>Remember this session</span>
+                  </label>
+                  <a href="#" onclick="showToast('Password reset link sent to registered email.'); return false;" style="color: #7c5cff; text-decoration: none; font-weight: 600;">Forgot password?</a>
+                </div>
+
+                <div id="loginDemoAlert" style="display: none; padding: 0.5rem; border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-align: center; margin-bottom: 1rem;"></div>
+
+                <button type="submit" id="btnLoginSubmitDemo" style="width: 100%; background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-size: 0.95rem; font-weight: 800; cursor: pointer; box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);">
+                  <span>Sign In to Student Workspace →</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               STAGE VIEW 6: Step 7 – Student Dashboard Overview
+               ======================================================== -->
+          <div class="journey-step-view" id="journeyView6">
+            <div style="max-width: 920px; margin: 0 auto; text-align: left;">
+              <!-- Dashboard Header Bar -->
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 1rem 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                  <div style="width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, #7c5cff, #38bdf8); display: flex; align-items: center; justify-content: center; font-weight: 900; color: #fff; font-size: 1.1rem; box-shadow: 0 0 15px rgba(124, 92, 255, 0.5);">
+                    S
+                  </div>
+                  <div>
+                    <div style="color: #fff; font-weight: 800; font-size: 1.1rem;">Welcome back, Shriya!</div>
+                    <div style="color: #94a3b8; font-size: 0.8rem;">Enrolled: Instagram 3-Sec Hooks & Autonomous Ad Scaling</div>
+                  </div>
+                </div>
+
+                <span style="background: rgba(124, 92, 255, 0.2); border: 1px solid rgba(124, 92, 255, 0.4); color: #c084fc; font-size: 0.75rem; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 999px;">
+                  ★ PRO MEMBER TIER
+                </span>
+              </div>
+
+              <!-- 4 Stat Widgets -->
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.75rem;">
+                <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.1rem;">
+                  <div style="color: #94a3b8; font-size: 0.75rem; margin-bottom: 0.35rem;">Curriculum Progress</div>
+                  <div style="color: #fff; font-size: 1.25rem; font-weight: 800;">3 / 14 Lessons</div>
+                  <div style="width: 100%; height: 5px; background: rgba(255,255,255,0.1); border-radius: 999px; margin-top: 0.65rem; overflow: hidden;">
+                    <div style="width: 21%; height: 100%; background: #34d399;"></div>
+                  </div>
+                </div>
+
+                <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.1rem;">
+                  <div style="color: #94a3b8; font-size: 0.75rem; margin-bottom: 0.35rem;">Total Watch Time</div>
+                  <div style="color: #38bdf8; font-size: 1.25rem; font-weight: 800;">1h 45m</div>
+                  <div style="color: #64748b; font-size: 0.7rem; margin-top: 0.45rem;">HD Video Streaming Active</div>
+                </div>
+
+                <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.1rem;">
+                  <div style="color: #94a3b8; font-size: 0.75rem; margin-bottom: 0.35rem;">Meta CAPI Health</div>
+                  <div style="color: #34d399; font-size: 1.25rem; font-weight: 800;">100% Events</div>
+                  <div style="color: #64748b; font-size: 0.7rem; margin-top: 0.45rem;">Server-Side Webhook Live</div>
+                </div>
+
+                <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.1rem;">
+                  <div style="color: #94a3b8; font-size: 0.75rem; margin-bottom: 0.35rem;">Priority Support</div>
+                  <div style="color: #c084fc; font-size: 1.25rem; font-weight: 800;">24/7 Dedicated</div>
+                  <div style="color: #64748b; font-size: 0.7rem; margin-top: 0.45rem;">VIP Marketer Discord</div>
+                </div>
+              </div>
+
+              <!-- Quick Launch Action Card -->
+              <div style="background: linear-gradient(135deg, rgba(124, 92, 255, 0.2), rgba(56, 189, 248, 0.15)); border: 1px solid rgba(202, 183, 255, 0.3); border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                  <span style="color: #38bdf8; font-size: 0.78rem; font-weight: 700;">UP NEXT • LESSON 04</span>
+                  <h4 style="color: #fff; font-size: 1.15rem; font-weight: 800; margin: 0.25rem 0;">Direct-Response Reel Scripting & Dynamic Creative Studio</h4>
+                  <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">Learn how to format winning UGC ad creative to scale past ₹50,000/day.</p>
+                </div>
+                <button type="button" onclick="goToStep(7)" style="background: #ffffff; color: #070419; border: none; padding: 0.75rem 1.5rem; border-radius: 999px; font-weight: 800; font-size: 0.9rem; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.4); white-space: nowrap;">
+                  Launch Player ▶
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               STAGE VIEW 7: Step 8 – Video Masterclass & Theory Toolkits
+               ======================================================== -->
+          <div class="journey-step-view" id="journeyView7">
+            <div style="display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 1.5rem; align-items: start; text-align: left;">
+              <!-- Left: Video Player -->
+              <div>
+                <div style="border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 50px rgba(0,0,0,0.8); position: relative; background: #000;">
+                  <video id="curriculumVideoPlayer" controls playsinline preload="auto" poster="/assets/hero_mockup.jpg" style="width: 100%; height: auto; display: block;">
+                    <source id="curriculumVideoSource" src="/assets/vid_05_AI_Marketer.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                  </video>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.85rem;">
+                  <div>
+                    <h4 id="curriculumPlayingTitle" style="color: #fff; font-size: 1.05rem; font-weight: 800;">Lesson 2: Direct-Response Reel Scripting & UGC Frameworks</h4>
+                    <p style="color: #94a3b8; font-size: 0.8rem; margin: 0;">Instructor-Led Masterclass • 1080p Full HD Streaming</p>
+                  </div>
+                  <span style="background: rgba(52, 211, 153, 0.15); color: #34d399; font-weight: 800; font-size: 0.75rem; padding: 0.3rem 0.7rem; border-radius: 999px;">UNLOCKED ✓</span>
+                </div>
+              </div>
+
+              <!-- Right: Playlist & Downloadable Toolkits -->
+              <div>
+                <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.15rem; margin-bottom: 1rem;">
+                  <h5 style="color: #fff; font-size: 0.88rem; font-weight: 800; margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em;">Masterclass Curriculum</h5>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div class="lesson-playlist-item" onclick="selectCurriculumLesson(1, '/assets/intro_option1.mp4', 'Lesson 1: The 3-Second Hook Psychological Formula')" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; font-size: 0.825rem; display: flex; justify-content: space-between; align-items: center;">
+                      <span style="color: #94a3b8;">1. 3-Sec Hook Formulas</span>
+                      <span style="color: #34d399; font-weight: 700;">✓ Done</span>
+                    </div>
+
+                    <div class="lesson-playlist-item is-playing" onclick="selectCurriculumLesson(2, '/assets/vid_05_AI_Marketer.mp4', 'Lesson 2: Direct-Response Reel Scripting & UGC Frameworks')" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: rgba(124, 92, 255, 0.2); border: 1px solid #7c5cff; cursor: pointer; font-size: 0.825rem; display: flex; justify-content: space-between; align-items: center;">
+                      <span style="color: #fff; font-weight: 700;">2. UGC Script Frameworks</span>
+                      <span style="color: #c084fc; font-weight: 800;">▶ Playing</span>
+                    </div>
+
+                    <div class="lesson-playlist-item" onclick="selectCurriculumLesson(3, '/assets/intro_option2.mp4', 'Lesson 3: Verified Business Manager & 18% GST Exemption')" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; font-size: 0.825rem; display: flex; justify-content: space-between; align-items: center;">
+                      <span style="color: #94a3b8;">3. Verified BM & GST Waiver</span>
+                      <span style="color: #64748b;">15 mins</span>
+                    </div>
+
+                    <div class="lesson-playlist-item" onclick="selectCurriculumLesson(4, '/assets/vid_06_Ads_Manager_2.mp4', 'Lesson 4: Autonomous AI Budget Optimization & 6.4X Scaling')" style="padding: 0.65rem 0.85rem; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; font-size: 0.825rem; display: flex; justify-content: space-between; align-items: center;">
+                      <span style="color: #94a3b8;">4. Autonomous AI Scaling</span>
+                      <span style="color: #64748b;">18 mins</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Downloadable Toolkits -->
+                <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.15rem;">
+                  <h5 style="color: #fff; font-size: 0.88rem; font-weight: 800; margin-bottom: 0.75rem; text-transform: uppercase;">Downloadable Resources</h5>
+                  <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <a href="#" onclick="showToast('📥 Downloading Notion Viral Hook Vault (.pdf)...'); return false;" style="color: #38bdf8; text-decoration: none; font-size: 0.8rem; font-weight: 600;">📥 Notion Hook Vault (.pdf)</a>
+                    <a href="#" onclick="showToast('📥 Downloading BM Compliance Checklist (.pdf)...'); return false;" style="color: #38bdf8; text-decoration: none; font-size: 0.8rem; font-weight: 600;">📥 BM Compliance Checklist (.pdf)</a>
+                    <a href="#" onclick="showToast('📥 Downloading UGC Script Library (.xlsx)...'); return false;" style="color: #38bdf8; text-decoration: none; font-size: 0.8rem; font-weight: 600;">📥 UGC Script Library (.xlsx)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               STAGE VIEW 8: Step 9 – Campaign Builder & AI Optimizer
+               ======================================================== -->
+          <div class="journey-step-view" id="journeyView8">
+            <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                <div>
+                  <h3 style="color: #fff; font-size: 1.35rem; font-weight: 800; margin-bottom: 0.2rem;">Meta Campaign Execution Studio</h3>
+                  <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">Configure your target parameters and preview autonomous AI Bidding scaling.</p>
+                </div>
+                <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.75rem; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 999px;">
+                  AI BIDDING ENGINE ONLINE
+                </span>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 1.5rem; align-items: start;">
+                <!-- Left: Configuration Form -->
+                <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem;">
+                  <!-- Campaign Objective -->
+                  <div style="margin-bottom: 1.25rem;">
+                    <label style="display: block; font-size: 0.825rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.45rem;">Campaign Objective</label>
+                    <div style="display: flex; gap: 0.4rem;">
+                      <button type="button" class="campaign-obj-btn is-active" id="btnObj_leads" onclick="selectCampaignObjective('leads')" style="flex: 1; padding: 0.5rem; border-radius: 8px; border: 1px solid #7c5cff; background: rgba(124,92,255,0.2); color: #fff; font-size: 0.78rem; font-weight: 700; cursor: pointer;">🎯 Leads</button>
+                      <button type="button" class="campaign-obj-btn" id="btnObj_sales" onclick="selectCampaignObjective('sales')" style="flex: 1; padding: 0.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.78rem; font-weight: 600; cursor: pointer;">💰 Sales</button>
+                      <button type="button" class="campaign-obj-btn" id="btnObj_traffic" onclick="selectCampaignObjective('traffic')" style="flex: 1; padding: 0.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.78rem; font-weight: 600; cursor: pointer;">🚀 Traffic</button>
+                    </div>
+                  </div>
+
+                  <!-- Daily Budget Slider -->
+                  <div style="margin-bottom: 1.25rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.45rem;">
+                      <label style="font-size: 0.825rem; font-weight: 700; color: #cbd5e1;">Daily Ad Budget</label>
+                      <span id="budgetSliderValue" style="font-size: 0.95rem; font-weight: 900; color: #34d399;">₹1,500</span>
+                    </div>
+                    <input type="range" min="500" max="10000" step="500" value="1500" oninput="updateBudgetProjection(this.value)" style="width: 100%; accent-color: #34d399; cursor: pointer;">
+                  </div>
+
+                  <!-- Hook Formula Selection -->
+                  <div style="margin-bottom: 1.25rem;">
+                    <label style="display: block; font-size: 0.825rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.45rem;">3-Sec Hook Architecture</label>
+                    <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                      <button type="button" class="hook-formula-btn is-active" id="btnHook_curiosity" onclick="selectHookStyle('curiosity')" style="padding: 0.6rem 0.85rem; border-radius: 8px; text-align: left; border: 1px solid #38bdf8; background: rgba(56, 189, 248, 0.15); color: #fff; font-size: 0.8rem; font-weight: 700; cursor: pointer;">
+                        Reel Formula A: Curiosity Gap ("Stop running Meta ads until...")
+                      </button>
+                      <button type="button" class="hook-formula-btn" id="btnHook_problem" onclick="selectHookStyle('problem')" style="padding: 0.6rem 0.85rem; border-radius: 8px; text-align: left; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.8rem; font-weight: 600; cursor: pointer;">
+                        Reel Formula B: Problem / Solution ("Here is how we slashed CPL to ₹2.60...")
+                      </button>
+                    </div>
+                  </div>
+
+                  <button type="button" onclick="goToStep(9)" style="width: 100%; background: linear-gradient(135deg, #7c5cff, #0284c7); color: #fff; border: none; padding: 0.8rem; border-radius: 10px; font-weight: 800; font-size: 0.92rem; cursor: pointer; box-shadow: 0 10px 25px rgba(124, 92, 255, 0.4);">
+                    Deploy Campaign with 6.4X ROAS →
+                  </button>
+                </div>
+
+                <!-- Right: Live Forecast Telemetry -->
+                <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem;">
+                  <h4 style="color: #fff; font-size: 0.95rem; font-weight: 800; margin-bottom: 1rem;">Live ROAS & Metric Projections</h4>
+                  
+                  <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+                    <div>
+                      <div style="color: #94a3b8; font-size: 0.75rem;">Projected Daily Reach</div>
+                      <div id="projReach" style="color: #fff; font-size: 1.15rem; font-weight: 800;">12,750 - 21,000</div>
+                    </div>
+                    <div>
+                      <div style="color: #94a3b8; font-size: 0.75rem;">Estimated High-Intent Leads</div>
+                      <div id="projLeads" style="color: #38bdf8; font-size: 1.15rem; font-weight: 800;">577 high-intent leads</div>
+                    </div>
+                    <div>
+                      <div style="color: #94a3b8; font-size: 0.75rem;">Verified Return On Ad Spend</div>
+                      <div id="projRoas" style="color: #34d399; font-size: 1.35rem; font-weight: 900;">6.4X verified</div>
+                    </div>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.85rem;">
+                      <div style="color: #94a3b8; font-size: 0.75rem;">Live Ad Copy Preview</div>
+                      <p id="previewAdHeadline" style="color: #c084fc; font-size: 0.825rem; font-style: italic; margin-top: 0.35rem;">"Stop running Meta ads until you change this single 3-second setting..."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================
+               STAGE VIEW 9: Step 10 – Final Actions & Graduation
+               ======================================================== -->
+          <div class="journey-step-view" id="journeyView9">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+              <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(52, 211, 153, 0.15); border: 2px solid #34d399; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; color: #34d399; font-size: 1.85rem;">
+                🏆
+              </div>
+
+              <span style="color: #34d399; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em;">JOURNEY COMPLETED • CAMPAIGN LIVE</span>
+              <h3 style="color: #fff; font-size: 1.75rem; font-weight: 900; margin: 0.35rem 0 0.75rem;">Congratulations! You Have Completed the Full User Journey</h3>
+              <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6; max-width: 650px; margin: 0 auto 1.75rem;">
+                From first landing to track selection, checkout, fast-pass authentication, HD video masterclasses, and deploying your 6.4X ROAS campaign — you have experienced every stage of the ecosystem.
+              </p>
+
+              <!-- Verified Certificate of Completion Card -->
+              <div style="background: radial-gradient(circle at 50% 20%, #15103a, #070417); border: 2px solid #c084fc; border-radius: 20px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 0 50px rgba(124, 92, 255, 0.35); text-align: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 12px; right: 16px; background: rgba(202,183,255,0.15); border: 1px solid #c084fc; color: #cab7ff; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 999px;">
+                  VERIFIED CERTIFICATE #GDP-2026-992
+                </div>
+
+                <div style="font-size: 0.85rem; color: #38bdf8; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">GLOBAL DIGI PULSE ACADEMY</div>
+                <h4 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 900; color: #fff; margin-bottom: 0.75rem;">Certificate of Achievement</h4>
+                <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 0.5rem;">This certifies that</p>
+                <div style="font-size: 1.6rem; font-weight: 900; color: #34d399; font-family: var(--font-heading); margin-bottom: 0.5rem;">Shriya</div>
+                <p style="color: #94a3b8; font-size: 0.825rem; max-width: 520px; margin: 0 auto 1.25rem;">
+                  has successfully mastered 3-Second Viral Hook Architectures, Ban-Proof Meta Business Manager Compliance, 18% GST Exemption, and Autonomous AI Campaign Optimization.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; font-size: 0.78rem; color: #64748b;">
+                  <span>Date: October 30, 2026</span>
+                  <span>•</span>
+                  <span>Credential ID: Verified Valid</span>
+                  <span>•</span>
+                  <span>Instructor: Global Digi Pulse</span>
+                </div>
+              </div>
+
+              <!-- Final Action Buttons -->
+              <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <button type="button" onclick="downloadCertificate()" style="background: linear-gradient(135deg, #10b981, #0284c7); color: #fff; border: none; padding: 0.9rem 2rem; border-radius: 999px; font-weight: 800; font-size: 0.95rem; cursor: pointer; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);">
+                  📥 Download Official Certificate (PDF)
+                </button>
+                <button type="button" onclick="goToStep(0)" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 0.9rem 2rem; border-radius: 999px; font-weight: 700; font-size: 0.95rem; cursor: pointer;">
+                  Restart Journey Walkthrough ↺
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Dynamic Feature Cards Deck (Madgicx Purple Glow Dividers) -->
+    <div class="features-screen_features" id="demoCardsContainer">
+      <div class="features-screen_slot">
+        <div class="features-screen_feature" onclick="navigateStep(1)">
+          <div class="features-screen_wrap">
+            <h3 class="features-screen_title" id="demoCardTitle0">🌟 Curated Social Proof</h3>
+            <p class="features-screen_desc" id="demoCardDesc0">Over 12,400+ active marketers enrolled with 4.9/5 verified community rating.</p>
+          </div>
+          <div class="features-screen_line-wrap">
+            <img src="/assets/purple-glow-line-divider.avif" alt="" class="features-screen_line" width="185" height="161" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="features-screen_slot">
+        <div class="features-screen_feature" onclick="navigateStep(1)">
+          <div class="features-screen_wrap">
+            <h3 class="features-screen_title" id="demoCardTitle1">🚀 Clear Value Proposition</h3>
+            <p class="features-screen_desc" id="demoCardDesc1">Direct access to proven 3-second hook frameworks and ban-proof BM compliance.</p>
+          </div>
+          <div class="features-screen_line-wrap">
+            <img src="/assets/purple-glow-line-divider.avif" alt="" class="features-screen_line" width="185" height="161" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="features-screen_slot">
+        <div class="features-screen_feature" onclick="navigateStep(1)">
+          <div class="features-screen_wrap">
+            <h3 class="features-screen_title" id="demoCardTitle2">⚡ Zero Friction Entry</h3>
+            <p class="features-screen_desc" id="demoCardDesc2">Instant 1-click exploration into the complete marketing curriculum without mandatory registration walls.</p>
+          </div>
+          <div class="features-screen_line-wrap">
+            <img src="/assets/purple-glow-line-divider.avif" alt="" class="features-screen_line" width="185" height="161" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horizon Glowing Divider -->
+    <div class="separator_component">
+      <img src="/assets/glowing-purple-section-divider.webp" alt="" class="separator_img" loading="lazy">
+    </div>
+
+  </main>
+
+  <!-- Sticky Bottom Navigation Dock -->
+  <footer class="demo-bottom-dock">
+    <button type="button" class="btn-dock-nav" id="btnDockPrev" onclick="navigateStep(-1)" style="visibility: hidden;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      <span>Previous</span>
+    </button>
+
+    <div class="dock-dots" id="dockDots">
+      <!-- Generated dynamically -->
+    </div>
+
+    <button type="button" class="btn-dock-nav btn-dock-next" id="btnDockNext" onclick="navigateStep(1)">
+      <span id="btnDockNextLabel">Next: Step 2 (SELECTION)</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </footer>
+
+  <script src="demo.js"></script>
+</body>
+</html>

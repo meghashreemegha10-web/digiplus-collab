@@ -50,6 +50,7 @@ app.use('/assets', express.static(path.join(__dirname, '../ui/assets'), staticOp
 app.use('/facebook_covers', express.static(path.join(__dirname, '../ui/facebook_covers'), staticOptions));
 app.use('/images', express.static(path.join(__dirname, '../ui/images'), staticOptions));
 app.use('/css', express.static(path.join(__dirname, '../ui/css'), staticOptions));
+app.use('/js', express.static(path.join(__dirname, '../ui/js'), staticOptions));
 app.use('/html', express.static(path.join(__dirname, '../ui/html'), staticOptions));
 app.use(express.static(path.join(__dirname, '../ui'), staticOptions));
 app.use(express.static(path.join(__dirname, '../ui/html'), staticOptions));
