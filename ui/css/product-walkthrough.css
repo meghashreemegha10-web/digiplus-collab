@@ -1,0 +1,193 @@
+/**
+ * Global Digi Pulse — Scripted Product Walkthrough & Animated Fake Cursor
+ * High-performance, isolated component overlay for the step-by-step video demo.
+ * Uses Web Animations API & CSS transitions with zero external dependencies.
+ */
+
+/* ==========================================================================
+   1. Walkthrough Container Setup
+   ========================================================================== */
+[data-cursor-demo] {
+  position: relative !important;
+  overflow: visible;
+}
+
+/* ==========================================================================
+   2. Fake Animated Cursor Overlay
+   ========================================================================== */
+.demo-cursor-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  pointer-events: none !important;
+  user-select: none !important;
+  z-index: 95;
+  will-change: transform, opacity;
+  transform: translate3d(-100px, -100px, 0);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.demo-cursor-overlay.is-visible {
+  opacity: 1;
+}
+
+/* Cursor Arrow SVG Graphic */
+.demo-cursor-arrow {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform-origin: 3px 2px;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.45));
+  transition: transform 0.14s ease-out;
+}
+
+.demo-cursor-overlay.is-clicking .demo-cursor-arrow {
+  transform: scale(0.88);
+}
+
+/* Mobile Touch Dot (Used on screens <= 480px) */
+.demo-cursor-touch-dot {
+  display: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.5);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.75);
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  transition: transform 0.15s ease-out;
+}
+
+.demo-cursor-overlay.is-clicking .demo-cursor-touch-dot {
+  transform: translate(-50%, -50%) scale(0.82);
+  background: rgba(56, 189, 248, 0.9);
+}
+
+@media (max-width: 480px) {
+  .demo-cursor-arrow {
+    display: none;
+  }
+  .demo-cursor-touch-dot {
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   3. Click Ripple Effect
+   ========================================================================== */
+.demo-click-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  margin-top: -17px;
+  margin-left: -17px;
+  border-radius: 50%;
+  pointer-events: none !important;
+  z-index: 94;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.6) 0%, rgba(124, 92, 255, 0.3) 70%, transparent 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.9);
+  transform: scale(0.2);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.demo-click-ripple.is-rippling {
+  animation: demoRippleExpand 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes demoRippleExpand {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   4. Pressed Target State
+   ========================================================================== */
+.demo-target-pressed {
+  transform: scale(0.96) !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+/* ==========================================================================
+   5. Step Navigation Arrow Bar Active Glow Animations
+   ========================================================================== */
+.opt-step-arrow.is-active-arrow {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 10px #38bdf8;
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   6. Interactive Replay Demo Control (Unobtrusive & Accessible)
+   ========================================================================== */
+.demo-replay-control {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  font-family: var(--font-inter, 'Inter', -apple-system, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 96;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+}
+
+.demo-replay-control.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.demo-replay-control:hover,
+.demo-replay-control:focus-visible {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.5);
+  outline: none;
+}
+
+.demo-replay-control svg {
+  transition: transform 0.4s ease;
+}
+
+.demo-replay-control:hover svg {
+  transform: rotate(-180deg);
+}
+
+/* ==========================================================================
+   7. Reduced Motion Accessibility
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .demo-cursor-overlay,
+  .demo-click-ripple,
+  .demo-replay-control {
+    display: none !important;
+  }
+}
