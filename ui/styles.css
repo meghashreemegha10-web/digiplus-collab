@@ -123,8 +123,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 58% 32%;
   display: block;
+  transition: object-position 0.25s ease;
 }
 
 /* Top Floating Navigation Bar - Seamless Transparent Background (Same as Image) */
@@ -259,9 +260,9 @@ body {
 /* Left Column Content on Hero (Headline & Frontend Mockup Pills) */
 .hero-left-content {
   position: absolute;
-  top: clamp(110px, 15vh, 155px);
-  left: clamp(28px, 4.8vw, 72px);
-  max-width: clamp(560px, 52vw, 840px);
+  top: clamp(100px, 14vh, 150px);
+  left: clamp(24px, 4.2vw, 64px);
+  max-width: min(500px, 42vw);
   z-index: 22;
   display: flex;
   flex-direction: column;
@@ -365,6 +366,9 @@ body {
 }
 
 @media (max-width: 992px) {
+  .hero-main-banner-img {
+    object-position: 62% 25%;
+  }
   .hero-left-content {
     max-width: 440px;
     top: 100px;
@@ -375,6 +379,9 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero-main-banner-img {
+    object-position: 60% 18%;
+  }
   .hero-left-content {
     display: none;
   }
