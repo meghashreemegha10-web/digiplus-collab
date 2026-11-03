@@ -123,9 +123,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 54% center;
+  object-position: center;
   display: block;
-  transition: object-position 0.25s ease;
 }
 
 /* Top Floating Navigation Bar - Seamless Transparent Background (Same as Image) */
@@ -140,7 +139,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(20px, 4vw, 54px);
-  background: linear-gradient(180deg, rgba(6, 9, 19, 0.6) 0%, rgba(6, 9, 19, 0) 100%);
+  background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border: none;
@@ -212,29 +211,29 @@ body {
 }
 
 .nav-item {
-  color: rgba(255, 255, 255, 0.92);
+  color: #ffffff;
   text-decoration: none;
-  font-size: 0.92rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border: none;
-  box-shadow: none;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: all 0.22s ease;
+  padding: 7px 15px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
 
 .nav-item:hover {
-  color: #00f2fe;
-  background: rgba(255, 255, 255, 0.08);
-  border: none;
-  box-shadow: none;
-  transform: translateY(-1px);
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.45), rgba(168, 85, 247, 0.5));
+  border-color: #00f2fe;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
 }
 
 .btn-member-login {
@@ -260,9 +259,9 @@ body {
 /* Left Column Content on Hero (Headline & Frontend Mockup Pills) */
 .hero-left-content {
   position: absolute;
-  top: clamp(100px, 14vh, 150px);
-  left: clamp(24px, 4.2vw, 64px);
-  max-width: min(500px, 42vw);
+  top: clamp(110px, 15vh, 155px);
+  left: clamp(28px, 4.8vw, 72px);
+  max-width: clamp(560px, 52vw, 840px);
   z-index: 22;
   display: flex;
   flex-direction: column;
@@ -366,9 +365,6 @@ body {
 }
 
 @media (max-width: 992px) {
-  .hero-main-banner-img {
-    object-position: 62% 25%;
-  }
   .hero-left-content {
     max-width: 440px;
     top: 100px;
@@ -379,9 +375,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero-main-banner-img {
-    object-position: 60% 18%;
-  }
   .hero-left-content {
     display: none;
   }
