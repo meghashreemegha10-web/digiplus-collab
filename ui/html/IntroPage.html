@@ -957,45 +957,7 @@
       border: 1px solid rgba(56, 189, 248, 0.25);
     }
 
-    /* Modal Payment Details Box */
-    .modal-payment-details-box {
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 1.1rem 1.4rem;
-      margin-bottom: 1.4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .modal-pay-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-    .modal-pay-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .modal-pay-price {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #34d399;
-    }
-    .modal-pay-badges-row {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      border-top: 1px dashed rgba(255, 255, 255, 0.08);
-      padding-top: 0.6rem;
-      font-size: 0.76rem;
-      color: #94a3b8;
-    }
+
 
     /* Professional Ad World & SaaS Checkout Gateway */
     .pro-checkout-box {
@@ -1419,20 +1381,7 @@
       margin: 0;
     }
 
-    /* Unlocked State View in Modal */
-    .unlocked-banner {
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      border-radius: 10px;
-      padding: 0.85rem 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.2rem;
-      color: #34d399;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
+
   </style>
 </head>
 <body>
@@ -1622,8 +1571,7 @@
       
       <div class="modal-header-bar">
         <div class="modal-header-title">
-          <span id="modalOptionBadge">Option 01</span>
-          <span id="modalOptionTitle">Module Overview</span>
+          <span id="modalOptionBadge">Option 01 • Masterclass</span>
         </div>
         <button class="modal-close-btn" onclick="closeOptionModal()" aria-label="Close modal">×</button>
       </div>
@@ -1641,12 +1589,6 @@
           <button type="button" class="modal-tab-pill" id="modalTabBoth" onclick="switchModalView('both')">
             📑 View All
           </button>
-        </div>
-
-        <!-- Unlocked Notice Banner (Shown after payment) -->
-        <div class="unlocked-banner" id="unlockedBanner" style="display: none;">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          <span>🎉 Real Masterclass Unlocked! Streaming full video below.</span>
         </div>
 
         <!-- Video Player (Swaps from Intro Video to Real Video upon payment) -->
@@ -1668,30 +1610,6 @@
           <ul class="theory-points-list" id="modalTheoryList">
             <!-- Populated dynamically based on option -->
           </ul>
-        </div>
-
-        <!-- Modal Payment Details Summary -->
-        <div class="modal-payment-details-box" id="modalPaymentDetailsBox">
-          <div class="modal-pay-row">
-            <div>
-              <span class="modal-pay-label">Masterclass Enrollment Fee</span>
-              <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
-                <span class="modal-pay-price" id="modalPayPrice">₹499</span>
-                <span style="font-size: 0.85rem; color: #64748b; text-decoration: line-through;">₹2,499</span>
-                <span style="font-size: 0.72rem; color: #34d399; font-weight: 700; background: rgba(16,185,129,0.15); padding: 0.15rem 0.5rem; border-radius: 4px;">Save 80% • One-time</span>
-              </div>
-            </div>
-            <div style="text-align: right;">
-              <span class="pay-status-pill pay-status-locked" id="modalPayStatusPill">🔒 Payment Required</span>
-              <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 0.25rem;">Includes 18% GST Exemption</div>
-            </div>
-          </div>
-          <div class="modal-pay-badges-row">
-            <span>⚡ Instant Full HD Stream</span>
-            <span>🛡️ 18% GST Exemption Included</span>
-            <span>💳 UPI / Card / NetBanking</span>
-            <span>🔒 256-Bit SSL Checkout</span>
-          </div>
         </div>
 
         <!-- Action / Payment Button Section -->
@@ -1960,8 +1878,9 @@
       const opt = optionsData[optId];
       if (!opt) return;
 
-      document.getElementById('modalOptionBadge').textContent = opt.badge;
-      document.getElementById('modalOptionTitle').textContent = opt.title;
+      document.getElementById('modalOptionBadge').textContent = `${opt.badge} • ${opt.platform} Masterclass`;
+      const titleEl = document.getElementById('modalOptionTitle');
+      if (titleEl) titleEl.textContent = '';
       document.getElementById('modalTheoryOverview').textContent = opt.theoryOverview;
 
       // Populate Theory points
@@ -1978,44 +1897,30 @@
                          localStorage.getItem(`unlocked_platform_${optId}`) === 'true';
       const player = document.getElementById('modalVideoPlayer');
       const source = document.getElementById('modalVideoSource');
-      const banner = document.getElementById('unlockedBanner');
       const actionBtn = document.getElementById('btnUnlockOption');
       const btnText = document.getElementById('unlockBtnText');
 
-      // Update Modal Payment Details
-      const modalPayPrice = document.getElementById('modalPayPrice');
-      const modalPayStatusPill = document.getElementById('modalPayStatusPill');
-      if (modalPayPrice) modalPayPrice.textContent = opt.price;
-      if (modalPayStatusPill) {
-        if (isUnlocked) {
-          modalPayStatusPill.className = 'pay-status-pill pay-status-unlocked';
-          modalPayStatusPill.innerHTML = `<span>✅ ${opt.price} Paid in Full • Active</span>`;
-        } else {
-          modalPayStatusPill.className = 'pay-status-pill pay-status-locked';
-          modalPayStatusPill.innerHTML = '<span>🔒 Payment Required</span>';
-        }
-      }
-
       if (isUnlocked) {
         // Show real targeted video (Step 4)
-        banner.style.display = 'flex';
-        banner.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          <span>🎉 Payment Complete! Real Targeted ${opt.platform} Video Unlocked & Streaming Below.</span>`;
         player.poster = opt.realPoster;
         source.src = opt.realVideo;
+        if (actionBtn) {
+          actionBtn.style.background = 'linear-gradient(135deg, #059669 0%, #10b981 100%)';
+          btnText.innerHTML = `✅ Masterclass Unlocked & Active — Streaming Now`;
+          actionBtn.onclick = null;
+        }
       } else {
         // Show intro video & payment unlock option
-        banner.style.display = 'none';
         player.poster = opt.introPoster;
         source.src = opt.introVideo;
+        if (actionBtn) {
+          actionBtn.style.background = opt.id === 1 
+            ? 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%)' 
+            : (opt.id === 2 ? 'linear-gradient(135deg, #1877f2 0%, #0099ff 100%)' : 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)');
+          btnText.innerHTML = `💳 Payment Gateway — Unlock ${opt.platform} Video (${opt.price})`;
+          actionBtn.onclick = function() { openPaymentGateway(optId); };
+        }
       }
-
-      // Always keep Payment Gateway button here
-      actionBtn.style.background = opt.id === 1 
-        ? 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%)' 
-        : (opt.id === 2 ? 'linear-gradient(135deg, #1877f2 0%, #0099ff 100%)' : 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)');
-      btnText.innerHTML = `💳 Payment Gateway — Unlock ${opt.platform} Video (${opt.price})`;
-      actionBtn.onclick = function() { openPaymentGateway(optId); };
 
       player.load();
       document.getElementById('optionModal').style.display = 'flex';
@@ -2152,8 +2057,9 @@
       closePaymentGateway();
 
       // Populate Option Modal to show Real Video
-      document.getElementById('modalOptionBadge').textContent = opt.badge;
-      document.getElementById('modalOptionTitle').textContent = opt.title;
+      document.getElementById('modalOptionBadge').textContent = `${opt.badge} • ${opt.platform} Masterclass`;
+      const titleEl = document.getElementById('modalOptionTitle');
+      if (titleEl) titleEl.textContent = '';
       document.getElementById('modalTheoryOverview').textContent = opt.theoryOverview;
       const listEl = document.getElementById('modalTheoryList');
       if (listEl) {
@@ -2165,31 +2071,24 @@
         });
       }
 
-      const banner = document.getElementById('unlockedBanner');
       const player = document.getElementById('modalVideoPlayer');
       const source = document.getElementById('modalVideoSource');
       const actionBtn = document.getElementById('btnUnlockOption');
       const btnText = document.getElementById('unlockBtnText');
 
-      banner.style.display = 'flex';
-      banner.innerHTML = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-        <span>🎉 Payment Complete! Real Targeted ${opt.platform} Video Unlocked & Streaming Below.</span>`;
-      
       player.poster = opt.realPoster;
       source.src = opt.realVideo;
       player.load();
       player.play();
 
-      // Keep Payment Gateway button here
-      actionBtn.style.background = opt.id === 1 
-        ? 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%)' 
-        : (opt.id === 2 ? 'linear-gradient(135deg, #1877f2 0%, #0099ff 100%)' : 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)');
-      btnText.innerHTML = `💳 Payment Gateway — Unlock ${opt.platform} Video (${opt.price})`;
-      actionBtn.onclick = function() { openPaymentGateway(currentOptionId); };
+      if (actionBtn) {
+        actionBtn.style.background = 'linear-gradient(135deg, #059669 0%, #10b981 100%)';
+        btnText.innerHTML = `✅ Masterclass Unlocked & Active — Streaming Now`;
+        actionBtn.onclick = null;
+      }
 
       // Ensure Option Modal is open so video streams immediately
       document.getElementById('optionModal').style.display = 'flex';
-      banner.scrollIntoView({ behavior: 'smooth' });
     }
 
     // Update Dashboard Card Badges, Payment Details & Buttons for All 3 Options
