@@ -962,3 +962,495 @@ html.mx-motion-paused * {
     padding: 0.4rem 0.85rem;
   }
 }
+
+/* ==========================================================================
+   15. Madgicx Ad Creative Optimization Suite (Interactive Mockup - Exact Match)
+   ========================================================================== */
+.opt-screen-viewport {
+  position: relative;
+  background: radial-gradient(circle at 50% 15%, rgba(20, 14, 46, 0.98), rgba(6, 3, 20, 0.99));
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  min-height: 580px;
+}
+
+.opt-screen-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(12, 7, 32, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 0.65rem 1.25rem;
+  font-family: var(--font-inter, 'Inter', -apple-system, sans-serif);
+  font-size: 0.825rem;
+  z-index: 10;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.opt-hud-mode-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.opt-hud-mode-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.opt-hud-mode-btn.is-active {
+  background: #7c5cff;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(124, 92, 255, 0.5);
+}
+
+/* Suite Layout (Sidebar + Two Column Dashboard) */
+.suite-dashboard-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 520px;
+}
+
+.suite-sidebar {
+  width: 76px;
+  background: rgba(9, 6, 26, 0.85);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 0.5rem;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.suite-sidebar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  color: #64748b;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.35rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.suite-sidebar-item:hover {
+  color: #cbd5e1;
+}
+
+.suite-sidebar-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.suite-sidebar-item.is-active {
+  color: #38bdf8;
+}
+
+.suite-sidebar-item.is-active .suite-sidebar-icon {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
+}
+
+.suite-main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 1.25rem;
+  padding: 1.35rem;
+  overflow: hidden;
+}
+
+/* Left Column: Creative Formulas */
+.suite-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.suite-col-header-label {
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.suite-hero-formula-box {
+  background: linear-gradient(145deg, rgba(23, 14, 56, 0.95), rgba(12, 7, 34, 0.98));
+  border: 1px solid rgba(168, 85, 247, 0.32);
+  border-radius: 20px;
+  padding: 1.35rem;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.suite-formula-title {
+  text-align: center;
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.suite-formula-title span {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #cbd5e1;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-top: 2px;
+}
+
+.suite-formulas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.suite-formula-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.suite-formula-card:hover,
+.suite-formula-card.is-active {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.suite-formula-card.card-fomo {
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.06);
+}
+.suite-formula-card.card-fomo:hover,
+.suite-formula-card.card-fomo.is-active {
+  border-color: #38bdf8;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+}
+
+.suite-formula-card.card-problem {
+  border-color: rgba(168, 85, 247, 0.3);
+  background: rgba(168, 85, 247, 0.06);
+}
+.suite-formula-card.card-problem:hover,
+.suite-formula-card.card-problem.is-active {
+  border-color: #a855f7;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.3);
+}
+
+.suite-formula-card.card-proof {
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.06);
+}
+.suite-formula-card.card-proof:hover,
+.suite-formula-card.card-proof.is-active {
+  border-color: #38bdf8;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+}
+
+.suite-formula-card.card-gap {
+  border-color: rgba(244, 114, 182, 0.3);
+  background: rgba(244, 114, 182, 0.06);
+}
+.suite-formula-card.card-gap:hover,
+.suite-formula-card.card-gap.is-active {
+  border-color: #f472b6;
+  box-shadow: 0 0 16px rgba(244, 114, 182, 0.3);
+}
+
+.suite-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 800;
+  font-size: 0.82rem;
+  margin-bottom: 0.3rem;
+}
+
+.suite-card-desc {
+  font-size: 0.735rem;
+  line-height: 1.4;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Hook Conversion Rate Chart Box */
+.suite-chart-box {
+  background: rgba(10, 7, 28, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+}
+
+.suite-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.suite-chart-title {
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.suite-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.suite-legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+/* Right Column: Templates & Scripts */
+.suite-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.suite-templates-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.4rem;
+}
+
+.suite-tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suite-tab-btn.is-active {
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
+}
+
+.suite-reels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.suite-reel-item {
+  background: #0b081e;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.suite-reel-item:hover {
+  transform: translateY(-3px);
+  border-color: #38bdf8;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+.suite-reel-media {
+  position: relative;
+  aspect-ratio: 9/12;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suite-play-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.suite-reel-item:hover .suite-play-circle {
+  transform: scale(1.15);
+  background: #38bdf8;
+  color: #070419;
+  border-color: #38bdf8;
+}
+
+.suite-reel-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: rgba(239, 68, 68, 0.9);
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+
+.suite-reel-label {
+  padding: 0.45rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* High-CTR Scripts Section */
+.suite-scripts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.suite-scripts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+
+.suite-script-item {
+  background: rgba(14, 10, 36, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.suite-script-item:hover {
+  border-color: rgba(124, 92, 255, 0.4);
+  background: rgba(124, 92, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.suite-script-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.suite-script-title {
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.suite-script-meta {
+  font-size: 0.68rem;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.suite-script-desc {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .suite-dashboard-wrapper {
+    flex-direction: column;
+  }
+  .suite-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.65rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    gap: 0.5rem;
+  }
+  .suite-main-content {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.25rem;
+  }
+  .suite-formulas-grid {
+    grid-template-columns: 1fr;
+  }
+  .suite-reels-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .suite-scripts-grid {
+    grid-template-columns: 1fr;
+  }
+}

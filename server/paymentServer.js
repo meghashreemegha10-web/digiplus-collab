@@ -55,8 +55,8 @@ app.use('/html', express.static(path.join(__dirname, '../ui/html'), staticOption
 app.use(express.static(path.join(__dirname, '../ui'), staticOptions));
 app.use(express.static(path.join(__dirname, '../ui/html'), staticOptions));
 
-// Serve main modern frontend design at root
-app.get(['/', '/index.html'], (req, res) => {
+// Serve main modern frontend design at root & optimization showcase
+app.get(['/', '/index.html', '/optimization'], (req, res) => {
   res.sendFile(path.join(__dirname, '../ui/index.html'), staticOptions);
 });
 

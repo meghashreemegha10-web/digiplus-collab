@@ -7,7 +7,8 @@
 /* ==========================================================================
    1. Walkthrough Container Setup
    ========================================================================== */
-[data-cursor-demo] {
+[data-cursor-demo],
+.product-demo[data-cursor-demo] {
   position: relative !important;
   overflow: visible;
 }
@@ -15,6 +16,7 @@
 /* ==========================================================================
    2. Fake Animated Cursor Overlay
    ========================================================================== */
+.demo-cursor,
 .demo-cursor-overlay {
   position: absolute;
   top: 0;
@@ -30,12 +32,14 @@
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.demo-cursor.is-visible,
 .demo-cursor-overlay.is-visible {
   opacity: 1;
 }
 
 /* Cursor Arrow SVG Graphic */
-.demo-cursor-arrow {
+.demo-cursor-arrow,
+.demo-cursor svg {
   width: 100%;
   height: 100%;
   display: block;
@@ -44,7 +48,10 @@
   transition: transform 0.14s ease-out;
 }
 
-.demo-cursor-overlay.is-clicking .demo-cursor-arrow {
+.demo-cursor.is-clicking .demo-cursor-arrow,
+.demo-cursor-overlay.is-clicking .demo-cursor-arrow,
+.demo-cursor.is-clicking svg,
+.demo-cursor-overlay.is-clicking svg {
   transform: scale(0.88);
 }
 
@@ -62,13 +69,15 @@
   transition: transform 0.15s ease-out;
 }
 
+.demo-cursor.is-clicking .demo-cursor-touch-dot,
 .demo-cursor-overlay.is-clicking .demo-cursor-touch-dot {
   transform: translate(-50%, -50%) scale(0.82);
   background: rgba(56, 189, 248, 0.9);
 }
 
 @media (max-width: 480px) {
-  .demo-cursor-arrow {
+  .demo-cursor-arrow,
+  .demo-cursor svg {
     display: none;
   }
   .demo-cursor-touch-dot {
@@ -185,6 +194,7 @@
    7. Reduced Motion Accessibility
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
+  .demo-cursor,
   .demo-cursor-overlay,
   .demo-click-ripple,
   .demo-replay-control {

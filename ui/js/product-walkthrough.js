@@ -10,19 +10,38 @@
   // Natural acceleration/deceleration easing curve
   const DEFAULT_EASING = 'cubic-bezier(0.22, 1, 0.36, 1)';
 
+  /**
+   * Calculate target coordinates from the live DOM using getBoundingClientRect()
+   * Prevents fake cursor from drifting or clicking the wrong place on different screens.
+   *
+   * @param {HTMLElement} container
+   * @param {HTMLElement} target
+   * @returns {{x: number, y: number}}
+   */
+  function getTargetPoint(container, target) {
+    if (!container || !target) return { x: 0, y: 0 };
+    const containerRect = container.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+
+    return {
+      x: targetRect.left - containerRect.left + targetRect.width / 2,
+      y: targetRect.top - containerRect.top + targetRect.height / 2,
+    };
+  }
+
   // Configurable declarative timeline stepping through the process with arrows
   const DEFAULT_TIMELINE = [
     // 1. Move to Step 01 in the arrow bar
     {
       target: '[data-demo-target="step-01"]',
       action: 'move',
-      duration: 850,
+      duration: 800,
       pauseAfter: 200
     },
     {
       target: '[data-demo-target="step-01"]',
       action: 'click',
-      pauseAfter: 2000
+      pauseAfter: 1900
     },
 
     // 2. Move along arrow to Step 02: Checkout & UPI
@@ -150,12 +169,11 @@
 
       // 1. Create Cursor Overlay with crisp high-contrast SVG arrow
       this.cursorEl = document.createElement('div');
-      this.cursorEl.className = 'demo-cursor-overlay';
+      this.cursorEl.className = 'demo-cursor demo-cursor-overlay';
       this.cursorEl.setAttribute('aria-hidden', 'true');
       this.cursorEl.innerHTML = `
         <svg class="demo-cursor-arrow" viewBox="0 0 32 32" aria-hidden="true">
-          <path d="M4 3 L26 17.5 L16 20.5 L11 30 Z" fill="#ffffff" stroke="#0a0f1d" stroke-width="2" stroke-linejoin="round" />
-          <circle cx="8" cy="8" r="2.5" fill="#38bdf8" />
+          <path d="M3 2 25 17 15 20 10 29Z" fill="#ffffff" stroke="#0a0f1d" stroke-width="2" stroke-linejoin="round" />
         </svg>
         <span class="demo-cursor-touch-dot" aria-hidden="true"></span>
       `;
@@ -242,21 +260,14 @@
     }
 
     /**
-     * Calculate target coordinates from the live DOM using getBoundingClientRect()
-     * Relative to the demo container, accounting for scroll and responsive layouts.
+     * Calculate target coordinates using live DOM getBoundingClientRect()
      */
     getTargetPoint(targetEl) {
+      const pt = getTargetPoint(this.container, targetEl);
+      // Safe clamp inside visible container bounds
       const containerRect = this.container.getBoundingClientRect();
-      const targetRect = targetEl.getBoundingClientRect();
-
-      // Center point calculation
-      const x = targetRect.left - containerRect.left + targetRect.width / 2;
-      const y = targetRect.top - containerRect.top + targetRect.height / 2;
-
-      // Safe clamp within visible container bounds
-      const clampedX = Math.max(12, Math.min(containerRect.width - 24, x));
-      const clampedY = Math.max(12, Math.min(containerRect.height - 24, y));
-
+      const clampedX = Math.max(12, Math.min(containerRect.width - 24, pt.x));
+      const clampedY = Math.max(12, Math.min(containerRect.height - 24, pt.y));
       return { x: clampedX, y: clampedY };
     }
 
@@ -409,11 +420,11 @@
         const midX = (startX + endX) / 2 - (dy / (dist || 1)) * perpFactor;
         const midY = (startY + endY) / 2 + (dx / (dist || 1)) * perpFactor;
 
-        // Keyframe definitions
+        // Keyframe definitions (cursor tip aligns precisely with target)
         const keyframes = [
-          { transform: `translate3d(${startX}px, ${startY}px, 0) rotate(${tilt * 0.5}deg)` },
-          { transform: `translate3d(${midX}px, ${midY}px, 0) rotate(${tilt}deg)`, offset: 0.55 },
-          { transform: `translate3d(${endX}px, ${endY}px, 0) rotate(0deg)` }
+          { transform: `translate3d(${startX - 3}px, ${startY - 2}px, 0) rotate(${tilt * 0.5}deg)` },
+          { transform: `translate3d(${midX - 3}px, ${midY - 2}px, 0) rotate(${tilt}deg)`, offset: 0.55 },
+          { transform: `translate3d(${endX - 3}px, ${endY - 2}px, 0) rotate(0deg)` }
         ];
 
         const anim = this.cursorEl.animate(keyframes, {
@@ -443,7 +454,7 @@
      * Position cursor directly without animation
      */
     setCursorPosition(x, y) {
-      this.cursorEl.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      this.cursorEl.style.transform = `translate3d(${x - 3}px, ${y - 2}px, 0)`;
     }
 
     /**
@@ -597,6 +608,7 @@
   }
 
   // Aliases for framework & module compatibility
+  global.getTargetPoint = getTargetPoint;
   global.ProductWalkthrough = ProductWalkthrough;
   global.GuidedCursorDemo = ProductWalkthrough;
   global.DemoCursorOverlay = ProductWalkthrough;
