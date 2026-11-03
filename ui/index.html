@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=31.0">
   <link rel="stylesheet" href="css/madgicx-motion.css?v=1.0">
-  <link rel="stylesheet" href="css/product-walkthrough.css?v=1.0">
 </head>
 <body>
 
@@ -376,568 +375,37 @@
           </button>
         </div>
 
-        <!-- Madgicx Animated Screen Container with Interactive Optimization Suite & Video Player -->
+        <!-- Madgicx Animated Screen Container with High-Definition Video Player (Like Before Format) -->
         <div class="features-screen_component">
           <div class="animated-screen" id="optAnimatedScreen">
             
             <!-- Floating Badge for Step 5 -->
             <div id="optFloatingBadge" class="screen-badge_component" style="display: none;">
               <div class="screen-badge_bage">
-                <div>AI Bidding - 6.4X ROAS Verified!</div>
+                <div>AI Bidding - exclusive on Global Digi Pulse!</div>
               </div>
             </div>
 
             <div class="screen_component">
-              <div class="opt-screen-viewport" id="optScreenViewport" data-cursor-demo>
+              <div class="screen_video" style="position: relative;">
                 
-                <!-- Screen Top HUD Bar (Exact Match with Image) -->
-                <div class="opt-screen-hud">
-                  <div style="display: flex; align-items: center; gap: 0.65rem;">
+                <!-- Floating Video Step HUD Overlay -->
+                <div class="video-step-hud">
+                  <div style="display: flex; align-items: center; gap: 0.6rem;">
                     <span class="video-hud-pulse"></span>
-                    <span id="videoHudStep" style="font-weight: 800; color: #ffffff; font-size: 0.825rem; letter-spacing: 0.05em; text-transform: uppercase;">STEP 02 • CHECKOUT & PAYMENT METHOD</span>
+                    <span id="videoHudStep" style="font-weight: 700; color: #fff; font-size: 0.85rem; letter-spacing: 0.04em;">STEP 01 • CHOOSE MASTERCLASS TRACK</span>
                   </div>
-                  
-                  <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;">
-                    <span id="videoHudUrl" style="color: #38bdf8; font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 0.78rem;">https://globaldigipulse.com/html/IntroPage.html?option=1</span>
-                    <span style="background: rgba(52, 211, 153, 0.16); border: 1px solid rgba(52, 211, 153, 0.4); color: #34d399; font-size: 0.7rem; font-weight: 800; padding: 2px 9px; border-radius: 999px;">LIVE DEMO</span>
-                    <div class="opt-hud-mode-group">
-                      <button type="button" class="opt-hud-mode-btn is-active" id="btnModeSuite" onclick="setOptMode('suite')">⚡ Interactive Studio</button>
-                      <button type="button" class="opt-hud-mode-btn" id="btnModeVideo" onclick="setOptMode('video')">▶ Video Walkthrough</button>
-                    </div>
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span id="videoHudUrl" style="color: #38bdf8; font-family: monospace; font-size: 0.78rem;">https://globaldigipulse.com/index.html#curriculum</span>
+                    <span style="background: rgba(52, 211, 153, 0.2); border: 1px solid rgba(52, 211, 153, 0.4); color: #34d399; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px;">LIVE DEMO</span>
                   </div>
                 </div>
 
-                <!-- STAGE 1: Interactive Screen Views -->
-                <div id="optStageInteractive" style="display: block; width: 100%;">
-                  
-                  <!-- ========================================================
-                       VIEW 0: Step 01 – Choose Track / Course Selection
-                       ======================================================== -->
-                  <div class="screen-step-view is-active" id="optScreenView0" style="padding: 1.5rem; text-align: left;">
-                    <div style="text-align: center; margin-bottom: 1.25rem;">
-                      <span style="color: #38bdf8; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">STEP 01 • CURRICULUM CATALOG</span>
-                      <h3 style="color: #fff; font-size: 1.45rem; font-weight: 900; margin: 0.35rem 0 0.5rem;">Select Your Specialized Social Media Masterclass</h3>
-                      <p style="color: #94a3b8; font-size: 0.875rem; max-width: 600px; margin: 0 auto;">Choose your high-converting track below with the official introductory 80% member fee waiver.</p>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
-                      <!-- Track 1 -->
-                      <div class="suite-formula-card card-fomo is-active" onclick="selectOptCourse(1)" style="padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <span style="background: rgba(236, 72, 153, 0.2); color: #f472b6; font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 999px;">TRACK 01</span>
-                            <span style="background: #ec4899; color: #fff; font-size: 0.65rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 999px;">80% OFF</span>
-                          </div>
-                          <h4 style="color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 0.35rem;">Instagram 3-Sec Hooks & Video Ads</h4>
-                          <p style="color: #94a3b8; font-size: 0.78rem; line-height: 1.45; margin: 0;">Master the 3-second psychological hook formulas, smartphone filming, and UGC video ad scripting.</p>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.08);">
-                          <div><span style="color: #34d399; font-size: 1.25rem; font-weight: 900;">₹499</span> <span style="color: #64748b; font-size: 0.75rem; text-decoration: line-through;">₹2,499</span></div>
-                          <button type="button" onclick="goToStep(1)" style="background: #38bdf8; color: #070419; border: none; font-size: 0.75rem; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 999px; cursor: pointer;">Selected ✓</button>
-                        </div>
-                      </div>
-
-                      <!-- Track 2 -->
-                      <div class="suite-formula-card card-problem" onclick="selectOptCourse(2)" style="padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 999px;">TRACK 02</span>
-                            <span style="background: #0284c7; color: #fff; font-size: 0.65rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 999px;">80% OFF</span>
-                          </div>
-                          <h4 style="color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 0.35rem;">Verified BM & 18% GST Exemption</h4>
-                          <p style="color: #94a3b8; font-size: 0.78rem; line-height: 1.45; margin: 0;">Enterprise Business Manager setup, CAPI webhooks, and legally waiving 18% GST ad tax on invoices.</p>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.08);">
-                          <div><span style="color: #34d399; font-size: 1.25rem; font-weight: 900;">₹499</span> <span style="color: #64748b; font-size: 0.75rem; text-decoration: line-through;">₹2,499</span></div>
-                          <button type="button" onclick="goToStep(1)" style="background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 999px; cursor: pointer;">Select</button>
-                        </div>
-                      </div>
-
-                      <!-- Track 3 -->
-                      <div class="suite-formula-card card-gap" onclick="selectOptCourse(3)" style="padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <span style="background: rgba(239, 68, 68, 0.2); color: #f87171; font-size: 0.68rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 999px;">TRACK 03</span>
-                            <span style="background: #dc2626; color: #fff; font-size: 0.65rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 999px;">80% OFF</span>
-                          </div>
-                          <h4 style="color: #fff; font-size: 1rem; font-weight: 800; margin-bottom: 0.35rem;">YouTube Skippable In-Stream Ads</h4>
-                          <p style="color: #94a3b8; font-size: 0.78rem; line-height: 1.45; margin: 0;">Target high-intent search intent buyers on YouTube with skippable in-stream video ads.</p>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.08);">
-                          <div><span style="color: #34d399; font-size: 1.25rem; font-weight: 900;">₹499</span> <span style="color: #64748b; font-size: 0.75rem; text-decoration: line-through;">₹2,499</span></div>
-                          <button type="button" onclick="goToStep(1)" style="background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 999px; cursor: pointer;">Select</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- ========================================================
-                       VIEW 1: Step 02 – EXACT MATCH OF THE USER'S SCREENSHOT
-                       Meta Ad Creative Suite & 3-Second Hook Dashboard
-                       ======================================================== -->
-                  <div class="screen-step-view" id="optScreenView1" style="display: none;">
-                    <div class="suite-dashboard-wrapper">
-                      
-                      <!-- Left Sidebar Navigation -->
-                      <nav class="suite-sidebar">
-                        <button type="button" class="suite-sidebar-item" id="suiteNavOverview" data-demo-target="sidebar-overview" onclick="selectSuiteNav('Overview')">
-                          <div class="suite-sidebar-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                              <rect x="3" y="3" width="7" height="7"></rect>
-                              <rect x="14" y="3" width="7" height="7"></rect>
-                              <rect x="14" y="14" width="7" height="7"></rect>
-                              <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                          </div>
-                          <span>Overview</span>
-                        </button>
-
-                        <button type="button" class="suite-sidebar-item" id="suiteNavCampaigns" data-demo-target="sidebar-campaigns" onclick="selectSuiteNav('Campaigns')">
-                          <div class="suite-sidebar-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                            </svg>
-                          </div>
-                          <span>Campaigns</span>
-                        </button>
-
-                        <button type="button" class="suite-sidebar-item is-active" id="suiteNavCreatives" data-demo-target="sidebar-creatives" onclick="selectSuiteNav('Creatives')">
-                          <div class="suite-sidebar-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-                              <line x1="7" y1="2" x2="7" y2="22"></line>
-                              <line x1="17" y1="2" x2="17" y2="22"></line>
-                              <line x1="2" y1="12" x2="22" y2="12"></line>
-                              <line x1="2" y1="7" x2="7" y2="7"></line>
-                              <line x1="2" y1="17" x2="7" y2="17"></line>
-                              <line x1="17" y1="17" x2="22" y2="17"></line>
-                              <line x1="17" y1="7" x2="22" y2="7"></line>
-                            </svg>
-                          </div>
-                          <span>Creatives</span>
-                        </button>
-
-                        <button type="button" class="suite-sidebar-item" id="suiteNavAudience" data-demo-target="sidebar-audience" onclick="selectSuiteNav('Audience')">
-                          <div class="suite-sidebar-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                              <circle cx="9" cy="7" r="4"></circle>
-                              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
-                          </div>
-                          <span>Audience</span>
-                        </button>
-
-                        <button type="button" class="suite-sidebar-item" id="suiteNavAnalytics" data-demo-target="sidebar-analytics" onclick="selectSuiteNav('Analytics')">
-                          <div class="suite-sidebar-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                              <line x1="18" y1="20" x2="18" y2="10"></line>
-                              <line x1="12" y1="20" x2="12" y2="4"></line>
-                              <line x1="6" y1="20" x2="6" y2="14"></line>
-                            </svg>
-                          </div>
-                          <span>Analytics</span>
-                        </button>
-                      </nav>
-
-                      <!-- Main Grid Area -->
-                      <div class="suite-main-content">
-                        
-                        <!-- Left Column: Creative Formulas & Hook Rate -->
-                        <div class="suite-col-left">
-                          <div class="suite-col-header-label">
-                            <span style="color: #38bdf8;">⚡</span>
-                            <span>Creative Formulas</span>
-                          </div>
-
-                          <div class="suite-hero-formula-box">
-                            <h3 class="suite-formula-title">
-                              3-SECOND HOOK
-                              <span>PSYCHOLOGICAL FORMULA</span>
-                            </h3>
-
-                            <!-- 2x2 Formula Cards Grid -->
-                            <div class="suite-formulas-grid">
-                              <!-- Formula 1: FOMO -->
-                              <div class="suite-formula-card card-fomo is-active" id="formulaCardFomo" data-demo-target="formula-fomo" onclick="selectFormula('fomo')">
-                                <div class="suite-card-head" style="color: #38bdf8;">
-                                  <span>🔒</span>
-                                  <span>FOMO</span>
-                                </div>
-                                <p class="suite-card-desc">
-                                  Discuss FOMO hook techniques, fast-paced cut changes, high-urgency intros, and countdown scarcity triggers.
-                                </p>
-                              </div>
-
-                              <!-- Formula 2: The Problem/Solution -->
-                              <div class="suite-formula-card card-problem" id="formulaCardProblem" data-demo-target="formula-problem" onclick="selectFormula('problem')">
-                                <div class="suite-card-head" style="color: #c084fc;">
-                                  <span>🎭</span>
-                                  <span>The Problem/Solution</span>
-                                </div>
-                                <p class="suite-card-desc">
-                                  Identify the exact audience pain point in first 3s & introduce the breakthrough mechanism and solution.
-                                </p>
-                              </div>
-
-                              <!-- Formula 3: Social Proof -->
-                              <div class="suite-formula-card card-proof" id="formulaCardProof" data-demo-target="formula-proof" onclick="selectFormula('proof')">
-                                <div class="suite-card-head" style="color: #38bdf8;">
-                                  <span>👥</span>
-                                  <span>Social Proof</span>
-                                </div>
-                                <p class="suite-card-desc">
-                                  Enhance social proof with real student numbers, live customer reactions, and authentic UGC clips.
-                                </p>
-                              </div>
-
-                              <!-- Formula 4: Curiosity Gap -->
-                              <div class="suite-formula-card card-gap" id="formulaCardGap" data-demo-target="formula-gap" onclick="selectFormula('gap')">
-                                <div class="suite-card-head" style="color: #f472b6;">
-                                  <span>❓</span>
-                                  <span>Curiosity Gap</span>
-                                </div>
-                                <p class="suite-card-desc">
-                                  Create an open curiosity gap that forces viewers to stay engaged until the final call to action.
-                                </p>
-                              </div>
-                            </div>
-
-                            <!-- Hook Conversion Rate Chart Box -->
-                            <div class="suite-chart-box">
-                              <div class="suite-chart-header">
-                                <span class="suite-chart-title">Hook Conversion Rate</span>
-                                <div class="suite-chart-legend">
-                                  <span><span class="suite-legend-dot" style="background: #38bdf8;"></span> Meta</span>
-                                  <span><span class="suite-legend-dot" style="background: #ec4899;"></span> Metric</span>
-                                </div>
-                              </div>
-
-                              <!-- SVG Chart -->
-                              <div style="width: 100%; height: 135px; position: relative;">
-                                <svg width="100%" height="100%" viewBox="0 0 500 135" preserveAspectRatio="none" style="overflow: visible;">
-                                  <defs>
-                                    <linearGradient id="suiteGradCyan" x1="0" y1="0" x2="0" y2="1">
-                                      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45" />
-                                      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0" />
-                                    </linearGradient>
-                                    <linearGradient id="suiteGradPink" x1="0" y1="0" x2="0" y2="1">
-                                      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.38" />
-                                      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.0" />
-                                    </linearGradient>
-                                  </defs>
-
-                                  <!-- Horizontal Grid Lines -->
-                                  <line x1="30" y1="15" x2="495" y2="15" stroke="rgba(255,255,255,0.06)" stroke-dasharray="3,3" />
-                                  <line x1="30" y1="42" x2="495" y2="42" stroke="rgba(255,255,255,0.06)" stroke-dasharray="3,3" />
-                                  <line x1="30" y1="69" x2="495" y2="69" stroke="rgba(255,255,255,0.06)" stroke-dasharray="3,3" />
-                                  <line x1="30" y1="96" x2="495" y2="96" stroke="rgba(255,255,255,0.06)" stroke-dasharray="3,3" />
-                                  <line x1="30" y1="120" x2="495" y2="120" stroke="rgba(255,255,255,0.12)" />
-
-                                  <!-- Y Axis Labels -->
-                                  <text x="22" y="18" fill="#64748b" font-size="8.5" text-anchor="end" font-family="monospace">80%</text>
-                                  <text x="22" y="45" fill="#64748b" font-size="8.5" text-anchor="end" font-family="monospace">60%</text>
-                                  <text x="22" y="72" fill="#64748b" font-size="8.5" text-anchor="end" font-family="monospace">40%</text>
-                                  <text x="22" y="99" fill="#64748b" font-size="8.5" text-anchor="end" font-family="monospace">20%</text>
-                                  <text x="22" y="122" fill="#64748b" font-size="8.5" text-anchor="end" font-family="monospace">0%</text>
-
-                                  <!-- Cyan Area & Line -->
-                                  <path d="M 35 120 L 35 110 C 65 95, 95 65, 125 70 C 155 75, 185 92, 215 90 C 245 88, 275 60, 305 65 C 335 70, 375 75, 415 68 C 455 60, 475 78, 495 82 L 495 120 Z" fill="url(#suiteGradCyan)" />
-                                  <path d="M 35 110 C 65 95, 95 65, 125 70 C 155 75, 185 92, 215 90 C 245 88, 275 60, 305 65 C 335 70, 375 75, 415 68 C 455 60, 475 78, 495 82" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linecap="round" />
-
-                                  <!-- Pink/Magenta Area & Line -->
-                                  <path d="M 35 120 L 35 98 C 65 78, 95 90, 125 80 C 155 70, 185 55, 215 58 C 245 61, 275 75, 305 62 C 335 48, 385 52, 425 45 C 465 38, 480 50, 495 55 L 495 120 Z" fill="url(#suiteGradPink)" />
-                                  <path d="M 35 98 C 65 78, 95 90, 125 80 C 155 70, 185 55, 215 58 C 245 61, 275 75, 305 62 C 335 48, 385 52, 425 45 C 465 38, 480 50, 495 55" fill="none" stroke="#ec4899" stroke-width="2.6" stroke-linecap="round" />
-
-                                  <!-- Peak Data Dots with Glow -->
-                                  <circle cx="215" cy="58" r="4" fill="#ec4899" stroke="#ffffff" stroke-width="1.5" />
-                                  <circle cx="305" cy="65" r="4" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5" />
-                                  <circle cx="425" cy="45" r="4" fill="#ec4899" stroke="#ffffff" stroke-width="1.5" />
-
-                                  <!-- X Axis Timestamps -->
-                                  <text x="35" y="132" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">0m</text>
-                                  <text x="110" y="132" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">10m</text>
-                                  <text x="190" y="132" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">20m</text>
-                                  <text x="270" y="132" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">30m</text>
-                                  <text x="350" y="132" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">40m</text>
-                                  <text x="430" y="132" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">50m</text>
-                                  <text x="495" y="132" fill="#64748b" font-size="8" text-anchor="middle" font-family="monospace">60m</text>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Right Column: Templates & High-CTR Scripts -->
-                        <div class="suite-col-right">
-                          <div class="suite-col-header-label" style="justify-content: space-between;">
-                            <span style="text-transform: uppercase;">Scroll-Stopping Ad Templates</span>
-                          </div>
-
-                          <!-- Tabs: Instagram Reels / Facebook Feed -->
-                          <div class="suite-templates-tabs">
-                            <button type="button" class="suite-tab-btn is-active" id="tabReels" data-demo-target="tab-reels" onclick="selectSuiteTab('reels')">
-                              INSTAGRAM REELS
-                            </button>
-                            <button type="button" class="suite-tab-btn" id="tabFeed" data-demo-target="tab-feed" onclick="selectSuiteTab('feed')">
-                              FACEBOOK FEED
-                            </button>
-                          </div>
-
-                          <!-- Row of 3 Video Reel Cards -->
-                          <div class="suite-reels-grid" id="suiteReelsContainer">
-                            <!-- Card 1: Product Demo -->
-                            <div class="suite-reel-item" data-demo-target="reel-card-1" onclick="previewReel('demo')">
-                              <div class="suite-reel-media" style="background-image: url('assets/poster_option1.jpg');">
-                                <div class="suite-play-circle">
-                                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                                </div>
-                              </div>
-                              <div class="suite-reel-label">Reels: Product Demo</div>
-                            </div>
-
-                            <!-- Card 2: Customer Testimonial -->
-                            <div class="suite-reel-item" data-demo-target="reel-card-2" onclick="previewReel('testimonial')">
-                              <div class="suite-reel-media" style="background-image: url('assets/clean_presenter_bg.jpg');">
-                                <div class="suite-play-circle">
-                                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                                </div>
-                              </div>
-                              <div class="suite-reel-label">Reels: Customer Testimonial</div>
-                            </div>
-
-                            <!-- Card 3: Limited Offer (Feed style) -->
-                            <div class="suite-reel-item" data-demo-target="reel-card-3" onclick="previewReel('offer')">
-                              <div class="suite-reel-media" style="background-image: url('assets/meta_ads_cover.jpg');">
-                                <span class="suite-reel-badge">LIMITED OFFER</span>
-                                <div class="suite-play-circle">
-                                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                                </div>
-                              </div>
-                              <div class="suite-reel-label">Feed: Limited Offer</div>
-                            </div>
-                          </div>
-
-                          <!-- High-CTR Scripts Section -->
-                          <div class="suite-scripts-section">
-                            <div>
-                              <h4 style="color: #ffffff; font-size: 0.88rem; font-weight: 800; letter-spacing: 0.04em; margin: 0 0 0.15rem; text-transform: uppercase;">
-                                High-CTR Scripts Library
-                              </h4>
-                              <p style="color: #94a3b8; font-size: 0.72rem; margin: 0;">
-                                Video Script Templates for varying business objectives
-                              </p>
-                            </div>
-
-                            <div class="suite-scripts-grid">
-                              <!-- Script 1 -->
-                              <div class="suite-script-item" onclick="viewScript('launch')">
-                                <div class="suite-script-header">
-                                  <span class="suite-script-title">Product Launch Script</span>
-                                  <span style="color: #64748b; font-size: 0.75rem;">⋮</span>
-                                </div>
-                                <div class="suite-script-meta">Target: Cold Broad • Full-HD Video</div>
-                                <p class="suite-script-desc">
-                                  High-curiosity hook script opening an immediate mental gap to introduce your product.
-                                </p>
-                              </div>
-
-                              <!-- Script 2 -->
-                              <div class="suite-script-item" onclick="viewScript('discount')">
-                                <div class="suite-script-header">
-                                  <span class="suite-script-title">Discount Offer Script</span>
-                                  <span style="color: #64748b; font-size: 0.75rem;">⋮</span>
-                                </div>
-                                <div class="suite-script-meta">Target: Retargeting • Limited Offer</div>
-                                <p class="suite-script-desc">
-                                  Direct-response scarcity copy converting hesitant website visitors into immediate buyers.
-                                </p>
-                              </div>
-
-                              <!-- Script 3 -->
-                              <div class="suite-script-item" onclick="viewScript('brand')">
-                                <div class="suite-script-header">
-                                  <span class="suite-script-title">Brand Awareness Script</span>
-                                  <span style="color: #64748b; font-size: 0.75rem;">⋮</span>
-                                </div>
-                                <div class="suite-script-meta">Target: Lookalikes • Storytelling</div>
-                                <p class="suite-script-desc">
-                                  Position authority with an emotional narrative framework building deep trust.
-                                </p>
-                              </div>
-
-                              <!-- Script 4 -->
-                              <div class="suite-script-item" onclick="viewScript('ugc')">
-                                <div class="suite-script-header">
-                                  <span class="suite-script-title">UGC Style Script</span>
-                                  <span style="color: #64748b; font-size: 0.75rem;">⋮</span>
-                                </div>
-                                <div class="suite-script-meta">Target: Direct Feed • Creator UGC</div>
-                                <p class="suite-script-desc">
-                                  Authentic raw smartphone review format proven to lower cost-per-acquisition.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- ========================================================
-                       VIEW 2: Step 03 – Scan & Pay Dynamic UPI QR Code
-                       ======================================================== -->
-                  <div class="screen-step-view" id="optScreenView2" style="display: none; padding: 1.5rem; text-align: center;">
-                    <div style="max-width: 520px; margin: 0 auto; background: rgba(13, 9, 34, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 20px; padding: 1.75rem; box-shadow: 0 20px 50px rgba(0,0,0,0.7);">
-                      <span style="color: #38bdf8; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">REAL-TIME GATEWAY SETTLEMENT</span>
-                      <h3 style="color: #fff; font-size: 1.35rem; font-weight: 800; margin: 0.35rem 0 1rem;">Scan & Pay with Any UPI App</h3>
-
-                      <!-- Dynamic QR Code SVG -->
-                      <div style="width: 170px; height: 170px; margin: 0 auto 1rem; background: #ffffff; border-radius: 16px; padding: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);">
-                        <svg width="150" height="150" viewBox="0 0 100 100" fill="#0f172a">
-                          <rect x="5" y="5" width="28" height="28" rx="4" fill="#0f172a"></rect>
-                          <rect x="9" y="9" width="20" height="20" rx="2" fill="#fff"></rect>
-                          <rect x="13" y="13" width="12" height="12" rx="2" fill="#0f172a"></rect>
-                          <rect x="67" y="5" width="28" height="28" rx="4" fill="#0f172a"></rect>
-                          <rect x="71" y="9" width="20" height="20" rx="2" fill="#fff"></rect>
-                          <rect x="75" y="13" width="12" height="12" rx="2" fill="#0f172a"></rect>
-                          <rect x="5" y="67" width="28" height="28" rx="4" fill="#0f172a"></rect>
-                          <rect x="9" y="71" width="20" height="20" rx="2" fill="#fff"></rect>
-                          <rect x="13" y="75" width="12" height="12" rx="2" fill="#0f172a"></rect>
-                          <circle cx="50" cy="50" r="14" fill="#0284c7"></circle>
-                          <text x="50" y="54" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">UPI</text>
-                          <rect x="38" y="10" width="8" height="8" fill="#0f172a"></rect>
-                          <rect x="50" y="15" width="6" height="12" fill="#0f172a"></rect>
-                          <rect x="38" y="75" width="10" height="6" fill="#0f172a"></rect>
-                          <rect x="75" y="45" width="14" height="6" fill="#0f172a"></rect>
-                          <rect x="42" y="85" width="18" height="6" fill="#0f172a"></rect>
-                        </svg>
-                      </div>
-
-                      <div style="font-size: 1.35rem; font-weight: 900; color: #34d399; margin-bottom: 0.2rem;">Amount: ₹499.00</div>
-                      <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.85rem;">
-                        Dynamic QR expires in: <strong id="optCountdownTimer" style="color: #f59e0b;">04:59</strong>
-                      </div>
-
-                      <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.5rem 0.85rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                        <span style="color: #fff; font-family: monospace; font-size: 0.85rem;">shriya@okhdfcbank</span>
-                        <span style="color: #34d399; font-size: 0.75rem; font-weight: 800;">✓ VERIFIED UPI</span>
-                      </div>
-
-                      <button type="button" onclick="simulateOptPayment()" style="width: 100%; background: linear-gradient(135deg, #10b981, #0284c7); color: #fff; border: none; padding: 0.75rem; border-radius: 10px; font-size: 0.9rem; font-weight: 800; cursor: pointer; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);">
-                        ⚡ Simulate Live Bank Payment Confirmation (Instant) →
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- ========================================================
-                       VIEW 3: Step 04 – Fast-Pass Login & Credentials
-                       ======================================================== -->
-                  <div class="screen-step-view" id="optScreenView3" style="display: none; padding: 1.5rem; text-align: center;">
-                    <div style="max-width: 540px; margin: 0 auto; background: rgba(13, 9, 34, 0.9); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 20px; padding: 1.75rem; box-shadow: 0 20px 50px rgba(0,0,0,0.7);">
-                      <div style="width: 52px; height: 52px; border-radius: 50%; background: rgba(52, 211, 153, 0.15); border: 2px solid #34d399; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: #34d399; font-size: 1.5rem;">
-                        ✓
-                      </div>
-                      <span style="color: #34d399; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">PAYMENT CONFIRMED • ORDER #GDP-8824</span>
-                      <h3 style="color: #fff; font-size: 1.35rem; font-weight: 800; margin: 0.35rem 0 0.5rem;">Your Fast-Pass Student ID is Ready</h3>
-                      <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1.25rem;">Automated credentials have been generated and provisioned with lifetime curriculum authorization.</p>
-
-                      <div style="background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 1.15rem; text-align: left; margin-bottom: 1.25rem;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5rem;">
-                          <span style="color: #94a3b8; font-size: 0.8rem;">Student ID:</span>
-                          <span style="color: #38bdf8; font-weight: 700; font-family: monospace;">GDP-2026-8842</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5rem;">
-                          <span style="color: #94a3b8; font-size: 0.8rem;">Username:</span>
-                          <span style="color: #fff; font-weight: 700; font-family: monospace;">Shriya</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5rem;">
-                          <span style="color: #94a3b8; font-size: 0.8rem;">Password:</span>
-                          <span style="color: #c084fc; font-weight: 700; font-family: monospace;">Megha@14</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                          <span style="color: #94a3b8; font-size: 0.8rem;">Access Status:</span>
-                          <span style="color: #34d399; font-weight: 800; font-size: 0.8rem;">✓ Lifetime Pro Active</span>
-                        </div>
-                      </div>
-
-                      <div style="display: flex; gap: 0.75rem;">
-                        <button type="button" onclick="copyOptCredentials()" style="flex: 1; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 0.7rem; border-radius: 10px; font-weight: 700; font-size: 0.85rem; cursor: pointer;">
-                          📋 Copy Credentials
-                        </button>
-                        <button type="button" onclick="goToStep(4)" style="flex: 1.3; background: linear-gradient(135deg, #7c5cff, #38bdf8); color: #fff; border: none; padding: 0.7rem; border-radius: 10px; font-weight: 800; font-size: 0.88rem; cursor: pointer;">
-                          Sign In & Unlock Video →
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- ========================================================
-                       VIEW 4: Step 05 – Video Streaming & 6.4X Scaling
-                       ======================================================== -->
-                  <div class="screen-step-view" id="optScreenView4" style="display: none; padding: 1.5rem; text-align: left;">
-                    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.25rem; align-items: start;">
-                      <!-- Left: Player -->
-                      <div>
-                        <div style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 15px 40px rgba(0,0,0,0.8); background: #000;">
-                          <video id="optStep5Video" width="100%" controls playsinline preload="auto" poster="assets/hero_mockup.jpg" style="width: 100%; height: auto; display: block;">
-                            <source src="assets/vid_06_Ads_Manager_2.mp4" type="video/mp4">
-                          </video>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem;">
-                          <div>
-                            <h4 style="color: #fff; font-size: 0.95rem; font-weight: 800; margin: 0;">Lesson 4: Autonomous AI Bidding & 6.4X ROAS Scaling</h4>
-                            <p style="color: #94a3b8; font-size: 0.78rem; margin: 0;">Full 1080p HD Streaming • Masterclass Unlocked</p>
-                          </div>
-                          <span style="background: rgba(52, 211, 153, 0.15); color: #34d399; font-weight: 800; font-size: 0.72rem; padding: 0.25rem 0.65rem; border-radius: 999px;">UNLOCKED ✓</span>
-                        </div>
-                      </div>
-
-                      <!-- Right: Budget & Telemetry -->
-                      <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.25rem;">
-                        <h4 style="color: #fff; font-size: 0.92rem; font-weight: 800; margin-bottom: 0.75rem;">Live AI Bidding Telemetry</h4>
-                        
-                        <div style="margin-bottom: 1rem;">
-                          <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
-                            <label style="font-size: 0.78rem; font-weight: 700; color: #cbd5e1;">Daily Ad Budget</label>
-                            <span id="optBudgetLabel" style="font-size: 0.95rem; font-weight: 900; color: #34d399;">₹1,500</span>
-                          </div>
-                          <input type="range" min="500" max="10000" step="500" value="1500" oninput="updateOptBudget(this.value)" style="width: 100%; accent-color: #34d399; cursor: pointer;">
-                        </div>
-
-                        <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.8rem;">
-                          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.4rem;">
-                            <span style="color: #94a3b8;">Est. Daily Reach:</span>
-                            <span id="optEstReach" style="color: #fff; font-weight: 800;">12,750 - 21,000</span>
-                          </div>
-                          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.4rem;">
-                            <span style="color: #94a3b8;">High-Intent Leads:</span>
-                            <span id="optEstLeads" style="color: #38bdf8; font-weight: 800;">577 leads</span>
-                          </div>
-                          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.4rem;">
-                            <span style="color: #94a3b8;">Verified ROAS:</span>
-                            <span style="color: #34d399; font-weight: 900;">6.4X Verified</span>
-                          </div>
-                        </div>
-
-                        <a href="html/CampainPage.html" style="display: block; text-align: center; margin-top: 1rem; background: linear-gradient(135deg, #7c5cff, #0284c7); color: #fff; text-decoration: none; padding: 0.65rem; border-radius: 8px; font-weight: 800; font-size: 0.85rem; box-shadow: 0 8px 20px rgba(124, 92, 255, 0.4);">
-                          Launch Production Campaign →
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <!-- STAGE 2: Standalone Video Player Tour (Shown when user clicks "Video Tour") -->
-                <div id="optStageVideo" style="display: none; width: 100%; position: relative;">
-                  <video id="optMainVideo" width="100%" autoplay muted loop playsinline preload="auto" poster="assets/hero_mockup.jpg" style="width: 100%; height: auto; display: block; background: #050512;">
-                    <source id="optVideoSource" src="assets/ads_optimization_demo.mp4" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                  </video>
-                </div>
+                <!-- High Definition Video Player (Exact Before Format) -->
+                <video id="optMainVideo" width="100%" autoplay muted loop playsinline preload="auto" poster="assets/hero_mockup.jpg" style="width: 100%; height: auto; display: block; border-radius: 32px; background: #050512;">
+                  <source id="optVideoSource" src="assets/ads_optimization_demo.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+                </video>
 
               </div>
             </div>
@@ -1113,213 +581,6 @@
         ];
 
         let currentActiveStep = 0;
-        let optCurrentMode = 'suite';
-        let optQrTimerInterval = null;
-
-        function setOptMode(mode) {
-          optCurrentMode = mode;
-          const interactiveStage = document.getElementById('optStageInteractive');
-          const videoStage = document.getElementById('optStageVideo');
-          const btnSuite = document.getElementById('btnModeSuite');
-          const btnVideo = document.getElementById('btnModeVideo');
-          const video = document.getElementById('optMainVideo');
-
-          if (mode === 'suite') {
-            if (interactiveStage) interactiveStage.style.display = 'block';
-            if (videoStage) videoStage.style.display = 'none';
-            if (btnSuite) btnSuite.classList.add('is-active');
-            if (btnVideo) btnVideo.classList.remove('is-active');
-            if (video) video.pause();
-          } else {
-            if (interactiveStage) interactiveStage.style.display = 'none';
-            if (videoStage) videoStage.style.display = 'block';
-            if (btnSuite) btnSuite.classList.remove('is-active');
-            if (btnVideo) btnVideo.classList.add('is-active');
-            if (video) video.play().catch(function(){});
-          }
-        }
-
-        function selectSuiteNav(navName) {
-          const navItems = ['Overview', 'Campaigns', 'Creatives', 'Audience', 'Analytics'];
-          navItems.forEach(function(item) {
-            const el = document.getElementById('suiteNav' + item);
-            if (el) {
-              if (item === navName) {
-                el.classList.add('is-active');
-              } else {
-                el.classList.remove('is-active');
-              }
-            }
-          });
-          if (typeof showToast === 'function') {
-            showToast('📂 Switched workspace view to: ' + navName);
-          }
-        }
-
-        function selectFormula(formulaKey) {
-          const formulas = ['fomo', 'problem', 'proof', 'gap'];
-          formulas.forEach(function(f) {
-            const card = document.getElementById('formulaCard' + f.charAt(0).toUpperCase() + f.slice(1));
-            if (card) {
-              if (f === formulaKey) {
-                card.classList.add('is-active');
-              } else {
-                card.classList.remove('is-active');
-              }
-            }
-          });
-        }
-
-        function selectSuiteTab(tabKey) {
-          const btnReels = document.getElementById('tabReels');
-          const btnFeed = document.getElementById('tabFeed');
-          const container = document.getElementById('suiteReelsContainer');
-
-          if (tabKey === 'reels') {
-            if (btnReels) btnReels.classList.add('is-active');
-            if (btnFeed) btnFeed.classList.remove('is-active');
-            if (container) {
-              container.innerHTML = `
-                <div class="suite-reel-item" data-demo-target="reel-card-1" onclick="previewReel('demo')">
-                  <div class="suite-reel-media" style="background-image: url('assets/poster_option1.jpg');">
-                    <div class="suite-play-circle">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                    </div>
-                  </div>
-                  <div class="suite-reel-label">Reels: Product Demo</div>
-                </div>
-                <div class="suite-reel-item" data-demo-target="reel-card-2" onclick="previewReel('testimonial')">
-                  <div class="suite-reel-media" style="background-image: url('assets/clean_presenter_bg.jpg');">
-                    <div class="suite-play-circle">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                    </div>
-                  </div>
-                  <div class="suite-reel-label">Reels: Customer Testimonial</div>
-                </div>
-                <div class="suite-reel-item" data-demo-target="reel-card-3" onclick="previewReel('offer')">
-                  <div class="suite-reel-media" style="background-image: url('assets/meta_ads_cover.jpg');">
-                    <span class="suite-reel-badge">LIMITED OFFER</span>
-                    <div class="suite-play-circle">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                    </div>
-                  </div>
-                  <div class="suite-reel-label">Feed: Limited Offer</div>
-                </div>
-              `;
-            }
-          } else {
-            if (btnReels) btnReels.classList.remove('is-active');
-            if (btnFeed) btnFeed.classList.add('is-active');
-            if (container) {
-              container.innerHTML = `
-                <div class="suite-reel-item" data-demo-target="reel-card-1" onclick="previewReel('feed_offer')">
-                  <div class="suite-reel-media" style="background-image: url('assets/ads_meta_command.jpg');">
-                    <span class="suite-reel-badge" style="background: #0284c7;">FEED AD</span>
-                    <div class="suite-play-circle">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                    </div>
-                  </div>
-                  <div class="suite-reel-label">Feed: Carousel Hook</div>
-                </div>
-                <div class="suite-reel-item" data-demo-target="reel-card-2" onclick="previewReel('feed_ugc')">
-                  <div class="suite-reel-media" style="background-image: url('assets/poster_option2.jpg');">
-                    <div class="suite-play-circle">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                    </div>
-                  </div>
-                  <div class="suite-reel-label">Feed: Split Proof</div>
-                </div>
-                <div class="suite-reel-item" data-demo-target="reel-card-3" onclick="previewReel('feed_direct')">
-                  <div class="suite-reel-media" style="background-image: url('assets/ads_social_matrix.jpg');">
-                    <span class="suite-reel-badge">TOP CTR</span>
-                    <div class="suite-play-circle">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                    </div>
-                  </div>
-                  <div class="suite-reel-label">Feed: Authority Banner</div>
-                </div>
-              `;
-            }
-          }
-        }
-
-        function previewReel(reelId) {
-          if (typeof showToast === 'function') {
-            showToast('🎬 Loading template preview: ' + reelId);
-          }
-        }
-
-        function viewScript(scriptId) {
-          const scripts = {
-            launch: "Product Launch Hook: 'Stop running Meta ads until you fix this single 3-second setting... Here is what 99% of media buyers get wrong.'",
-            discount: "Discount Offer Hook: 'Only 14 access passes left for today with official 18% GST waiver. Click below before the link expires at midnight.'",
-            brand: "Brand Awareness Hook: 'How we scaled from zero to ₹14.8 Crores using zero-agency autonomous ads in 90 days flat.'",
-            ugc: "UGC Style Hook: 'I was skeptical about spending ₹499 on an ad course, but this 3-sec psychological framework cut my CPL to ₹2.60 on day one.'"
-          };
-          if (scripts[scriptId]) {
-            alert(scripts[scriptId]);
-          }
-        }
-
-        function selectOptCourse(courseNum) {
-          goToStep(1);
-        }
-
-        function simulateOptPayment() {
-          if (typeof showToast === 'function') {
-            showToast('⚡ Webhook clearance received from UPI Gateway! Verified ₹499.');
-          }
-          setTimeout(function() {
-            goToStep(3);
-          }, 600);
-        }
-
-        function copyOptCredentials() {
-          const text = "Student ID: GDP-2026-8842\\nUsername: Shriya\\nPassword: Megha@14\\nURL: https://globaldigipulse.com/LoginPage.html";
-          if (navigator.clipboard) {
-            navigator.clipboard.writeText(text);
-          }
-          if (typeof showToast === 'function') {
-            showToast('📋 Fast-Pass credentials copied to clipboard!');
-          } else {
-            alert('Fast-Pass credentials copied to clipboard!');
-          }
-        }
-
-        function updateOptBudget(val) {
-          const lbl = document.getElementById('optBudgetLabel');
-          const reach = document.getElementById('optEstReach');
-          const leads = document.getElementById('optEstLeads');
-          if (lbl) lbl.textContent = '₹' + Number(val).toLocaleString('en-IN');
-          const factor = Number(val) / 1500;
-          if (reach) {
-            const minR = Math.round(12750 * factor);
-            const maxR = Math.round(21000 * factor);
-            reach.textContent = minR.toLocaleString('en-IN') + ' - ' + maxR.toLocaleString('en-IN');
-          }
-          if (leads) {
-            const estL = Math.round(577 * factor);
-            leads.textContent = estL + ' leads';
-          }
-        }
-
-        function startOptQrTimer() {
-          if (optQrTimerInterval) clearInterval(optQrTimerInterval);
-          let seconds = 299;
-          const timerEl = document.getElementById('optCountdownTimer');
-          if (!timerEl) return;
-          optQrTimerInterval = setInterval(function() {
-            seconds--;
-            if (seconds <= 0) {
-              clearInterval(optQrTimerInterval);
-              timerEl.textContent = '00:00';
-              return;
-            }
-            const m = Math.floor(seconds / 60);
-            const s = seconds % 60;
-            timerEl.textContent = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
-          }, 1000);
-        }
 
         function goToStep(index) {
           if (index < 0 || index >= stepDefinitions.length) return;
@@ -1367,25 +628,7 @@
             }
           }
 
-          // 3. Update interactive step views
-          for (let v = 0; v < 5; v++) {
-            const vEl = document.getElementById('optScreenView' + v);
-            if (vEl) {
-              if (v === index) {
-                vEl.classList.add('is-active');
-                vEl.style.display = (v === 1) ? 'block' : 'block';
-              } else {
-                vEl.classList.remove('is-active');
-                vEl.style.display = 'none';
-              }
-            }
-          }
-
-          if (index === 2) {
-            startOptQrTimer();
-          }
-
-          // 4. Update video source
+          // 3. Update video playback
           const video = document.getElementById('optMainVideo');
           const source = document.getElementById('optVideoSource');
           if (video && source) {
@@ -1393,19 +636,17 @@
               video.poster = data.poster;
               source.setAttribute('src', data.video);
               video.load();
-              if (optCurrentMode === 'video') {
-                video.play().catch(function(){});
-              }
+              video.play().catch(function(){});
             }
           }
 
-          // 5. Update floating badge
+          // 4. Update floating badge
           const floatingBadge = document.getElementById('optFloatingBadge');
           if (floatingBadge) {
             floatingBadge.style.display = data.showBadge ? 'flex' : 'none';
           }
 
-          // 6. Update indicator dots
+          // 5. Update indicator dots
           const dots = document.querySelectorAll('.opt-step-dot');
           dots.forEach(function(dot, i) {
             if (i === index) {
@@ -1415,7 +656,7 @@
             }
           });
 
-          // 7. Update Next/Prev controls
+          // 6. Update Next/Prev controls
           const btnPrev = document.getElementById('btnOptPrev');
           const nextLabel = document.getElementById('btnOptNextLabel');
           if (btnPrev) {
@@ -1430,7 +671,7 @@
             }
           }
 
-          // 8. Update 3 feature cards
+          // 7. Update 3 feature cards
           for (let c = 0; c < 3; c++) {
             const cTitle = document.getElementById('cardTitle' + c);
             const cDesc = document.getElementById('cardDesc' + c);
@@ -1454,8 +695,9 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-          // Default to Step 01 or if user directly wants the optimization suite
-          goToStep(1); // Start on Step 02 (The exact Madgicx Suite shown in screenshot)
+          goToStep(0);
+          const v = document.getElementById('optMainVideo');
+          if (v) v.play().catch(function(){});
         });
       </script>
     </section>
@@ -1675,6 +917,5 @@
 
   <script src="app.js?v=30.0"></script>
   <script src="js/madgicx-motion.js?v=1.0"></script>
-  <script src="js/product-walkthrough.js?v=1.0"></script>
 </body>
 </html>
