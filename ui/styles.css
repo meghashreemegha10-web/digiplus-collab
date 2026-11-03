@@ -120,11 +120,14 @@ body {
 }
 
 .hero-main-banner-img {
-  width: 100%;
+  width: 108%;
   height: 100%;
+  margin-left: -3%;
   object-fit: cover;
-  object-position: center;
+  object-position: 38% center;
   display: block;
+  transform: translateX(2.5%);
+  transition: transform 0.3s ease, object-position 0.3s ease;
 }
 
 /* Top Floating Navigation Bar - Seamless Transparent Background (Same as Image) */
@@ -261,7 +264,7 @@ body {
   position: absolute;
   top: clamp(110px, 15vh, 155px);
   left: clamp(28px, 4.8vw, 72px);
-  max-width: clamp(560px, 52vw, 840px);
+  max-width: min(520px, 44vw);
   z-index: 22;
   display: flex;
   flex-direction: column;
@@ -365,6 +368,12 @@ body {
 }
 
 @media (max-width: 992px) {
+  .hero-main-banner-img {
+    width: 106%;
+    margin-left: -2%;
+    transform: translateX(1.5%);
+    object-position: 40% center;
+  }
   .hero-left-content {
     max-width: 440px;
     top: 100px;
@@ -375,6 +384,12 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero-main-banner-img {
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+    object-position: center;
+  }
   .hero-left-content {
     display: none;
   }
