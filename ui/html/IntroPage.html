@@ -322,79 +322,11 @@
     .card-platform-youtube .card-watermark, .card-track-3 .card-watermark { color: #ef4444; }
     .option-card:hover .card-watermark { opacity: 0.14; }
 
-    /* Top Unified Metadata Box (One Box with 2 Sections Inside) */
-    .card-top-meta-row {
-      display: flex;
-      padding: 1rem 1.25rem 0.65rem 1.25rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .unified-meta-box {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-radius: 10px;
-      overflow: hidden;
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(10, 16, 30, 0.88);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-    }
-
-    .card-platform-instagram .unified-meta-box, .card-track-1 .unified-meta-box {
-      border-color: rgba(225, 48, 108, 0.38);
-      background: linear-gradient(90deg, rgba(225, 48, 108, 0.18) 0%, rgba(15, 23, 42, 0.88) 100%);
-    }
-    .card-platform-facebook .unified-meta-box, .card-track-2 .unified-meta-box {
-      border-color: rgba(24, 119, 242, 0.38);
-      background: linear-gradient(90deg, rgba(24, 119, 242, 0.18) 0%, rgba(15, 23, 42, 0.88) 100%);
-    }
-    .card-platform-youtube .unified-meta-box, .card-track-3 .unified-meta-box {
-      border-color: rgba(239, 68, 68, 0.38);
-      background: linear-gradient(90deg, rgba(239, 68, 68, 0.18) 0%, rgba(15, 23, 42, 0.88) 100%);
-    }
-
-    .meta-section-left {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 0.42rem 0.75rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      white-space: nowrap;
-    }
-    .card-platform-instagram .meta-section-left, .card-track-1 .meta-section-left { color: #fb7185; }
-    .card-platform-facebook .meta-section-left, .card-track-2 .meta-section-left { color: #38bdf8; }
-    .card-platform-youtube .meta-section-left, .card-track-3 .meta-section-left { color: #f87171; }
-
-    .meta-section-divider {
-      width: 1px;
-      height: 18px;
-      background: rgba(255, 255, 255, 0.18);
-      flex-shrink: 0;
-    }
-
-    .meta-section-right {
-      font-size: 0.71rem;
-      font-weight: 700;
-      padding: 0.42rem 0.75rem;
-      color: #f1f5f9;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      white-space: nowrap;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
     /* Video Viewport Frame */
     .option-thumb-wrapper {
       position: relative;
       width: calc(100% - 2rem);
-      margin: 0 auto;
+      margin: 1.25rem auto 0;
       height: 200px;
       background: #000;
       overflow: hidden;
@@ -682,6 +614,35 @@
     .btn-pay-youtube:hover {
       background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
       box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
+    }
+
+
+    .modal-tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4px;
+      border-radius: 12px;
+    }
+    .modal-tab-pill {
+      flex: 1;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      border: none;
+      background: none;
+      color: #94a3b8;
+      font-size: 0.825rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .modal-tab-pill.is-active {
+      background: #7c5cff;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(124, 92, 255, 0.5);
     }
 
     /* Unique Platform Action Buttons */
@@ -1541,21 +1502,8 @@
       <!-- ================= BOX 1: INSTAGRAM ================= -->
       <div class="option-card card-platform-instagram card-track-1" id="trackCard1" onclick="openOptionModal(1)">
         <div class="card-watermark">INSTA</div>
-        
-        <div class="card-top-meta-row">
-          <div class="unified-meta-box">
-            <span class="meta-section-left">📸 INSTAGRAM • REELS & VIDEO ADS</span>
-            <span class="meta-section-divider"></span>
-            <span class="meta-section-right">⚡ 68%+ 3-Sec Hook Rate</span>
-          </div>
-        </div>
 
-        <div class="option-thumb-wrapper">
-          <div class="hud-reticle-tl"></div>
-          <div class="hud-reticle-tr"></div>
-          <div class="hud-reticle-bl"></div>
-          <div class="hud-reticle-br"></div>
-
+        <div class="option-thumb-wrapper" onclick="openOptionModal(1)" title="Click to open intro video & theory">
           <img src="../assets/poster_option1.jpg" alt="Instagram Video Ads Masterclass" class="option-thumb-img">
           
           <div class="option-overlay-play">
@@ -1580,6 +1528,7 @@
           <p class="option-card-desc">
             Stop the scroll on Instagram Reels and Stories. Access psychological hook formulas, creator UGC templates, and dynamic creative variations to eliminate ad fatigue.
           </p>
+
           <div class="option-features-tags">
             <span class="feature-chip">3-Sec Hooks</span>
             <span class="feature-chip">Reels Formats</span>
@@ -1587,21 +1536,9 @@
             <span class="feature-chip">High CTR</span>
           </div>
 
-          <!-- Compact Payment Box for Instagram -->
-          <div class="card-payment-details-box" id="cardPayDetails1">
-            <div class="pay-details-compact">
-              <div class="pay-details-price">
-                <span class="pay-amount-main" id="payAmountMain1">₹499</span>
-                <span class="pay-amount-original">₹2,499</span>
-                <span class="pay-discount-pill">80% OFF</span>
-              </div>
-              <span class="pay-status-pill pay-status-locked" id="payStatusPill1">🛡️ 18% GST Waived</span>
-            </div>
-          </div>
-
-          <!-- Single Direct Payment / Stream Button -->
-          <button type="button" class="btn-card-pay btn-pay-instagram" id="cardPayBtn1" onclick="event.stopPropagation(); handleCardPaymentAction(1)">
-            <span>💳 Pay ₹499 & Unlock Instagram Masterclass</span>
+          <!-- Single Simple Action Button to Open Intro Video & Theory -->
+          <button type="button" class="btn-card-pay btn-pay-instagram" id="cardPayBtn1" onclick="event.stopPropagation(); openOptionModal(1)">
+            <span>▶ Watch Intro Video & Theory</span>
           </button>
         </div>
       </div>
@@ -1610,20 +1547,7 @@
       <div class="option-card card-platform-facebook card-track-2" id="trackCard2" onclick="openOptionModal(2)">
         <div class="card-watermark">META</div>
 
-        <div class="card-top-meta-row">
-          <div class="unified-meta-box">
-            <span class="meta-section-left">🌐 FACEBOOK • BM & ADS SETUP</span>
-            <span class="meta-section-divider"></span>
-            <span class="meta-section-right">🛡️ 18% GST Exemption & Ban Shield</span>
-          </div>
-        </div>
-
-        <div class="option-thumb-wrapper">
-          <div class="hud-reticle-tl"></div>
-          <div class="hud-reticle-tr"></div>
-          <div class="hud-reticle-bl"></div>
-          <div class="hud-reticle-br"></div>
-
+        <div class="option-thumb-wrapper" onclick="openOptionModal(2)" title="Click to open intro video & theory">
           <img src="../assets/poster_option2.jpg" alt="Facebook Ads & Business Manager Setup" class="option-thumb-img">
           
           <div class="option-overlay-play">
@@ -1648,6 +1572,7 @@
           <p class="option-card-desc">
             Configure enterprise Facebook Business Managers, sync Pixel and Conversions API (CAPI), set up official 18% GST tax exemptions, and recover disabled accounts.
           </p>
+
           <div class="option-features-tags">
             <span class="feature-chip">Verified BM</span>
             <span class="feature-chip">GST Exemption</span>
@@ -1655,21 +1580,9 @@
             <span class="feature-chip">Account Shield</span>
           </div>
 
-          <!-- Compact Payment Box for Facebook -->
-          <div class="card-payment-details-box" id="cardPayDetails2">
-            <div class="pay-details-compact">
-              <div class="pay-details-price">
-                <span class="pay-amount-main" id="payAmountMain2">₹499</span>
-                <span class="pay-amount-original">₹2,499</span>
-                <span class="pay-discount-pill">80% OFF</span>
-              </div>
-              <span class="pay-status-pill pay-status-locked" id="payStatusPill2">🛡️ 18% GST Waived</span>
-            </div>
-          </div>
-
-          <!-- Single Direct Payment / Stream Button -->
-          <button type="button" class="btn-card-pay btn-pay-facebook" id="cardPayBtn2" onclick="event.stopPropagation(); handleCardPaymentAction(2)">
-            <span>💳 Pay ₹499 & Unlock Facebook Masterclass</span>
+          <!-- Single Simple Action Button to Open Intro Video & Theory -->
+          <button type="button" class="btn-card-pay btn-pay-facebook" id="cardPayBtn2" onclick="event.stopPropagation(); openOptionModal(2)">
+            <span>▶ Watch Intro Video & Theory</span>
           </button>
         </div>
       </div>
@@ -1678,20 +1591,7 @@
       <div class="option-card card-platform-youtube card-track-3" id="trackCard3" onclick="openOptionModal(3)">
         <div class="card-watermark">YOUTUBE</div>
 
-        <div class="card-top-meta-row">
-          <div class="unified-meta-box">
-            <span class="meta-section-left">▶️ YOUTUBE • VIDEO CAMPAIGNS</span>
-            <span class="meta-section-divider"></span>
-            <span class="meta-section-right">📈 6.4X ROAS & Smart Bidding</span>
-          </div>
-        </div>
-
-        <div class="option-thumb-wrapper">
-          <div class="hud-reticle-tl"></div>
-          <div class="hud-reticle-tr"></div>
-          <div class="hud-reticle-bl"></div>
-          <div class="hud-reticle-br"></div>
-
+        <div class="option-thumb-wrapper" onclick="openOptionModal(3)" title="Click to open intro video & theory">
           <img src="../assets/ads_youtube_campaign.jpg" alt="YouTube Ads & Campaign Setup" class="option-thumb-img">
           
           <div class="option-overlay-play">
@@ -1716,6 +1616,7 @@
           <p class="option-card-desc">
             Master YouTube skippable in-stream and in-feed campaigns, target high-intent search audience segments, cut lead acquisition costs, and scale video budgets with maximum ROAS.
           </p>
+
           <div class="option-features-tags">
             <span class="feature-chip">YouTube Ads</span>
             <span class="feature-chip">Intent Audience</span>
@@ -1723,21 +1624,9 @@
             <span class="feature-chip">6.4X ROAS</span>
           </div>
 
-          <!-- Compact Payment Box for YouTube -->
-          <div class="card-payment-details-box" id="cardPayDetails3">
-            <div class="pay-details-compact">
-              <div class="pay-details-price">
-                <span class="pay-amount-main" id="payAmountMain3">₹499</span>
-                <span class="pay-amount-original">₹2,499</span>
-                <span class="pay-discount-pill">80% OFF</span>
-              </div>
-              <span class="pay-status-pill pay-status-locked" id="payStatusPill3">🛡️ 18% GST Waived</span>
-            </div>
-          </div>
-
-          <!-- Single Direct Payment / Stream Button -->
-          <button type="button" class="btn-card-pay btn-pay-youtube" id="cardPayBtn3" onclick="event.stopPropagation(); handleCardPaymentAction(3)">
-            <span>💳 Pay ₹499 & Unlock YouTube Masterclass</span>
+          <!-- Single Simple Action Button to Open Intro Video & Theory -->
+          <button type="button" class="btn-card-pay btn-pay-youtube" id="cardPayBtn3" onclick="event.stopPropagation(); openOptionModal(3)">
+            <span>▶ Watch Intro Video & Theory</span>
           </button>
         </div>
       </div>
@@ -1762,6 +1651,19 @@
 
       <div class="modal-body-content">
         
+        <!-- Segmented Tab Nav: Intro Video vs Theory -->
+        <div class="modal-tab-bar" id="modalTabBar">
+          <button type="button" class="modal-tab-pill is-active" id="modalTabVideo" onclick="switchModalView('video')">
+            🎥 Intro Video & Walkthrough
+          </button>
+          <button type="button" class="modal-tab-pill" id="modalTabTheory" onclick="switchModalView('theory')">
+            📘 Strategy & Blueprint Theory
+          </button>
+          <button type="button" class="modal-tab-pill" id="modalTabBoth" onclick="switchModalView('both')">
+            📑 View All
+          </button>
+        </div>
+
         <!-- Unlocked Notice Banner (Shown after payment) -->
         <div class="unlocked-banner" id="unlockedBanner" style="display: none;">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
@@ -2031,8 +1933,50 @@
 
     let currentOptionId = 1;
 
+    // Direct actions from the 3 simple & professional boxes
+    function openIntroVideoModal(optId) {
+      openOptionModal(optId, 'video');
+    }
+
+    function openTheoryModal(optId) {
+      openOptionModal(optId, 'theory');
+    }
+
+    function switchModalView(mode) {
+      const videoWrapper = document.querySelector('.modal-video-wrapper');
+      const theoryBox = document.querySelector('.theory-box');
+      const btnVideo = document.getElementById('modalTabVideo');
+      const btnTheory = document.getElementById('modalTabTheory');
+      const btnBoth = document.getElementById('modalTabBoth');
+      const player = document.getElementById('modalVideoPlayer');
+
+      if (mode === 'video') {
+        if (videoWrapper) videoWrapper.style.display = 'block';
+        if (theoryBox) theoryBox.style.display = 'none';
+        if (btnVideo) btnVideo.classList.add('is-active');
+        if (btnTheory) btnTheory.classList.remove('is-active');
+        if (btnBoth) btnBoth.classList.remove('is-active');
+        if (player) {
+          player.play().catch(function(){});
+        }
+      } else if (mode === 'theory') {
+        if (videoWrapper) videoWrapper.style.display = 'none';
+        if (theoryBox) theoryBox.style.display = 'block';
+        if (btnVideo) btnVideo.classList.remove('is-active');
+        if (btnTheory) btnTheory.classList.add('is-active');
+        if (btnBoth) btnBoth.classList.remove('is-active');
+        if (player) player.pause();
+      } else {
+        if (videoWrapper) videoWrapper.style.display = 'block';
+        if (theoryBox) theoryBox.style.display = 'block';
+        if (btnVideo) btnVideo.classList.remove('is-active');
+        if (btnTheory) btnTheory.classList.remove('is-active');
+        if (btnBoth) btnBoth.classList.add('is-active');
+      }
+    }
+
     // Open Option Modal (Step 2: Show Intro Video, Theory, and Unlock Button)
-    function openOptionModal(optId) {
+    function openOptionModal(optId, initialViewMode) {
       currentOptionId = optId;
       const opt = optionsData[optId];
       if (!opt) return;
@@ -2096,6 +2040,7 @@
 
       player.load();
       document.getElementById('optionModal').style.display = 'flex';
+      switchModalView(initialViewMode || 'both');
     }
 
     function closeOptionModal() {
@@ -2321,22 +2266,16 @@
               payBtn.style.background = 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)';
               payBtn.style.boxShadow = '0 4px 18px rgba(239, 68, 68, 0.4)';
             }
-            payBtn.innerHTML = `<span>💳 Pay ${opt.price} & Unlock ${opt.platform} Masterclass</span>`;
-            payBtn.onclick = function(e) { e.stopPropagation(); openPaymentGateway(i); };
+            payBtn.innerHTML = `<span>▶ Watch Intro Video & Theory</span>`;
+            payBtn.onclick = function(e) { e.stopPropagation(); openOptionModal(i); };
           }
         }
       }
     }
 
-    // Direct Card Payment Handler
+    // Direct Card Action Handler (Opens Intro Video & Theory Blueprint)
     function handleCardPaymentAction(optId) {
-      const isUnlocked = localStorage.getItem(`unlocked_option_${optId}`) === 'true' || 
-                         localStorage.getItem(`unlocked_platform_${optId}`) === 'true';
-      if (isUnlocked) {
-        openOptionModal(optId);
-      } else {
-        openPaymentGateway(optId);
-      }
+      openOptionModal(optId);
     }
 
     // Interactive Pipeline Jump
