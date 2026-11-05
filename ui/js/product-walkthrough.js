@@ -31,91 +31,19 @@
 
   // Configurable declarative timeline stepping through the process with arrows
   const DEFAULT_TIMELINE = [
-    // 1. Move to Step 01 in the arrow bar
-    {
-      target: '[data-demo-target="step-01"]',
-      action: 'move',
-      duration: 800,
-      pauseAfter: 200
-    },
-    {
-      target: '[data-demo-target="step-01"]',
-      action: 'click',
-      pauseAfter: 1900
-    },
-
-    // 2. Move along arrow to Step 02: Checkout & UPI
-    {
-      target: '[data-demo-target="step-02"]',
-      action: 'move',
-      duration: 850,
-      pauseAfter: 200
-    },
-    {
-      target: '[data-demo-target="step-02"]',
-      action: 'click',
-      pauseAfter: 2200
-    },
-
-    // 3. Move along arrow to Step 03: Scan & Pay QR
-    {
-      target: '[data-demo-target="step-03"]',
-      action: 'move',
-      duration: 850,
-      pauseAfter: 200
-    },
-    {
-      target: '[data-demo-target="step-03"]',
-      action: 'click',
-      pauseAfter: 2200
-    },
-
-    // 4. Move along arrow to Step 04: Fast-Pass Login
-    {
-      target: '[data-demo-target="step-04"]',
-      action: 'move',
-      duration: 850,
-      pauseAfter: 200
-    },
-    {
-      target: '[data-demo-target="step-04"]',
-      action: 'click',
-      pauseAfter: 2200
-    },
-
-    // 5. Move along arrow to Step 05: Unlocked Video & Scaling
-    {
-      target: '[data-demo-target="step-05"]',
-      action: 'move',
-      duration: 850,
-      pauseAfter: 200
-    },
-    {
-      target: '[data-demo-target="step-05"]',
-      action: 'click',
-      pauseAfter: 2500
-    },
-
-    // 6. Inspect the live video demo screen
-    {
-      target: '[data-demo-target="demo-video-screen"]',
-      action: 'move',
-      duration: 800,
-      pauseAfter: 1200
-    },
-
-    // 7. Move down to Next Step button
-    {
-      target: '[data-demo-target="btn-next-step"]',
-      action: 'move',
-      duration: 800,
-      pauseAfter: 250
-    },
-    {
-      target: '[data-demo-target="btn-next-step"]',
-      action: 'click',
-      pauseAfter: 1200
-    }
+    { target: '[data-demo-target="register-submit"]', action: 'move', duration: 760, pauseAfter: 180 },
+    { target: '[data-demo-target="register-submit"]', action: 'click', pauseAfter: 900 },
+    { target: '[data-demo-target="login-submit"]', action: 'move', duration: 760, pauseAfter: 180 },
+    { target: '[data-demo-target="login-submit"]', action: 'click', pauseAfter: 1000 },
+    { target: '[data-demo-target="facebook-course"]', action: 'move', duration: 850, pauseAfter: 180 },
+    { target: '[data-demo-target="facebook-course"]', action: 'click', pauseAfter: 1000 },
+    { target: '[data-demo-target="facebook-option"]', action: 'move', duration: 720, pauseAfter: 180 },
+    { target: '[data-demo-target="facebook-option"]', action: 'click', pauseAfter: 480 },
+    { target: '[data-demo-target="upi-option"]', action: 'move', duration: 580, pauseAfter: 150 },
+    { target: '[data-demo-target="upi-option"]', action: 'click', pauseAfter: 600 },
+    { target: '[data-demo-target="payment-submit"]', action: 'move', duration: 720, pauseAfter: 180 },
+    { target: '[data-demo-target="payment-submit"]', action: 'click', pauseAfter: 3100 },
+    { target: '[data-demo-target="unlocked-active"]', action: 'move', duration: 780, pauseAfter: 2600 }
   ];
 
   class ProductWalkthrough {
@@ -141,6 +69,7 @@
       this.currentY = 0;
       this.isPlaying = false;
       this.isPausedByUser = false;
+      this.hasStartedInViewport = false;
       this.abortController = null;
       this.observer = null;
       this.resizeObserver = null;
@@ -208,6 +137,7 @@
       this.handleUserInteraction = this.handleUserInteraction.bind(this);
       this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
       this.handleResize = this.handleResize.bind(this);
+      this.handleViewportPosition = this.handleViewportPosition.bind(this);
       this.replayWalkthrough = this.replayWalkthrough.bind(this);
 
       // Replay button click
@@ -219,6 +149,7 @@
 
       // Page visibility listener
       document.addEventListener('visibilitychange', this.handleVisibilityChange);
+      window.addEventListener('scroll', this.handleViewportPosition, { passive: true });
 
       // Resize listener
       if (typeof ResizeObserver !== 'undefined') {
@@ -227,10 +158,12 @@
       } else {
         window.addEventListener('resize', this.handleResize);
       }
+      window.addEventListener('resize', this.handleViewportPosition);
     }
 
     /**
-     * Start observing viewport entrance (at least 40% threshold)
+     * Start only when the demo itself is properly framed in the viewport.
+     * Reaching the section heading alone must never begin the walkthrough.
      */
     initIntersectionObserver() {
       if (!('IntersectionObserver' in window)) {
@@ -241,22 +174,60 @@
       this.observer = new IntersectionObserver(
         entries => {
           entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio >= this.options.intersectionThreshold) {
+            const rect = entry.boundingClientRect;
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+            const center = rect.top + rect.height / 2;
+            const isDemoPage = typeof window !== 'undefined' && (window.location.pathname.includes('demo') || window.location.pathname.endsWith('demo.html'));
+            const centered = isDemoPage ? true : (center >= viewportHeight * 0.38 && center <= viewportHeight * 0.68);
+            const enoughVisible = isDemoPage ? (entry.intersectionRatio >= 0.1) : (entry.intersectionRatio >= 0.78);
+
+            if (entry.isIntersecting && enoughVisible && centered) {
               if (!this.isPlaying && !this.isPausedByUser) {
+                if (!this.hasStartedInViewport && typeof global.goToStep === 'function') {
+                  global.goToStep(0);
+                  this.container.scrollTop = 0;
+                }
+                this.hasStartedInViewport = true;
                 this.start();
               }
-            } else {
-              // Pause when demo scrolls outside viewport
-              if (this.isPlaying) {
-                this.pause();
-              }
+            } else if (this.isPlaying && !isDemoPage) {
+              // Pause as soon as the demo is no longer properly framed.
+              this.pause();
             }
           });
         },
-        { threshold: [0, this.options.intersectionThreshold] }
+        { threshold: [0, 0.1, 0.4, 0.6, 0.78, 0.9, 1] }
       );
 
       this.observer.observe(this.container);
+    }
+
+    handleViewportPosition() {
+      if (!this.container || this.isPausedByUser || document.hidden) return;
+      if (this.viewportRaf) return;
+      this.viewportRaf = requestAnimationFrame(() => {
+        this.viewportRaf = 0;
+        const rect = this.container.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const visibleTop = Math.max(0, rect.top);
+        const visibleBottom = Math.min(viewportHeight, rect.bottom);
+        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+        const ratio = visibleHeight / Math.max(1, rect.height);
+        const center = rect.top + rect.height / 2;
+        const isDemoPage = typeof window !== 'undefined' && (window.location.pathname.includes('demo') || window.location.pathname.endsWith('demo.html'));
+        const ready = isDemoPage ? (ratio >= 0.1) : (ratio >= 0.78 && center >= viewportHeight * 0.38 && center <= viewportHeight * 0.68);
+
+        if (ready && !this.isPlaying) {
+          if (!this.hasStartedInViewport && typeof global.goToStep === 'function') {
+            global.goToStep(0);
+            this.container.scrollTop = 0;
+          }
+          this.hasStartedInViewport = true;
+          this.start();
+        } else if (!ready && this.isPlaying && !isDemoPage) {
+          this.pause();
+        }
+      });
     }
 
     /**
@@ -380,6 +351,8 @@
       const targetEl = this.resolveTarget(step.target);
       if (!targetEl) return;
 
+      await this.ensureTargetVisible(targetEl, signal);
+
       const dest = this.getTargetPoint(targetEl);
 
       if (step.action === 'move') {
@@ -392,6 +365,22 @@
         if (step.pauseAfter) {
           await this.sleep(step.pauseAfter, signal);
         }
+      }
+    }
+
+    async ensureTargetVisible(targetEl, signal) {
+      const containerRect = this.container.getBoundingClientRect();
+      const targetRect = targetEl.getBoundingClientRect();
+      const fullyVisible = targetRect.top >= containerRect.top + 8 && targetRect.bottom <= containerRect.bottom - 8;
+      if (fullyVisible) return;
+
+      // The screenshot states are scaled canvases; if a target still falls
+      // outside the fixed stage, gently scroll the stage instead of moving
+      // the page and recalculate only after the scroll settles.
+      if (this.container.scrollHeight > this.container.clientHeight) {
+        const desired = targetEl.offsetTop - this.container.clientHeight / 2 + targetEl.offsetHeight / 2;
+        this.container.scrollTo({ top: Math.max(0, desired), behavior: 'smooth' });
+        await this.sleep(360, signal);
       }
     }
 
@@ -473,6 +462,7 @@
 
       // 3. Brief pressed state on target element
       targetEl.classList.add('demo-target-pressed');
+      this.isSyntheticClick = true;
 
       // 4. Trigger target's real click handler safely
       try {
@@ -484,6 +474,16 @@
       } catch (e) {
         console.warn('[ProductWalkthrough click dispatch]:', e);
       }
+      this.isSyntheticClick = false;
+
+      // Panel-changing clicks replace the visible journey state. Let layout,
+      // fonts, and images settle before resolving the next live target.
+      await this.sleep(260, signal);
+      if (typeof global.fitActiveJourneyShot === 'function') {
+        global.fitActiveJourneyShot();
+        await this.sleep(80, signal);
+      }
+      this.container.scrollTop = 0;
 
       await this.sleep(180, signal);
 
@@ -498,6 +498,7 @@
      * Handle manual user clicks/touches inside the demo container
      */
     handleUserInteraction(e) {
+      if (this.isSyntheticClick) return;
       if (e.target && (e.target === this.replayBtn || this.replayBtn.contains(e.target))) {
         return;
       }
@@ -559,15 +560,15 @@
      * Discreet reset between loops back to Step 1
      */
     async discreetReset(signal) {
+      if (typeof global.goToStep === 'function') {
+        global.goToStep(0);
+      }
       const resetTarget = this.resolveTarget('[data-demo-target="step-01"]');
       if (resetTarget) {
         const pt = this.getTargetPoint(resetTarget);
         this.currentX = pt.x;
         this.currentY = pt.y;
         this.setCursorPosition(this.currentX, this.currentY);
-        if (typeof global.goToStep === 'function') {
-          global.goToStep(0);
-        }
       }
       await this.sleep(200, signal);
     }
@@ -595,6 +596,8 @@
       if (this.resizeObserver) this.resizeObserver.disconnect();
       window.removeEventListener('resize', this.handleResize);
       document.removeEventListener('visibilitychange', this.handleVisibilityChange);
+      window.removeEventListener('scroll', this.handleViewportPosition);
+      window.removeEventListener('resize', this.handleViewportPosition);
 
       if (this.container) {
         this.container.removeEventListener('pointerdown', this.handleUserInteraction, { capture: true });

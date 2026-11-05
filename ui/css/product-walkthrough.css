@@ -83,6 +83,11 @@
   .demo-cursor-touch-dot {
     display: block;
   }
+  .demo-replay-control {
+    top: auto;
+    right: 10px;
+    bottom: 10px;
+  }
 }
 
 /* ==========================================================================

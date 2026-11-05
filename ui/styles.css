@@ -120,13 +120,13 @@ body {
 }
 
 .hero-main-banner-img {
-  width: 114%;
+  width: 100%;
   height: 100%;
-  margin-left: -5.5%;
+  margin-left: 0;
   object-fit: cover;
-  object-position: 30% center;
+  object-position: 56% top;
   display: block;
-  transform: translateX(5%);
+  transform: none;
   transition: transform 0.3s ease, object-position 0.3s ease;
 }
 
@@ -137,7 +137,7 @@ body {
   left: 0;
   width: 100%;
   height: 72px;
-  z-index: 30;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -210,33 +210,36 @@ body {
 .nav-menu {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 52;
   gap: 10px;
 }
 
 .nav-item {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-size: 0.92rem;
+  font-weight: 600;
   transition: all 0.22s ease;
-  padding: 7px 15px;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
 
 .nav-item:hover {
-  color: #ffffff;
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.45), rgba(168, 85, 247, 0.5));
-  border-color: #00f2fe;
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
+  color: #00f2fe;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  box-shadow: none;
+  text-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
+  transform: translateY(-1px);
 }
 
 .btn-member-login {
@@ -304,6 +307,8 @@ body {
 .hero-left-pills {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 52;
   gap: 10px;
 }
 
@@ -313,6 +318,8 @@ body {
   padding: 7px 18px 7px 9px;
   display: inline-flex;
   align-items: center;
+  position: relative;
+  z-index: 52;
   gap: 10px;
   cursor: pointer;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.06);
@@ -532,6 +539,8 @@ body {
 .card-social-row {
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 52;
   gap: 10px;
   margin-bottom: 0.55rem;
 }
@@ -1004,6 +1013,8 @@ body {
 .transform-list li {
   display: flex;
   align-items: flex-start;
+  position: relative;
+  z-index: 52;
   gap: 10px;
   font-size: 0.94rem;
   color: #cbd5e1;
@@ -1508,6 +1519,8 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
   display: inline-flex;
   align-items: center;
+  position: relative;
+  z-index: 52;
   gap: 10px;
   text-decoration: none;
 }
@@ -1552,6 +1565,8 @@ body {
 .footer-brand {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 52;
   gap: 10px;
   font-size: 1.05rem;
   font-weight: 800;
@@ -1746,4 +1761,16 @@ body {
   margin-top: 0.95rem;
   padding-top: 0.85rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-presenter-fg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 56% top;
+  z-index: 20;
+  pointer-events: none;
+  display: block;
 }

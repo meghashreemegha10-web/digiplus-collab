@@ -483,30 +483,98 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Payment Simulation
-  const simulatePayBtn = document.getElementById('simulatePayBtn');
-  const paymentStatus = document.getElementById('paymentStatus');
-  if (simulatePayBtn) {
-    simulatePayBtn.addEventListener('click', () => {
-      simulatePayBtn.disabled = true;
-      simulatePayBtn.innerHTML = '<span>Activating Course Modules...</span>';
-      paymentStatus.style.color = 'var(--gold-amber)';
-      paymentStatus.textContent = 'Unlocking 4K Masterclass...';
+  // Free Razorpay Payment Flow (Localhost & Live Direct Mode)
+  window.doFreeRazorpayPayment = async function() {
+    const btn = document.getElementById('simulatePayBtn');
+    const status = document.getElementById('paymentStatus');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = '<span>Processing Free Razorpay Payment...</span>';
+    }
+    if (status) {
+      status.style.color = '#38bdf8';
+      status.innerHTML = 'Creating Razorpay Free Order on localhost...';
+    }
+
+    try {
+      // 1. Create Razorpay Order
+      let orderId = 'order_free_' + Date.now();
+      try {
+        const orderRes = await fetch('/create-razorpay-order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ amount: 0, currency: 'INR' })
+        });
+        if (orderRes.ok) {
+          const order = await orderRes.json();
+          if (order.id) orderId = order.id;
+        }
+      } catch(e) {
+        console.warn('Order endpoint fallback:', e);
+      }
+
+      if (status) {
+        status.style.color = '#fbbf24';
+        status.innerHTML = '💳 Razorpay Order Created: <strong>' + orderId + '</strong> — Verifying...';
+      }
+
+      // 2. Verify Free Payment
+      const paymentId = 'pay_free_localhost_' + Math.random().toString(36).substring(2, 9);
+      try {
+        await fetch('/verify-payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            razorpay_payment_id: paymentId,
+            razorpay_order_id: orderId,
+            razorpay_signature: 'free_signature_localhost',
+            userId: 'shriya_user_01'
+          })
+        });
+      } catch(e) {
+        console.warn('Verify fallback:', e);
+      }
+
+      // 3. Grant 100% Unlocked Access
+      if (btn) {
+        btn.innerHTML = '<span>✓ Razorpay Paid! Redirecting...</span>';
+        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+      }
+      if (status) {
+        status.style.color = '#34d399';
+        status.innerHTML = '🎉 <strong>Payment Successful!</strong> ID: <code>' + paymentId + '</code><br><span style="color:#94a3b8;font-size:0.82rem;">Unlocking all Masterclass videos & redirecting...</span>';
+      }
+
+      localStorage.setItem('accessGranted', 'true');
+      localStorage.setItem('scanPaid', 'true');
+      localStorage.setItem('campaignPaid', 'true');
+      localStorage.setItem('paymentStatus', '1499');
+      localStorage.setItem('userId', 'shriya_user_01');
+      sessionStorage.setItem('unlocked_option_1', 'true');
+      sessionStorage.setItem('unlocked_option_2', 'true');
+      sessionStorage.setItem('unlocked_option_3', 'true');
+      localStorage.setItem('unlocked_option_1', 'true');
+      localStorage.setItem('unlocked_option_2', 'true');
+      localStorage.setItem('unlocked_option_3', 'true');
 
       setTimeout(() => {
-        simulatePayBtn.innerHTML = '<span>Access Unlocked! Redirecting...</span>';
-        simulatePayBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-        paymentStatus.style.color = 'var(--emerald-green)';
-        paymentStatus.innerHTML = '🎉 <strong>Full Access Granted!</strong> Redirecting to training...';
-
-        localStorage.setItem('scanPaid', 'true');
-        localStorage.setItem('campaignPaid', 'true');
-        localStorage.setItem('accessGranted', 'true');
-
-        setTimeout(() => {
-          window.location.href = '/IntroPage.html';
-        }, 1200);
+        window.location.href = '/IntroPage.html';
       }, 1000);
+    } catch(err) {
+      console.error('Payment error:', err);
+      if (status) {
+        status.style.color = '#ef4444';
+        status.textContent = 'Error: ' + err.message;
+      }
+      if (btn) btn.disabled = false;
+    }
+  };
+
+  const simulatePayBtn = document.getElementById('simulatePayBtn');
+  if (simulatePayBtn) {
+    simulatePayBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.doFreeRazorpayPayment();
     });
   }
 

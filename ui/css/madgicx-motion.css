@@ -76,6 +76,38 @@
   50% { transform: translateY(-5px); }
 }
 
+@keyframes mxHeroPillEnter {
+  0% { opacity: 0; transform: translate3d(-72px, 0, 0) scale(.96); }
+  68% { opacity: 1; transform: translate3d(5px, 0, 0) scale(1.008); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes mxHeroTileFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(var(--tile-rotate, 0deg));
+  }
+  25% {
+    transform: translate3d(var(--tile-drift-x, 8px), -18px, 0) scale(1.025) rotate(calc(var(--tile-rotate, 0deg) + 2.5deg));
+  }
+  50% {
+    transform: translate3d(calc(var(--tile-drift-x, 8px) * 0.4), -6px, 0) scale(0.985) rotate(calc(var(--tile-rotate, 0deg) - 1deg));
+  }
+  75% {
+    transform: translate3d(calc(var(--tile-drift-x, 8px) * -0.6), 10px, 0) scale(1.015) rotate(calc(var(--tile-rotate, 0deg) - 2deg));
+  }
+}
+
+@keyframes mxHeroTileGlow {
+  0%, 100% {
+    box-shadow: 0 14px 34px rgba(15, 10, 40, 0.28), 0 0 18px rgba(120, 160, 255, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 20px 48px rgba(70, 50, 180, 0.38), 0 0 28px rgba(0, 229, 255, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.85);
+  }
+}
+
 @keyframes mxPulseRing {
   0% {
     transform: scale(0.95);
@@ -254,6 +286,224 @@
 .mx-delay-2 { transition-delay: 0.16s !important; }
 .mx-delay-3 { transition-delay: 0.24s !important; }
 .mx-delay-4 { transition-delay: 0.32s !important; }
+
+/* Hero Background & Depth: Clean background presentation with hologram tiles embedded in background artwork */
+.hero-main-banner-img {
+  will-change: transform;
+  width: 100% !important;
+  height: 100% !important;
+  margin-left: 0 !important;
+  object-fit: cover !important;
+  object-position: 56% top !important;
+  transform: none !important;
+  transition: transform .25s ease-out;
+}
+
+.hero-platform-floats {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;
+  display: block !important;
+}
+
+.hero-platform-tile {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28),
+                0 2px 8px rgba(0, 0, 0, 0.12),
+                inset 0 1px 1px rgba(255, 255, 255, 0.8),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.08);
+    transform-origin: center;
+    animation: mxHeroTileFloat var(--tile-speed, 4.8s) ease-in-out var(--tile-delay, 0s) infinite,
+               mxHeroTileGlow var(--tile-speed, 4.8s) ease-in-out var(--tile-delay, 0s) infinite;
+    will-change: transform, box-shadow;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    pointer-events: auto;
+  }
+
+.hero-platform-tile:hover {
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 48px rgba(0, 242, 254, 0.35), inset 0 1px 2px #fff;
+}
+
+.hero-platform-tile__logo {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.hero-platform-tile svg {
+  width: 68%;
+  height: 68%;
+}
+
+/* 1. Meta — floating upper-left dusk sky, framing above-left of presenter safely below navbar */
+.hero-platform-tile--meta {
+    left: 54%;
+    top: clamp(162px, 18.5vh, 180px);
+    width: 74px;
+    height: 66px;
+    border-radius: 20px;
+    --tile-speed: 4.8s;
+    --tile-delay: 0s;
+    --tile-drift-x: 5px;
+    --tile-rotate: 2deg;
+    color: #0081fb;
+  }
+
+/* 2. YouTube — high apex in the sky above the presenter along the upward neon glow safely below navbar */
+.hero-platform-tile--youtube {
+    left: 68%;
+    top: clamp(168px, 19.5vh, 186px);
+    width: 74px;
+    height: 64px;
+    border-radius: 20px;
+    --tile-speed: 5.2s;
+    --tile-delay: -1.6s;
+    --tile-drift-x: -5px;
+    --tile-rotate: -2deg;
+  }
+
+/* 3. Google — floating in open sky to the far right near the ascending peak */
+.hero-platform-tile--google {
+    left: 84%;
+    top: clamp(174px, 20vh, 194px);
+    width: 76px;
+    height: 76px;
+    border-radius: 22px;
+    --tile-speed: 5.0s;
+    --tile-delay: -2.6s;
+    --tile-drift-x: 6px;
+    --tile-rotate: 3deg;
+  }
+
+.hero-platform-tile__google {
+  font: 900 38px/1 Arial, sans-serif;
+  background-image: conic-gradient(from -45deg, #4285f4 0 25%, #34a853 0 45%, #fbbc05 0 65%, #ea4335 0 82%, #4285f4 0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 4. Google Ads — floating upper-right sky, well above hand gestures */
+.hero-platform-tile--ads {
+    left: 75.5%;
+    top: clamp(238px, 27.5vh, 260px);
+    width: 74px;
+    height: 74px;
+    border-radius: 22px;
+    --tile-speed: 4.6s;
+    --tile-delay: -3.4s;
+    --tile-drift-x: -5px;
+    --tile-rotate: 2.5deg;
+  }
+
+/* 5. 1290% Chart — floating in open sunset sky on the left, clear of headline and tablet */
+.hero-platform-tile--chart {
+    left: 41%;
+    top: clamp(208px, 24vh, 230px);
+    width: 96px;
+    height: 74px;
+    min-width: 96px;
+    min-height: 74px;
+    border-radius: 20px;
+    --tile-speed: 5.8s;
+    --tile-delay: -4.5s;
+    --tile-drift-x: 6px;
+    --tile-rotate: -2.5deg;
+    color: #e8f8ff;
+  }
+
+.hero-platform-tile__chart {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px 10px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #eefaff;
+    box-sizing: border-box;
+  }
+  
+  .hero-platform-tile__chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3.5px;
+  }
+  
+  .hero-platform-tile__chart b {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #00e5ff;
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.55);
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  
+  .hero-platform-tile__chart i {
+    width: 6.5px;
+    border-radius: 2.5px 2.5px 0 0;
+    background: linear-gradient(180deg, #00e5ff 0%, #0088ff 100%);
+    box-shadow: 0 0 6px rgba(0, 229, 255, 0.6);
+  }
+  
+  .hero-platform-tile__chart i:nth-of-type(1) { height: 10px; }
+  .hero-platform-tile__chart i:nth-of-type(2) { height: 15px; }
+  .hero-platform-tile__chart i:nth-of-type(3) { height: 21px; }
+  .hero-platform-tile__chart i:nth-of-type(4) { height: 27px; }
+  .hero-platform-tile__chart i:nth-of-type(5) { height: 34px; }
+
+.hero-left-content,
+.hero-navbar {
+  will-change: transform;
+}
+
+/* Four hero benefits arrive as one smooth 1.7s sequence. */
+.hero-left-pills .hero-pill-item { opacity: 0; transform: translate3d(-72px, 0, 0) scale(.96); will-change: transform, opacity; }
+.hero-left-pills.hero-pills-animate .hero-pill-item { animation: mxHeroPillEnter .72s cubic-bezier(.16, 1, .3, 1) forwards; }
+.hero-left-pills.hero-pills-animate .hero-pill-item:nth-child(1) { animation-delay: .12s; }
+.hero-left-pills.hero-pills-animate .hero-pill-item:nth-child(2) { animation-delay: .4s; }
+.hero-left-pills.hero-pills-animate .hero-pill-item:nth-child(3) { animation-delay: .68s; }
+.hero-left-pills.hero-pills-animate .hero-pill-item:nth-child(4) { animation-delay: .96s; }
+
+@media(max-width: 1200px) {
+  .hero-platform-tile--chart { left: 36%; top: clamp(195px, 22vh, 215px); width: 88px; height: 68px; }
+  .hero-platform-tile--meta { left: 52%; top: clamp(152px, 17vh, 168px); width: 68px; height: 60px; }
+  .hero-platform-tile--youtube { left: 67%; top: clamp(158px, 18vh, 174px); width: 68px; height: 60px; }
+  .hero-platform-tile--ads { left: 75%; top: clamp(220px, 25vh, 240px); width: 68px; height: 68px; }
+  .hero-platform-tile--google { left: 83%; top: clamp(162px, 18.5vh, 178px); width: 70px; height: 70px; }
+}
+
+@media(max-width: 992px) {
+  .hero-platform-tile--chart { left: 32%; top: clamp(180px, 20vh, 198px); width: 80px; height: 62px; }
+  .hero-platform-tile--meta { left: 50%; top: clamp(142px, 16vh, 156px); width: 62px; height: 54px; }
+  .hero-platform-tile--youtube { left: 66%; top: clamp(148px, 16.5vh, 162px); width: 62px; height: 54px; }
+  .hero-platform-tile--ads { left: 74%; top: clamp(205px, 23vh, 222px); width: 62px; height: 62px; }
+  .hero-platform-tile--google { left: 82%; top: clamp(152px, 17vh, 166px); width: 62px; height: 62px; }
+}
+
+@media(max-width: 640px) {
+  .hero-platform-floats { display: none; }
+}
+@media(max-width:768px){.hero-platform-floats{display:none}}
+@media(prefers-reduced-motion:reduce){.hero-left-pills .hero-pill-item{opacity:1!important;animation:none!important;transform:none!important}}
 
 /* 6. Modal Spring Pop Entrance */
 .modal-overlay[style*="display: flex"],
@@ -666,7 +916,8 @@ html.mx-motion-paused * {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 4.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
   pointer-events: none;
 }
 
@@ -694,6 +945,62 @@ html.mx-motion-paused * {
     display: none;
   }
 }
+
+/* Landing-page live payment walkthrough (replaces the old MP4 screen). */
+.landing-live-demo{min-height:510px;background:radial-gradient(circle at 50% 12%,rgba(124,92,255,.2),transparent 44%),#070419;border-radius:32px;overflow:hidden}
+.landing-demo-stage{min-height:510px;padding:88px 46px 42px;color:#fff}
+.landing-demo-view{display:none;max-width:880px;margin:0 auto;animation:landingDemoIn .42s cubic-bezier(.22,1,.36,1) both}
+.landing-demo-view.is-active{display:block}
+.landing-demo-kicker{margin-bottom:8px;color:#38bdf8;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-align:center}
+.landing-demo-view>h3{margin:0 0 28px;color:#fff;font-size:clamp(1.45rem,2.5vw,2.2rem);line-height:1.12;text-align:center}
+.landing-track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.landing-track-card{min-height:180px;padding:22px;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:rgba(15,23,42,.72);color:#94a3b8;text-align:left;cursor:pointer;transition:.24s cubic-bezier(.22,1,.36,1)}
+.landing-track-card:hover,.landing-track-card.is-selected{transform:translateY(-4px);border-color:#38bdf8;background:rgba(56,189,248,.12);box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.landing-track-card span{display:block;margin-bottom:14px;color:#38bdf8;font-size:.72rem;font-weight:800;text-transform:uppercase}
+.landing-track-card strong{display:block;margin-bottom:8px;color:#fff;font-size:1.05rem}.landing-track-card small{line-height:1.45}
+.landing-demo-result{display:flex;justify-content:space-between;gap:16px;margin-top:18px;padding:13px 18px;border-radius:12px;background:rgba(255,255,255,.05);color:#94a3b8;font-size:.84rem}.landing-demo-result strong{color:#34d399}
+.landing-payment-card{max-width:650px;margin:auto;padding:24px;border:1px solid rgba(202,183,255,.22);border-radius:20px;background:rgba(13,9,34,.9)}
+.landing-order-row{display:flex;justify-content:space-between;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.09)}.landing-order-row strong{color:#34d399;font-size:1.3rem}
+.landing-payment-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.landing-payment-tabs button{padding:11px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:rgba(255,255,255,.04);color:#94a3b8;cursor:pointer}.landing-payment-tabs button.is-active{border-color:#38bdf8;background:rgba(56,189,248,.15);color:#fff}
+.landing-upi-address{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;margin-bottom:18px;padding:13px;border-radius:10px;background:rgba(15,23,42,.8)}.landing-upi-address span{color:#38bdf8;font-weight:800}.landing-upi-address strong{font-family:monospace}.landing-upi-address em{color:#34d399;font-size:.75rem;font-style:normal;font-weight:800}
+.landing-primary-action{width:100%;padding:13px 18px;border:0;border-radius:10px;background:linear-gradient(135deg,#7c5cff,#0284c7);color:#fff;font-weight:800;cursor:pointer;transition:.2s}.landing-primary-action:hover{transform:translateY(-2px);filter:brightness(1.1)}.landing-primary-action.is-success{background:linear-gradient(135deg,#10b981,#0284c7)}
+.landing-qr-layout{display:grid;grid-template-columns:230px 1fr;gap:32px;align-items:center;max-width:650px;margin:auto;padding:24px;border-radius:20px;background:rgba(13,9,34,.9)}
+.landing-qr-code{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:210px;height:210px;padding:18px;border-radius:18px;background:#fff}.landing-qr-code i{border-radius:3px;background:#0f172a}.landing-qr-code i:nth-child(2),.landing-qr-code i:nth-child(4),.landing-qr-code i:nth-child(6),.landing-qr-code i:nth-child(8){background:linear-gradient(135deg,#0284c7,#7c5cff)}.landing-qr-code b{position:absolute;inset:50% auto auto 50%;padding:8px;border-radius:50%;background:#0284c7;color:#fff;transform:translate(-50%,-50%)}
+.landing-qr-copy>strong{display:block;color:#34d399;font-size:1.35rem}.landing-qr-copy p{min-height:48px;color:#94a3b8}
+.landing-success-icon{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 16px;border:2px solid #34d399;border-radius:50%;background:rgba(52,211,153,.12);color:#34d399;font-size:1.55rem}
+.landing-credentials{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:650px;margin:0 auto 18px}.landing-credentials div,.landing-workspace-stats div{padding:16px;border-radius:12px;background:rgba(15,23,42,.82)}.landing-credentials span,.landing-workspace-stats span{display:block;color:#94a3b8;font-size:.75rem}.landing-credentials strong,.landing-workspace-stats strong{color:#fff}
+.landing-workspace-head,.landing-next-lesson{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px;border-radius:14px;background:rgba(15,23,42,.82)}.landing-workspace-head span,.landing-next-lesson span{display:block;color:#38bdf8;font-size:.72rem;text-transform:uppercase}.landing-workspace-head strong,.landing-next-lesson strong{display:block;color:#fff;font-size:1.05rem}.landing-workspace-head em{color:#c084fc;font-style:normal;font-weight:800}.landing-workspace-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.landing-next-lesson small{display:block;color:#94a3b8}.landing-next-lesson button{padding:12px 18px;border:0;border-radius:999px;background:#fff;color:#070419;font-weight:800;cursor:pointer;white-space:nowrap}
+.landing-demo-toast{position:fixed;left:50%;bottom:28px;z-index:9999;padding:12px 20px;border:1px solid #7c5cff;border-radius:999px;background:#0d0a21;color:#fff;opacity:0;transform:translate(-50%,16px);transition:.25s;pointer-events:none}.landing-demo-toast.is-visible{opacity:1;transform:translate(-50%,0)}
+@keyframes landingDemoIn{from{opacity:0}to{opacity:1}}
+@media(max-width:760px){.landing-live-demo,.landing-demo-stage{min-height:620px}.landing-demo-stage{padding:82px 18px 28px}.landing-track-grid,.landing-credentials,.landing-workspace-stats{grid-template-columns:1fr}.landing-track-card{min-height:0}.landing-qr-layout{grid-template-columns:1fr}.landing-qr-code{width:180px;height:180px;margin:auto}.landing-workspace-head,.landing-next-lesson{align-items:flex-start;flex-direction:column}.landing-next-lesson button{width:100%}.landing-payment-tabs{grid-template-columns:1fr}.landing-upi-address{grid-template-columns:1fr;text-align:center}}
+@media(prefers-reduced-motion:reduce){.landing-demo-view,.landing-track-card,.landing-primary-action{animation:none!important;transition:none!important}}
+
+/* Screenshot-faithful registration -> login -> courses -> payment -> unlock
+   walkthrough. Scoped to the landing demo so no other pages are restyled. */
+.journey-screenshot-stage{position:relative;height:540px;padding:54px 16px 14px;background:#050916;color:#fff;overflow:hidden}
+.journey-shot{display:none;position:absolute;left:50%;top:calc(50% + var(--journey-center-offset,28px));width:max-content;max-width:none;margin:0;animation:landingDemoIn .38s cubic-bezier(.22,1,.36,1) both;transform:translate(-50%,-50%) scale(var(--journey-fit-scale,1));transform-origin:center}.journey-shot.is-active{display:block}
+.journey-shot--signup,.journey-shot--login{width:500px}.journey-shot--courses{width:1320px}.journey-shot--payment{width:560px}.journey-shot--unlocked{width:960px}
+.journey-auth-card{position:relative;width:min(440px,94%);margin:0 auto;padding:34px 32px;border-radius:18px}.journey-auth-card h3{margin:0 0 8px;font-size:30px;line-height:1.2}.journey-auth-card p{margin:0 0 24px;color:#94a3b8}.journey-auth-card label{display:block;margin:0 0 16px;font-weight:700}.journey-auth-card input{width:100%;height:44px;margin-top:7px;padding:0 14px;border:1px solid #3b465b;border-radius:8px;background:#1b2437;color:inherit;font-size:16px;font-weight:600}.journey-close{position:absolute;right:14px;top:14px;width:34px;height:34px;border:0;border-radius:50%;background:#222c3f;color:#9aa8bf;font-size:20px}.journey-auth-card--dark{border:1px solid #0d768c;background:#0b1427}.journey-auth-card--light{background:#fff;color:#13203b;box-shadow:0 24px 60px rgba(0,0,0,.35)}.journey-auth-card--light p{color:#71809c}.journey-auth-card--light label{position:relative;margin-bottom:10px}.journey-auth-card--light input{margin:0;padding-left:40px;border-color:#d1dbea;background:#e9f0fd;color:#202536}.journey-auth-card--light label i{position:absolute;right:10px;top:13px;font-style:normal}.journey-input-icon{position:absolute;left:14px;top:12px;z-index:1}.journey-auth-card--light>a{display:block;margin:-3px 0 12px;text-align:right;color:#0584dc;font-size:13px}.journey-password{position:relative}.journey-password span{position:absolute;right:16px;top:19px;color:#020617}.journey-gradient-btn{width:100%;height:50px;border:0;border-radius:10px;background:linear-gradient(105deg,#1499ed,#9448ef);color:#fff;font-size:18px;font-weight:800;box-shadow:0 10px 23px rgba(25,153,237,.24);cursor:pointer}.journey-divider{position:relative;margin:18px 0;text-align:center;color:#71809c;font-size:12px}.journey-divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#dae2ee}.journey-divider span{position:relative;padding:0 12px;background:#fff}.journey-socials{display:flex;justify-content:center;gap:12px}.journey-socials button{width:36px;height:36px;border:1px solid #d3dbe8;border-radius:50%;background:#fff;color:#1677dd;font-weight:900}.journey-signup-link{margin-top:16px;text-align:center;color:#52627e}.journey-signup-link strong{color:#087fc4}
+.journey-portal-nav{display:flex;align-items:center;gap:24px;padding:14px 20px;border-bottom:1px solid #18233b;background:#060b19}.journey-portal-nav strong{font-size:17px}.journey-portal-nav strong span{display:inline-grid;place-items:center;width:38px;height:38px;margin-right:10px;border-radius:10px;background:linear-gradient(135deg,#1499ed,#9448ef)}.journey-portal-nav nav{flex:1;text-align:center;color:#96a2b9}.journey-portal-nav em{padding:8px 14px;border:1px solid #087757;border-radius:999px;color:#25daa4;font-style:normal;font-size:12px}.journey-portal-nav>button{padding:8px 18px;border:1px solid #9e2634;border-radius:8px;background:#31131e;color:#ff707d}.journey-course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:20px}.journey-course-card{overflow:hidden;border:1px solid #263356;border-radius:22px;background:#0b1428}.journey-course-card--instagram{border-color:#692044}.journey-course-card--youtube{border-color:#9e2634}.journey-course-media{position:relative;height:200px;background-position:center;background-size:cover}.journey-media-instagram{background-image:url('../assets/ads_meta_command.jpg')}.journey-media-facebook{background-image:url('../assets/business_atlantis_sanctum.jpg')}.journey-media-youtube{background-image:url('../assets/ads_youtube_campaign.jpg')}.journey-course-media>button{position:absolute;left:50%;top:50%;width:58px;height:58px;border:0;border-radius:50%;background:#1499ed;color:#fff;font-size:24px;transform:translate(-50%,-50%)}.journey-course-card--instagram .journey-course-media>button,.journey-course-card--youtube .journey-course-media>button{background:#f22b38}.journey-course-media span,.journey-course-media b{position:absolute;bottom:10px;padding:4px 8px;border-radius:6px;background:#111b2d;font-size:11px}.journey-course-media span{left:12px}.journey-course-media b{right:12px;color:#ffd24a}.journey-course-card--instagram .journey-course-media b{color:#33dba2}.journey-course-body{min-height:330px;padding:22px;display:flex;flex-direction:column}.journey-course-body small{color:#33bfe8;font-weight:800}.journey-course-card--instagram small,.journey-course-card--youtube small{color:#ff526a}.journey-course-body h3{margin:12px 0 10px;font-size:20px;line-height:1.35}.journey-course-body p{color:#9aa6bd;line-height:1.55}.journey-course-body>button{margin-top:auto;padding:14px;border:0;border-radius:10px;background:#1499ed;color:#fff;font-weight:800}.journey-course-card--instagram .journey-course-body>button{background:#11b983}.journey-course-card--youtube .journey-course-body>button{background:#ee3943}
+.journey-payment-shell{width:min(520px,96%);margin:0 auto;border:1px solid #0f7388;border-radius:16px;background:#0d172c;overflow:hidden}.journey-payment-top{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;border-bottom:1px solid #26334b}.journey-payment-top button{padding:7px 12px;border:1px solid #46536a;border-radius:8px;background:#172238;color:#dce7f7}.journey-payment-top strong{color:#27deb2;font-size:11px}.journey-payment-heading{padding:18px 22px 10px;color:#95a2ba;font-size:12px;font-weight:800}.journey-payment-heading span{float:right;color:#34c8ff}.journey-option-tabs{display:grid;grid-template-columns:repeat(3,1fr);margin:0 22px 14px}.journey-option-tabs button{padding:9px 4px;font-size:11px;white-space:nowrap;letter-spacing:-0.02em;border:1px solid #35415a;background:#172238;color:#aeb8ca;font-weight:700}.journey-payment-methods button,.journey-upi-apps button{padding:10px;border:1px solid #35415a;background:#172238;color:#aeb8ca;font-weight:700}.journey-option-tabs button:first-child,.journey-payment-methods button:first-child,.journey-upi-apps button:first-child{border-radius:10px 0 0 10px}.journey-option-tabs button:last-child,.journey-payment-methods button:last-child,.journey-upi-apps button:last-child{border-radius:0 10px 10px 0}.journey-option-tabs .is-active,.journey-payment-methods .is-active,.journey-upi-apps .is-active{border-color:#22c7ff;background:#132a45;color:#fff}.journey-order-card{display:flex;justify-content:space-between;margin:0 22px 14px;padding:16px;border:1px solid #26334b;border-radius:12px}.journey-order-card>div:first-child{max-width:75%}.journey-order-card span{display:block;color:#38bdf8;font-size:11px;font-weight:800}.journey-order-card strong{display:block;margin-top:9px}.journey-order-card del{display:block;color:#66738d}.journey-order-card b{display:block;color:#26dfa1;font-size:25px}.journey-order-card em{padding:4px 8px;border:1px solid #a21f37;border-radius:4px;background:#3a1420;color:#ff5570;font-size:11px;font-style:normal}.journey-payment-methods,.journey-upi-apps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 22px}.journey-upi-apps{grid-template-columns:repeat(4,1fr)}.journey-payment-shell>p{margin:22px;color:#a6b0c4}.journey-upi-id{display:flex;justify-content:space-between;margin:14px 22px;padding:13px 16px;border:1px solid #35415a;border-radius:10px}.journey-upi-id span{color:#2de4a3;font-size:12px}.journey-pay-btn{width:calc(100% - 44px);margin:24px 22px 0;padding:16px;border:0;border-radius:12px;background:#1499ed;color:#fff;font-size:18px;font-weight:800;box-shadow:0 9px 24px rgba(20,153,237,.3)}
+.journey-unlocked-shell{width:min(900px,96%);margin:0 auto;border:1px solid #0f7388;border-radius:16px;background:#0d172c;overflow:hidden}.journey-unlocked-head{display:flex;justify-content:space-between;padding:20px 28px;border-bottom:1px solid #26334b;font-size:20px}.journey-unlocked-head button{width:34px;height:34px;border:0;border-radius:50%;background:#26334b;color:#fff}.journey-theory-card{margin:0 28px;padding:0 24px 24px;border:1px solid #35415a;border-top:0;border-radius:0 0 14px 14px;background:#172238}.journey-theory-card h3{margin:0 0 20px;color:#38bdf8}.journey-theory-card p,.journey-theory-card li{line-height:1.55}.journey-theory-card li{margin:10px 0}.journey-theory-card li::marker{color:#26dfa1}.journey-unlocked-btn{display:block;width:52%;margin:42px auto 14px;padding:17px;border:2px solid #bfffe8;border-radius:14px;background:#0daf7b;color:#fff;font-size:18px;font-weight:900;box-shadow:0 0 30px rgba(17,185,131,.28)}.journey-unlocked-foot{text-align:center;color:#8bb0d4}
+@media(max-width:900px){.journey-screenshot-stage{height:540px;padding:54px 10px 14px}.journey-portal-nav nav,.journey-portal-nav em{display:none}.journey-payment-shell{width:520px}.journey-unlocked-btn{width:82%}}
+@media(max-width:560px){.journey-unlocked-head{font-size:15px}.journey-unlocked-btn{width:82%;font-size:16px}}
+@media(prefers-reduced-motion:reduce){.journey-shot{animation:none!important}}
+
+/* Payment confirmation interstitial between checkout and unlocked access. */
+.journey-payment-shell{position:relative}
+.journey-payment-confirmation{position:absolute;inset:0;z-index:20;display:grid;grid-template-columns:180px 1fr;gap:26px;align-items:center;padding:34px;border-radius:16px;background:rgba(8,15,31,.97);opacity:0;visibility:hidden;transform:scale(.97);transition:opacity .35s cubic-bezier(.16,1,.3,1),transform .35s cubic-bezier(.16,1,.3,1),visibility .35s}
+.journey-payment-confirmation.is-visible{opacity:1;visibility:visible;transform:scale(1)}
+.journey-confirm-qr{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:7px;width:170px;height:170px;padding:16px;border-radius:18px;background:#fff;overflow:hidden}
+.journey-confirm-qr i{border-radius:3px;background:#0f172a;animation:journeyQrPulse 1.1s ease-in-out infinite}.journey-confirm-qr i:nth-child(2n){background:#1499ed;animation-delay:-.35s}.journey-confirm-qr i:nth-child(3n){background:#8b5cf6;animation-delay:-.7s}
+.journey-confirm-qr span{position:absolute;left:0;right:0;height:3px;background:#2de4a3;box-shadow:0 0 14px #2de4a3;animation:journeyQrScan 1.25s ease-in-out infinite}
+.journey-confirm-copy{min-height:145px;display:flex;align-items:center}.journey-confirm-loader{display:flex;align-items:center;gap:12px;color:#c5d0e3}.journey-confirm-loader b{width:24px;height:24px;border:3px solid #31405b;border-top-color:#38bdf8;border-radius:50%;animation:journeySpin .8s linear infinite}.journey-confirm-success{display:none}
+.journey-payment-shell.is-success .journey-confirm-loader{display:none}.journey-payment-shell.is-success .journey-confirm-success{display:grid;grid-template-columns:48px 1fr;gap:4px 14px;align-items:center;animation:journeySuccessIn .45s cubic-bezier(.16,1,.3,1) both}.journey-confirm-success em{grid-row:1/3;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#12b981;color:#fff;font-size:25px;font-style:normal}.journey-confirm-success strong{color:#35e0a2;font-size:22px}.journey-confirm-success small{color:#a8b4c9}
+.journey-payment-shell.is-confirming>.journey-payment-top,.journey-payment-shell.is-confirming>.journey-payment-heading,.journey-payment-shell.is-confirming>.journey-option-tabs,.journey-payment-shell.is-confirming>.journey-order-card,.journey-payment-shell.is-confirming>.journey-payment-methods,.journey-payment-shell.is-confirming>p,.journey-payment-shell.is-confirming>.journey-upi-apps,.journey-payment-shell.is-confirming>.journey-upi-id,.journey-payment-shell.is-confirming>.journey-pay-btn{filter:blur(3px);opacity:.18;transition:.3s}
+@keyframes journeyQrScan{0%,100%{top:14px;opacity:.35}50%{top:153px;opacity:1}}@keyframes journeyQrPulse{0%,100%{opacity:.68;transform:scale(.94)}50%{opacity:1;transform:scale(1)}}@keyframes journeySpin{to{transform:rotate(360deg)}}@keyframes journeySuccessIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(max-width:560px){.journey-payment-confirmation{grid-template-columns:125px 1fr;padding:22px;gap:16px}.journey-confirm-qr{width:120px;height:120px;padding:11px;gap:5px}.journey-confirm-qr span{animation-name:journeyQrScanMobile}.journey-confirm-success{grid-template-columns:40px 1fr!important}.journey-confirm-success em{width:40px;height:40px}.journey-confirm-success strong{font-size:17px}}@keyframes journeyQrScanMobile{0%,100%{top:10px}50%{top:107px}}
+@media(prefers-reduced-motion:reduce){.journey-confirm-qr i,.journey-confirm-qr span,.journey-confirm-loader b,.journey-confirm-success{animation:none!important}}
 
 /* ==========================================================================
    12. Step-by-Step Workflow Navigation & Controls (Madgicx Multi-Step Engine)
@@ -1453,4 +1760,706 @@ html.mx-motion-paused * {
   .suite-scripts-grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* ==========================================================================
+   ALL-SECTION MOTION & INTERACTION ENHANCEMENTS (PURE MOTION - ZERO COLOR CHANGES)
+   Distinct moves, floats, sways, pulses, and spring physics for each content type.
+   All original colors, borders, typography, and backgrounds 100% preserved.
+   ========================================================================== */
+
+/* 1. Distinct Motion Keyframes */
+@keyframes mxNavbarSlideDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mxHeartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.14); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.10); }
+  70% { transform: scale(1); }
+}
+
+@keyframes mxBadgeBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.028); }
+}
+
+@keyframes mxFloatCard1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes mxFloatCard2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(0.8deg); }
+}
+
+@keyframes mxFloatCard3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(-0.8deg); }
+}
+
+@keyframes mxFloatCard4 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes mxPillarFloat1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(0.6deg); }
+}
+
+@keyframes mxPillarFloat2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-0.6deg); }
+}
+
+@keyframes mxPillarFloat3 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(0.5deg); }
+}
+
+@keyframes mxIconZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.10); }
+}
+
+@keyframes mxIconSway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+
+@keyframes mxIconShield {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes mxVideoBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.008); }
+}
+
+@keyframes mxHighlightPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.16); }
+}
+
+@keyframes mxHighlightWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+@keyframes mxHighlightFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes mxHighlightBounce {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.15) translateY(-3px); }
+}
+
+@keyframes mxCtaPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.025); }
+}
+
+@keyframes mxArrowNudge {
+  0%, 100% { transform: translateX(0); opacity: 0.6; }
+  50% { transform: translateX(5px); opacity: 1; }
+}
+
+@keyframes mxActiveStepBreathe {
+  0%, 100% { transform: scale(1.04); }
+  50% { transform: scale(1.065); }
+}
+
+@keyframes mxStepTransition {
+  0% { opacity: 0.35; transform: scale(0.985); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* 2. Header & Navbar (Pure Motion) */
+.hero-navbar {
+  animation: mxNavbarSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.brand-logo .pulse-icon-box svg,
+.footer-brand .pulse-icon-box svg {
+  animation: mxHeartbeat 2.6s infinite ease-in-out;
+  transform-origin: center;
+}
+
+.hero-navbar .nav-item {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.hero-navbar .nav-item:hover {
+  transform: translateY(-2px);
+}
+
+.btn-member-login {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-member-login:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+}
+
+/* 3. Hero Feature Pills (Pure Motion) */
+.hero-pill-item {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.hero-pill-item:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+}
+
+/* 4. Section 2: Trust Metrics Cards (Independent Float Physics - Zero Color Override) */
+.trust-container .trust-stat-box:nth-child(1) {
+  animation: mxFloatCard1 4.2s ease-in-out infinite;
+}
+
+.trust-container .trust-stat-box:nth-child(2) {
+  animation: mxFloatCard2 4.8s ease-in-out -1.2s infinite;
+}
+
+.trust-container .trust-stat-box:nth-child(3) {
+  animation: mxFloatCard3 4.5s ease-in-out -2.3s infinite;
+}
+
+.trust-container .trust-stat-box:nth-child(4) {
+  animation: mxFloatCard4 5.1s ease-in-out -3.4s infinite;
+}
+
+.trust-stat-box {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform;
+}
+
+.trust-stat-box:hover {
+  transform: translateY(-9px) scale(1.03) !important;
+  animation-play-state: paused;
+}
+
+.trust-stat-number {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.trust-stat-box:hover .trust-stat-number {
+  transform: scale(1.06);
+}
+
+/* 5. Section 3: Surprise Discovery / 3 Core Cards (Distinct Card Floats & Icon Moves) */
+.surprise-glow-badge,
+.section-badge {
+  animation: mxBadgeBreathe 3.4s infinite ease-in-out;
+  display: inline-block;
+}
+
+.surprise-grid .surprise-card:nth-child(1) {
+  animation: mxPillarFloat1 5.2s ease-in-out infinite;
+}
+
+.surprise-grid .surprise-card:nth-child(2) {
+  animation: mxPillarFloat2 5.8s ease-in-out -1.8s infinite;
+}
+
+.surprise-grid .surprise-card:nth-child(3) {
+  animation: mxPillarFloat3 5.5s ease-in-out -3.2s infinite;
+}
+
+.surprise-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform;
+}
+
+.surprise-card:hover {
+  transform: translateY(-11px) scale(1.02) !important;
+  animation-play-state: paused;
+}
+
+/* Card 1 Icon: Smooth Zoom Pulse */
+.surprise-card.card-blue .card-icon-box svg {
+  animation: mxIconZoom 3.2s infinite ease-in-out;
+  transform-origin: center;
+}
+
+/* Card 2 Icon: Rotational Sway */
+.surprise-card.card-purple .card-icon-box svg {
+  animation: mxIconSway 3.8s infinite ease-in-out;
+  transform-origin: center;
+}
+
+/* Card 3 Icon: Vertical Float */
+.surprise-card.card-amber .card-icon-box svg {
+  animation: mxIconShield 3.4s infinite ease-in-out;
+  transform-origin: center;
+}
+
+.card-icon-box {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.surprise-card:hover .card-icon-box {
+  transform: scale(1.14);
+}
+
+.card-features-list li {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card-features-list li:hover {
+  transform: translateX(6px);
+}
+
+.card-features-list li .check-icon {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-features-list li:hover .check-icon {
+  transform: scale(1.25);
+}
+
+/* 6. Section 4: Official Video Player & Highlights (Different Micro-Moves) */
+.official-intro-video-wrapper {
+  animation: mxVideoBreathe 6s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform;
+}
+
+.official-intro-video-wrapper:hover {
+  transform: translateY(-5px) scale(1.01) !important;
+  animation-play-state: paused;
+}
+
+.highlight-item-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform;
+}
+
+.highlight-item-card:hover {
+  transform: translateY(-7px) scale(1.025) !important;
+}
+
+/* Highlight 1 emoji: Gentle Pulse */
+.video-highlights-grid .highlight-item-card:nth-child(1) > div:first-child {
+  animation: mxHighlightPulse 3s infinite ease-in-out;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* Highlight 2 emoji: Wiggle */
+.video-highlights-grid .highlight-item-card:nth-child(2) > div:first-child {
+  animation: mxHighlightWiggle 3.2s infinite ease-in-out;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* Highlight 3 emoji: Gentle Float */
+.video-highlights-grid .highlight-item-card:nth-child(3) > div:first-child {
+  animation: mxHighlightFloat 2.8s infinite ease-in-out;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* Highlight 4 emoji: Scale Bounce */
+.video-highlights-grid .highlight-item-card:nth-child(4) > div:first-child {
+  animation: mxHighlightBounce 3.4s infinite ease-in-out;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* 7. Section 5: Optimization Showcase & Interactive Steps (Motion Physics) */
+.btn-opt-cta {
+  animation: mxCtaPulse 3.2s infinite ease-in-out;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-opt-cta:hover {
+  transform: translateY(-3px) scale(1.035) !important;
+  animation-play-state: paused;
+}
+
+.btn-opt-cta svg {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-opt-cta:hover svg {
+  transform: translateX(5px);
+}
+
+.opt-step-btn {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.opt-step-btn:hover:not(.is-active) {
+  transform: translateY(-3px);
+}
+
+.opt-step-btn.is-active {
+  animation: mxActiveStepBreathe 2.8s infinite ease-in-out;
+}
+
+.opt-step-arrow {
+  animation: mxArrowNudge 2.2s infinite ease-in-out;
+  display: inline-block;
+}
+
+.features-screen_slot {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.features-screen_slot:hover {
+  transform: translateY(-6px);
+}
+
+.animated-screen.step-animate {
+  animation: mxStepTransition 0.36s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 8. Site Footer (Pure Motion) */
+.site-footer a {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: inline-block;
+}
+
+.site-footer a:hover {
+  transform: translateY(-2px);
+}
+
+
+/* 9. Madgicx Horizon Beam & Dashboard Screen Physics */
+@keyframes mxHorizonBeamScan {
+  0%, 100% { opacity: 0.88; transform: scaleX(0.995); }
+  50% { opacity: 1; transform: scaleX(1.008); }
+}
+
+@keyframes mxDashboardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.separator_img {
+  animation: mxHorizonBeamScan 4s ease-in-out infinite;
+  transform-origin: center;
+  display: block;
+}
+
+.features-screen_component {
+  animation: mxDashboardFloat 5.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.features-screen_component:hover {
+  animation-play-state: paused;
+}
+
+/* 10. Madgicx Journey Course Cards Motion (Step 3) */
+.journey-course-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform;
+}
+
+.journey-course-card:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+}
+
+.journey-course-media button {
+  animation: mxPulseRing 2.6s infinite ease-out;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey-course-card:hover .journey-course-media button {
+  transform: scale(1.15) !important;
+}
+
+
+/* ==========================================================================
+   INSIDE BOXES & AFTER-LOGIN PORTAL MOTIONS (PURE MOTION)
+   ========================================================================== */
+
+/* 1. Step 01 & Step 02: Auth Card Floating Elevation */
+@keyframes mxAuthCardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.journey-auth-card {
+  animation: mxAuthCardFloat 4.8s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.journey-auth-card:hover {
+  animation-play-state: paused;
+}
+
+.journey-socials button,
+.card-social-btn {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.journey-socials button:hover,
+.card-social-btn:hover {
+  transform: translateY(-3px) scale(1.12) rotate(6deg) !important;
+}
+
+.journey-gradient-btn {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.journey-gradient-btn:hover {
+  transform: translateY(-2px) scale(1.025) !important;
+}
+
+/* 2. Step 03: After-Login Member Portal Box (.journey-shot--courses) */
+@keyframes mxPortalDotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+
+@keyframes mxInstaCardFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(0.4deg); }
+}
+
+@keyframes mxFbCardFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(-0.5deg); }
+}
+
+@keyframes mxYtCardFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(0.3deg); }
+}
+
+@keyframes mxHdPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.journey-portal-nav em {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.journey-portal-nav em::before,
+.user-status-dot {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: mxPortalDotPulse 1.8s infinite ease-in-out;
+}
+
+/* Distinct Float Rhythms for the 3 Masterclass Cards */
+.journey-course-grid .journey-course-card--instagram {
+  animation: mxInstaCardFloat 4.6s ease-in-out infinite;
+}
+
+.journey-course-grid .journey-course-card--facebook {
+  animation: mxFbCardFloat 5.2s ease-in-out -1.5s infinite;
+}
+
+.journey-course-grid .journey-course-card--youtube {
+  animation: mxYtCardFloat 4.9s ease-in-out -3s infinite;
+}
+
+.journey-course-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform;
+}
+
+.journey-course-card:hover {
+  transform: translateY(-9px) scale(1.025) !important;
+  animation-play-state: paused;
+}
+
+.journey-course-media span {
+  animation: mxHdPulse 2.4s infinite ease-in-out;
+  display: inline-block;
+}
+
+.journey-course-media b {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey-course-card:hover .journey-course-media b {
+  transform: translateX(4px);
+}
+
+.journey-course-body button {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.journey-course-body button:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+}
+
+/* 3. Step 04: Payment Box Inside Motions (.journey-shot--payment) */
+@keyframes mxLockFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes mxDiscountPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes mxUpiBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.journey-payment-top strong {
+  animation: mxLockFloat 3s infinite ease-in-out;
+  display: inline-block;
+}
+
+.journey-order-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey-order-card:hover {
+  transform: translateY(-3px);
+}
+
+.journey-order-card em {
+  animation: mxDiscountPulse 2.2s infinite ease-in-out;
+  display: inline-block;
+}
+
+.journey-option-tabs button,
+.journey-payment-methods button {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.journey-option-tabs button:hover:not(.is-active),
+.journey-payment-methods button:hover:not(.is-active) {
+  transform: translateY(-2px);
+}
+
+.journey-option-tabs button.is-active,
+.journey-payment-methods button.is-active {
+  animation: mxActiveStepBreathe 3s infinite ease-in-out;
+}
+
+.journey-upi-apps button {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.journey-upi-apps button:hover {
+  transform: translateY(-4px) scale(1.08) !important;
+}
+
+.journey-upi-apps button.is-active {
+  animation: mxUpiBounce 2.5s infinite ease-in-out;
+}
+
+.journey-upi-id span {
+  animation: mxPortalDotPulse 2s infinite ease-in-out;
+  display: inline-block;
+}
+
+.journey-pay-btn {
+  animation: mxCtaPulse 3s infinite ease-in-out;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.journey-pay-btn:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+  animation-play-state: paused;
+}
+
+/* 4. Step 05: Unlocked Masterclass Box Inside Motions (.journey-shot--unlocked) */
+@keyframes mxTheoryFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.journey-theory-card {
+  animation: mxTheoryFloat 5s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey-theory-card:hover {
+  animation-play-state: paused;
+}
+
+.journey-theory-card ul li {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey-theory-card ul li:hover {
+  transform: translateX(5px);
+}
+
+.journey-unlocked-btn {
+  animation: mxCtaPulse 2.8s infinite ease-in-out;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.journey-unlocked-btn:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+  animation-play-state: paused;
+}
+
+/* 5. Post-Login Member Portal Page (html/IntroPage.html) */
+.track-filter-bar .filter-btn {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.portal-nav-item {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: inline-block;
+}
+
+.portal-nav-item:hover {
+  transform: translateY(-2px);
+}
+
+.btn-portal-logout {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-portal-logout:hover {
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Ensure navigation bar options remain completely transparent */
+.hero-navbar .nav-item {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.hero-navbar .nav-item:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #00f2fe !important;
+}
+
+/* 3D Foreground Cutout: Presenter stands in front of floating icons */
+.hero-presenter-fg {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 56% top !important;
+  z-index: 20;
+  pointer-events: none;
+  display: block;
 }

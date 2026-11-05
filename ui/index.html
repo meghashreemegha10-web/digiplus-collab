@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=31.0">
-  <link rel="stylesheet" href="css/madgicx-motion.css?v=1.0">
-  <link rel="stylesheet" href="css/product-walkthrough.css?v=2.0">
+  <link rel="stylesheet" href="css/madgicx-motion.css?v=3.0">
+  <link rel="stylesheet" href="css/product-walkthrough.css?v=2.2">
 </head>
 <body>
 
@@ -51,8 +51,32 @@
       <!-- Center Hero Showcase Frame: Edge-to-Edge 100vh Complete Frame -->
       <div class="hero-banner-viewport">
         <div class="hero-banner-wrapper">
-          <img src="assets/natural_presenter_bg.jpg?v=7.0" alt="Global Digi Pulse - Learn Create Run Ads Grow - Standing Marketing Instructor" class="hero-main-banner-img">
-          
+          <img src="assets/natural_presenter_bg_clean.jpg" alt="Global Digi Pulse - Learn Create Run Ads Grow - Standing Marketing Instructor" class="hero-main-banner-img">
+
+          <!-- Motion-only overlays aligned with the platform tiles already
+               present in the hero artwork. They add depth without changing
+               the existing layout, content, or background composition. -->
+          <div class="hero-platform-floats" aria-hidden="true">
+            <div class="hero-platform-tile hero-platform-tile--meta" data-hero-depth="0.7">
+              <span class="hero-platform-tile__logo"><svg viewBox="0 0 36 24" width="48" height="32" fill="none"><path d="M18.0001 7.238C15.9381 3.86 13.0641 2 9.6101 2C4.3021 2 0.0001 6.478 0.0001 12C0.0001 17.522 4.3021 22 9.6101 22C13.2501 22 16.3401 19.954 18.0001 16.762C19.6601 19.954 22.7501 22 26.3901 22C31.6981 22 36.0001 17.522 36.0001 12C36.0001 6.478 31.6981 2 26.3901 2C22.9361 2 20.0621 3.86 18.0001 7.238ZM9.6101 18.4C6.3021 18.4 3.6001 15.534 3.6001 12C3.6001 8.466 6.3021 5.6 9.6101 5.6C12.3801 5.6 14.6721 7.424 16.1421 10.374C14.7141 13.784 12.3361 18.4 9.6101 18.4ZM26.3901 18.4C23.6641 18.4 21.2861 13.784 19.8581 10.374C21.3281 7.424 23.6201 5.6 26.3901 5.6C29.6981 5.6 32.4001 8.466 32.4001 12C32.4001 15.534 29.6981 18.4 26.3901 18.4Z" fill="#0081FB"/></svg></span>
+            </div>
+            <div class="hero-platform-tile hero-platform-tile--youtube" data-hero-depth="1.05">
+              <span class="hero-platform-tile__logo"><svg viewBox="0 0 48 36"><rect x="3" y="5" width="42" height="26" rx="8" fill="#ff3040"/><path d="M20 12l13 6.5L20 25z" fill="#fff"/></svg></span>
+            </div>
+            <div class="hero-platform-tile hero-platform-tile--google" data-hero-depth="0.9">
+              <span class="hero-platform-tile__logo"><svg viewBox="0 0 48 48" width="46" height="46"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.82l7.35-5.64z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg></span>
+            </div>
+            <div class="hero-platform-tile hero-platform-tile--ads" data-hero-depth="1.2">
+              <span class="hero-platform-tile__logo"><svg viewBox="0 0 48 48"><path d="M22 6h9l14 28-8 5z" fill="#34a853"/><path d="M22 6L4 37l8 5 15-25z" fill="#4285f4"/><circle cx="9" cy="38" r="6" fill="#fbbc04"/></svg></span>
+            </div>
+            <div class="hero-platform-tile hero-platform-tile--chart" data-hero-depth="0.55">
+              <span class="hero-platform-tile__logo hero-platform-tile__chart"><b>1290%</b><span class="hero-platform-tile__chart-bars"><i></i><i></i><i></i><i></i><i></i></span></span>
+            </div>
+          </div>
+
+          <!-- Foreground Presenter Layer: Stands in front of floating icons -->
+          <img src="assets/presenter_cutout.png" alt="" class="hero-presenter-fg" aria-hidden="true">
+
           <!-- Left Column Content: Headline & 4 Feature Pills from Frontend Design -->
           <div class="hero-left-content">
             <h1 class="hero-main-title">
@@ -268,7 +292,7 @@
             What is <span class="gradient-text">Global Digi Pulse</span>?
           </h2>
           <p class="section-desc" style="font-size: 1.05rem; color: #94a3b8; max-width: 720px; margin: 0 auto; line-height: 1.6;">
-            Watch this 80-second official walkthrough to learn what is inside our platform, why ambitious brands use it, and how to scale your Meta Ads with consistent 3.8X to 6.5X ROAS.
+            Watch this official cinematic walkthrough to learn what is inside our platform, why ambitious brands use it, and how to scale your Meta Ads with consistent 3.8X to 6.5X ROAS.
           </p>
         </div>
 
@@ -315,25 +339,19 @@
     <!-- ========================================================================
          INTERACTIVE DEMO & OPTIMIZATION WORKFLOW (MADGICX-STYLE WALKTHROUGH)
          ======================================================================== -->
-                    <section class="section-optimization-showcase" id="optimization" style="padding: 5.5rem 0 3.5rem; background: linear-gradient(180deg, #070417 0%, #0c0626 50%, #060216 100%); position: relative; overflow: hidden;">
+    <section class="section-optimization-showcase" id="optimization" style="padding: 5.5rem 0 0; background: linear-gradient(180deg, #070417 0%, #0c0626 50%, #060216 100%); position: relative; overflow: hidden;">
       
       <!-- Ambient Purple & Cyan Radial Glow Effects -->
       <div style="position: absolute; top: 8%; left: 50%; transform: translateX(-50%); width: 950px; height: 500px; background: radial-gradient(ellipse at center, rgba(145, 122, 255, 0.15), transparent 70%); filter: blur(65px); pointer-events: none; z-index: 0;"></div>
       <div style="position: absolute; top: 55%; left: 50%; transform: translateX(-50%); width: 1000px; height: 550px; background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.12), transparent 70%); filter: blur(75px); pointer-events: none; z-index: 0;"></div>
 
-      <div class="section-container" style="max-width: 1220px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 2;" data-cursor-demo>
+      <div class="section-container" style="max-width: 1220px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 2;">
         
         <!-- Header Text -->
         <div style="text-align: center; max-width: 840px; margin: 0 auto 2.5rem;">
-          <div class="additional-heading" id="optStepBadge">
-            <span>⚡ STEP 01 • COURSE SELECTION</span>
-          </div>
-          <h2 id="optStepTitle" style="font-size: clamp(2.2rem, 4vw, 3.25rem); font-weight: 800; line-height: 1.15; color: #ffffff; letter-spacing: -0.025em; margin: 0.5rem 0 1.25rem; transition: opacity 0.25s ease;">
-            Browse Catalog & Choose Your Masterclass Track
+          <h2 id="optStepTitle" style="font-size: clamp(2.2rem, 4vw, 3.25rem); font-weight: 800; line-height: 1.15; color: #ffffff; letter-spacing: -0.025em; margin: 0.5rem 0 1.5rem; transition: opacity 0.25s ease;">
+            Create Your Global Digi Pulse Account
           </h2>
-          <p id="optStepDesc" style="font-size: 1.125rem; color: #a1a1aa; line-height: 1.6; max-width: 740px; margin: 0 auto 2.25rem; transition: opacity 0.25s ease;">
-            Explore the 3 targeted masterclass modules (Instagram 3-Sec Hooks, Verified Facebook BM & GST, or YouTube Ads). Review syllabus, student ratings, and select your preferred track.
-          </p>
           
           <div style="display: flex; justify-content: center;">
             <div class="animated-button">
@@ -352,27 +370,27 @@
         <div class="opt-steps-bar" id="optStepsBar">
           <button class="opt-step-btn is-active" id="stepBtn0" data-demo-target="step-01" onclick="goToStep(0)">
             <span class="opt-step-num">01</span>
-            <span>1. Choose Track</span>
+            <span>1. Sign Up</span>
           </button>
           <div class="opt-step-arrow">→</div>
           <button class="opt-step-btn" id="stepBtn1" data-demo-target="step-02" onclick="goToStep(1)">
             <span class="opt-step-num">02</span>
-            <span>2. Checkout & UPI</span>
+            <span>2. Login</span>
           </button>
           <div class="opt-step-arrow">→</div>
           <button class="opt-step-btn" id="stepBtn2" data-demo-target="step-03" onclick="goToStep(2)">
             <span class="opt-step-num">03</span>
-            <span>3. Scan & Pay QR</span>
+            <span>3. Courses</span>
           </button>
           <div class="opt-step-arrow">→</div>
           <button class="opt-step-btn" id="stepBtn3" data-demo-target="step-04" onclick="goToStep(3)">
             <span class="opt-step-num">04</span>
-            <span>4. Fast-Pass Login</span>
+            <span>4. Payment</span>
           </button>
           <div class="opt-step-arrow">→</div>
           <button class="opt-step-btn" id="stepBtn4" data-demo-target="step-05" onclick="goToStep(4)">
             <span class="opt-step-num">05</span>
-            <span>5. Unlocked Video & Scaling</span>
+            <span>5. Unlocked</span>
           </button>
         </div>
 
@@ -388,7 +406,7 @@
             </div>
 
             <div class="screen_component">
-              <div class="screen_video" style="position: relative;">
+              <div class="screen_video landing-live-demo" style="position: relative;">
                 
                 <!-- Floating Video Step HUD Overlay -->
                 <div class="video-step-hud">
@@ -402,11 +420,14 @@
                   </div>
                 </div>
 
-                <!-- High Definition Video Player (Exact Before Format) -->
-                <video id="optMainVideo" width="100%" autoplay muted loop playsinline preload="auto" poster="assets/hero_mockup.jpg" style="width: 100%; height: auto; display: block; border-radius: 32px; background: #050512;">
-                  <source id="optVideoSource" src="assets/ads_optimization_demo.mp4" type="video/mp4">
-                  Your browser does not support HTML5 video.
-                </video>
+                <!-- Real DOM-driven demo states (no embedded screen recording). -->
+                <div class="journey-screenshot-stage" id="landingDemoStage" data-demo-target="demo-live-stage" data-cursor-demo aria-live="polite">
+                  <section class="journey-shot journey-shot--signup is-active" data-landing-demo-view="0"><div class="journey-auth-card journey-auth-card--dark"><button class="journey-close" type="button">×</button><h3>Create Your Account</h3><p>Join 12,000+ digital marketers mastering social media ads.</p><label>Username<input value="John" readonly></label><label>Email Address<input value="Johndoe@gmail.com" readonly></label><label>Password<div class="journey-password"><input type="password" value="12345678D" readonly><span>◉</span></div></label><button type="button" class="journey-gradient-btn" data-demo-target="register-submit" onclick="goToStep(1)">Complete Registration</button></div></section>
+                  <section class="journey-shot journey-shot--login" data-landing-demo-view="1"><div class="journey-auth-card journey-auth-card--light"><button class="journey-close" type="button">×</button><h3>Welcome Back!</h3><p>Sign in to continue your journey</p><label><span class="journey-input-icon">♟</span><input value="John" readonly></label><label><span class="journey-input-icon">🔒</span><input type="password" value="12345678D" readonly><i>👩🏻</i></label><a href="#" onclick="return false">Forgot password?</a><button type="button" class="journey-gradient-btn" data-demo-target="login-submit" onclick="goToStep(2)">Login →</button><div class="journey-divider"><span>or continue with</span></div><div class="journey-socials"><button type="button">G</button><button type="button">f</button></div><div class="journey-signup-link">Don't have an account? <strong>Sign Up</strong></div></div></section>
+                  <section class="journey-shot journey-shot--courses" data-landing-demo-view="2"><div class="journey-portal-nav"><strong><span>⌁</span> GLOBAL DIGI PULSE</strong><nav>Home &nbsp;&nbsp; Modules &nbsp;&nbsp; Curriculum &nbsp;&nbsp; Walkthrough &nbsp;&nbsp; Contact</nav><em>● Shriya (Active Member)</em><button>Logout</button></div><div class="journey-course-grid"><article class="journey-course-card journey-course-card--instagram"><div class="journey-course-media journey-media-instagram"><button>▶</button><span>⏱ 14:20 MINS • HD</span><b>💳 Payment Option (₹499)</b></div><div class="journey-course-body"><small>INSTAGRAM MASTERCLASS</small><h3>Instagram 3-Second Hook Formulas & High-Converting Video Ads</h3><p>Stop the scroll on Instagram Reels and Stories. Access psychological hook formulas and creator UGC templates.</p><button type="button" onclick="goToStep(3)">💳 Payment Option (₹499 UPI / Cards) →</button></div></article><article class="journey-course-card journey-course-card--facebook"><div class="journey-course-media journey-media-facebook"><button>▶</button><span>⏱ 18:45 MINS • HD</span><b>🔒 Click to Preview</b></div><div class="journey-course-body"><small>FACEBOOK MASTERCLASS</small><h3>Verified Facebook Business Manager, GST Exemption & Account Recovery</h3><p>Configure enterprise Facebook Business Managers, sync Pixel and Conversions API, and recover disabled accounts.</p><button type="button" data-demo-target="facebook-course" onclick="goToStep(3)">▶ Watch Intro Video & Theory</button></div></article><article class="journey-course-card journey-course-card--youtube"><div class="journey-course-media journey-media-youtube"><button>▶</button><span>⏱ 22:10 MINS • HD</span><b>🔒 Click to Preview</b></div><div class="journey-course-body"><small>YOUTUBE MASTERCLASS</small><h3>YouTube Skippable Ads Setup, Slashing CPL & Scaled Conversions</h3><p>Master YouTube skippable ads with high-intent audience segments and scaled budgets.</p><button>▶ Watch Intro Video & Theory</button></div></article></div></section>
+                  <section class="journey-shot journey-shot--payment" data-landing-demo-view="3"><div class="journey-payment-shell" id="journeyPaymentShell"><div class="journey-payment-top"><button>← Back</button><strong>🔒 256-BIT SSL ENCRYPTED GATEWAY</strong></div><div class="journey-payment-heading">⚡ PAYMENT GATEWAY • CHOOSE TARGET PLATFORM: <span>All 3 Available</span></div><div class="journey-option-tabs"><button type="button">📸 Option 1: Instagram (₹499)</button><button type="button" class="is-active" data-demo-target="facebook-option">🌐 Option 2: Facebook (₹499)</button><button type="button">▶️ Option 3: YouTube (₹499)</button></div><div class="journey-order-card"><div><span>🌐 FACEBOOK MASTERCLASS</span><strong>Verified Facebook Business Manager, GST Exemption & Recovery</strong></div><div><del>₹2,499</del><b>₹499</b><em>80% OFF</em></div></div><div class="journey-payment-methods"><button class="is-active" data-demo-target="upi-option">⚡ Instant UPI</button><button>💳 Card / Debit</button><button>🏦 NetBanking</button></div><p>Select your preferred UPI App or enter your UPI ID:</p><div class="journey-upi-apps"><button class="is-active">● GPay</button><button>● PhonePe</button><button>● Paytm</button><button>● BHIM</button></div><div class="journey-upi-id"><strong>shriya@okhdfcbank</strong><span>✓ VERIFIED</span></div><button class="journey-pay-btn" type="button" data-demo-target="payment-submit" onclick="runPaymentConfirmation(this)">🔒 Pay ₹499 & Unlock Facebook Masterclass</button><div class="journey-payment-confirmation" id="journeyPaymentConfirmation" aria-live="polite"><div class="journey-confirm-qr" aria-label="Animated payment QR"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span></span></div><div class="journey-confirm-copy"><div class="journey-confirm-loader"><b></b><span id="journeyConfirmStatus">Scanning secure UPI response…</span></div><div class="journey-confirm-success"><em>✓</em><strong>Payment successful</strong><small>₹499 received. Unlocking your Facebook masterclass.</small></div></div></div></div></section>
+                  <section class="journey-shot journey-shot--unlocked" data-landing-demo-view="4"><div class="journey-unlocked-shell"><div class="journey-unlocked-head"><strong>🌐 FACEBOOK MASTERCLASS • Facebook Masterclass</strong><button>×</button></div><div class="journey-theory-card"><h3>📘 Strategy & Blueprint Theory</h3><p>Meta's compliance AI bans thousands of ad accounts daily due to misconfigured Business Managers. This masterclass provides the exact administrative and technical setup required to maintain an enterprise-level, ban-proof advertising backend on Facebook.</p><ul><li><b>Enterprise BM Verification:</b> Step-by-step submission of business registration, domain verification, and utility proofs.</li><li><b>18% GST Tax Exemption:</b> Correct configuration of GSTIN in payment settings.</li><li><b>Meta Conversions API (CAPI):</b> Server-side event tracking via webhooks and Digistore.</li></ul></div><button type="button" class="journey-unlocked-btn" data-demo-target="unlocked-active">☑ Masterclass Unlocked & Active —<br>Streaming Now</button><p class="journey-unlocked-foot">Instant Access • Secure 256-bit Encrypted Checkout • UPI, Cards & NetBanking</p></div></section>
+                </div>
 
               </div>
             </div>
@@ -452,35 +473,8 @@
           </div>
         </div>
 
-        <!-- Navigation Controls: Prev Step, Dots, Next Step -->
-        <div class="opt-nav-controls">
-          <button class="opt-nav-prev-btn" id="btnOptPrev" onclick="navigateStep(-1)" style="visibility: hidden;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-            <span>Previous Step</span>
-          </button>
-
-          <div class="opt-step-dots" id="optStepDots">
-            <span class="opt-step-dot is-active" onclick="goToStep(0)"></span>
-            <span class="opt-step-dot" onclick="goToStep(1)"></span>
-            <span class="opt-step-dot" onclick="goToStep(2)"></span>
-            <span class="opt-step-dot" onclick="goToStep(3)"></span>
-            <span class="opt-step-dot" onclick="goToStep(4)"></span>
-          </div>
-
-          <button class="opt-nav-next-btn" id="btnOptNext" data-demo-target="btn-next-step" onclick="navigateStep(1)">
-            <span id="btnOptNextLabel">Next Step: 2. Checkout & UPI</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Glowing Purple Horizon Divider -->
-        <div class="separator_component">
+                <!-- Glowing Purple Horizon Divider -->
+        <div class="separator_component" style="margin-top: 0; margin-bottom: 0;">
           <img src="assets/glowing-purple-section-divider.webp" alt="" class="separator_img" loading="lazy">
         </div>
 
@@ -491,13 +485,13 @@
         const stepDefinitions = [
           {
             stepNum: '01',
-            badge: '⚡ STEP 01 • COURSE SELECTION',
-            title: 'Browse Catalog & Choose Your Masterclass Track',
-            desc: 'Explore the 3 targeted masterclass modules (Instagram 3-Sec Hooks, Verified Facebook BM & GST, or YouTube Ads). Review syllabus, student ratings, and select your preferred track.',
-            ctaText: 'Select Masterclass Track (₹499)',
+            badge: '',
+            title: 'Create Your Global Digi Pulse Account',
+            desc: '',
+            ctaText: 'Complete Registration',
             ctaLink: '#curriculum',
-            hudStep: 'STEP 01 • CHOOSE MASTERCLASS TRACK',
-            hudUrl: 'https://globaldigipulse.com/index.html#curriculum',
+            hudStep: 'STEP 01 • SIGN UP',
+            hudUrl: 'https://globaldigipulse.com/RegisterPage.html',
             video: 'assets/ads_optimization_demo.mp4',
             poster: 'assets/hero_mockup.jpg',
             showBadge: false,
@@ -509,13 +503,13 @@
           },
           {
             stepNum: '02',
-            badge: '⚡ STEP 02 • CHECKOUT & PAYMENT METHOD',
-            title: 'Review Masterclass Syllabus & Select Payment Method',
-            desc: 'Inspect detailed curriculum breakdown and transparent pricing with official 18% GST tax waiver. Select Instant UPI (GPay, PhonePe, Paytm, BHIM), Card, or NetBanking.',
-            ctaText: 'Proceed to Payment Portal (₹499)',
+            badge: '⚡ STEP 02 • MEMBER LOGIN',
+            title: 'Sign In to Continue Your Journey',
+            desc: 'Use the newly created username and password to enter the member portal.',
+            ctaText: 'Login to Member Portal',
             ctaLink: 'html/IntroPage.html?option=1',
-            hudStep: 'STEP 02 • CHECKOUT & PAYMENT METHOD',
-            hudUrl: 'https://globaldigipulse.com/html/IntroPage.html?option=1',
+            hudStep: 'STEP 02 • LOGIN',
+            hudUrl: 'https://globaldigipulse.com/LoginPage.html',
             video: 'assets/intro_option1.mp4',
             poster: 'assets/poster_option1.jpg',
             showBadge: false,
@@ -527,13 +521,13 @@
           },
           {
             stepNum: '03',
-            badge: '⚡ STEP 03 • SECURE TRANSACTION',
-            title: 'Scan Dynamic UPI QR & Instant Payment Verification',
-            desc: 'Scan the secure dynamic UPI QR code with any UPI app or complete card authorization. The automated webhook verifies your ₹499 transaction in real time with zero delay.',
-            ctaText: 'Scan & Pay ₹499 Now',
+            badge: '⚡ STEP 03 • MASTERCLASS CATALOG',
+            title: 'Choose the Facebook Masterclass',
+            desc: 'Open the Facebook Business Manager course from the three available member tracks.',
+            ctaText: 'Watch Facebook Intro & Theory',
             ctaLink: 'html/ScanAndPay.html',
-            hudStep: 'STEP 03 • SCAN & PAY DYNAMIC UPI QR',
-            hudUrl: 'https://globaldigipulse.com/html/ScanAndPay.html',
+            hudStep: 'STEP 03 • COURSES AVAILABLE',
+            hudUrl: 'https://globaldigipulse.com/html/IntroPage.html',
             video: 'assets/intro_option2.mp4',
             poster: 'assets/poster_option2.jpg',
             showBadge: false,
@@ -545,13 +539,13 @@
           },
           {
             stepNum: '04',
-            badge: '⚡ STEP 04 • INSTANT ONBOARDING',
-            title: 'Receive Student Fast-Pass Credentials & Member Login',
-            desc: 'Zero registration lag. Automated fast-pass instantly assigns your authorized student username, password token, and session keys with one-click authorization into the student portal.',
-            ctaText: 'Enter Student Portal (LoginPage.html)',
+            badge: '⚡ STEP 04 • FACEBOOK CHECKOUT',
+            title: 'Pay ₹499 with Instant UPI',
+            desc: 'Confirm the Facebook option, keep Instant UPI selected, and unlock the full masterclass.',
+            ctaText: 'Pay ₹499 & Unlock Facebook',
             ctaLink: 'html/LoginPage.html',
-            hudStep: 'STEP 04 • FAST-PASS CREDENTIALS & LOGIN',
-            hudUrl: 'https://globaldigipulse.com/html/WelcomePage.html',
+            hudStep: 'STEP 04 • PAYMENT GATEWAY',
+            hudUrl: 'https://globaldigipulse.com/html/IntroPage.html?option=2',
             video: 'assets/vid_05_AI_Marketer.mp4',
             poster: 'assets/ads_meta_command.jpg',
             showBadge: false,
@@ -563,20 +557,20 @@
           },
           {
             stepNum: '05',
-            badge: '⚡ STEP 05 • EXECUTION & SCALING',
-            title: 'Stream HD Video Masterclass & Launch High-ROAS Campaigns',
-            desc: 'Access full original HD masterclass video player, download actionable strategy templates, configure verified Business Managers, and deploy autonomous ad scaling up to 6.4X ROAS.',
-            ctaText: 'Launch Campaigns & Scale to 6.4X ROAS',
+            badge: '⚡ STEP 05 • ACCESS GRANTED',
+            title: 'Facebook Masterclass Unlocked',
+            desc: 'Payment is confirmed and the complete strategy and blueprint theory is active for streaming.',
+            ctaText: 'Masterclass Unlocked & Active',
             ctaLink: 'html/CampainPage.html',
-            hudStep: 'STEP 05 • UNLOCKED VIDEO & CAMPAIGN SCALING',
-            hudUrl: 'https://globaldigipulse.com/html/CampainPage.html',
+            hudStep: 'STEP 05 • STREAMING ACCESS ACTIVE',
+            hudUrl: 'https://globaldigipulse.com/html/IntroPage.html#facebook',
             video: 'assets/vid_06_Ads_Manager_2.mp4',
             poster: 'assets/ads_global_ecosystem.jpg',
             showBadge: true,
             cards: [
-              { icon: '▶️', title: 'Full 1080p HD Masterclass Video', desc: 'Complete tactical video lessons with playback speed control and theoretical strategy blueprints.' },
-              { icon: '🛠️', title: 'Downloadable Strategy Toolkits', desc: 'Notion campaign trackers, tested UGC hook scripts, and BM compliance checklists ready immediately.' },
-              { icon: '📈', title: 'Scale Ads to 6.4X ROAS', desc: 'Practical implementation workflows to scale budgets aggressively while keeping cost-per-lead low.' }
+              { icon: '✓', title: 'Workspace Unlocked', desc: 'The member dashboard is ready without relying on a screen-recording video.' },
+              { icon: '→', title: 'Next Lesson Ready', desc: 'Launch the next practical lesson directly from the live UI.' },
+              { icon: '📈', title: 'Visible Progress', desc: 'Track course completion, watch time, and support access.' }
             ]
           }
         ];
@@ -587,6 +581,7 @@
           if (index < 0 || index >= stepDefinitions.length) return;
           currentActiveStep = index;
           const data = stepDefinitions[index];
+          if (index !== 3) resetPaymentConfirmation();
 
           // 1. Update text content
           const badgeEl = document.getElementById('optStepBadge');
@@ -639,17 +634,11 @@
             }
           });
 
-          // 3. Update video playback
-          const video = document.getElementById('optMainVideo');
-          const source = document.getElementById('optVideoSource');
-          if (video && source) {
-            if (source.getAttribute('src') !== data.video) {
-              video.poster = data.poster;
-              source.setAttribute('src', data.video);
-              video.load();
-              video.play().catch(function(){});
-            }
-          }
+          // 3. Switch the live DOM demo state instead of swapping MP4 files.
+          document.querySelectorAll('[data-landing-demo-view]').forEach(function(view, viewIndex) {
+            view.classList.toggle('is-active', viewIndex === index);
+          });
+          requestAnimationFrame(fitActiveJourneyShot);
 
           // 4. Update floating badge
           const floatingBadge = document.getElementById('optFloatingBadge');
@@ -707,9 +696,113 @@
 
         document.addEventListener('DOMContentLoaded', function() {
           goToStep(0);
-          const v = document.getElementById('optMainVideo');
-          if (v) v.play().catch(function(){});
+          window.addEventListener('resize', fitActiveJourneyShot);
         });
+
+        function fitActiveJourneyShot() {
+          const stage = document.getElementById('landingDemoStage');
+          const shot = stage && stage.querySelector('.journey-shot.is-active');
+          if (!stage || !shot) return;
+          shot.style.setProperty('--journey-fit-scale', '1');
+          const hud = stage.parentElement && stage.parentElement.querySelector('.video-step-hud');
+          const hudReserve = hud ? Math.ceil(hud.getBoundingClientRect().height + 26) : 72;
+          const centerOffset = Math.round(hudReserve / 2);
+          shot.style.setProperty('--journey-center-offset', centerOffset + 'px');
+          const availableWidth = Math.max(1, stage.clientWidth - 36);
+          const availableHeight = Math.max(1, stage.clientHeight - hudReserve - 28);
+          const naturalWidth = Math.max(1, shot.scrollWidth);
+          const naturalHeight = Math.max(1, shot.scrollHeight);
+          let scale = Math.min(1, availableWidth / naturalWidth, availableHeight / naturalHeight);
+          if (shot.matches('.journey-shot--signup, .journey-shot--login, .journey-shot--courses')) {
+            scale *= .92;
+          }
+          scale = Math.max(.38, scale);
+          shot.style.setProperty('--journey-fit-scale', String(scale));
+
+          // Enforce a visible safety boundary for the controls used by the
+          // cursor, especially the payment CTA near the bottom of state 4.
+          const stageRect = stage.getBoundingClientRect();
+          const controls = shot.querySelectorAll('[data-demo-target]');
+          let controlBottom = 0;
+          controls.forEach(function(control) {
+            const rect = control.getBoundingClientRect();
+            controlBottom = Math.max(controlBottom, rect.bottom);
+          });
+          if (controlBottom > stageRect.bottom - 18) {
+            const safeTop = stageRect.top + hudReserve;
+            const adjustment = (stageRect.bottom - 28 - safeTop) / Math.max(1, controlBottom - safeTop);
+            scale = Math.max(.38, scale * adjustment);
+            shot.style.setProperty('--journey-fit-scale', String(scale));
+          }
+        }
+
+        function selectLandingTrack(button, label) {
+          document.querySelectorAll('.landing-track-card').forEach(function(card) { card.classList.remove('is-selected'); });
+          button.classList.add('is-selected');
+          const selected = document.getElementById('landingSelectedTrack');
+          if (selected) selected.textContent = label;
+        }
+
+        function selectLandingPayment(button, label) {
+          document.querySelectorAll('.landing-payment-tabs button').forEach(function(tab) { tab.classList.remove('is-active'); });
+          button.classList.add('is-active');
+          const method = document.getElementById('landingPaymentMethod');
+          if (method) method.textContent = label;
+        }
+
+        function simulateLandingPayment(button) {
+          const status = document.getElementById('landingPaymentStatus');
+          button.disabled = true;
+          button.textContent = 'Checking bank webhook…';
+          if (status) status.textContent = 'Securely verifying ₹499 payment…';
+          setTimeout(function() {
+            if (status) status.textContent = '✓ Payment confirmed — credentials issued';
+            button.textContent = 'Payment confirmed';
+            button.classList.add('is-success');
+            setTimeout(function() { goToStep(3); }, 850);
+          }, 850);
+        }
+
+        function showLandingDemoToast(message) {
+          let toast = document.getElementById('landingDemoToast');
+          if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'landingDemoToast';
+            toast.className = 'landing-demo-toast';
+            document.body.appendChild(toast);
+          }
+          toast.textContent = message;
+          toast.classList.add('is-visible');
+          setTimeout(function() { toast.classList.remove('is-visible'); }, 2200);
+        }
+
+        function resetPaymentConfirmation() {
+          const shell = document.getElementById('journeyPaymentShell');
+          const confirmation = document.getElementById('journeyPaymentConfirmation');
+          const status = document.getElementById('journeyConfirmStatus');
+          if (shell) shell.classList.remove('is-confirming', 'is-success');
+          if (confirmation) confirmation.classList.remove('is-visible');
+          if (status) status.textContent = 'Scanning secure UPI response…';
+        }
+
+        function runPaymentConfirmation(button) {
+          const shell = document.getElementById('journeyPaymentShell');
+          const confirmation = document.getElementById('journeyPaymentConfirmation');
+          const status = document.getElementById('journeyConfirmStatus');
+          if (!shell || !confirmation) return;
+          button.disabled = true;
+          shell.classList.add('is-confirming');
+          confirmation.classList.add('is-visible');
+          if (status) status.textContent = 'Scanning secure UPI response…';
+          setTimeout(function() {
+            if (status) status.textContent = 'Bank confirmation received';
+            shell.classList.add('is-success');
+          }, 1050);
+          setTimeout(function() {
+            button.disabled = false;
+            goToStep(4);
+          }, 2350);
+        }
       </script>
     </section>
   </main>
@@ -919,7 +1012,7 @@
       </div>
 
       <button class="btn-enroll-gradient" style="width:100%; justify-content:center; margin:0 auto;" id="simulatePayBtn">
-        <span>Proceed to Pay ₹1499 (Razorpay / UPI)</span>
+        <span>⚡ Free Razorpay Payment (Direct 1-Click Access)</span>
       </button>
 
       <div id="paymentStatus" style="margin-top:1rem; font-size:0.9rem; min-height:24px;"></div>
@@ -927,7 +1020,7 @@
   </div>
 
   <script src="app.js?v=30.0"></script>
-  <script src="js/madgicx-motion.js?v=1.0"></script>
-  <script src="js/product-walkthrough.js?v=2.0"></script>
+  <script src="js/madgicx-motion.js?v=2.0"></script>
+  <script src="js/product-walkthrough.js?v=2.8"></script>
 </body>
 </html>
