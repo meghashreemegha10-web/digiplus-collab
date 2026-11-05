@@ -12,29 +12,29 @@
   <link rel="stylesheet" href="../css/madgicx-motion.css?v=1.0">
   <style>
     :root {
-      --portal-sky-top: #dff1fd;
-      --portal-sky-mid: #eef7ff;
-      --portal-sky-bot: #f8fcff;
-      --portal-sky-accent: #0284c7;
+      --portal-classic-top: #fbfbfd;
+      --portal-classic-mid: #f5f5f7;
+      --portal-classic-bot: #ececf1;
+      --portal-classic-border: rgba(210, 210, 215, 0.8);
       --bg-dark: #070c18;
       --card-bg: rgba(11, 18, 35, 0.92);
       --card-border: rgba(255, 255, 255, 0.14);
-      --cyan-glow: #0284c7;
+      --cyan-glow: #0071e3;
       --purple-glow: #a855f7;
       --emerald: #10b981;
-      --text-main: #0a2540;
-      --text-sub: #334155;
+      --text-main: #1d1d1f;
+      --text-sub: #6e6e73;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: #f0f8ff;
+      background-color: #fbfbfd;
       background-image: 
-        radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.85), transparent 45%),
-        radial-gradient(circle at 82% 38%, rgba(216, 239, 254, 0.55), transparent 50%),
-        radial-gradient(circle at 50% 85%, rgba(238, 247, 255, 0.45), transparent 55%),
-        linear-gradient(180deg, #dcf0fd 0%, #edf7ff 45%, #f8fcff 100%);
+        radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.95), transparent 45%),
+        radial-gradient(circle at 82% 38%, rgba(245, 245, 247, 0.75), transparent 50%),
+        radial-gradient(circle at 50% 85%, rgba(236, 236, 241, 0.65), transparent 55%),
+        linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 45%, #ececf1 100%);
       background-size: cover;
       background-attachment: fixed;
       color: var(--text-main);
@@ -49,15 +49,15 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.90);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(216, 239, 254, 0.85);
+      border-bottom: 1px solid rgba(210, 210, 215, 0.8);
       padding: 0.85rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     }
 
     .portal-brand {
@@ -65,7 +65,7 @@
       align-items: center;
       gap: 0.75rem;
       text-decoration: none;
-      color: #0f172a;
+      color: #1d1d1f;
     }
 
     .portal-logo-icon {
@@ -84,7 +84,7 @@
       font-size: 1.15rem;
       font-weight: 800;
       letter-spacing: 0.02em;
-      color: #0f172a;
+      color: #1d1d1f;
     }
 
     .portal-nav-center {
@@ -94,14 +94,14 @@
     }
 
     .portal-nav-item {
-      color: #475569;
+      color: #6e6e73;
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 600;
       transition: color 0.2s;
     }
     .portal-nav-item:hover, .portal-nav-item.active {
-      color: #0284c7;
+      color: #0071e3;
     }
 
     .portal-nav-right {
@@ -166,16 +166,16 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(2, 132, 199, 0.28);
-      color: #0284c7;
+      background: #ffffff;
+      border: 1px solid rgba(210, 210, 215, 0.9);
+      color: #1d1d1f;
       padding: 0.35rem 0.95rem;
       border-radius: 9999px;
       font-size: 0.88rem;
       font-weight: 700;
       margin-bottom: 0.8rem;
       backdrop-filter: blur(8px);
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .portal-title {
@@ -183,13 +183,13 @@
       font-weight: 800;
       line-height: 1.25;
       margin-bottom: 0.6rem;
-      color: #0a2540;
-      letter-spacing: -0.02em;
+      color: #1d1d1f;
+      letter-spacing: -0.025em;
     }
 
     .portal-subtitle {
       font-size: 1.05rem;
-      color: #334155;
+      color: #6e6e73;
       max-width: 720px;
       margin: 0 auto;
       line-height: 1.6;
@@ -210,19 +210,19 @@
       justify-content: center;
       align-items: center;
       background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(216, 239, 254, 0.9);
+      border: 1px solid rgba(210, 210, 215, 0.85);
       padding: 0.35rem;
       border-radius: 9999px;
       margin: 1.4rem auto 2.4rem auto;
       backdrop-filter: blur(14px);
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), inset 0 1px 0 #ffffff;
       gap: 0.35rem;
       flex-wrap: wrap;
     }
     .filter-btn {
       background: transparent;
       border: 1px solid transparent;
-      color: #475569;
+      color: #6e6e73;
       padding: 0.6rem 1.4rem;
       border-radius: 9999px;
       font-size: 0.9rem;
@@ -1828,7 +1828,7 @@
   </div>
 
   <!-- Footer -->
-  <footer style="text-align: center; padding: 2.5rem 1.5rem; color: #475569; font-size: 0.88rem; font-weight: 500; border-top: 1px solid rgba(216, 239, 254, 0.9);">
+  <footer style="text-align: center; padding: 2.5rem 1.5rem; color: #6e6e73; font-size: 0.88rem; font-weight: 500; border-top: 1px solid rgba(210, 210, 215, 0.85);">
     © 2026 GLOBAL DIGI PULSE • ALL RIGHTS RESERVED • Empowering High-Growth Advertisers Worldwide
   </footer>
 
