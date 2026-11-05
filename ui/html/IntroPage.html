@@ -12,32 +12,34 @@
   <link rel="stylesheet" href="../css/madgicx-motion.css?v=1.0">
   <style>
     :root {
-      --portal-sky-top: #dff1fd;
-      --portal-sky-mid: #eef7ff;
-      --portal-sky-bot: #f8fcff;
-      --portal-sky-accent: #0284c7;
+      --portal-bg: #f0f0f0;
+      --portal-card-bg: linear-gradient(145deg, #111d33 0%, #0a1324 100%);
+      --portal-card-border: rgba(255, 255, 255, 0.12);
+      --portal-text-main: #0f172a;
+      --portal-text-sub: #475569;
+      --portal-border: #dcdcdc;
       --bg-dark: #070c18;
-      --card-bg: rgba(11, 18, 35, 0.92);
+      --card-bg: rgba(11, 18, 35, 0.94);
       --card-border: rgba(255, 255, 255, 0.14);
       --cyan-glow: #0284c7;
       --purple-glow: #a855f7;
       --emerald: #10b981;
-      --text-main: #0a2540;
-      --text-sub: #334155;
+      --text-main: #0f172a;
+      --text-sub: #475569;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: #f0f8ff;
+      background-color: #f0f0f0;
       background-image: 
-        radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.85), transparent 45%),
-        radial-gradient(circle at 82% 38%, rgba(216, 239, 254, 0.55), transparent 50%),
-        radial-gradient(circle at 50% 85%, rgba(238, 247, 255, 0.45), transparent 55%),
-        linear-gradient(180deg, #dcf0fd 0%, #edf7ff 45%, #f8fcff 100%);
+        radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.9), transparent 45%),
+        radial-gradient(circle at 82% 38%, rgba(230, 230, 230, 0.6), transparent 50%),
+        radial-gradient(circle at 50% 85%, rgba(220, 220, 220, 0.5), transparent 55%),
+        linear-gradient(180deg, #f0f0f0 0%, #eaeaea 50%, #e2e2e2 100%);
       background-size: cover;
       background-attachment: fixed;
-      color: var(--text-main);
+      color: var(--portal-text-main);
       font-family: 'Plus Jakarta Sans', sans-serif;
       min-height: 100vh;
       display: flex;
@@ -49,15 +51,15 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.90);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(216, 239, 254, 0.85);
+      border-bottom: 1px solid #dcdcdc;
       padding: 0.85rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
     }
 
     .portal-brand {
@@ -119,7 +121,7 @@
       padding: 0.4rem 0.85rem;
       border-radius: 9999px;
       font-size: 0.85rem;
-      color: #34d399;
+      color: #10b981;
       font-weight: 600;
     }
 
@@ -132,9 +134,9 @@
     }
 
     .btn-portal-logout {
-      background: rgba(239, 68, 68, 0.15);
-      border: 1px solid rgba(239, 68, 68, 0.35);
-      color: #f87171;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
       padding: 0.45rem 1rem;
       border-radius: 8px;
       font-size: 0.85rem;
@@ -159,23 +161,23 @@
     /* Section Header */
     .portal-header {
       text-align: center;
-      margin-bottom: 2.8rem;
+      margin-bottom: 2rem;
     }
 
     .portal-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(2, 132, 199, 0.28);
-      color: #0284c7;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      color: #0f172a;
       padding: 0.35rem 0.95rem;
       border-radius: 9999px;
       font-size: 0.88rem;
       font-weight: 700;
       margin-bottom: 0.8rem;
       backdrop-filter: blur(8px);
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     .portal-title {
@@ -183,25 +185,17 @@
       font-weight: 800;
       line-height: 1.25;
       margin-bottom: 0.6rem;
-      color: #0a2540;
-      letter-spacing: -0.02em;
+      color: #0f172a;
+      letter-spacing: -0.025em;
     }
 
     .portal-subtitle {
       font-size: 1.05rem;
-      color: #334155;
+      color: #475569;
       max-width: 720px;
       margin: 0 auto;
       line-height: 1.6;
       font-weight: 500;
-    }
-
-    /* =========================================================================
-       UNIQUE FUTURISTIC MASTERCLASS ARCHITECTURE & PIPELINE
-       ========================================================================= */
-    .portal-header {
-      text-align: center;
-      margin-bottom: 2rem;
     }
 
     /* 3 Options in One Unified Segment Bar */
@@ -209,13 +203,13 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(216, 239, 254, 0.9);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid #dcdcdc;
       padding: 0.35rem;
       border-radius: 9999px;
       margin: 1.4rem auto 2.4rem auto;
       backdrop-filter: blur(14px);
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05), inset 0 1px 0 #ffffff;
       gap: 0.35rem;
       flex-wrap: wrap;
     }
@@ -236,27 +230,6 @@
       gap: 0.4rem;
       white-space: nowrap;
     }
-    .filter-btn-instagram:hover {
-      color: #ffffff;
-      background: rgba(225, 48, 108, 0.22);
-      border-color: rgba(225, 48, 108, 0.55);
-      box-shadow: 0 0 18px rgba(225, 48, 108, 0.35);
-      transform: translateY(-2px);
-    }
-    .filter-btn-facebook:hover {
-      color: #ffffff;
-      background: rgba(24, 119, 242, 0.22);
-      border-color: rgba(24, 119, 242, 0.55);
-      box-shadow: 0 0 18px rgba(24, 119, 242, 0.35);
-      transform: translateY(-2px);
-    }
-    .filter-btn-youtube:hover {
-      color: #ffffff;
-      background: rgba(239, 68, 68, 0.22);
-      border-color: rgba(239, 68, 68, 0.55);
-      box-shadow: 0 0 18px rgba(239, 68, 68, 0.35);
-      transform: translateY(-2px);
-    }
 
     /* Unique 3 Options Grid */
     .options-grid {
@@ -273,9 +246,9 @@
 
     /* Holographic Card Container */
     .option-card {
-      background: rgba(11, 18, 35, 0.88);
+      background: linear-gradient(145deg, #111d33 0%, #0a1324 100%);
       border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -283,13 +256,13 @@
       cursor: pointer;
       backdrop-filter: blur(20px);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 22px 48px -8px rgba(15, 23, 42, 0.28), 0 8px 18px rgba(15, 23, 42, 0.12);
     }
 
     /* Platform-Specific Signatures (Instagram, Facebook, YouTube) */
     .option-card.card-platform-instagram, .option-card.card-track-1 {
       border-color: rgba(225, 48, 108, 0.35);
-      background: radial-gradient(circle at 10% 0%, rgba(225, 48, 108, 0.16), transparent 50%), rgba(11, 18, 35, 0.94);
+      background: radial-gradient(circle at 10% 0%, rgba(225, 48, 108, 0.18), transparent 50%), linear-gradient(145deg, #111d33 0%, #0a1324 100%);
     }
     .option-card.card-platform-instagram:hover, .option-card.card-track-1:hover {
       transform: translateY(-8px) scale(1.015);
@@ -299,7 +272,7 @@
 
     .option-card.card-platform-facebook, .option-card.card-track-2 {
       border-color: rgba(24, 119, 242, 0.35);
-      background: radial-gradient(circle at 10% 0%, rgba(24, 119, 242, 0.16), transparent 50%), rgba(11, 18, 35, 0.94);
+      background: radial-gradient(circle at 10% 0%, rgba(24, 119, 242, 0.18), transparent 50%), linear-gradient(145deg, #111d33 0%, #0a1324 100%);
     }
     .option-card.card-platform-facebook:hover, .option-card.card-track-2:hover {
       transform: translateY(-8px) scale(1.015);
@@ -309,7 +282,7 @@
 
     .option-card.card-platform-youtube, .option-card.card-track-3 {
       border-color: rgba(239, 68, 68, 0.35);
-      background: radial-gradient(circle at 10% 0%, rgba(239, 68, 68, 0.16), transparent 50%), rgba(11, 18, 35, 0.94);
+      background: radial-gradient(circle at 10% 0%, rgba(239, 68, 68, 0.18), transparent 50%), linear-gradient(145deg, #111d33 0%, #0a1324 100%);
     }
     .option-card.card-platform-youtube:hover, .option-card.card-track-3:hover {
       transform: translateY(-8px) scale(1.015);
@@ -516,7 +489,7 @@
 
     .option-card-desc {
       font-size: 0.9rem;
-      color: var(--text-sub);
+      color: #94a3b8;
       line-height: 1.55;
       margin-bottom: 1.2rem;
       flex: 1;
@@ -565,9 +538,9 @@
     }
     .btn-card-intro {
       width: 100%;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
       padding: 0.85rem 1rem;
       border-radius: 12px;
       font-size: 0.92rem;
@@ -580,10 +553,11 @@
       transition: all 0.22s ease;
       font-family: inherit;
       backdrop-filter: blur(8px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
     }
     .btn-card-intro:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.4);
       color: #ffffff;
       transform: translateY(-2px);
     }
@@ -632,7 +606,6 @@
       background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
       box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
     }
-
 
     .modal-tab-bar {
       display: flex;
@@ -1828,7 +1801,7 @@
   </div>
 
   <!-- Footer -->
-  <footer style="text-align: center; padding: 2.5rem 1.5rem; color: #475569; font-size: 0.88rem; font-weight: 500; border-top: 1px solid rgba(216, 239, 254, 0.9);">
+  <footer style="text-align: center; padding: 2.5rem 1.5rem; color: #475569; font-size: 0.88rem; font-weight: 500; border-top: 1px solid #dcdcdc;">
     © 2026 GLOBAL DIGI PULSE • ALL RIGHTS RESERVED • Empowering High-Growth Advertisers Worldwide
   </footer>
 
