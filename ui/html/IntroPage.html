@@ -273,9 +273,9 @@
 
     /* Holographic Card Container */
     .option-card {
-      background: rgba(11, 18, 35, 0.88);
+      background: #ffffff;
       border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(216, 239, 254, 0.9);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -283,38 +283,38 @@
       cursor: pointer;
       backdrop-filter: blur(20px);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 14px 34px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
     }
 
     /* Platform-Specific Signatures (Instagram, Facebook, YouTube) */
     .option-card.card-platform-instagram, .option-card.card-track-1 {
-      border-color: rgba(225, 48, 108, 0.35);
-      background: radial-gradient(circle at 10% 0%, rgba(225, 48, 108, 0.16), transparent 50%), rgba(11, 18, 35, 0.94);
+      border-color: rgba(225, 48, 108, 0.25);
+      background: radial-gradient(circle at 10% 0%, rgba(225, 48, 108, 0.05), transparent 50%), #ffffff;
     }
     .option-card.card-platform-instagram:hover, .option-card.card-track-1:hover {
       transform: translateY(-8px) scale(1.015);
       border-color: #e1306c;
-      box-shadow: 0 24px 50px rgba(225, 48, 108, 0.35), 0 0 35px rgba(225, 48, 108, 0.2);
+      box-shadow: 0 20px 45px -4px rgba(225, 48, 108, 0.22), 0 4px 14px rgba(225, 48, 108, 0.1);
     }
 
     .option-card.card-platform-facebook, .option-card.card-track-2 {
-      border-color: rgba(24, 119, 242, 0.35);
-      background: radial-gradient(circle at 10% 0%, rgba(24, 119, 242, 0.16), transparent 50%), rgba(11, 18, 35, 0.94);
+      border-color: rgba(24, 119, 242, 0.25);
+      background: radial-gradient(circle at 10% 0%, rgba(24, 119, 242, 0.05), transparent 50%), #ffffff;
     }
     .option-card.card-platform-facebook:hover, .option-card.card-track-2:hover {
       transform: translateY(-8px) scale(1.015);
       border-color: #1877f2;
-      box-shadow: 0 24px 50px rgba(24, 119, 242, 0.35), 0 0 35px rgba(24, 119, 242, 0.2);
+      box-shadow: 0 20px 45px -4px rgba(24, 119, 242, 0.22), 0 4px 14px rgba(24, 119, 242, 0.1);
     }
 
     .option-card.card-platform-youtube, .option-card.card-track-3 {
-      border-color: rgba(239, 68, 68, 0.35);
-      background: radial-gradient(circle at 10% 0%, rgba(239, 68, 68, 0.16), transparent 50%), rgba(11, 18, 35, 0.94);
+      border-color: rgba(239, 68, 68, 0.25);
+      background: radial-gradient(circle at 10% 0%, rgba(239, 68, 68, 0.05), transparent 50%), #ffffff;
     }
     .option-card.card-platform-youtube:hover, .option-card.card-track-3:hover {
       transform: translateY(-8px) scale(1.015);
       border-color: #ef4444;
-      box-shadow: 0 24px 50px rgba(239, 68, 68, 0.35), 0 0 35px rgba(239, 68, 68, 0.2);
+      box-shadow: 0 20px 45px -4px rgba(239, 68, 68, 0.22), 0 4px 14px rgba(239, 68, 68, 0.1);
     }
 
     /* Giant Platform Watermarks */
@@ -327,14 +327,14 @@
       line-height: 1;
       user-select: none;
       pointer-events: none;
-      opacity: 0.05;
+      opacity: 0.04;
       font-family: 'Plus Jakarta Sans', sans-serif;
       transition: opacity 0.3s;
     }
     .card-platform-instagram .card-watermark, .card-track-1 .card-watermark { color: #e1306c; }
     .card-platform-facebook .card-watermark, .card-track-2 .card-watermark { color: #1877f2; }
     .card-platform-youtube .card-watermark, .card-track-3 .card-watermark { color: #ef4444; }
-    .option-card:hover .card-watermark { opacity: 0.14; }
+    .option-card:hover .card-watermark { opacity: 0.08; }
 
     /* Video Viewport Frame */
     .option-thumb-wrapper {
@@ -345,8 +345,8 @@
       background: #000;
       overflow: hidden;
       border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
     }
 
     .option-thumb-img {
@@ -494,29 +494,31 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .card-platform-instagram .option-module-label, .card-track-1 .option-module-label { color: #fb7185; }
-    .card-platform-facebook .option-module-label, .card-track-2 .option-module-label { color: #38bdf8; }
-    .card-platform-youtube .option-module-label, .card-track-3 .option-module-label { color: #f87171; }
+    .card-platform-instagram .option-module-label, .card-track-1 .option-module-label { color: #e1306c; }
+    .card-platform-facebook .option-module-label, .card-track-2 .option-module-label { color: #0081fb; }
+    .card-platform-youtube .option-module-label, .card-track-3 .option-module-label { color: #ef4444; }
 
     .level-indicator {
       font-size: 0.7rem;
-      color: #94a3b8;
-      background: rgba(255, 255, 255, 0.05);
+      color: #475569;
+      background: rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(15, 23, 42, 0.08);
       padding: 0.15rem 0.5rem;
       border-radius: 4px;
+      font-weight: 600;
     }
 
     .option-card-title {
       font-size: 1.25rem;
       font-weight: 700;
       line-height: 1.35;
-      color: #ffffff;
+      color: #0f172a;
       margin-bottom: 0.65rem;
     }
 
     .option-card-desc {
       font-size: 0.9rem;
-      color: var(--text-sub);
+      color: #475569;
       line-height: 1.55;
       margin-bottom: 1.2rem;
       flex: 1;
@@ -530,26 +532,29 @@
     }
 
     .feature-chip {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(15, 23, 42, 0.08);
       padding: 0.3rem 0.65rem;
       border-radius: 8px;
       font-size: 0.75rem;
-      font-weight: 500;
-      color: #e2e8f0;
+      font-weight: 600;
+      color: #334155;
       transition: all 0.2s ease;
     }
     .card-platform-instagram:hover .feature-chip, .card-track-1:hover .feature-chip {
       border-color: rgba(225, 48, 108, 0.35);
       background: rgba(225, 48, 108, 0.08);
+      color: #e1306c;
     }
     .card-platform-facebook:hover .feature-chip, .card-track-2:hover .feature-chip {
       border-color: rgba(24, 119, 242, 0.35);
       background: rgba(24, 119, 242, 0.08);
+      color: #0081fb;
     }
     .card-platform-youtube:hover .feature-chip, .card-track-3:hover .feature-chip {
       border-color: rgba(239, 68, 68, 0.35);
       background: rgba(239, 68, 68, 0.08);
+      color: #ef4444;
     }
 
     /* Platform Dual-Action Button Group for All 3 Options */
@@ -565,9 +570,9 @@
     }
     .btn-card-intro {
       width: 100%;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #e2e8f0;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      color: #0f172a;
       padding: 0.85rem 1rem;
       border-radius: 12px;
       font-size: 0.92rem;
@@ -579,13 +584,14 @@
       gap: 0.5rem;
       transition: all 0.22s ease;
       font-family: inherit;
-      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
     }
     .btn-card-intro:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.35);
-      color: #ffffff;
+      background: #ffffff;
+      border-color: #94a3b8;
+      color: #0f172a;
       transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
     }
     .btn-card-pay {
       width: 100%;
