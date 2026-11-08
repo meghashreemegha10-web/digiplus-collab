@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script>window.location.replace("IntroPage.html");</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GLOBAL DIGI PULSE</title>
     <link rel="stylesheet" href="../css/app2.css">
@@ -319,10 +318,13 @@
               Your browser does not support the video tag.
             </video>
           </div>
-          <div style="margin-top:14px;display:flex;justify-content:center;gap:14px;width:100%;">
+          <div style="margin-top:14px;display:flex;justify-content:center;gap:14px;width:100%;flex-wrap:wrap;">
             <button class="welcome-btn" id="goToCampaignBtn" style="padding:12px 24px;font-size:1.05rem;">
               <svg style="vertical-align:middle;margin-right:8px;" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="10" stroke="#2e9ad0" stroke-width="2" fill="#ffe066"/><path d="M9 8l5 3-5 3V8z" fill="#2e9ad0"/></svg>
               Next Page
+            </button>
+            <button class="welcome-btn" onclick="window.location.href='IntroPage.html'" style="background:rgba(255,255,255,0.95);color:#0284c7;border:1.5px solid #0284c7;padding:12px 20px;font-size:1.05rem;box-shadow:none;">
+              Vault Overview
             </button>
             <button class="welcome-btn" id="logoutBtn" style="background:linear-gradient(135deg, #ef4444, #dc2626) !important;padding:12px 24px;font-size:1.05rem;">
               Logout
@@ -414,6 +416,26 @@
     }
   </style>
   <script>
+    // Enforce payment access on live website, but allow open preview for the hoster on localhost
+    (function enforceAccess() {
+      const hostname = window.location.hostname;
+      const isLocalhost = hostname === 'localhost' || 
+                          hostname === '127.0.0.1' || 
+                          hostname.startsWith('192.168.') || 
+                          hostname.endsWith('.local') || 
+                          window.location.protocol === 'file:';
+      if (isLocalhost) return;
+
+      const hasAccess = localStorage.getItem('accessGranted') === 'true' ||
+                        localStorage.getItem('scanPaid') === 'true' ||
+                        localStorage.getItem('paymentStatus') === '1499' ||
+                        localStorage.getItem('unlocked_option_2') === 'true';
+      if (!hasAccess) {
+        alert('This Meta / Facebook Ads Masterclass is locked. Please complete enrollment to access.');
+        window.location.href = 'IntroPage.html?option=2';
+      }
+    })();
+
     document.getElementById("goToCampaignBtn")?.addEventListener("click", function() {
       window.location.href = "CampainPage.html";
     });

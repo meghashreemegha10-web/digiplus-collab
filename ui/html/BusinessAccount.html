@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script>window.location.replace("IntroPage.html");</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GLOBAL DIGI PULSE</title>
     <link rel="stylesheet" href="businessPage.css">
@@ -222,18 +221,24 @@
         
         <!-- Left Column: Video & Actions -->
         <div style="flex:1;min-width:280px;max-width:440px;display:flex;flex-direction:column;align-items:center;">
-          <div class="magical-nav-badge" style="margin-bottom:12px;font-size:0.90rem;padding:5px 12px;">💼 ENTERPRISE SCALING: BUSINESS ARCHITECTURE & CRM 💼</div>
+          <div class="magical-nav-badge" style="margin-bottom:12px;font-size:0.90rem;padding:5px 12px;">💼 ENTERPRISE SCALING: BUSINESS ARCHITECTURE & CRM 🚨</div>
           <h1 class="main-title" style="margin-bottom:16px;font-size:2.1rem;text-align:center;">WELCOME TO GLOBAL DIGI PULSE</h1>
           <div class="video-container" style="width:100%;max-width:440px;margin-bottom:16px;border-radius:16px;overflow:hidden;">
             <video width="100%" height="220" controls style="border-radius:14px;max-height:220px;display:block;">
-              <source src="https://archive.org/download/short-video.jpg/short%20video%204.jpg.mp4" type="video/mp4">
+              <source src="https://archive.org/download/short-video.jpg/short%20video2.jpg.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
-          <div style="margin-top:14px;display:flex;justify-content:center;gap:14px;width:100%;">
+          <div style="margin-top:14px;display:flex;justify-content:center;gap:14px;width:100%;flex-wrap:wrap;">
+            <button class="welcome-btn" onclick="window.location.href='CampainPage.html'" style="background:rgba(255,255,255,0.95);color:#0284c7;border:1.5px solid #0284c7;padding:12px 20px;font-size:1.05rem;box-shadow:none;">
+              ← Previous (YouTube Hub)
+            </button>
             <button class="welcome-btn" id="goToThankYouBtn" style="background:linear-gradient(135deg, #10b981 0%, #06b6d4 100%) !important;padding:12px 24px;font-size:1.05rem;">
               <svg style="vertical-align:middle;margin-right:8px;" width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Complete Masterclass
+            </button>
+            <button class="welcome-btn" onclick="window.location.href='IntroPage.html'" style="background:rgba(255,255,255,0.95);color:#0284c7;border:1.5px solid #0284c7;padding:12px 20px;font-size:1.05rem;box-shadow:none;">
+              Vault Overview
             </button>
             <button class="welcome-btn" onclick="window.location.href='LoginPage.html'" style="background:linear-gradient(135deg, #ef4444, #dc2626) !important;padding:12px 24px;font-size:1.05rem;">
               Logout
@@ -291,6 +296,26 @@
     </div>
     <footer class="footer-line" style="position:fixed;left:0;bottom:0;width:100vw;text-align:center;padding:12px 0;color:#fff;font-size:16px;font-weight:700;text-shadow:1px 1px 4px #2e9ad0;background:rgba(10,16,38,0.95);z-index:10;">ALL RIGHTS RESERVED</footer>
     <script>
+    // Enforce payment access on live website, but allow open preview for the hoster on localhost
+    (function enforceAccess() {
+      const hostname = window.location.hostname;
+      const isLocalhost = hostname === 'localhost' || 
+                          hostname === '127.0.0.1' || 
+                          hostname.startsWith('192.168.') || 
+                          hostname.endsWith('.local') || 
+                          window.location.protocol === 'file:';
+      if (isLocalhost) return;
+
+      const hasAccess = localStorage.getItem('accessGranted') === 'true' ||
+                        localStorage.getItem('scanPaid') === 'true' ||
+                        localStorage.getItem('paymentStatus') === '1499' ||
+                        localStorage.getItem('unlocked_option_1') === 'true';
+      if (!hasAccess) {
+        alert('This Instagram Masterclass is locked. Please complete enrollment to access.');
+        window.location.href = 'IntroPage.html?option=1';
+      }
+    })();
+
     function showBonusVideoPopup() {
       document.getElementById('bonus-video-popup').style.display = 'flex';
       var vid = document.getElementById('bonus-video');

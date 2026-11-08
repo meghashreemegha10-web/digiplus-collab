@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>window.location.replace("IntroPage.html");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GLOBAL DIGI PULSE</title>
   <link rel="stylesheet" href="../css/app2.css">
@@ -39,7 +38,7 @@
       (function() {
         const scanPaid = localStorage.getItem('scanPaid');
         if (scanPaid === 'true') {
-          window.location.href = 'IntroPage.html';
+          window.location.href = 'WelcomePage.html';
         }
       })();
     </script>
@@ -83,7 +82,9 @@
             const status = await res.json();
             if (status.scanPaid) {
               localStorage.setItem('scanPaid', 'true');
-              window.location.href = 'IntroPage.html';
+              localStorage.setItem('accessGranted', 'true');
+              localStorage.setItem('paymentStatus', '1499');
+              window.location.href = 'WelcomePage.html';
               return;
             } else {
               localStorage.removeItem('scanPaid');
@@ -146,7 +147,9 @@
                     .then(data => {
                       if (data.success) {
                         localStorage.setItem('scanPaid', 'true');
-                        window.location.href = 'IntroPage.html';
+                        localStorage.setItem('accessGranted', 'true');
+                        localStorage.setItem('paymentStatus', '1499');
+                        window.location.href = 'WelcomePage.html';
                       } else {
                         alert('Payment verification failed. Please contact support.');
                       }
