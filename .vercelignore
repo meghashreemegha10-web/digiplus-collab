@@ -1,0 +1,13 @@
+server/data/*.wt
+server/data/*.lock
+server/data/*.bson
+server/data/journal/
+server/data/diagnostic.data/
+server/data/_tmp/
+server/data/_mdb_catalog.wt
+server/data/sizeStorer.wt
+server/data/WiredTiger*
+scratch/
+*.bat
+*.sh
+README_LOCAL.md

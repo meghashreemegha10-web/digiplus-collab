@@ -140,3 +140,4 @@ Thumbs.db
 
 # Scratch / temporary development files
 scratch/
+.vercel

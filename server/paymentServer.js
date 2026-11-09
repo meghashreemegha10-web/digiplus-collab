@@ -10,7 +10,6 @@ const nodemailer = require('nodemailer');
 const twilio = require('twilio');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const bodyParser = require('body-parser');
 const sgMail = require('@sendgrid/mail');
 const path = require('path');
 const os = require('os');
@@ -162,11 +161,28 @@ if (twilioSid && twilioToken && twilioSid.startsWith('AC')) {
 }
 
 // Local JSON file storage fallback for users
-const dataDir = path.join(__dirname, 'data');
+const isVercel = process.env.VERCEL === '1' || !!process.env.VERCEL;
+const dataDir = isVercel ? path.join(os.tmpdir(), 'globaldigipulse') : path.join(__dirname, 'data');
 if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir, { recursive: true });
+  try {
+    fs.mkdirSync(dataDir, { recursive: true });
+  } catch (e) {
+    console.error('Error creating data directory:', e.message);
+  }
 }
 const usersFilePath = path.join(dataDir, 'users.json');
+
+// In serverless environments, seed users.json from bundled repo data if not already initialized
+if (isVercel && !fs.existsSync(usersFilePath)) {
+  try {
+    const bundledUsers = path.join(__dirname, 'data', 'users.json');
+    if (fs.existsSync(bundledUsers)) {
+      fs.copyFileSync(bundledUsers, usersFilePath);
+    }
+  } catch (e) {
+    console.error('Error seeding users.json in tmpdir:', e.message);
+  }
+}
 
 function getLocalUsers() {
   try {
@@ -880,11 +896,15 @@ process.on('unhandledRejection', (reason) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, '0.0.0.0', () => {
-  const netIp = getNetworkIp();
-  console.log(`\n==================================================`);
-  console.log(`Global Digi Pulse server running at:`);
-  console.log(`  - Local:   http://localhost:${PORT}/`);
-  console.log(`  - Network: http://${netIp}:${PORT}/`);
-  console.log(`==================================================\n`);
-});
+if (require.main === module) {
+  app.listen(PORT, '0.0.0.0', () => {
+    const netIp = getNetworkIp();
+    console.log(`\n==================================================`);
+    console.log(`Global Digi Pulse server running at:`);
+    console.log(`  - Local:   http://localhost:${PORT}/`);
+    console.log(`  - Network: http://${netIp}:${PORT}/`);
+    console.log(`==================================================\n`);
+  });
+}
+
+module.exports = app;

@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "{ui/**,models/**,server/data/**}",
+      "maxDuration": 15
+    }
+  },
+  "rewrites": [
+    { "source": "/assets/(.*)", "destination": "/ui/assets/$1" },
+    { "source": "/css/(.*)", "destination": "/ui/css/$1" },
+    { "source": "/js/(.*)", "destination": "/ui/js/$1" },
+    { "source": "/images/(.*)", "destination": "/ui/images/$1" },
+    { "source": "/facebook_covers/(.*)", "destination": "/ui/facebook_covers/$1" },
+    { "source": "/html/(.*)", "destination": "/ui/html/$1" },
+    { "source": "/demo/(.*)", "destination": "/ui/demo/$1" },
+    { "source": "/styles.css", "destination": "/ui/styles.css" },
+    { "source": "/(.*)", "destination": "/api/index.js" }
+  ]
+}

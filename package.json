@@ -16,5 +16,8 @@
   },
   "scripts": {
     "start": "node server/paymentServer.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
