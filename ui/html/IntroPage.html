@@ -246,12 +246,12 @@
     }
 
     .filter-btn {
-      background: transparent;
-      border: 1px solid transparent;
+      background: rgba(221, 227, 232, 0.45);
+      border: 1px solid rgba(58, 15, 52, 0.12);
       color: #3A0F34;
-      padding: 0.6rem 1.4rem;
+      padding: 0.6rem 1.3rem;
       border-radius: 9999px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
       cursor: pointer;
       backdrop-filter: blur(8px);
@@ -264,8 +264,10 @@
     }
 
     .filter-btn:hover {
-      background: rgba(58, 15, 52, 0.08);
+      background: rgba(58, 15, 52, 0.12);
+      border-color: #EAAA00;
       color: #3A0F34;
+      transform: translateY(-1px);
     }
 
     /* Unique 3 Options Grid */
@@ -1515,8 +1517,11 @@
             and dynamic creative variations to eliminate ad fatigue.
           </p>
 
-          <!-- Action Button: Watch Intro Video & Theory -->
+          <!-- Action Buttons: Unlock Masterclass & Watch Intro Video -->
           <div class="card-action-btn-group" id="cardActionGroup1">
+            <button type="button" class="btn-card-pay" style="margin-top:0;padding:10px 16px;font-size:0.92rem;margin-bottom:8px;" onclick="event.stopPropagation(); openPaymentGateway(1)">
+              <span>💳 Unlock Instagram (₹499)</span>
+            </button>
             <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(1)">
               <span>▶ Watch Intro Video & Theory</span>
             </button>
@@ -1557,8 +1562,11 @@
             GST tax exemptions, and recover disabled accounts.
           </p>
 
-          <!-- Action Button: Watch Intro Video & Theory -->
+          <!-- Action Buttons: Unlock Masterclass & Watch Intro Video -->
           <div class="card-action-btn-group" id="cardActionGroup2">
+            <button type="button" class="btn-card-pay" style="margin-top:0;padding:10px 16px;font-size:0.92rem;margin-bottom:8px;" onclick="event.stopPropagation(); openPaymentGateway(2)">
+              <span>💳 Unlock Facebook (₹499)</span>
+            </button>
             <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(2)">
               <span>▶ Watch Intro Video & Theory</span>
             </button>
@@ -1599,8 +1607,11 @@
             lead acquisition costs, and scale video budgets with maximum ROAS.
           </p>
 
-          <!-- Action Button: Watch Intro Video & Theory -->
+          <!-- Action Buttons: Unlock Masterclass & Watch Intro Video -->
           <div class="card-action-btn-group" id="cardActionGroup3">
+            <button type="button" class="btn-card-pay" style="margin-top:0;padding:10px 16px;font-size:0.92rem;margin-bottom:8px;" onclick="event.stopPropagation(); openPaymentGateway(3)">
+              <span>💳 Unlock YouTube (₹499)</span>
+            </button>
             <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(3)">
               <span>▶ Watch Intro Video & Theory</span>
             </button>
@@ -2252,9 +2263,14 @@
             `;
           } else {
             actionGroup.innerHTML = `
-              <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(${i})">
-                <span>▶ Watch Intro Video & Theory</span>
-              </button>
+              <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
+                <button type="button" class="btn-card-pay" style="margin-top:0;padding:10px 16px;font-size:0.92rem;" onclick="event.stopPropagation(); openPaymentGateway(${i})">
+                  <span>💳 Unlock ${opt.platform} (${opt.price})</span>
+                </button>
+                <button type="button" class="btn-card-intro" style="margin-top:0;padding:8px 14px;font-size:0.88rem;" onclick="event.stopPropagation(); openOptionModal(${i})">
+                  <span>▶ Watch Intro Video & Theory</span>
+                </button>
+              </div>
             `;
           }
         }
