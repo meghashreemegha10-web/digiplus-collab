@@ -1469,7 +1469,7 @@
           <button type="button" class="filter-btn filter-btn-youtube" onclick="openOptionModal(3)">
             <span>▶️ YouTube Campaigns</span>
           </button>
-          <button type="button" class="filter-btn" onclick="window.location.href='WelcomePage.html'"
+          <button type="button" class="filter-btn" onclick="window.location.href='IntroPage.html'"
             style="background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%); border: 1.5px solid rgba(234, 170, 0, 0.45); color: #DDE3E8; font-weight: 800; box-shadow: 0 4px 15px rgba(58, 15, 52, 0.25);">
             <span>🎬 Original 3-Video Hub (Welcome Page)</span>
           </button>
@@ -1916,7 +1916,7 @@
           actionBtn.style.border = '1.5px solid #EAAA00';
           actionBtn.style.boxShadow = '0 6px 25px rgba(234, 170, 0, 0.35)';
           btnText.innerHTML = `🚀 Open Dedicated ${opt.platform} Masterclass Hub`;
-          actionBtn.onclick = function () { openPaymentGateway(optId, 'hub'); };
+          actionBtn.onclick = function () { openPaymentGateway(optId); };
         } else {
           actionBtn.style.background = 'linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%)';
           actionBtn.style.color = '#170314';
@@ -1950,14 +1950,14 @@
     }
 
     // Step 3: Professional Payment Gateway Flow (For all 3 options)
+    // All unlock/hub buttons must go through the paid checkout — never straight to a hub page.
     function openPaymentGateway(optId, intent) {
       if (optId) {
         currentOptionId = optId;
       }
       const productMap = { 1: 'instagram', 2: 'facebook', 3: 'youtube' };
       const productId = productMap[currentOptionId] || 'instagram';
-      const intentParam = intent ? '&intent=hub' : '';
-      window.location.href = `/checkout/?product=${productId}&option=${currentOptionId}${intentParam}`;
+      window.location.href = `/checkout/?product=${productId}&option=${currentOptionId}`;
     }
 
     // Update Dashboard Card Badges, Payment Details & Buttons for All 3 Options
@@ -1984,7 +1984,7 @@
           if (isUnlocked) {
             actionGroup.innerHTML = `
               <div style="display:flex;gap:8px;width:100%;">
-                <button type="button" class="btn-card-pay" style="flex:1.2;background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%); color:#DDE3E8; border: 1.5px solid #EAAA00; box-shadow: 0 4px 16px rgba(234, 170, 0, 0.3); margin-top: 0; padding:10px 14px; font-size:0.9rem;" onclick="event.stopPropagation(); openPaymentGateway(${i}, 'hub');">
+                <button type="button" class="btn-card-pay" style="flex:1.2;background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%); color:#DDE3E8; border: 1.5px solid #EAAA00; box-shadow: 0 4px 16px rgba(234, 170, 0, 0.3); margin-top: 0; padding:10px 14px; font-size:0.9rem;" onclick="event.stopPropagation(); openPaymentGateway(${i});">
                   <span>🚀 Open ${opt.platform} Hub</span>
                 </button>
                 <button type="button" class="btn-card-intro" style="flex:0.8;margin-top:0;padding:10px 12px;font-size:0.85rem;" onclick="event.stopPropagation(); openOptionModal(${i})">
