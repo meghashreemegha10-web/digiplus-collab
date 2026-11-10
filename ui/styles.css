@@ -1271,3 +1271,436 @@ body {
   pointer-events: none;
   display: block;
 }
+
+
+/* ==========================================================================
+   ULTRA-LUXURY WHITE, CHAMPAGNE GOLD & DEEP AUBERGINE SYSTEM (MATCHING MOCKUP)
+   ========================================================================== */
+:root {
+  --bg-primary: #FFFFFF;
+  --bg-ivory: #FAFAF8;
+  --bg-sand: #F5F3EF;
+  --bg-card-white: #FFFFFF;
+
+  --deep-aubergine: #2B0F2A;
+  --deep-aubergine-dark: #1A0719;
+  --deep-aubergine-soft: #4A2246;
+  --deep-aubergine-muted: #5A3B56;
+
+  --luxury-gold: #C59B27;
+  --luxury-gold-light: #E5B25D;
+  --luxury-gold-dark: #A57D18;
+  --luxury-gold-border: rgba(212, 175, 55, 0.35);
+  --luxury-gold-glow: rgba(229, 178, 93, 0.4);
+
+  --text-main: #2B0F2A;
+  --text-muted: #5A3B56;
+  --text-dim: #7A5B76;
+}
+
+/* Page Body */
+body {
+  background: 
+    radial-gradient(circle at 14% 18%, rgba(229, 178, 93, 0.14), transparent 42%),
+    radial-gradient(circle at 86% 22%, rgba(212, 175, 55, 0.10), transparent 42%),
+    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 35%, #F5F3EF 70%, #EFECE6 100%) !important;
+  color: var(--text-main) !important;
+}
+
+/* Hero Section */
+.hero-showcase-section, .hero-section {
+  background: #ffffff !important;
+  height: 100vh !important;
+  min-height: 750px !important;
+  max-height: 100vh !important;
+  position: relative !important;
+}
+
+.hero-banner-viewport {
+  background: #ffffff !important;
+}
+
+.hero-banner-wrapper {
+  background: #ffffff !important;
+}
+
+.hero-main-banner-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center top !important;
+  background: #ffffff !important;
+}
+
+/* Hide legacy overlay elements that are already baked into the approved hero artwork */
+.hero-presenter-fg,
+.hero-platform-floats,
+.hero-login-overlay-card {
+  display: none !important;
+}
+
+/* Turn hero-left-content into invisible accessible overlay hotspots over the pills and cards */
+.hero-left-content {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
+
+.hero-main-title,
+.hero-main-subtitle {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.hero-left-pills {
+  position: absolute !important;
+  top: 40% !important;
+  left: 3.5% !important;
+  width: 320px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  pointer-events: auto !important;
+}
+
+.hero-pill-item {
+  opacity: 0 !important;
+  cursor: pointer !important;
+  height: 38px !important;
+}
+
+/* Top Floating Navbar - Styled in Pure White, Deep Aubergine & Champagne Gold */
+.hero-navbar {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 50 !important;
+  padding: 10px clamp(20px, 4vw, 54px) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22) !important;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.06) !important;
+}
+
+.pulse-icon-box {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  background: linear-gradient(135deg, #2B0F2A 0%, #4A2246 60%, #E5B25D 100%) !important;
+  border: 1.5px solid rgba(229, 178, 93, 0.75) !important;
+  box-shadow: 0 0 15px rgba(229, 178, 93, 0.45) !important;
+}
+
+.brand-sub {
+  color: #2B0F2A !important;
+  font-weight: 800 !important;
+  font-size: 0.75rem !important;
+  text-shadow: none !important;
+}
+
+.brand-main {
+  font-size: 1.35rem !important;
+  font-weight: 900 !important;
+  background: linear-gradient(135deg, #2B0F2A 0%, #C59B27 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: none !important;
+}
+
+.nav-item {
+  color: #2B0F2A !important;
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.nav-item:hover {
+  color: #C59B27 !important;
+}
+
+.btn-member-login {
+  background: linear-gradient(135deg, #E5B25D 0%, #C59B27 100%) !important;
+  color: #200D1C !important;
+  font-weight: 700 !important;
+  border-radius: 999px !important;
+  padding: 8px 24px !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35) !important;
+  cursor: pointer !important;
+  font-size: 0.92rem !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.btn-member-login:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Trust Metrics Bar */
+.trust-metrics-section {
+  background: #ffffff !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.25) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.06) !important;
+  padding: 1.5rem 0 !important;
+}
+
+.trust-stat-number {
+  color: #2B0F2A !important;
+  font-weight: 800 !important;
+  font-size: 1.7rem !important;
+}
+
+.trust-stat-label {
+  color: #5A3B56 !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+}
+
+/* Surprise Discovery & 3 Core Pillar Cards */
+.section-surprise-about {
+  background: transparent !important;
+  padding: 5rem 0 !important;
+}
+
+.surprise-glow-badge span {
+  background: #ffffff !important;
+  color: #C59B27 !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.12) !important;
+  font-weight: 700 !important;
+}
+
+.surprise-main-title {
+  color: #2B0F2A !important;
+  font-weight: 800 !important;
+}
+
+.surprise-main-title .gradient-text {
+  background: linear-gradient(135deg, #2B0F2A 0%, #C59B27 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.surprise-intro-lead {
+  color: #5A3B56 !important;
+}
+
+.surprise-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 14px 40px rgba(212, 175, 55, 0.08), 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.surprise-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(212, 175, 55, 0.6) !important;
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.18) !important;
+}
+
+.card-tag {
+  color: #C59B27 !important;
+  font-weight: 800 !important;
+}
+
+.card-title {
+  color: #2B0F2A !important;
+  font-weight: 800 !important;
+}
+
+.card-desc {
+  color: #5A3B56 !important;
+}
+
+.card-features-list li {
+  color: #2B0F2A !important;
+}
+
+.card-features-list .check-icon {
+  color: #C59B27 !important;
+}
+
+/* Official Introduction & Curriculum Section */
+.section-curriculum {
+  background: radial-gradient(circle at 50% 20%, rgba(229, 178, 93, 0.1), transparent 70%) !important;
+}
+
+.section-badge {
+  background: #ffffff !important;
+  color: #2B0F2A !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.1) !important;
+}
+
+.section-title {
+  color: #2B0F2A !important;
+}
+
+.section-title .gradient-text {
+  background: linear-gradient(135deg, #2B0F2A 0%, #C59B27 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.section-desc {
+  color: #5A3B56 !important;
+}
+
+.official-intro-video-wrapper {
+  background: linear-gradient(135deg, rgba(229, 178, 93, 0.45), rgba(43, 15, 42, 0.35), rgba(229, 178, 93, 0.2)) !important;
+  box-shadow: 0 25px 60px rgba(212, 175, 55, 0.16) !important;
+}
+
+.highlight-item-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.32) !important;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.08) !important;
+}
+
+.highlight-item-card h4 {
+  color: #2B0F2A !important;
+}
+
+.highlight-item-card p {
+  color: #5A3B56 !important;
+}
+
+/* Login Modal - Deep Aubergine & Glowing Champagne Gold */
+.modal-overlay {
+  background: rgba(18, 5, 17, 0.75) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.modal-content,
+#loginModal .modal-content,
+#registerModal .modal-content,
+#forgotModal .modal-content {
+  background: #20071D !important;
+  border: 1.5px solid #E5B25D !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 35px rgba(229, 178, 93, 0.35) !important;
+  border-radius: 20px !important;
+}
+
+.login-input,
+#loginModal input,
+#registerModal input,
+#forgotModal input {
+  background: #310D2C !important;
+  border: 1px solid rgba(229, 178, 93, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.login-input:focus,
+#loginModal input:focus {
+  border-color: #E5B25D !important;
+  box-shadow: 0 0 12px rgba(229, 178, 93, 0.4) !important;
+}
+
+.btn-enroll-gradient,
+#loginModal button[type="submit"],
+#registerModal button[type="submit"],
+#forgotModal button[type="submit"] {
+  background: linear-gradient(135deg, #E5B25D 0%, #C59B27 100%) !important;
+  color: #200D1C !important;
+  font-weight: 800 !important;
+  border: none !important;
+  box-shadow: 0 8px 25px rgba(229, 178, 93, 0.4) !important;
+}
+
+/* Site Footer */
+.site-footer {
+  background: #1A0719 !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.25) !important;
+  color: #DDE3E8 !important;
+}
+
+.footer-brand span {
+  color: #ffffff !important;
+}
+
+.site-footer a {
+  color: #E5B25D !important;
+  transition: color 0.2s ease !important;
+}
+
+.site-footer a:hover {
+  color: #ffffff !important;
+}
+
+
+/* ==========================================================================
+   Hero Interactive Hotspots for Feature Pills & Bottom Stats Cards
+   ========================================================================== */
+.hero-interactive-hotspots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 25;
+}
+
+.hero-hotspots-pills {
+  position: absolute;
+  left: 4.8%;
+  top: 36.5%;
+  width: 290px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.hero-hotspot-pill {
+  display: block;
+  width: 100%;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.22s ease, transform 0.22s ease;
+}
+
+.hero-hotspot-pill:hover {
+  background: rgba(229, 178, 93, 0.12);
+  transform: translateX(4px);
+}
+
+.hero-hotspots-cards {
+  position: absolute;
+  left: 4.8%;
+  bottom: 8%;
+  width: 440px;
+  height: 175px;
+  display: flex;
+  gap: 16px;
+  pointer-events: auto;
+}
+
+.hero-hotspot-card {
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-hotspot-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+}
+
+@media (max-width: 900px) {
+  .hero-hotspots-pills,
+  .hero-hotspots-cards {
+    display: none;
+  }
+}
