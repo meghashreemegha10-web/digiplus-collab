@@ -208,155 +208,134 @@
 }
 
 
+
 /* ==========================================================================
-   8. Ice Silver, Deep Aubergine & Marigold System Overrides for Optimization Demo
+   8. Front-End Cohesive Luxury Color System for Optimization Demo
    ========================================================================== */
 .section-optimization-showcase {
-  background: linear-gradient(180deg, #180517 0%, #290824 50%, #150314 100%) !important;
+  background: radial-gradient(circle at 50% 12%, rgba(212, 175, 55, 0.12), transparent 60%), radial-gradient(circle at 50% 88%, rgba(58, 15, 52, 0.04), transparent 60%), #F8F8F8 !important;
+  color: #2B0F2A !important;
 }
 
 .animated-button .btn-opt-cta {
   background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
-  color: #2b0b26 !important;
+  color: #1F081C !important;
+  font-size: 1.14rem !important;
   font-weight: 800 !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.45) !important;
+  padding: 14px 38px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 8px 26px rgba(212, 175, 55, 0.45) !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+}
+
+.animated-button .btn-opt-cta:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6) !important;
 }
 
 .opt-steps-bar {
-  background: rgba(43, 11, 38, 0.75) !important;
-  border: 1px solid rgba(212, 175, 55, 0.25) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 10px 32px rgba(212, 175, 55, 0.12) !important;
+  border-radius: 999px !important;
+  padding: 8px 18px !important;
 }
 
 .opt-step-btn {
-  color: rgba(221, 227, 232, 0.85) !important;
+  color: #5A3B56 !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  padding: 9px 18px !important;
+  border-radius: 999px !important;
+  transition: all 0.22s ease !important;
+}
+
+.opt-step-btn:hover {
+  color: #D4AF37 !important;
+  background: rgba(212, 175, 55, 0.08) !important;
 }
 
 .opt-step-btn.is-active {
-  background: #D4AF37 !important;
-  color: #2b0b26 !important;
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
+  color: #1F081C !important;
+  font-size: 1.05rem !important;
   font-weight: 800 !important;
   box-shadow: 0 4px 18px rgba(212, 175, 55, 0.45) !important;
 }
 
 .opt-step-btn.is-active .opt-step-num {
-  background: #3A0F34 !important;
-  color: #D4AF37 !important;
-  box-shadow: 0 0 8px rgba(58, 15, 52, 0.6) !important;
+  background: #2B0F2A !important;
+  color: #F5D77F !important;
+  box-shadow: 0 0 10px rgba(43, 15, 42, 0.4) !important;
+}
+
+.opt-step-btn .opt-step-num {
+  background: rgba(212, 175, 55, 0.16) !important;
+  color: #AA822A !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
 }
 
 .opt-step-arrow {
-  color: rgba(212, 175, 55, 0.4) !important;
+  color: #AA822A !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
 }
 
 .opt-step-arrow.is-active-arrow {
   color: #D4AF37 !important;
-  text-shadow: 0 0 10px #D4AF37 !important;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.6) !important;
 }
 
 .screen_component {
-  border: 1px solid rgba(212, 175, 55, 0.3) !important;
-  background: #180517 !important;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 175, 55, 0.12) !important;
+  border: 2px solid rgba(212, 175, 55, 0.4) !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 25px 65px rgba(212, 175, 55, 0.16), 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+  border-radius: 24px !important;
 }
 
 .video-step-hud {
-  background: rgba(30, 8, 27, 0.95) !important;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
-}
-
-.video-hud-pulse {
-  background: #D4AF37 !important;
-  box-shadow: 0 0 10px #D4AF37 !important;
-}
-
-#videoHudUrl {
-  color: #D4AF37 !important;
-}
-
-.journey-auth-card--dark {
-  background: #240821 !important;
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.15) !important;
-}
-
-.journey-auth-card input {
-  background: #350d30 !important;
-  border: 1px solid rgba(212, 175, 55, 0.3) !important;
-  color: #fff !important;
-}
-
-.journey-auth-card input:focus {
-  border-color: #D4AF37 !important;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
-}
-
-.journey-gradient-btn {
-  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
-  color: #2b0b26 !important;
-  font-weight: 800 !important;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4) !important;
-}
-
-.journey-auth-card--light {
-  background: #ffffff !important;
-  border: 1px solid rgba(58, 15, 52, 0.15) !important;
-  box-shadow: 0 24px 60px rgba(58, 15, 52, 0.25) !important;
-}
-
-.journey-auth-card--light .journey-gradient-btn,
-.journey-auth-card--light .journey-login-btn {
-  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
-  color: #2b0b26 !important;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4) !important;
-}
-
-.journey-auth-card--light input {
-  border-color: rgba(58, 15, 52, 0.2) !important;
-  background: #f7f9fa !important;
-  color: #2b0b26 !important;
-}
-
-.journey-pay-btn {
-  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
-  color: #2b0b26 !important;
-  font-weight: 800 !important;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4) !important;
-}
-
-.journey-option-tabs button.is-active,
-.journey-payment-methods button.is-active,
-.journey-upi-apps button.is-active {
-  background: #D4AF37 !important;
-  color: #2b0b26 !important;
-  border-color: #D4AF37 !important;
+  background: rgba(43, 15, 42, 0.96) !important;
+  border-bottom: 1.5px solid rgba(212, 175, 55, 0.35) !important;
+  padding: 12px 20px !important;
 }
 
 .features-screen_features {
-  border: 1px solid rgba(212, 175, 55, 0.2) !important;
-  background: rgba(36, 9, 32, 0.65) !important;
-  backdrop-filter: blur(12px) !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  gap: 1.5rem !important;
+  margin-top: 2rem !important;
 }
 
 .features-screen_feature {
-  border-color: rgba(212, 175, 55, 0.15) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 20px !important;
+  padding: 1.8rem 1.6rem !important;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
 }
 
 .features-screen_feature:hover {
-  background-color: rgba(212, 175, 55, 0.08) !important;
-  border-color: rgba(212, 175, 55, 0.4) !important;
-  box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.55), 0 0 30px -5px rgba(212, 175, 55, 0.25) !important;
+  transform: translateY(-4px) !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 18px 42px rgba(212, 175, 55, 0.24) !important;
 }
 
 .features-screen_title {
-  color: #ffffff !important;
+  color: #2B0F2A !important;
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.6rem !important;
 }
 
 .features-screen_desc {
-  color: #DDE3E8 !important;
+  color: #5A3B56 !important;
+  font-size: 1.08rem !important;
+  line-height: 1.6 !important;
 }
-
 
 /* ==========================================================================
    9. Full Simulation Overrides for Walkthrough Steps 03, 04, 05
