@@ -14,6 +14,17 @@
     { "source": "/facebook_covers/(.*)", "destination": "/ui/facebook_covers/$1" },
     { "source": "/html/(.*)", "destination": "/ui/html/$1" },
     { "source": "/demo/(.*)", "destination": "/ui/demo/$1" },
+    { "source": "/IntroPage.html", "destination": "/ui/html/IntroPage.html" },
+    { "source": "/IntroPage", "destination": "/ui/html/IntroPage.html" },
+    { "source": "/WelcomePage.html", "destination": "/ui/html/WelcomePage.html" },
+    { "source": "/WelcomePage", "destination": "/ui/html/WelcomePage.html" },
+    { "source": "/BusinessAccount.html", "destination": "/ui/html/BusinessAccount.html" },
+    { "source": "/BusinessAccount", "destination": "/ui/html/BusinessAccount.html" },
+    { "source": "/CampainPage.html", "destination": "/ui/html/CampainPage.html" },
+    { "source": "/CampainPage", "destination": "/ui/html/CampainPage.html" },
+    { "source": "/ScanAndPay.html", "destination": "/ui/html/ScanAndPay.html" },
+    { "source": "/LoginPage.html", "destination": "/ui/html/LoginPage.html" },
+    { "source": "/RegisterPage.html", "destination": "/ui/html/RegisterPage.html" },
     { "source": "/styles.css", "destination": "/ui/styles.css" },
     { "source": "/(.*)", "destination": "/api/index.js" }
   ]
