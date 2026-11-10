@@ -16,20 +16,38 @@
   <link rel="stylesheet" href="../css/madgicx-motion.css?v=1.0">
   <style>
     :root {
-      --portal-bg: #f0f0f0;
-      --portal-card-bg: linear-gradient(145deg, #111d33 0%, #0a1324 100%);
-      --portal-card-border: rgba(255, 255, 255, 0.12);
-      --portal-text-main: #0f172a;
-      --portal-text-sub: #475569;
-      --portal-border: #dcdcdc;
-      --bg-dark: #070c18;
-      --card-bg: rgba(11, 18, 35, 0.94);
-      --card-border: rgba(255, 255, 255, 0.14);
-      --cyan-glow: #0284c7;
-      --purple-glow: #a855f7;
-      --emerald: #10b981;
-      --text-main: #0f172a;
-      --text-sub: #475569;
+      /* Palette from Color System:
+         1. ICE SILVER: #DDE3E8
+         2. DEEP AUBERGINE: #3A0F34
+         3. MARIGOLD: #EAAA00
+      */
+      --ice-silver: #DDE3E8;
+      --ice-silver-light: #F4F7F9;
+      --ice-silver-dark: #C6D0D8;
+      --ice-silver-glass: rgba(221, 227, 232, 0.78);
+      --ice-silver-border: rgba(221, 227, 232, 0.95);
+
+      --deep-aubergine: #3A0F34;
+      --deep-aubergine-dark: #240620;
+      --deep-aubergine-night: #170314;
+      --deep-aubergine-light: #581a50;
+      --deep-aubergine-soft: #4d2348;
+      --deep-aubergine-glass: rgba(58, 15, 52, 0.65);
+
+      --marigold: #EAAA00;
+      --marigold-light: #FFC42E;
+      --marigold-dark: #C99200;
+      --marigold-glow: rgba(234, 170, 0, 0.45);
+      --marigold-tint: rgba(234, 170, 0, 0.16);
+
+      --portal-bg: #DDE3E8;
+      --portal-text-main: #3A0F34;
+      --portal-text-sub: #54274e;
+      --portal-border: rgba(58, 15, 52, 0.14);
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --card-border: rgba(221, 227, 232, 0.95);
+      --text-main: #3A0F34;
+      --text-sub: #54274e;
     }
 
     * {
@@ -39,13 +57,13 @@
     }
 
     body {
-      background-color: #f0f0f0;
+      background-color: #DDE3E8;
       background-image:
-        radial-gradient(circle at 18% 45%, rgba(225, 48, 108, 0.12), transparent 40%),
-        radial-gradient(circle at 50% 48%, rgba(24, 119, 242, 0.12), transparent 40%),
-        radial-gradient(circle at 82% 45%, rgba(239, 68, 68, 0.12), transparent 40%),
-        radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.8), transparent 60%),
-        linear-gradient(180deg, #f0f0f0 0%, #ebebeb 50%, #e2e2e2 100%);
+        radial-gradient(circle at 14% 18%, rgba(234, 170, 0, 0.18), transparent 42%),
+        radial-gradient(circle at 86% 22%, rgba(58, 15, 52, 0.14), transparent 42%),
+        radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.75), transparent 55%),
+        radial-gradient(circle at 50% 5%, rgba(255, 255, 255, 0.9), transparent 50%),
+        linear-gradient(180deg, #E7EDF2 0%, #DDE3E8 35%, #D4DCE2 70%, #CAD4DB 100%);
       background-size: cover;
       background-attachment: fixed;
       color: var(--portal-text-main);
@@ -60,15 +78,15 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid #dcdcdc;
+      background: rgba(221, 227, 232, 0.88);
+      backdrop-filter: blur(18px) saturate(180%);
+      -webkit-backdrop-filter: blur(18px) saturate(180%);
+      border-bottom: 1.5px solid rgba(58, 15, 52, 0.12);
       padding: 0.85rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 20px rgba(58, 15, 52, 0.05);
     }
 
     .portal-brand {
@@ -76,26 +94,26 @@
       align-items: center;
       gap: 0.75rem;
       text-decoration: none;
-      color: #0f172a;
+      color: #3A0F34;
     }
 
     .portal-logo-icon {
       width: 38px;
       height: 38px;
       border-radius: 10px;
-      background: linear-gradient(135deg, #0284c7, #9333ea);
+      background: linear-gradient(135deg, #3A0F34 0%, #581a50 60%, #EAAA00 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+      color: #DDE3E8;
+      box-shadow: 0 4px 16px rgba(234, 170, 0, 0.35);
     }
 
     .portal-brand-text {
       font-size: 1.15rem;
       font-weight: 800;
       letter-spacing: 0.02em;
-      color: #0f172a;
+      color: #3A0F34;
     }
 
     .portal-nav-center {
@@ -105,7 +123,7 @@
     }
 
     .portal-nav-item {
-      color: #475569;
+      color: #54274e;
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 600;
@@ -114,7 +132,7 @@
 
     .portal-nav-item:hover,
     .portal-nav-item.active {
-      color: #0284c7;
+      color: #EAAA00;
     }
 
     .portal-nav-right {
@@ -127,38 +145,39 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      background: rgba(58, 15, 52, 0.08);
+      border: 1.5px solid rgba(234, 170, 0, 0.45);
       padding: 0.4rem 0.85rem;
       border-radius: 9999px;
       font-size: 0.85rem;
-      color: #10b981;
-      font-weight: 600;
+      color: #3A0F34;
+      font-weight: 700;
     }
 
     .user-status-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 8px #10b981;
+      background: #EAAA00;
+      box-shadow: 0 0 10px #EAAA00;
     }
 
     .btn-portal-logout {
-      background: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      color: #ef4444;
+      background: rgba(58, 15, 52, 0.08);
+      border: 1px solid rgba(58, 15, 52, 0.25);
+      color: #3A0F34;
       padding: 0.45rem 1rem;
       border-radius: 8px;
       font-size: 0.85rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
     }
 
     .btn-portal-logout:hover {
-      background: #ef4444;
-      color: #fff;
+      background: #3A0F34;
+      color: #DDE3E8;
+      border-color: #3A0F34;
     }
 
     /* Main Container */
@@ -180,16 +199,16 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: #ffffff;
-      border: 1px solid #d1d5db;
-      color: #0f172a;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1.5px solid rgba(234, 170, 0, 0.45);
+      color: #3A0F34;
       padding: 0.35rem 0.95rem;
       border-radius: 9999px;
       font-size: 0.88rem;
       font-weight: 700;
       margin-bottom: 0.8rem;
       backdrop-filter: blur(8px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 14px rgba(58, 15, 52, 0.06);
     }
 
     .portal-title {
@@ -197,13 +216,13 @@
       font-weight: 800;
       line-height: 1.25;
       margin-bottom: 0.6rem;
-      color: #0f172a;
+      color: #3A0F34;
       letter-spacing: -0.025em;
     }
 
     .portal-subtitle {
       font-size: 1.05rem;
-      color: #475569;
+      color: #54274e;
       max-width: 720px;
       margin: 0 auto;
       line-height: 1.6;
@@ -215,13 +234,13 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid #dcdcdc;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1.5px solid rgba(58, 15, 52, 0.14);
       padding: 0.35rem;
       border-radius: 9999px;
       margin: 1.4rem auto 2.4rem auto;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05), inset 0 1px 0 #ffffff;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 24px rgba(58, 15, 52, 0.06), inset 0 1px 0 #ffffff;
       gap: 0.35rem;
       flex-wrap: wrap;
     }
@@ -229,7 +248,7 @@
     .filter-btn {
       background: transparent;
       border: 1px solid transparent;
-      color: #475569;
+      color: #3A0F34;
       padding: 0.6rem 1.4rem;
       border-radius: 9999px;
       font-size: 0.9rem;
@@ -242,6 +261,11 @@
       align-items: center;
       gap: 0.4rem;
       white-space: nowrap;
+    }
+
+    .filter-btn:hover {
+      background: rgba(58, 15, 52, 0.08);
+      color: #3A0F34;
     }
 
     /* Unique 3 Options Grid */
@@ -264,11 +288,11 @@
       }
     }
 
-    /* Luminous Transparent Crystal Glass Card Container */
+    /* Luminous Crystal Glass Card Container (The Boxes) */
     .option-card {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.28) 100%);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(221, 227, 232, 0.62) 100%);
       border-radius: 24px;
-      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      border: 1.5px solid rgba(221, 227, 232, 0.95);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -277,47 +301,47 @@
       backdrop-filter: blur(28px) saturate(190%);
       -webkit-backdrop-filter: blur(28px) saturate(190%);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
-      box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03), inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+      box-shadow: 0 18px 45px -8px rgba(58, 15, 52, 0.12), 0 4px 14px -2px rgba(58, 15, 52, 0.04), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
     }
 
-    /* Platform-Specific Signatures (Instagram, Facebook, YouTube) - Luminous Radiance */
+    /* Individual Card Radiance inside Ice Silver + Deep Aubergine + Marigold system */
     .option-card.card-platform-instagram,
     .option-card.card-track-1 {
-      border-color: rgba(225, 48, 108, 0.32);
-      background: radial-gradient(circle at 50% 0%, rgba(225, 48, 108, 0.12), transparent 65%), linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.32) 100%);
+      border-color: rgba(58, 15, 52, 0.16);
+      background: radial-gradient(circle at 50% 0%, rgba(234, 170, 0, 0.16), rgba(58, 15, 52, 0.06) 65%, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(221, 227, 232, 0.65) 100%);
     }
 
     .option-card.card-platform-instagram:hover,
     .option-card.card-track-1:hover {
       transform: translateY(-8px) scale(1.015);
-      border-color: #e1306c;
-      box-shadow: 0 24px 50px -6px rgba(225, 48, 108, 0.25), 0 8px 20px rgba(15, 23, 42, 0.06), inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+      border-color: #EAAA00;
+      box-shadow: 0 24px 55px -6px rgba(58, 15, 52, 0.22), 0 0 24px rgba(234, 170, 0, 0.35), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
     }
 
     .option-card.card-platform-facebook,
     .option-card.card-track-2 {
-      border-color: rgba(24, 119, 242, 0.32);
-      background: radial-gradient(circle at 50% 0%, rgba(24, 119, 242, 0.12), transparent 65%), linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.32) 100%);
+      border-color: rgba(58, 15, 52, 0.16);
+      background: radial-gradient(circle at 50% 0%, rgba(58, 15, 52, 0.14), rgba(234, 170, 0, 0.07) 65%, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(221, 227, 232, 0.65) 100%);
     }
 
     .option-card.card-platform-facebook:hover,
     .option-card.card-track-2:hover {
       transform: translateY(-8px) scale(1.015);
-      border-color: #1877f2;
-      box-shadow: 0 24px 50px -6px rgba(24, 119, 242, 0.25), 0 8px 20px rgba(15, 23, 42, 0.06), inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+      border-color: #EAAA00;
+      box-shadow: 0 24px 55px -6px rgba(58, 15, 52, 0.22), 0 0 24px rgba(234, 170, 0, 0.35), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
     }
 
     .option-card.card-platform-youtube,
     .option-card.card-track-3 {
-      border-color: rgba(239, 68, 68, 0.32);
-      background: radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.12), transparent 65%), linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.32) 100%);
+      border-color: rgba(58, 15, 52, 0.16);
+      background: radial-gradient(circle at 50% 0%, rgba(234, 170, 0, 0.22), rgba(58, 15, 52, 0.08) 65%, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(221, 227, 232, 0.65) 100%);
     }
 
     .option-card.card-platform-youtube:hover,
     .option-card.card-track-3:hover {
       transform: translateY(-8px) scale(1.015);
-      border-color: #ef4444;
-      box-shadow: 0 24px 50px -6px rgba(239, 68, 68, 0.25), 0 8px 20px rgba(15, 23, 42, 0.06), inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+      border-color: #EAAA00;
+      box-shadow: 0 24px 55px -6px rgba(58, 15, 52, 0.22), 0 0 24px rgba(234, 170, 0, 0.35), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
     }
 
     /* Giant Platform Watermarks */
@@ -330,28 +354,15 @@
       line-height: 1;
       user-select: none;
       pointer-events: none;
-      opacity: 0.04;
+      opacity: 0.05;
+      color: #3A0F34;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      transition: opacity 0.3s;
-    }
-
-    .card-platform-instagram .card-watermark,
-    .card-track-1 .card-watermark {
-      color: #e1306c;
-    }
-
-    .card-platform-facebook .card-watermark,
-    .card-track-2 .card-watermark {
-      color: #1877f2;
-    }
-
-    .card-platform-youtube .card-watermark,
-    .card-track-3 .card-watermark {
-      color: #ef4444;
+      transition: opacity 0.3s, color 0.3s;
     }
 
     .option-card:hover .card-watermark {
-      opacity: 0.09;
+      opacity: 0.1;
+      color: #EAAA00;
     }
 
     /* Video Viewport Frame */
@@ -360,11 +371,11 @@
       width: calc(100% - 2rem);
       margin: 1.25rem auto 0;
       height: 200px;
-      background: #000;
+      background: #170314;
       overflow: hidden;
       border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      border: 1.5px solid rgba(234, 170, 0, 0.25);
+      box-shadow: 0 8px 24px rgba(23, 3, 20, 0.35);
     }
 
     .option-thumb-img {
@@ -378,7 +389,7 @@
       transform: scale(1.08);
     }
 
-    /* HUD Corner Reticles */
+    /* HUD Corner Reticles in Marigold */
     .hud-reticle-tl,
     .hud-reticle-tr,
     .hud-reticle-bl,
@@ -393,35 +404,35 @@
     .hud-reticle-tl {
       top: 6px;
       left: 6px;
-      border-top: 2px solid rgba(255, 255, 255, 0.4);
-      border-left: 2px solid rgba(255, 255, 255, 0.4);
+      border-top: 2px solid rgba(234, 170, 0, 0.75);
+      border-left: 2px solid rgba(234, 170, 0, 0.75);
     }
 
     .hud-reticle-tr {
       top: 6px;
       right: 6px;
-      border-top: 2px solid rgba(255, 255, 255, 0.4);
-      border-right: 2px solid rgba(255, 255, 255, 0.4);
+      border-top: 2px solid rgba(234, 170, 0, 0.75);
+      border-right: 2px solid rgba(234, 170, 0, 0.75);
     }
 
     .hud-reticle-bl {
       bottom: 6px;
       left: 6px;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-      border-left: 2px solid rgba(255, 255, 255, 0.4);
+      border-bottom: 2px solid rgba(234, 170, 0, 0.75);
+      border-left: 2px solid rgba(234, 170, 0, 0.75);
     }
 
     .hud-reticle-br {
       bottom: 6px;
       right: 6px;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-      border-right: 2px solid rgba(255, 255, 255, 0.4);
+      border-bottom: 2px solid rgba(234, 170, 0, 0.75);
+      border-right: 2px solid rgba(234, 170, 0, 0.75);
     }
 
     .option-overlay-play {
       position: absolute;
       inset: 0;
-      background: rgba(7, 12, 24, 0.42);
+      background: rgba(23, 3, 20, 0.38);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -429,37 +440,21 @@
     }
 
     .option-card:hover .option-overlay-play {
-      background: rgba(7, 12, 24, 0.2);
+      background: rgba(23, 3, 20, 0.18);
     }
 
-    /* Radar Pulse behind Play Button */
+    /* Radar Pulse behind Play Button in Marigold */
     .radar-pulse-ring {
       position: absolute;
       width: 68px;
       height: 68px;
       border-radius: 50%;
-      border: 1.5px solid rgba(225, 48, 108, 0.6);
+      border: 1.5px solid rgba(234, 170, 0, 0.75);
       animation: radarPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
       pointer-events: none;
     }
 
-    .card-platform-instagram .radar-pulse-ring,
-    .card-track-1 .radar-pulse-ring {
-      border-color: rgba(225, 48, 108, 0.6);
-    }
-
-    .card-platform-facebook .radar-pulse-ring,
-    .card-track-2 .radar-pulse-ring {
-      border-color: rgba(24, 119, 242, 0.6);
-    }
-
-    .card-platform-youtube .radar-pulse-ring,
-    .card-track-3 .radar-pulse-ring {
-      border-color: rgba(239, 68, 68, 0.6);
-    }
-
     @keyframes radarPing {
-
       75%,
       100% {
         transform: scale(1.6);
@@ -474,32 +469,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: #170314;
+      background: linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%);
+      box-shadow: 0 0 24px rgba(234, 170, 0, 0.7);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       position: relative;
       z-index: 2;
     }
 
-    .card-platform-instagram .play-btn-circle,
-    .card-track-1 .play-btn-circle {
-      background: linear-gradient(135deg, #833ab4, #fd1d1d 60%, #fcb045 100%);
-      box-shadow: 0 0 24px rgba(225, 48, 108, 0.7);
-    }
-
-    .card-platform-facebook .play-btn-circle,
-    .card-track-2 .play-btn-circle {
-      background: linear-gradient(135deg, #1877f2, #0099ff);
-      box-shadow: 0 0 24px rgba(24, 119, 242, 0.7);
-    }
-
-    .card-platform-youtube .play-btn-circle,
-    .card-track-3 .play-btn-circle {
-      background: linear-gradient(135deg, #dc2626, #ef4444);
-      box-shadow: 0 0 24px rgba(239, 68, 68, 0.7);
-    }
-
     .option-card:hover .play-btn-circle {
       transform: scale(1.12);
+      box-shadow: 0 0 30px rgba(234, 170, 0, 0.9);
     }
 
     /* Video Duration Tag */
@@ -507,14 +487,14 @@
       position: absolute;
       bottom: 10px;
       left: 10px;
-      background: rgba(7, 12, 24, 0.82);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(23, 3, 20, 0.88);
+      border: 1px solid rgba(234, 170, 0, 0.35);
       backdrop-filter: blur(8px);
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
       font-size: 0.7rem;
       font-weight: 600;
-      color: #cbd5e1;
+      color: #DDE3E8;
       display: flex;
       align-items: center;
       gap: 0.3rem;
@@ -525,12 +505,12 @@
       position: absolute;
       bottom: 10px;
       right: 10px;
-      background: rgba(7, 12, 24, 0.88);
+      background: rgba(23, 3, 20, 0.92);
       backdrop-filter: blur(8px);
       padding: 0.25rem 0.65rem;
       border-radius: 9999px;
       font-size: 0.74rem;
-      font-weight: 600;
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 0.3rem;
@@ -538,12 +518,12 @@
     }
 
     .status-locked {
-      border: 1px solid rgba(245, 158, 11, 0.4);
-      color: #fbbf24;
+      border: 1px solid rgba(234, 170, 0, 0.65);
+      color: #EAAA00;
     }
 
     .status-unlocked {
-      border: 1px solid rgba(16, 185, 129, 0.4);
+      border: 1px solid rgba(16, 185, 129, 0.6);
       color: #34d399;
     }
 
@@ -569,45 +549,31 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-    }
-
-    .card-platform-instagram .option-module-label,
-    .card-track-1 .option-module-label {
-      color: #be185d;
-    }
-
-    .card-platform-facebook .option-module-label,
-    .card-track-2 .option-module-label {
-      color: #0284c7;
-    }
-
-    .card-platform-youtube .option-module-label,
-    .card-track-3 .option-module-label {
-      color: #dc2626;
+      color: #3A0F34;
     }
 
     .level-indicator {
       font-size: 0.72rem;
       font-weight: 700;
-      color: #475569;
-      background: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      color: #3A0F34;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(234, 170, 0, 0.35);
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+      box-shadow: 0 2px 6px rgba(58, 15, 52, 0.04);
     }
 
     .option-card-title {
       font-size: 1.25rem;
       font-weight: 800;
       line-height: 1.35;
-      color: #0f172a;
+      color: #3A0F34;
       margin-bottom: 0.65rem;
     }
 
     .option-card-desc {
       font-size: 0.9rem;
-      color: #475569;
+      color: #51274c;
       line-height: 1.55;
       margin-bottom: 1.2rem;
       flex: 1;
@@ -621,36 +587,21 @@
     }
 
     .feature-chip {
-      background: rgba(255, 255, 255, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(58, 15, 52, 0.15);
       padding: 0.3rem 0.65rem;
       border-radius: 8px;
       font-size: 0.75rem;
       font-weight: 600;
-      color: #334155;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+      color: #3A0F34;
+      box-shadow: 0 2px 6px rgba(58, 15, 52, 0.04);
       transition: all 0.2s ease;
     }
 
-    .card-platform-instagram:hover .feature-chip,
-    .card-track-1:hover .feature-chip {
-      border-color: rgba(225, 48, 108, 0.35);
-      background: rgba(225, 48, 108, 0.08);
-      color: #be185d;
-    }
-
-    .card-platform-facebook:hover .feature-chip,
-    .card-track-2:hover .feature-chip {
-      border-color: rgba(24, 119, 242, 0.35);
-      background: rgba(24, 119, 242, 0.08);
-      color: #0284c7;
-    }
-
-    .card-platform-youtube:hover .feature-chip,
-    .card-track-3:hover .feature-chip {
-      border-color: rgba(239, 68, 68, 0.35);
-      background: rgba(239, 68, 68, 0.08);
-      color: #dc2626;
+    .option-card:hover .feature-chip {
+      border-color: rgba(234, 170, 0, 0.6);
+      background: rgba(234, 170, 0, 0.12);
+      color: #3A0F34;
     }
 
     /* Platform Dual-Action Button Group for All 3 Options */
@@ -668,9 +619,9 @@
 
     .btn-card-intro {
       width: 100%;
-      background: #ffffff;
-      border: 1px solid #d1d5db;
-      color: #0f172a;
+      background: linear-gradient(135deg, #ffffff 0%, #DDE3E8 100%);
+      border: 1.5px solid rgba(58, 15, 52, 0.2);
+      color: #3A0F34;
       padding: 0.85rem 1rem;
       border-radius: 12px;
       font-size: 0.92rem;
@@ -682,32 +633,15 @@
       gap: 0.5rem;
       transition: all 0.25s ease;
       font-family: inherit;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 4px 12px rgba(58, 15, 52, 0.06);
     }
 
     .btn-card-intro:hover {
       transform: translateY(-2px);
-    }
-
-    .card-platform-instagram:hover .btn-card-intro {
-      background: linear-gradient(135deg, #e1306c, #f77737);
-      border-color: transparent;
-      color: #ffffff;
-      box-shadow: 0 8px 22px rgba(225, 48, 108, 0.35);
-    }
-
-    .card-platform-facebook:hover .btn-card-intro {
-      background: linear-gradient(135deg, #1877f2, #0099ff);
-      border-color: transparent;
-      color: #ffffff;
-      box-shadow: 0 8px 22px rgba(24, 119, 242, 0.35);
-    }
-
-    .card-platform-youtube:hover .btn-card-intro {
-      background: linear-gradient(135deg, #dc2626, #ef4444);
-      border-color: transparent;
-      color: #ffffff;
-      box-shadow: 0 8px 22px rgba(239, 68, 68, 0.35);
+      background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%);
+      border-color: #EAAA00;
+      color: #DDE3E8;
+      box-shadow: 0 8px 24px rgba(58, 15, 52, 0.35), 0 0 16px rgba(234, 170, 0, 0.3);
     }
 
     .btn-card-pay {
@@ -724,51 +658,24 @@
       transition: all 0.25s ease;
       font-family: inherit;
       border: none;
-      color: #ffffff;
+      color: #170314;
+      background: linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%);
       margin-top: 0.85rem;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 6px 20px rgba(234, 170, 0, 0.45);
     }
 
     .btn-card-pay:hover {
       transform: translateY(-2px);
-    }
-
-    .btn-pay-instagram {
-      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%);
-      box-shadow: 0 4px 18px rgba(225, 48, 108, 0.4);
-    }
-
-    .btn-pay-instagram:hover {
-      background: linear-gradient(135deg, #6c2f97 0%, #e01616 60%, #e69c3a 100%);
-      box-shadow: 0 8px 25px rgba(225, 48, 108, 0.6);
-    }
-
-    .btn-pay-facebook {
-      background: linear-gradient(135deg, #1877f2 0%, #0099ff 100%);
-      box-shadow: 0 4px 18px rgba(24, 119, 242, 0.4);
-    }
-
-    .btn-pay-facebook:hover {
-      background: linear-gradient(135deg, #125ec4 0%, #007ecc 100%);
-      box-shadow: 0 8px 25px rgba(24, 119, 242, 0.6);
-    }
-
-    .btn-pay-youtube {
-      background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
-      box-shadow: 0 4px 18px rgba(239, 68, 68, 0.4);
-    }
-
-    .btn-pay-youtube:hover {
-      background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
-      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
+      background: linear-gradient(135deg, #d49b00 0%, #EAAA00 50%, #b88200 100%);
+      box-shadow: 0 8px 25px rgba(234, 170, 0, 0.65);
     }
 
     .modal-tab-bar {
       display: flex;
       gap: 0.5rem;
       margin-bottom: 1.25rem;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(221, 227, 232, 0.06);
+      border: 1px solid rgba(221, 227, 232, 0.12);
       padding: 4px;
       border-radius: 12px;
     }
@@ -779,7 +686,8 @@
       border-radius: 8px;
       border: none;
       background: none;
-      color: #94a3b8;
+      color: #DDE3E8;
+      opacity: 0.8;
       font-size: 0.825rem;
       font-weight: 700;
       cursor: pointer;
@@ -788,92 +696,11 @@
     }
 
     .modal-tab-pill.is-active {
-      background: #7c5cff;
-      color: #ffffff;
-      box-shadow: 0 0 12px rgba(124, 92, 255, 0.5);
-    }
-
-    /* Unique Platform Action Buttons */
-    .btn-open-option {
-      width: 100%;
-      border: none;
-      color: #ffffff;
-      padding: 0.9rem 1.2rem;
-      border-radius: 12px;
-      font-size: 0.94rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
-      font-family: inherit;
-    }
-
-    .btn-arrow-icon {
-      font-size: 1.1rem;
-      transition: transform 0.2s ease;
-    }
-
-    .btn-open-option:hover .btn-arrow-icon {
-      transform: translateX(4px);
-    }
-
-    .btn-instagram,
-    .btn-theme-1 {
-      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%);
-      box-shadow: 0 4px 18px rgba(225, 48, 108, 0.4);
-    }
-
-    .btn-instagram:hover,
-    .btn-theme-1:hover {
-      background: linear-gradient(135deg, #6c2f97 0%, #e01616 60%, #e69c3a 100%);
-      box-shadow: 0 8px 24px rgba(225, 48, 108, 0.55);
-    }
-
-    .btn-facebook,
-    .btn-theme-2 {
-      background: linear-gradient(135deg, #1877f2 0%, #0099ff 100%);
-      box-shadow: 0 4px 18px rgba(24, 119, 242, 0.4);
-    }
-
-    .btn-facebook:hover,
-    .btn-theme-2:hover {
-      background: linear-gradient(135deg, #125ec4 0%, #007ecc 100%);
-      box-shadow: 0 8px 24px rgba(24, 119, 242, 0.55);
-    }
-
-    .btn-youtube,
-    .btn-theme-3 {
-      background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
-      box-shadow: 0 4px 18px rgba(239, 68, 68, 0.4);
-    }
-
-    .btn-youtube:hover,
-    .btn-theme-3:hover {
-      background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
-      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.55);
-    }
-
-    /* Highlight pulse animation when jumping from pipeline */
-    @keyframes cardJumpPulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.03);
-        filter: brightness(1.2);
-      }
-    }
-
-    .highlight-pulse {
-      animation: cardJumpPulse 0.9s ease;
+      background: linear-gradient(135deg, #EAAA00 0%, #d49b00 100%);
+      color: #170314;
+      opacity: 1;
+      font-weight: 800;
+      box-shadow: 0 0 16px rgba(234, 170, 0, 0.45);
     }
 
     /* Modal Backdrop */
@@ -881,8 +708,9 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(3, 7, 18, 0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(23, 3, 20, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 1000;
       align-items: center;
       justify-content: center;
@@ -891,44 +719,45 @@
     }
 
     .modal-content-box {
-      background: #0f172a;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: linear-gradient(160deg, #240620 0%, #170314 55%, #3A0F34 100%);
+      border: 1.5px solid rgba(234, 170, 0, 0.35);
       border-radius: 20px;
       max-width: 900px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 25px 70px rgba(23, 3, 20, 0.85), 0 0 35px rgba(234, 170, 0, 0.18);
       position: relative;
       display: flex;
       flex-direction: column;
+      color: #DDE3E8;
     }
 
     .modal-header-bar {
       padding: 1.25rem 1.75rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(234, 170, 0, 0.25);
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
-      background: #0f172a;
+      background: #170314;
       z-index: 10;
     }
 
     .modal-header-title {
       font-size: 1.2rem;
       font-weight: 700;
-      color: #fff;
+      color: #DDE3E8;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
     .modal-close-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      color: #cbd5e1;
+      background: rgba(221, 227, 232, 0.12);
+      border: 1px solid rgba(221, 227, 232, 0.2);
+      color: #DDE3E8;
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -937,12 +766,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.2s;
+      transition: all 0.2s;
     }
 
     .modal-close-btn:hover {
-      background: #ef4444;
-      color: #fff;
+      background: #EAAA00;
+      color: #170314;
+      border-color: #EAAA00;
     }
 
     .modal-body-content {
@@ -956,8 +786,8 @@
       overflow: hidden;
       background: #000;
       margin-bottom: 1.8rem;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1.5px solid rgba(234, 170, 0, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
 
     .modal-video-wrapper video {
@@ -971,16 +801,16 @@
     .unlocked-lessons-box {
       margin-top: -0.8rem;
       margin-bottom: 1.6rem;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: rgba(58, 15, 52, 0.55);
+      border: 1px solid rgba(234, 170, 0, 0.3);
       border-radius: 12px;
       padding: 12px 16px;
     }
 
     .lesson-pill-btn {
-      background: rgba(30, 41, 59, 0.8);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: #e2e8f0;
+      background: rgba(221, 227, 232, 0.1);
+      border: 1px solid rgba(221, 227, 232, 0.18);
+      color: #DDE3E8;
       padding: 7px 14px;
       border-radius: 20px;
       font-size: 0.82rem;
@@ -993,22 +823,23 @@
     }
 
     .lesson-pill-btn:hover {
-      border-color: #38bdf8;
-      background: rgba(56, 189, 248, 0.15);
-      color: #38bdf8;
+      border-color: #EAAA00;
+      background: rgba(234, 170, 0, 0.18);
+      color: #EAAA00;
     }
 
     .lesson-pill-btn.active {
-      background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
-      border-color: #38bdf8;
-      color: #ffffff;
-      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+      background: linear-gradient(135deg, #EAAA00 0%, #d49b00 100%);
+      border-color: #EAAA00;
+      color: #170314;
+      font-weight: 800;
+      box-shadow: 0 4px 15px rgba(234, 170, 0, 0.4);
     }
 
     /* Theory Information Card */
     .theory-box {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(58, 15, 52, 0.45);
+      border: 1px solid rgba(234, 170, 0, 0.25);
       border-radius: 14px;
       padding: 1.5rem;
       margin-bottom: 1.8rem;
@@ -1019,7 +850,7 @@
       align-items: center;
       gap: 0.6rem;
       margin-bottom: 1rem;
-      color: #38bdf8;
+      color: #EAAA00;
       font-size: 1.1rem;
       font-weight: 700;
     }
@@ -1027,7 +858,7 @@
     .theory-text {
       font-size: 0.95rem;
       line-height: 1.65;
-      color: #cbd5e1;
+      color: #DDE3E8;
       margin-bottom: 1rem;
     }
 
@@ -1043,12 +874,12 @@
       align-items: flex-start;
       gap: 0.6rem;
       font-size: 0.92rem;
-      color: #e2e8f0;
+      color: #DDE3E8;
       line-height: 1.5;
     }
 
     .theory-check-icon {
-      color: #10b981;
+      color: #EAAA00;
       font-weight: bold;
       flex-shrink: 0;
       margin-top: 2px;
@@ -1063,17 +894,17 @@
       justify-content: center !important;
       text-align: center !important;
       padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(234, 170, 0, 0.2);
       width: 100%;
     }
 
     .btn-modal-unlock {
       width: 100%;
-      max-width: 460px;
+      max-width: 480px;
       margin: 0 auto !important;
-      background: linear-gradient(135deg, #10b981, #059669);
+      background: linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%);
       border: none;
-      color: #ffffff;
+      color: #170314;
       padding: 1rem 1.8rem;
       border-radius: 12px;
       font-size: 1.05rem;
@@ -1084,125 +915,45 @@
       justify-content: center !important;
       text-align: center !important;
       gap: 0.6rem;
-      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+      box-shadow: 0 8px 25px rgba(234, 170, 0, 0.45);
       transition: all 0.2s;
     }
 
     .btn-modal-unlock:hover {
-      background: linear-gradient(135deg, #059669, #047857);
+      background: linear-gradient(135deg, #d49b00 0%, #EAAA00 50%, #b88200 100%);
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.5);
+      box-shadow: 0 12px 30px rgba(234, 170, 0, 0.65);
     }
 
     .unlock-subtext {
       font-size: 0.85rem;
-      color: var(--text-sub);
+      color: #DDE3E8;
+      opacity: 0.8;
       text-align: center !important;
       display: block !important;
       margin: 0 auto !important;
     }
 
-    /* =========================================================================
-       CARD & MODAL COMPACT PAYMENT DETAILS PRESENTATION
-       ========================================================================= */
-    .card-payment-details-box {
-      background: rgba(15, 23, 42, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 10px;
-      padding: 0.45rem 0.85rem;
-      margin-top: 0.75rem;
-      margin-bottom: 0.1rem;
-      backdrop-filter: blur(8px);
-      transition: all 0.25s ease;
-    }
-
-    .card-payment-details-box:hover {
-      border-color: rgba(56, 189, 248, 0.35);
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .pay-details-compact {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .pay-details-price {
-      display: flex;
-      align-items: baseline;
-      gap: 0.4rem;
-    }
-
-    .pay-amount-main {
-      font-size: 1.22rem;
-      font-weight: 900;
-      color: #34d399;
-      letter-spacing: -0.01em;
-    }
-
-    .pay-amount-original {
-      font-size: 0.78rem;
-      color: #64748b;
-      text-decoration: line-through;
-      font-weight: 600;
-    }
-
-    .pay-discount-pill {
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 0.12rem 0.38rem;
-      border-radius: 4px;
-      background: rgba(239, 68, 68, 0.16);
-      color: #f87171;
-      border: 1px solid rgba(239, 68, 68, 0.28);
-    }
-
-    .pay-status-pill {
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.22rem 0.55rem;
-      border-radius: 9999px;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      white-space: nowrap;
-    }
-
-    .pay-status-unlocked {
-      background: rgba(16, 185, 129, 0.16);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.35);
-    }
-
-    .pay-status-locked {
-      background: rgba(56, 189, 248, 0.12);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-    }
-
-
-
     /* Professional Ad World & SaaS Checkout Gateway */
     .pro-checkout-box {
-      background: #0d1527;
-      border: 1px solid rgba(56, 189, 248, 0.28);
+      background: linear-gradient(160deg, #240620 0%, #170314 60%, #3A0F34 100%);
+      border: 1.5px solid rgba(234, 170, 0, 0.35);
       border-radius: 18px;
       max-width: 590px;
       width: 95%;
       max-height: 94vh;
       overflow-y: auto;
       position: relative;
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
-      color: #fff;
+      box-shadow: 0 25px 70px rgba(23, 3, 20, 0.85), 0 0 35px rgba(234, 170, 0, 0.18);
+      color: #DDE3E8;
       display: flex;
       flex-direction: column;
     }
 
     .pro-checkout-header {
       padding: 0.75rem 1.25rem;
-      background: rgba(15, 23, 42, 0.95);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: #170314;
+      border-bottom: 1px solid rgba(234, 170, 0, 0.25);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1211,9 +962,9 @@
     }
 
     .checkout-back-btn {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #cbd5e1;
+      background: rgba(221, 227, 232, 0.08);
+      border: 1px solid rgba(234, 170, 0, 0.3);
+      color: #DDE3E8;
       padding: 0.35rem 0.75rem;
       border-radius: 8px;
       font-size: 0.8rem;
@@ -1228,9 +979,9 @@
     }
 
     .checkout-back-btn:hover {
-      background: rgba(56, 189, 248, 0.18);
-      border-color: #38bdf8;
-      color: #38bdf8;
+      background: rgba(234, 170, 0, 0.2);
+      border-color: #EAAA00;
+      color: #EAAA00;
       transform: translateX(-2px);
     }
 
@@ -1238,7 +989,7 @@
       display: flex;
       align-items: center;
       gap: 0.35rem;
-      color: #34d399;
+      color: #EAAA00;
       font-size: 0.7rem;
       font-weight: 800;
       letter-spacing: 0.04em;
@@ -1255,7 +1006,8 @@
     .checkout-cancel-back-btn {
       background: transparent;
       border: none;
-      color: #94a3b8;
+      color: #DDE3E8;
+      opacity: 0.75;
       font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
@@ -1271,8 +1023,9 @@
     }
 
     .checkout-cancel-back-btn:hover {
-      color: #fff;
-      text-decoration-color: #38bdf8;
+      color: #EAAA00;
+      opacity: 1;
+      text-decoration-color: #EAAA00;
     }
 
     .pro-checkout-body {
@@ -1287,16 +1040,17 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.35rem;
-      background: rgba(15, 23, 42, 0.75);
+      background: rgba(23, 3, 20, 0.75);
       padding: 0.3rem;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(234, 170, 0, 0.25);
     }
 
     .checkout-opt-btn {
       background: transparent;
       border: 1px solid transparent;
-      color: #94a3b8;
+      color: #DDE3E8;
+      opacity: 0.75;
       padding: 0.48rem 0.25rem;
       border-radius: 8px;
       font-size: 0.72rem;
@@ -1316,28 +1070,18 @@
 
     .checkout-opt-btn:hover {
       color: #fff;
-      background: rgba(255, 255, 255, 0.06);
+      opacity: 1;
+      background: rgba(234, 170, 0, 0.12);
     }
 
-    .checkout-opt-btn.active-opt-1 {
-      background: rgba(225, 48, 108, 0.22);
-      border-color: rgba(225, 48, 108, 0.6);
-      color: #ffffff;
-      box-shadow: 0 0 12px rgba(225, 48, 108, 0.35);
-    }
-
-    .checkout-opt-btn.active-opt-2 {
-      background: rgba(24, 119, 242, 0.22);
-      border-color: rgba(24, 119, 242, 0.6);
-      color: #ffffff;
-      box-shadow: 0 0 12px rgba(24, 119, 242, 0.35);
-    }
-
+    .checkout-opt-btn.active-opt-1,
+    .checkout-opt-btn.active-opt-2,
     .checkout-opt-btn.active-opt-3 {
-      background: rgba(239, 68, 68, 0.22);
-      border-color: rgba(239, 68, 68, 0.6);
-      color: #ffffff;
-      box-shadow: 0 0 12px rgba(239, 68, 68, 0.35);
+      background: rgba(234, 170, 0, 0.25);
+      border-color: #EAAA00;
+      color: #EAAA00;
+      opacity: 1;
+      box-shadow: 0 0 14px rgba(234, 170, 0, 0.35);
     }
 
     @media (max-width: 580px) {
@@ -1357,10 +1101,10 @@
       }
     }
 
-    /* Compact Order Summary Card (Clean & Valid Info) */
+    /* Compact Order Summary Card */
     .checkout-summary-card {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(58, 15, 52, 0.55);
+      border: 1px solid rgba(234, 170, 0, 0.25);
       border-radius: 12px;
       padding: 0.65rem 0.95rem;
     }
@@ -1392,9 +1136,9 @@
       font-weight: 800;
       padding: 0.18rem 0.5rem;
       border-radius: 5px;
-      background: rgba(56, 189, 248, 0.15);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: rgba(234, 170, 0, 0.18);
+      color: #EAAA00;
+      border: 1px solid rgba(234, 170, 0, 0.4);
       text-transform: uppercase;
       letter-spacing: 0.04em;
       white-space: nowrap;
@@ -1403,7 +1147,7 @@
     .checkout-guarantee-pill {
       font-size: 0.7rem;
       font-weight: 700;
-      color: #34d399;
+      color: #DDE3E8;
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
@@ -1431,7 +1175,8 @@
     .price-original-striked {
       font-size: 0.72rem;
       text-decoration: line-through;
-      color: #64748b;
+      color: #DDE3E8;
+      opacity: 0.6;
       line-height: 1;
       margin-bottom: 0.15rem;
     }
@@ -1439,16 +1184,15 @@
     .price-final-pay {
       font-size: 1.35rem;
       font-weight: 900;
-      color: #34d399;
+      color: #EAAA00;
       line-height: 1.1;
     }
 
     .price-discount-badge {
       font-size: 0.65rem;
       font-weight: 800;
-      color: #f43f5e;
-      background: rgba(244, 63, 94, 0.15);
-      border: 1px solid rgba(244, 63, 94, 0.3);
+      color: #170314;
+      background: #EAAA00;
       padding: 0.1rem 0.35rem;
       border-radius: 4px;
       margin-top: 0.15rem;
@@ -1457,8 +1201,8 @@
 
     /* Payment Methods Segment */
     .checkout-payment-methods {
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(23, 3, 20, 0.6);
+      border: 1px solid rgba(234, 170, 0, 0.2);
       border-radius: 14px;
       padding: 1.1rem;
     }
@@ -1467,15 +1211,16 @@
       display: flex;
       gap: 0.5rem;
       margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(234, 170, 0, 0.2);
       padding-bottom: 0.75rem;
     }
 
     .method-tab {
       flex: 1;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--text-sub);
+      background: rgba(221, 227, 232, 0.06);
+      border: 1px solid rgba(221, 227, 232, 0.12);
+      color: #DDE3E8;
+      opacity: 0.8;
       padding: 0.55rem 0.5rem;
       border-radius: 8px;
       font-size: 0.82rem;
@@ -1488,18 +1233,21 @@
 
     .method-tab:hover {
       color: #fff;
-      background: rgba(255, 255, 255, 0.1);
+      opacity: 1;
+      background: rgba(234, 170, 0, 0.15);
     }
 
     .method-tab.active {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(2, 132, 199, 0.3));
-      border-color: #38bdf8;
-      color: #fff;
+      background: linear-gradient(135deg, rgba(234, 170, 0, 0.28), rgba(234, 170, 0, 0.45));
+      border-color: #EAAA00;
+      color: #ffffff;
+      opacity: 1;
     }
 
     .panel-instruction {
       font-size: 0.8rem;
-      color: var(--text-sub);
+      color: #DDE3E8;
+      opacity: 0.8;
       margin-bottom: 0.75rem;
     }
 
@@ -1511,9 +1259,9 @@
     }
 
     .upi-app-btn {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #f1f5f9;
+      background: rgba(221, 227, 232, 0.06);
+      border: 1px solid rgba(221, 227, 232, 0.14);
+      color: #DDE3E8;
       padding: 0.5rem 0.4rem;
       border-radius: 8px;
       font-size: 0.78rem;
@@ -1529,9 +1277,9 @@
 
     .upi-app-btn:hover,
     .upi-app-btn.active {
-      background: rgba(56, 189, 248, 0.18);
-      border-color: #38bdf8;
-      color: #38bdf8;
+      background: rgba(234, 170, 0, 0.22);
+      border-color: #EAAA00;
+      color: #EAAA00;
     }
 
     .checkout-input-group {
@@ -1543,8 +1291,8 @@
 
     .pro-input {
       width: 100%;
-      background: rgba(11, 18, 35, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(23, 3, 20, 0.85);
+      border: 1px solid rgba(221, 227, 232, 0.22);
       border-radius: 10px;
       padding: 0.75rem 1rem;
       font-size: 0.88rem;
@@ -1555,7 +1303,8 @@
     }
 
     .pro-input:focus {
-      border-color: #38bdf8;
+      border-color: #EAAA00;
+      box-shadow: 0 0 10px rgba(234, 170, 0, 0.35);
     }
 
     .input-verified-tag {
@@ -1563,7 +1312,7 @@
       right: 12px;
       font-size: 0.72rem;
       font-weight: 800;
-      color: #34d399;
+      color: #EAAA00;
       letter-spacing: 0.05em;
       pointer-events: none;
     }
@@ -1580,9 +1329,9 @@
     }
 
     .bank-pill {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #f1f5f9;
+      background: rgba(221, 227, 232, 0.06);
+      border: 1px solid rgba(221, 227, 232, 0.14);
+      color: #DDE3E8;
       padding: 0.6rem 0.8rem;
       border-radius: 8px;
       font-size: 0.82rem;
@@ -1595,17 +1344,17 @@
 
     .bank-pill:hover,
     .bank-pill.active {
-      background: rgba(56, 189, 248, 0.15);
-      border-color: #38bdf8;
-      color: #38bdf8;
+      background: rgba(234, 170, 0, 0.22);
+      border-color: #EAAA00;
+      color: #EAAA00;
     }
 
     /* Checkout Action Button */
     .pro-btn-checkout {
       width: 100%;
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      background: linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%);
       border: none;
-      color: #ffffff;
+      color: #170314;
       padding: 1rem 1.4rem;
       border-radius: 12px;
       font-size: 1.05rem;
@@ -1616,13 +1365,14 @@
       justify-content: center;
       gap: 0.6rem;
       transition: all 0.25s;
-      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 6px 22px rgba(234, 170, 0, 0.45);
       font-family: inherit;
     }
 
     .pro-btn-checkout:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(16, 185, 129, 0.55);
+      background: linear-gradient(135deg, #d49b00 0%, #EAAA00 50%, #b88200 100%);
+      box-shadow: 0 10px 30px rgba(234, 170, 0, 0.65);
     }
 
     /* Trust Footer */
@@ -1644,7 +1394,8 @@
     .trust-item {
       font-size: 0.74rem;
       font-weight: 700;
-      color: #94a3b8;
+      color: #DDE3E8;
+      opacity: 0.8;
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
@@ -1652,7 +1403,8 @@
 
     .trust-disclaimer {
       font-size: 0.72rem;
-      color: #64748b;
+      color: #DDE3E8;
+      opacity: 0.65;
       line-height: 1.4;
       margin: 0;
     }
@@ -1716,11 +1468,11 @@
             <span>▶️ YouTube Campaigns</span>
           </button>
           <button type="button" class="filter-btn" onclick="window.location.href='WelcomePage.html'"
-            style="background: rgba(56, 189, 248, 0.18); border-color: rgba(56, 189, 248, 0.5); color: #38bdf8; font-weight: 800; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);">
+            style="background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%); border: 1.5px solid rgba(234, 170, 0, 0.45); color: #DDE3E8; font-weight: 800; box-shadow: 0 4px 15px rgba(58, 15, 52, 0.25);">
             <span>🎬 Original 3-Video Hub (Welcome Page)</span>
           </button>
           <button type="button" class="filter-btn" onclick="openPaymentGateway(currentOptionId)"
-            style="background: rgba(16, 185, 129, 0.18); border-color: rgba(16, 185, 129, 0.5); color: #34d399; font-weight: 800; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);">
+            style="background: linear-gradient(135deg, #EAAA00 0%, #d49b00 100%); border: 1.5px solid #EAAA00; color: #170314; font-weight: 800; box-shadow: 0 4px 18px rgba(234, 170, 0, 0.4);">
             <span>💳 Payment Gateway (All 3 Options)</span>
           </button>
         </div>
@@ -1899,7 +1651,7 @@
         <!-- Full-Length Lessons Playlist for Unlocked Members -->
         <div class="unlocked-lessons-box" id="unlockedLessonsContainer" style="display: none;">
           <div
-            style="font-size: 0.82rem; font-weight: 800; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+            style="font-size: 0.82rem; font-weight: 800; color: #EAAA00; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
             <span>🎬</span> <span>Select Masterclass Lesson (Full Length):</span>
           </div>
           <div id="unlockedLessonsList" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
@@ -1964,9 +1716,9 @@
         <!-- 3 Options Segment Selector inside Checkout -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.1rem;">
           <span
-            style="font-size: 0.74rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">⚡
+            style="font-size: 0.74rem; font-weight: 800; color: #DDE3E8; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.05em;">⚡
             Payment Gateway • Choose Target Platform:</span>
-          <span style="font-size: 0.72rem; color: #38bdf8; font-weight: 700;">All 3 Available</span>
+          <span style="font-size: 0.72rem; color: #EAAA00; font-weight: 700;">All 3 Available</span>
         </div>
         <div class="checkout-option-selector">
           <button type="button" class="checkout-opt-btn" id="checkoutOptBtn1" onclick="switchCheckoutOption(1)">
@@ -2092,7 +1844,7 @@
 
   <!-- Footer -->
   <footer
-    style="text-align: center; padding: 2.5rem 1.5rem; color: #475569; font-size: 0.88rem; font-weight: 500; border-top: 1px solid #dcdcdc;">
+    style="text-align: center; padding: 2.5rem 1.5rem; color: #54274e; font-size: 0.88rem; font-weight: 600; border-top: 1.5px solid rgba(58, 15, 52, 0.15); background: rgba(221, 227, 232, 0.65);">
     © 2026 GLOBAL DIGI PULSE • ALL RIGHTS RESERVED • Empowering High-Growth Advertisers Worldwide
   </footer>
 
@@ -2303,22 +2055,17 @@
 
         if (isPaid) {
           const targetUrl = optId === 1 ? 'BusinessAccount.html' : (optId === 3 ? 'CampainPage.html' : 'WelcomePage.html');
-          actionBtn.style.background = 'linear-gradient(135deg, #059669 0%, #10b981 100%)';
-          actionBtn.style.boxShadow = '0 6px 25px rgba(16, 185, 129, 0.45)';
+          actionBtn.style.background = 'linear-gradient(135deg, #3A0F34 0%, #581a50 100%)';
+          actionBtn.style.color = '#DDE3E8';
+          actionBtn.style.border = '1.5px solid #EAAA00';
+          actionBtn.style.boxShadow = '0 6px 25px rgba(234, 170, 0, 0.35)';
           btnText.innerHTML = `🚀 Open Dedicated ${opt.platform} Masterclass Hub`;
           actionBtn.onclick = function () { window.location.href = targetUrl; };
         } else {
-          if (optId === 1) {
-            actionBtn.style.background = 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%)';
-            actionBtn.style.boxShadow = '0 6px 25px rgba(225, 48, 108, 0.45)';
-          } else if (optId === 2) {
-            actionBtn.style.background = 'linear-gradient(135deg, #1877f2 0%, #0099ff 100%)';
-            actionBtn.style.boxShadow = '0 6px 25px rgba(24, 119, 242, 0.45)';
-          } else {
-            actionBtn.style.background = 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)';
-            actionBtn.style.boxShadow = '0 6px 25px rgba(239, 68, 68, 0.45)';
-          }
-
+          actionBtn.style.background = 'linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%)';
+          actionBtn.style.color = '#170314';
+          actionBtn.style.border = 'none';
+          actionBtn.style.boxShadow = '0 6px 25px rgba(234, 170, 0, 0.45)';
           btnText.innerHTML = `💳 Payment Gateway — Unlock ${opt.platform} Masterclass (${opt.price})`;
           actionBtn.onclick = function () { openPaymentGateway(optId); };
         }
@@ -2363,19 +2110,9 @@
       const badgeEl = document.getElementById('checkoutPlatformBadge');
       if (badgeEl) {
         badgeEl.textContent = opt.badge;
-        if (opt.id === 1) {
-          badgeEl.style.color = '#fb7185';
-          badgeEl.style.borderColor = 'rgba(225, 48, 108, 0.4)';
-          badgeEl.style.background = 'rgba(225, 48, 108, 0.15)';
-        } else if (opt.id === 2) {
-          badgeEl.style.color = '#38bdf8';
-          badgeEl.style.borderColor = 'rgba(24, 119, 242, 0.4)';
-          badgeEl.style.background = 'rgba(24, 119, 242, 0.15)';
-        } else {
-          badgeEl.style.color = '#f87171';
-          badgeEl.style.borderColor = 'rgba(239, 68, 68, 0.4)';
-          badgeEl.style.background = 'rgba(239, 68, 68, 0.15)';
-        }
+        badgeEl.style.color = '#EAAA00';
+        badgeEl.style.borderColor = 'rgba(234, 170, 0, 0.45)';
+        badgeEl.style.background = 'rgba(234, 170, 0, 0.18)';
       }
 
       const titleEl = document.getElementById('checkoutProductTitle');
@@ -2397,16 +2134,9 @@
 
       const submitBtn = document.getElementById('proCheckoutSubmitBtn');
       if (submitBtn) {
-        if (opt.id === 1) {
-          submitBtn.style.background = 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 60%, #fcb045 100%)';
-          submitBtn.style.boxShadow = '0 6px 20px rgba(225, 48, 108, 0.45)';
-        } else if (opt.id === 2) {
-          submitBtn.style.background = 'linear-gradient(135deg, #1877f2 0%, #0099ff 100%)';
-          submitBtn.style.boxShadow = '0 6px 20px rgba(24, 119, 242, 0.45)';
-        } else {
-          submitBtn.style.background = 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)';
-          submitBtn.style.boxShadow = '0 6px 20px rgba(239, 68, 68, 0.45)';
-        }
+        submitBtn.style.background = 'linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%)';
+        submitBtn.style.color = '#170314';
+        submitBtn.style.boxShadow = '0 6px 22px rgba(234, 170, 0, 0.45)';
       }
     }
 
@@ -2512,7 +2242,7 @@
             const targetUrl = i === 1 ? 'BusinessAccount.html' : (i === 3 ? 'CampainPage.html' : 'WelcomePage.html');
             actionGroup.innerHTML = `
               <div style="display:flex;gap:8px;width:100%;">
-                <button type="button" class="btn-card-pay" style="flex:1.2;background: linear-gradient(135deg, #059669 0%, #10b981 100%); box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4); margin-top: 0; padding:10px 14px; font-size:0.9rem;" onclick="event.stopPropagation(); window.location.href='${targetUrl}';">
+                <button type="button" class="btn-card-pay" style="flex:1.2;background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%); color:#DDE3E8; border: 1.5px solid #EAAA00; box-shadow: 0 4px 16px rgba(234, 170, 0, 0.3); margin-top: 0; padding:10px 14px; font-size:0.9rem;" onclick="event.stopPropagation(); window.location.href='${targetUrl}';">
                   <span>🚀 Open ${opt.platform} Hub</span>
                 </button>
                 <button type="button" class="btn-card-intro" style="flex:0.8;margin-top:0;padding:10px 12px;font-size:0.85rem;" onclick="event.stopPropagation(); openOptionModal(${i})">
