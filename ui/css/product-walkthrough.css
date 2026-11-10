@@ -44,7 +44,7 @@
   height: 100%;
   display: block;
   transform-origin: 3px 2px;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.45));
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 12px rgba(232, 116, 59, 0.45));
   transition: transform 0.14s ease-out;
 }
 
@@ -61,9 +61,9 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(56, 189, 248, 0.5);
+  background: rgba(232, 116, 59, 0.5);
   border: 2px solid #ffffff;
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.75);
+  box-shadow: 0 0 16px rgba(232, 116, 59, 0.75);
   transform: translate(-50%, -50%);
   transform-origin: center center;
   transition: transform 0.15s ease-out;
@@ -72,7 +72,7 @@
 .demo-cursor.is-clicking .demo-cursor-touch-dot,
 .demo-cursor-overlay.is-clicking .demo-cursor-touch-dot {
   transform: translate(-50%, -50%) scale(0.82);
-  background: rgba(56, 189, 248, 0.9);
+  background: rgba(232, 116, 59, 0.9);
 }
 
 @media (max-width: 480px) {
@@ -104,8 +104,8 @@
   border-radius: 50%;
   pointer-events: none !important;
   z-index: 94;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.6) 0%, rgba(124, 92, 255, 0.3) 70%, transparent 100%);
-  border: 1.5px solid rgba(56, 189, 248, 0.9);
+  background: radial-gradient(circle, rgba(232, 116, 59, 0.6) 0%, rgba(143, 163, 199, 0.3) 70%, transparent 100%);
+  border: 1.5px solid rgba(232, 116, 59, 0.9);
   transform: scale(0.2);
   opacity: 0;
   will-change: transform, opacity;
@@ -131,7 +131,7 @@
    ========================================================================== */
 .demo-target-pressed {
   transform: scale(0.96) !important;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6) !important;
+  box-shadow: 0 0 20px rgba(232, 116, 59, 0.6) !important;
   transition: transform 0.15s ease, box-shadow 0.15s ease !important;
 }
 
@@ -139,8 +139,8 @@
    5. Step Navigation Arrow Bar Active Glow Animations
    ========================================================================== */
 .opt-step-arrow.is-active-arrow {
-  color: #38bdf8 !important;
-  text-shadow: 0 0 10px #38bdf8;
+  color: #E8743B !important;
+  text-shadow: 0 0 10px #E8743B;
   transform: translateX(2px);
 }
 
@@ -157,8 +157,8 @@
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  color: #38bdf8;
+  border: 1px solid rgba(232, 116, 59, 0.4);
+  color: #E8743B;
   font-family: var(--font-inter, 'Inter', -apple-system, sans-serif);
   font-size: 0.75rem;
   font-weight: 700;
@@ -180,10 +180,10 @@
 
 .demo-replay-control:hover,
 .demo-replay-control:focus-visible {
-  background: rgba(56, 189, 248, 0.2);
-  border-color: #38bdf8;
+  background: rgba(232, 116, 59, 0.2);
+  border-color: #E8743B;
   color: #ffffff;
-  box-shadow: 0 0 18px rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 18px rgba(232, 116, 59, 0.5);
   outline: none;
 }
 
