@@ -408,11 +408,6 @@
       disablePayYoutubeBtn();
     }
 
-    // If user has already paid for campaign, redirect to BusinessAccount.html
-    if (localStorage.getItem('campaignPaid') === 'true') {
-      window.location.href = 'BusinessAccount.html';
-    }
-
     // Enforce backend payment status check on page load
     (async function() {
       try {

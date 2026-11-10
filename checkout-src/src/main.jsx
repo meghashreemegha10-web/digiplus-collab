@@ -52,6 +52,21 @@ function App() {
     return card.number.replace(/\D/g, '').length >= 16 && card.name.trim().length > 2 && /^\d{2}\/\d{2}$/.test(card.expiry) && /^\d{3,4}$/.test(card.cvv);
   }
 
+  useEffect(() => {
+    if (params.get('intent') !== 'hub' || !product) return;
+    const optionId = product.id === 'instagram' ? 1 : product.id === 'facebook' ? 2 : 3;
+    const alreadyOwned = localStorage.getItem(`unlocked_option_${optionId}`) === 'true' || localStorage.getItem('accessGranted') === 'true';
+    if (!alreadyOwned) return;
+    setBusy(true); setPhase('processing'); setMessage('Verifying your access…');
+    const t = setTimeout(async () => {
+      unlockFor(product.id);
+      setPhase('success'); setMessage('Payment already complete. Access granted.');
+      await sleep(1800);
+      location.href = '/' + product.hub;
+    }, 1600);
+    return () => clearTimeout(t);
+  }, [product, params]);
+
   async function pay() {
     if (!product || owned(product.id)) { setMessage('This masterclass is already unlocked.'); return; }
     if (!valid()) { setMessage('Enter valid demo payment details.'); return; }
