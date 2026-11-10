@@ -1686,7 +1686,7 @@
           <button type="button" class="btn-modal-unlock" id="btnUnlockOption"
             onclick="openPaymentGateway(currentOptionId)"
             style="margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-            <span id="unlockBtnText">💳 Payment Gateway — Unlock Masterclass Video (₹499)</span>
+            <span id="unlockBtnText">Unlock full masterclass for all 3 instagram, youtube and facebook</span>
           </button>
           <span class="unlock-subtext" style="text-align: center; display: block; margin: 0.5rem auto 0;">Instant Access
             • Secure 256-bit Encrypted Checkout • UPI, Cards & NetBanking</span>
@@ -1913,14 +1913,14 @@
           actionBtn.style.color = '#DDE3E8';
           actionBtn.style.border = '1.5px solid #EAAA00';
           actionBtn.style.boxShadow = '0 6px 25px rgba(234, 170, 0, 0.35)';
-          btnText.innerHTML = `🚀 Open Dedicated ${opt.platform} Masterclass Hub`;
+          btnText.textContent = 'Unlock full masterclass for all 3 instagram, youtube and facebook';
           actionBtn.onclick = function () { openPaymentGateway(optId); };
         } else {
           actionBtn.style.background = 'linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%)';
           actionBtn.style.color = '#170314';
           actionBtn.style.border = 'none';
           actionBtn.style.boxShadow = '0 6px 25px rgba(234, 170, 0, 0.45)';
-          btnText.innerHTML = `💳 Payment Gateway — Unlock ${opt.platform} Masterclass (${opt.price})`;
+          btnText.textContent = 'Unlock full masterclass for all 3 instagram, youtube and facebook';
           actionBtn.onclick = function () { openPaymentGateway(optId); };
         }
       }
