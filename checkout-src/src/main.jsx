@@ -44,7 +44,6 @@ function App() {
   const [profile, setProfile] = useState(() => ({ user: { name: localStorage.getItem('name') || 'Member', email: localStorage.getItem('email') || 'member@globaldigipulse.com' }, mode: 'sandbox', billing: { entitlements: { instagram: localStorage.getItem('unlocked_option_1') === 'true', facebook: localStorage.getItem('unlocked_option_2') === 'true', youtube: localStorage.getItem('unlocked_option_3') === 'true' }, orders: JSON.parse(localStorage.getItem('gdp_orders') || '[]') } }));
 
   const product = useMemo(() => PRODUCTS.find(p => p.id === selected), [selected]);
-  const owned = id => localStorage.getItem(`unlocked_option_${id === 'instagram' ? 1 : id === 'facebook' ? 2 : 3}`) === 'true';
   const field = (key, value) => setCard(c => ({ ...c, [key]: value }));
 
   function valid() {
@@ -53,23 +52,8 @@ function App() {
     return card.number.replace(/\D/g, '').length >= 16 && card.name.trim().length > 2 && /^\d{2}\/\d{2}$/.test(card.expiry) && /^\d{3,4}$/.test(card.cvv);
   }
 
-  useEffect(() => {
-    if (params.get('intent') !== 'hub' || !product) return;
-    const optionId = product.id === 'instagram' ? 1 : product.id === 'facebook' ? 2 : 3;
-    const alreadyOwned = localStorage.getItem(`unlocked_option_${optionId}`) === 'true' || localStorage.getItem('accessGranted') === 'true';
-    if (!alreadyOwned) return;
-    setBusy(true); setPhase('processing'); setMessage('Verifying your access…');
-    const t = setTimeout(async () => {
-      unlockFor(product.id);
-      setPhase('success'); setMessage('Payment already complete. Access granted.');
-      await sleep(2800);
-      location.href = '/' + product.hub;
-    }, 1600);
-    return () => clearTimeout(t);
-  }, [product, params]);
-
   async function pay() {
-    if (!product || owned(product.id)) { setMessage('This masterclass is already unlocked.'); return; }
+    if (!product) return;
     if (!valid()) { setMessage('Enter valid demo payment details.'); return; }
     setBusy(true); setPhase('processing'); setMessage('Encrypting payment details…');
     try {
@@ -129,12 +113,11 @@ function App() {
           </aside>
         </section>
         <section className="plans">
-          {PRODUCTS.map(p => <button key={p.id} className={`${selected === p.id ? 'selected ' : ''}${owned(p.id) ? 'owned' : ''}`} onClick={() => setSelected(p.id)}>
+          {PRODUCTS.map(p => <button key={p.id} className={selected === p.id ? 'selected' : ''} onClick={() => setSelected(p.id)}>
             <span>Lifetime course</span>
             <h2>{p.title}</h2>
             <p>{p.description}</p>
             <strong>{money(p.amount)}</strong>
-            {owned(p.id) && <em>✓ Already unlocked</em>}
           </button>)}
         </section>
         <section className="checkout">
@@ -172,7 +155,7 @@ function App() {
             <p>{product?.title}</p>
             <span>One-time payment · lifetime access</span>
             <strong>{product ? money(product.amount) : '—'}</strong>
-            <button disabled={busy || owned(product?.id)} onClick={pay}>{owned(product?.id) ? 'Already unlocked' : busy ? 'Processing…' : `Proceed to Pay ${product ? money(product.amount) : ''}`}</button>
+            <button disabled={busy} onClick={pay}>{busy ? 'Processing…' : `Proceed to Pay ${product ? money(product.amount) : ''}`}</button>
             <small>🔒 Your payment credentials are not stored by Global Digi Pulse.</small>
           </div>
         </section>
