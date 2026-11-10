@@ -40,7 +40,7 @@ function App() {
   const [phase, setPhase] = useState('form');
   const [message, setMessage] = useState('');
   const [method, setMethod] = useState('card');
-  const [card, setCard] = useState({ number: '4242 4242 4242 4242', name: 'DEMO USER', expiry: '12/29', cvv: '123', upi: 'demo@okaxis' });
+  const [card, setCard] = useState({ number: '4242 4242 4242 4242', name: 'DEMO USER', expiry: '12/29', cvv: '123', upi: 'demo@okaxis', bank: 'HDFC Bank' });
   const [profile, setProfile] = useState(() => ({ user: { name: localStorage.getItem('name') || 'Member', email: localStorage.getItem('email') || 'member@globaldigipulse.com' }, mode: 'sandbox', billing: { entitlements: { instagram: localStorage.getItem('unlocked_option_1') === 'true', facebook: localStorage.getItem('unlocked_option_2') === 'true', youtube: localStorage.getItem('unlocked_option_3') === 'true' }, orders: JSON.parse(localStorage.getItem('gdp_orders') || '[]') } }));
 
   const product = useMemo(() => PRODUCTS.find(p => p.id === selected), [selected]);
@@ -49,6 +49,7 @@ function App() {
 
   function valid() {
     if (method === 'upi') return card.upi.includes('@');
+    if (method === 'net') return !!card.bank;
     return card.number.replace(/\D/g, '').length >= 16 && card.name.trim().length > 2 && /^\d{2}\/\d{2}$/.test(card.expiry) && /^\d{3,4}$/.test(card.cvv);
   }
 
@@ -61,7 +62,7 @@ function App() {
     const t = setTimeout(async () => {
       unlockFor(product.id);
       setPhase('success'); setMessage('Payment already complete. Access granted.');
-      await sleep(1800);
+      await sleep(2800);
       location.href = '/' + product.hub;
     }, 1600);
     return () => clearTimeout(t);
@@ -72,10 +73,10 @@ function App() {
     if (!valid()) { setMessage('Enter valid demo payment details.'); return; }
     setBusy(true); setPhase('processing'); setMessage('Encrypting payment details…');
     try {
-      const r = await fetch('/create-order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userId: localStorage.getItem('userId') || '', amount: product.amount, purpose: 'course_' + product.id }) });
+      const r = await fetch('/create-order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userId: localStorage.getItem('userId') || '', amount: product.amount, purpose: 'course_' + product.id, method }) });
       const data = await r.json();
       if (!r.ok) throw Error(data.error || 'Order failed');
-      await sleep(850); setMessage('Authorizing payment…');
+      await sleep(850); setMessage(method === 'net' ? 'Connecting to your bank securely…' : method === 'upi' ? 'Awaiting UPI authorization…' : 'Authorizing payment…');
       await sleep(1150);
       const done = await fetch('/verify-payment', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ razorpay_payment_id: 'pay_sandbox_' + Date.now(), razorpay_order_id: data.id, razorpay_signature: 'sandbox', userId: localStorage.getItem('userId') || '' }) });
       const result = await done.json();
@@ -85,7 +86,7 @@ function App() {
       orders.unshift({ id: data.id, course_id: product.id, amount: product.amount, status: 'paid', created_at: new Date().toISOString() });
       localStorage.setItem('gdp_orders', JSON.stringify(orders.slice(0, 20)));
       setPhase('success'); setMessage('Payment successful. Access granted.');
-      await sleep(1800);
+      await sleep(2800);
       location.href = '/' + product.hub;
     } catch (e) {
       setPhase('form'); setMessage(e.message || 'Payment failed. Please retry.');
@@ -100,10 +101,21 @@ function App() {
     </header>
     <main>
       {phase !== 'form' ? <section className={`payment-state ${phase}`}>
-        <div className="state-icon">{phase === 'success' ? '✓' : <i />}</div>
-        <h1>{phase === 'success' ? 'Payment successful' : 'Processing payment'}</h1>
-        <p>{message}</p>
-        <div className="state-lines"><b /><b /><b /></div>
+        {phase === 'success' ? <>
+          <svg className="check-svg" viewBox="0 0 100 100" aria-hidden="true">
+            <circle className="check-circle" cx="50" cy="50" r="46" />
+            <path className="check-mark" d="M28 52 L44 68 L74 36" fill="none" />
+          </svg>
+          <h1>Payment Successful</h1>
+          <p>{message}</p>
+          <div className="confetti"><b /><b /><b /><b /><b /><b /><b /><b /><b /><b /><b /><b /></div>
+          <span className="redirect-note">Unlocking your masterclass hub…</span>
+        </> : <>
+          <div className="state-icon"><i /></div>
+          <h1>Processing payment</h1>
+          <p>{message}</p>
+          <div className="state-lines"><b /><b /><b /></div>
+        </>}
       </section> : <>
         <section className="intro">
           <div>
@@ -129,8 +141,9 @@ function App() {
           <div className="pay-form">
             <h2>Payment details</h2>
             <div className="methods">
-              <button className={method === 'card' ? 'active' : ''} onClick={() => setMethod('card')}>Card</button>
-              <button className={method === 'upi' ? 'active' : ''} onClick={() => setMethod('upi')}>UPI</button>
+              <button className={method === 'card' ? 'active' : ''} onClick={() => setMethod('card')}>💳 Debit / Credit Card</button>
+              <button className={method === 'upi' ? 'active' : ''} onClick={() => setMethod('upi')}>⚡ UPI</button>
+              <button className={method === 'net' ? 'active' : ''} onClick={() => setMethod('net')}>🏦 Net Banking</button>
             </div>
             {method === 'card' ? <>
               <label>Card number<input value={card.number} onChange={e => field('number', e.target.value)} inputMode="numeric" /></label>
@@ -139,7 +152,19 @@ function App() {
                 <label>Expiry<input value={card.expiry} onChange={e => field('expiry', e.target.value)} /></label>
                 <label>CVV<input value={card.cvv} onChange={e => field('cvv', e.target.value)} type="password" /></label>
               </div>
-            </> : <label>UPI ID<input value={card.upi} onChange={e => field('upi', e.target.value)} placeholder="name@bank" /></label>}
+            </> : method === 'upi' ? <label>UPI ID<input value={card.upi} onChange={e => field('upi', e.target.value)} placeholder="name@bank" /></label> : <>
+              <label>Select your bank
+                <select value={card.bank} onChange={e => field('bank', e.target.value)}>
+                  <option>HDFC Bank</option>
+                  <option>ICICI Bank</option>
+                  <option>State Bank of India</option>
+                  <option>Axis Bank</option>
+                  <option>Kotak Mahindra Bank</option>
+                  <option>Punjab National Bank</option>
+                </select>
+              </label>
+              <small className="net-note">You will be redirected to your bank's secure page to authorize this payment.</small>
+            </>}
             {message && <div className="message">{message}</div>}
           </div>
           <div className="total">
@@ -147,7 +172,7 @@ function App() {
             <p>{product?.title}</p>
             <span>One-time payment · lifetime access</span>
             <strong>{product ? money(product.amount) : '—'}</strong>
-            <button disabled={busy || owned(product?.id)} onClick={pay}>{owned(product?.id) ? 'Already unlocked' : busy ? 'Processing…' : 'Pay securely'}</button>
+            <button disabled={busy || owned(product?.id)} onClick={pay}>{owned(product?.id) ? 'Already unlocked' : busy ? 'Processing…' : `Proceed to Pay ${product ? money(product.amount) : ''}`}</button>
             <small>🔒 Your payment credentials are not stored by Global Digi Pulse.</small>
           </div>
         </section>
