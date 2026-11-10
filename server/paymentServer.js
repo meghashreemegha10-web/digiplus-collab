@@ -88,6 +88,27 @@ app.get(['/pricing', '/pricing.html'], (req, res) => {
   safeSendFile(res, path.join(__dirname, '../ui/pricing.html'), path.join(__dirname, '../ui/index.html'));
 });
 
+// Masterclass & Campaign Hubs
+app.get(['/IntroPage.html', '/IntroPage', '/intropage'], (req, res) => {
+  safeSendFile(res, path.join(__dirname, '../ui/html/IntroPage.html'));
+});
+
+app.get(['/WelcomePage.html', '/WelcomePage', '/welcome-page'], (req, res) => {
+  safeSendFile(res, path.join(__dirname, '../ui/html/WelcomePage.html'));
+});
+
+app.get(['/BusinessAccount.html', '/BusinessAccount', '/business-account'], (req, res) => {
+  safeSendFile(res, path.join(__dirname, '../ui/html/BusinessAccount.html'));
+});
+
+app.get(['/CampainPage.html', '/CampainPage', '/campaign-page'], (req, res) => {
+  safeSendFile(res, path.join(__dirname, '../ui/html/CampainPage.html'));
+});
+
+app.get(['/checkout', '/checkout/'], (req, res) => {
+  safeSendFile(res, path.join(__dirname, '../ui/checkout/index.html'));
+});
+
 // Member LoginPage & Auth Pages
 app.get(['/LoginPage.html', '/LoginPage', '/login', '/login-page'], (req, res) => {
   safeSendFile(res, path.join(__dirname, '../ui/html/LoginPage.html'));
