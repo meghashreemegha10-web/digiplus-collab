@@ -9,45 +9,60 @@
     content="Authorized Member Masterclass Portal for Global Digi Pulse. Select from 3 core Meta Advertising tracks to preview intro videos, review theoretical frameworks, and access complete lessons.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=25.0">
+  <link rel="stylesheet" href="../styles.css?v=44.0">
   <link rel="stylesheet" href="../css/madgicx-motion.css?v=1.0">
   <style>
     :root {
-      /* Palette from Color System:
-         1. ICE SILVER: #DDE3E8
-         2. DEEP AUBERGINE: #3A0F34
-         3. MARIGOLD: #EAAA00
-      */
-      --ice-silver: #DDE3E8;
-      --ice-silver-light: #F4F7F9;
-      --ice-silver-dark: #C6D0D8;
-      --ice-silver-glass: rgba(221, 227, 232, 0.78);
-      --ice-silver-border: rgba(221, 227, 232, 0.95);
+      /* Pearl White & Classic Gold Luxury Portal System (Matching Frontend A to Z) */
+      --pearl-white: #FAF9F6;
+      --pearl-white-pure: #FFFFFF;
+      --pearl-white-ivory: #FAFAF8;
+      --pearl-white-sand: #F5F3EF;
+      --pearl-white-glass: rgba(255, 255, 255, 0.95);
+      --pearl-white-border: rgba(212, 175, 55, 0.38);
 
-      --deep-aubergine: #3A0F34;
-      --deep-aubergine-dark: #240620;
-      --deep-aubergine-night: #170314;
-      --deep-aubergine-light: #581a50;
-      --deep-aubergine-soft: #4d2348;
-      --deep-aubergine-glass: rgba(58, 15, 52, 0.65);
+      --deep-aubergine: #2B0F2A;
+      --deep-aubergine-dark: #1A1423;
+      --deep-aubergine-night: #140813;
+      --deep-aubergine-light: #5A1E54;
+      --deep-aubergine-soft: #4A1B45;
+      --deep-aubergine-glass: rgba(43, 15, 42, 0.65);
 
-      --marigold: #EAAA00;
-      --marigold-light: #FFC42E;
-      --marigold-dark: #C99200;
-      --marigold-glow: rgba(234, 170, 0, 0.45);
-      --marigold-tint: rgba(234, 170, 0, 0.16);
+      --gold-primary: #D4AF37;
+      --gold-light: #F0D478;
+      --gold-highlight: #FFF2A3;
+      --gold-dark: #B58A2B;
+      --gold-bronze: #8C6819;
+      --gold-glow: rgba(212, 175, 55, 0.40);
+      --gold-tint: rgba(212, 175, 55, 0.12);
+      --gold-border: rgba(212, 175, 55, 0.38);
+      --gold-btn-gradient: linear-gradient(135deg, #E2BF6F 0%, #D4AF37 50%, #C19626 100%);
 
-      --portal-bg: #DDE3E8;
-      --portal-text-main: #3A0F34;
-      --portal-text-sub: #54274e;
-      --portal-border: rgba(58, 15, 52, 0.14);
-      --card-bg: rgba(255, 255, 255, 0.88);
-      --card-border: rgba(221, 227, 232, 0.95);
-      --text-main: #3A0F34;
-      --text-sub: #54274e;
+      /* Compatibility aliases */
+      --ice-silver: #FAF9F6;
+      --ice-silver-light: #FFFFFF;
+      --ice-silver-dark: #F5F3EF;
+      --ice-silver-glass: rgba(255, 255, 255, 0.95);
+      --ice-silver-border: rgba(212, 175, 55, 0.38);
+
+      --marigold: #D4AF37;
+      --marigold-light: #F0D478;
+      --marigold-dark: #B58A2B;
+      --marigold-glow: rgba(212, 175, 55, 0.40);
+      --marigold-tint: rgba(212, 175, 55, 0.12);
+
+      --portal-bg: #FAF9F6;
+      --portal-text-main: #1A1423;
+      --portal-text-sub: #4D4D4D;
+      --portal-border: rgba(212, 175, 55, 0.35);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --card-border: rgba(212, 175, 55, 0.38);
+      --text-main: #1A1423;
+      --text-sub: #4D4D4D;
     }
 
     * {
@@ -57,13 +72,13 @@
     }
 
     body {
-      background-color: #DDE3E8;
+      background-color: #FAF9F6;
       background-image:
-        radial-gradient(circle at 14% 18%, rgba(234, 170, 0, 0.18), transparent 42%),
-        radial-gradient(circle at 86% 22%, rgba(58, 15, 52, 0.14), transparent 42%),
-        radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.75), transparent 55%),
-        radial-gradient(circle at 50% 5%, rgba(255, 255, 255, 0.9), transparent 50%),
-        linear-gradient(180deg, #E7EDF2 0%, #DDE3E8 35%, #D4DCE2 70%, #CAD4DB 100%);
+        radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+        radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%),
+        radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+        radial-gradient(circle at 50% 5%, rgba(255, 255, 255, 0.98), transparent 50%),
+        linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%);
       background-size: cover;
       background-attachment: fixed;
       color: var(--portal-text-main);
@@ -78,15 +93,15 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(221, 227, 232, 0.88);
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(18px) saturate(180%);
       -webkit-backdrop-filter: blur(18px) saturate(180%);
-      border-bottom: 1.5px solid rgba(58, 15, 52, 0.12);
+      border-bottom: 1.5px solid rgba(212, 175, 55, 0.18);
       padding: 0.85rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 20px rgba(58, 15, 52, 0.05);
+      box-shadow: 0 4px 20px rgba(43, 15, 42, 0.05);
     }
 
     .portal-brand {
@@ -94,26 +109,26 @@
       align-items: center;
       gap: 0.75rem;
       text-decoration: none;
-      color: #3A0F34;
+      color: #2B0F2A;
     }
 
     .portal-logo-icon {
       width: 38px;
       height: 38px;
       border-radius: 10px;
-      background: linear-gradient(135deg, #3A0F34 0%, #581a50 60%, #EAAA00 100%);
+      background: linear-gradient(135deg, #2B0F2A 0%, #5A1E54 60%, #D4AF37 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #DDE3E8;
-      box-shadow: 0 4px 16px rgba(234, 170, 0, 0.35);
+      color: #FAF9F6;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
     }
 
     .portal-brand-text {
       font-size: 1.15rem;
       font-weight: 800;
       letter-spacing: 0.02em;
-      color: #3A0F34;
+      color: #2B0F2A;
     }
 
     .portal-nav-center {
@@ -123,7 +138,7 @@
     }
 
     .portal-nav-item {
-      color: #54274e;
+      color: #4D4D4D;
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 600;
@@ -132,7 +147,7 @@
 
     .portal-nav-item:hover,
     .portal-nav-item.active {
-      color: #EAAA00;
+      color: #D4AF37;
     }
 
     .portal-nav-right {
@@ -145,12 +160,12 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(58, 15, 52, 0.08);
-      border: 1.5px solid rgba(234, 170, 0, 0.45);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
       padding: 0.4rem 0.85rem;
       border-radius: 9999px;
       font-size: 0.85rem;
-      color: #3A0F34;
+      color: #2B0F2A;
       font-weight: 700;
     }
 
@@ -158,14 +173,14 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #EAAA00;
-      box-shadow: 0 0 10px #EAAA00;
+      background: #D4AF37;
+      box-shadow: 0 0 10px #D4AF37;
     }
 
     .btn-portal-logout {
-      background: rgba(58, 15, 52, 0.08);
-      border: 1px solid rgba(58, 15, 52, 0.25);
-      color: #3A0F34;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.38);
+      color: #2B0F2A;
       padding: 0.45rem 1rem;
       border-radius: 8px;
       font-size: 0.85rem;
@@ -175,9 +190,9 @@
     }
 
     .btn-portal-logout:hover {
-      background: #3A0F34;
-      color: #DDE3E8;
-      border-color: #3A0F34;
+      background: #2B0F2A;
+      color: #FAF9F6;
+      border-color: #2B0F2A;
     }
 
     /* Main Container */
@@ -200,29 +215,30 @@
       align-items: center;
       gap: 0.4rem;
       background: rgba(255, 255, 255, 0.95);
-      border: 1.5px solid rgba(234, 170, 0, 0.45);
-      color: #3A0F34;
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+      color: #2B0F2A;
       padding: 0.35rem 0.95rem;
       border-radius: 9999px;
       font-size: 0.88rem;
       font-weight: 700;
       margin-bottom: 0.8rem;
       backdrop-filter: blur(8px);
-      box-shadow: 0 4px 14px rgba(58, 15, 52, 0.06);
+      box-shadow: 0 4px 14px rgba(43, 15, 42, 0.06);
     }
 
     .portal-title {
-      font-size: 2.25rem;
-      font-weight: 800;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.35rem;
+      font-weight: 700;
       line-height: 1.25;
       margin-bottom: 0.6rem;
-      color: #3A0F34;
-      letter-spacing: -0.025em;
+      color: #1A1423;
+      letter-spacing: -0.015em;
     }
 
     .portal-subtitle {
       font-size: 1.05rem;
-      color: #54274e;
+      color: #4D4D4D;
       max-width: 720px;
       margin: 0 auto;
       line-height: 1.6;
@@ -235,23 +251,23 @@
       justify-content: center;
       align-items: center;
       background: rgba(255, 255, 255, 0.88);
-      border: 1.5px solid rgba(58, 15, 52, 0.14);
+      border: 1.5px solid rgba(212, 175, 55, 0.22);
       padding: 0.35rem;
       border-radius: 9999px;
       margin: 1.4rem auto 2.4rem auto;
       backdrop-filter: blur(16px);
-      box-shadow: 0 8px 24px rgba(58, 15, 52, 0.06), inset 0 1px 0 #ffffff;
+      box-shadow: 0 8px 24px rgba(43, 15, 42, 0.06), inset 0 1px 0 #ffffff;
       gap: 0.35rem;
       flex-wrap: wrap;
     }
 
     .filter-btn {
-      background: transparent;
-      border: 1px solid transparent;
-      color: #3A0F34;
-      padding: 0.6rem 1.4rem;
+      background: rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      color: #2B0F2A;
+      padding: 0.6rem 1.3rem;
       border-radius: 9999px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
       cursor: pointer;
       backdrop-filter: blur(8px);
@@ -264,8 +280,10 @@
     }
 
     .filter-btn:hover {
-      background: rgba(58, 15, 52, 0.08);
-      color: #3A0F34;
+      background: rgba(212, 175, 55, 0.18);
+      border-color: #D4AF37;
+      color: #2B0F2A;
+      transform: translateY(-1px);
     }
 
     /* Unique 3 Options Grid */
@@ -290,9 +308,9 @@
 
     /* Luminous Crystal Glass Card Container (The Boxes) */
     .option-card {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(221, 227, 232, 0.62) 100%);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.62) 100%);
       border-radius: 24px;
-      border: 1.5px solid rgba(221, 227, 232, 0.95);
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -301,47 +319,47 @@
       backdrop-filter: blur(28px) saturate(190%);
       -webkit-backdrop-filter: blur(28px) saturate(190%);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
-      box-shadow: 0 18px 45px -8px rgba(58, 15, 52, 0.12), 0 4px 14px -2px rgba(58, 15, 52, 0.04), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+      box-shadow: 0 18px 45px -8px rgba(212, 175, 55, 0.18), 0 4px 14px -2px rgba(43, 15, 42, 0.04), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
     }
 
     /* Individual Card Radiance inside Ice Silver + Deep Aubergine + Marigold system */
     .option-card.card-platform-instagram,
     .option-card.card-track-1 {
-      border-color: rgba(58, 15, 52, 0.16);
-      background: radial-gradient(circle at 50% 0%, rgba(234, 170, 0, 0.16), rgba(58, 15, 52, 0.06) 65%, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(221, 227, 232, 0.65) 100%);
+      border-color: rgba(212, 175, 55, 0.28);
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.16), rgba(43, 15, 42, 0.06) 65%, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.65) 100%);
     }
 
     .option-card.card-platform-instagram:hover,
     .option-card.card-track-1:hover {
       transform: translateY(-8px) scale(1.015);
-      border-color: #EAAA00;
-      box-shadow: 0 24px 55px -6px rgba(58, 15, 52, 0.22), 0 0 24px rgba(234, 170, 0, 0.35), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+      border-color: #D4AF37;
+      box-shadow: 0 24px 55px -6px rgba(212, 175, 55, 0.35), 0 0 24px rgba(212, 175, 55, 0.35), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
     }
 
     .option-card.card-platform-facebook,
     .option-card.card-track-2 {
-      border-color: rgba(58, 15, 52, 0.16);
-      background: radial-gradient(circle at 50% 0%, rgba(58, 15, 52, 0.14), rgba(234, 170, 0, 0.07) 65%, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(221, 227, 232, 0.65) 100%);
+      border-color: rgba(212, 175, 55, 0.28);
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.22), rgba(212, 175, 55, 0.07) 65%, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.65) 100%);
     }
 
     .option-card.card-platform-facebook:hover,
     .option-card.card-track-2:hover {
       transform: translateY(-8px) scale(1.015);
-      border-color: #EAAA00;
-      box-shadow: 0 24px 55px -6px rgba(58, 15, 52, 0.22), 0 0 24px rgba(234, 170, 0, 0.35), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+      border-color: #D4AF37;
+      box-shadow: 0 24px 55px -6px rgba(212, 175, 55, 0.35), 0 0 24px rgba(212, 175, 55, 0.35), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
     }
 
     .option-card.card-platform-youtube,
     .option-card.card-track-3 {
-      border-color: rgba(58, 15, 52, 0.16);
-      background: radial-gradient(circle at 50% 0%, rgba(234, 170, 0, 0.22), rgba(58, 15, 52, 0.08) 65%, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(221, 227, 232, 0.65) 100%);
+      border-color: rgba(212, 175, 55, 0.28);
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.22), rgba(212, 175, 55, 0.12) 65%, transparent 70%), linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.65) 100%);
     }
 
     .option-card.card-platform-youtube:hover,
     .option-card.card-track-3:hover {
       transform: translateY(-8px) scale(1.015);
-      border-color: #EAAA00;
-      box-shadow: 0 24px 55px -6px rgba(58, 15, 52, 0.22), 0 0 24px rgba(234, 170, 0, 0.35), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+      border-color: #D4AF37;
+      box-shadow: 0 24px 55px -6px rgba(212, 175, 55, 0.35), 0 0 24px rgba(212, 175, 55, 0.35), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
     }
 
     /* Giant Platform Watermarks */
@@ -355,14 +373,14 @@
       user-select: none;
       pointer-events: none;
       opacity: 0.05;
-      color: #3A0F34;
+      color: #2B0F2A;
       font-family: 'Plus Jakarta Sans', sans-serif;
       transition: opacity 0.3s, color 0.3s;
     }
 
     .option-card:hover .card-watermark {
       opacity: 0.1;
-      color: #EAAA00;
+      color: #D4AF37;
     }
 
     /* Video Viewport Frame */
@@ -374,7 +392,7 @@
       background: #170314;
       overflow: hidden;
       border-radius: 16px;
-      border: 1.5px solid rgba(234, 170, 0, 0.25);
+      border: 1.5px solid rgba(212, 175, 55, 0.25);
       box-shadow: 0 8px 24px rgba(23, 3, 20, 0.35);
     }
 
@@ -404,29 +422,29 @@
     .hud-reticle-tl {
       top: 6px;
       left: 6px;
-      border-top: 2px solid rgba(234, 170, 0, 0.75);
-      border-left: 2px solid rgba(234, 170, 0, 0.75);
+      border-top: 2px solid rgba(212, 175, 55, 0.75);
+      border-left: 2px solid rgba(212, 175, 55, 0.75);
     }
 
     .hud-reticle-tr {
       top: 6px;
       right: 6px;
-      border-top: 2px solid rgba(234, 170, 0, 0.75);
-      border-right: 2px solid rgba(234, 170, 0, 0.75);
+      border-top: 2px solid rgba(212, 175, 55, 0.75);
+      border-right: 2px solid rgba(212, 175, 55, 0.75);
     }
 
     .hud-reticle-bl {
       bottom: 6px;
       left: 6px;
-      border-bottom: 2px solid rgba(234, 170, 0, 0.75);
-      border-left: 2px solid rgba(234, 170, 0, 0.75);
+      border-bottom: 2px solid rgba(212, 175, 55, 0.75);
+      border-left: 2px solid rgba(212, 175, 55, 0.75);
     }
 
     .hud-reticle-br {
       bottom: 6px;
       right: 6px;
-      border-bottom: 2px solid rgba(234, 170, 0, 0.75);
-      border-right: 2px solid rgba(234, 170, 0, 0.75);
+      border-bottom: 2px solid rgba(212, 175, 55, 0.75);
+      border-right: 2px solid rgba(212, 175, 55, 0.75);
     }
 
     .option-overlay-play {
@@ -449,12 +467,13 @@
       width: 68px;
       height: 68px;
       border-radius: 50%;
-      border: 1.5px solid rgba(234, 170, 0, 0.75);
+      border: 1.5px solid rgba(212, 175, 55, 0.75);
       animation: radarPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
       pointer-events: none;
     }
 
     @keyframes radarPing {
+
       75%,
       100% {
         transform: scale(1.6);
@@ -470,8 +489,8 @@
       align-items: center;
       justify-content: center;
       color: #170314;
-      background: linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%);
-      box-shadow: 0 0 24px rgba(234, 170, 0, 0.7);
+      background: linear-gradient(135deg, #D4AF37 0%, #F0D478 50%, #C59B27 100%);
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.7);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       position: relative;
       z-index: 2;
@@ -479,7 +498,7 @@
 
     .option-card:hover .play-btn-circle {
       transform: scale(1.12);
-      box-shadow: 0 0 30px rgba(234, 170, 0, 0.9);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.9);
     }
 
     /* Video Duration Tag */
@@ -488,13 +507,13 @@
       bottom: 10px;
       left: 10px;
       background: rgba(23, 3, 20, 0.88);
-      border: 1px solid rgba(234, 170, 0, 0.35);
+      border: 1px solid rgba(212, 175, 55, 0.35);
       backdrop-filter: blur(8px);
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
       font-size: 0.7rem;
       font-weight: 600;
-      color: #DDE3E8;
+      color: #FAF9F6;
       display: flex;
       align-items: center;
       gap: 0.3rem;
@@ -518,8 +537,8 @@
     }
 
     .status-locked {
-      border: 1px solid rgba(234, 170, 0, 0.65);
-      color: #EAAA00;
+      border: 1px solid rgba(212, 175, 55, 0.65);
+      color: #D4AF37;
     }
 
     .status-unlocked {
@@ -549,31 +568,31 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: #3A0F34;
+      color: #2B0F2A;
     }
 
     .level-indicator {
       font-size: 0.72rem;
       font-weight: 700;
-      color: #3A0F34;
+      color: #2B0F2A;
       background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(234, 170, 0, 0.35);
+      border: 1px solid rgba(212, 175, 55, 0.35);
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(58, 15, 52, 0.04);
+      box-shadow: 0 2px 6px rgba(43, 15, 42, 0.04);
     }
 
     .option-card-title {
       font-size: 1.25rem;
       font-weight: 800;
       line-height: 1.35;
-      color: #3A0F34;
+      color: #2B0F2A;
       margin-bottom: 0.65rem;
     }
 
     .option-card-desc {
       font-size: 0.9rem;
-      color: #51274c;
+      color: #4D4D4D;
       line-height: 1.55;
       margin-bottom: 1.2rem;
       flex: 1;
@@ -588,20 +607,20 @@
 
     .feature-chip {
       background: rgba(255, 255, 255, 0.85);
-      border: 1px solid rgba(58, 15, 52, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.25);
       padding: 0.3rem 0.65rem;
       border-radius: 8px;
       font-size: 0.75rem;
       font-weight: 600;
-      color: #3A0F34;
-      box-shadow: 0 2px 6px rgba(58, 15, 52, 0.04);
+      color: #2B0F2A;
+      box-shadow: 0 2px 6px rgba(43, 15, 42, 0.04);
       transition: all 0.2s ease;
     }
 
     .option-card:hover .feature-chip {
-      border-color: rgba(234, 170, 0, 0.6);
-      background: rgba(234, 170, 0, 0.12);
-      color: #3A0F34;
+      border-color: rgba(212, 175, 55, 0.6);
+      background: rgba(212, 175, 55, 0.12);
+      color: #2B0F2A;
     }
 
     /* Platform Dual-Action Button Group for All 3 Options */
@@ -619,9 +638,9 @@
 
     .btn-card-intro {
       width: 100%;
-      background: linear-gradient(135deg, #ffffff 0%, #DDE3E8 100%);
-      border: 1.5px solid rgba(58, 15, 52, 0.2);
-      color: #3A0F34;
+      background: linear-gradient(135deg, #ffffff 0%, #FAF9F6 100%);
+      border: 1.5px solid rgba(212, 175, 55, 0.32);
+      color: #2B0F2A;
       padding: 0.85rem 1rem;
       border-radius: 12px;
       font-size: 0.92rem;
@@ -633,15 +652,15 @@
       gap: 0.5rem;
       transition: all 0.25s ease;
       font-family: inherit;
-      box-shadow: 0 4px 12px rgba(58, 15, 52, 0.06);
+      box-shadow: 0 4px 12px rgba(43, 15, 42, 0.06);
     }
 
     .btn-card-intro:hover {
       transform: translateY(-2px);
-      background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%);
-      border-color: #EAAA00;
-      color: #DDE3E8;
-      box-shadow: 0 8px 24px rgba(58, 15, 52, 0.35), 0 0 16px rgba(234, 170, 0, 0.3);
+      background: linear-gradient(135deg, #2B0F2A 0%, #5A1E54 100%);
+      border-color: #D4AF37;
+      color: #FAF9F6;
+      box-shadow: 0 8px 24px rgba(43, 15, 42, 0.35), 0 0 16px rgba(212, 175, 55, 0.3);
     }
 
     .btn-card-pay {
@@ -659,23 +678,23 @@
       font-family: inherit;
       border: none;
       color: #170314;
-      background: linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%);
+      background: linear-gradient(135deg, #D4AF37 0%, #F0D478 50%, #C59B27 100%);
       margin-top: 0.85rem;
-      box-shadow: 0 6px 20px rgba(234, 170, 0, 0.45);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
     }
 
     .btn-card-pay:hover {
       transform: translateY(-2px);
-      background: linear-gradient(135deg, #d49b00 0%, #EAAA00 50%, #b88200 100%);
-      box-shadow: 0 8px 25px rgba(234, 170, 0, 0.65);
+      background: linear-gradient(135deg, #C59B27 0%, #D4AF37 50%, #AA822A 100%);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.65);
     }
 
     .modal-tab-bar {
       display: flex;
       gap: 0.5rem;
       margin-bottom: 1.25rem;
-      background: rgba(221, 227, 232, 0.06);
-      border: 1px solid rgba(221, 227, 232, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       padding: 4px;
       border-radius: 12px;
     }
@@ -686,7 +705,7 @@
       border-radius: 8px;
       border: none;
       background: none;
-      color: #DDE3E8;
+      color: #FAF9F6;
       opacity: 0.8;
       font-size: 0.825rem;
       font-weight: 700;
@@ -696,11 +715,11 @@
     }
 
     .modal-tab-pill.is-active {
-      background: linear-gradient(135deg, #EAAA00 0%, #d49b00 100%);
+      background: linear-gradient(135deg, #D4AF37 0%, #C59B27 100%);
       color: #170314;
       opacity: 1;
       font-weight: 800;
-      box-shadow: 0 0 16px rgba(234, 170, 0, 0.45);
+      box-shadow: 0 0 16px rgba(212, 175, 55, 0.45);
     }
 
     /* Modal Backdrop */
@@ -719,23 +738,23 @@
     }
 
     .modal-content-box {
-      background: linear-gradient(160deg, #240620 0%, #170314 55%, #3A0F34 100%);
-      border: 1.5px solid rgba(234, 170, 0, 0.35);
+      background: linear-gradient(160deg, #1A1423 0%, #170314 55%, #2B0F2A 100%);
+      border: 1.5px solid rgba(212, 175, 55, 0.35);
       border-radius: 20px;
       max-width: 900px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      box-shadow: 0 25px 70px rgba(23, 3, 20, 0.85), 0 0 35px rgba(234, 170, 0, 0.18);
+      box-shadow: 0 25px 70px rgba(23, 3, 20, 0.85), 0 0 35px rgba(212, 175, 55, 0.18);
       position: relative;
       display: flex;
       flex-direction: column;
-      color: #DDE3E8;
+      color: #FAF9F6;
     }
 
     .modal-header-bar {
       padding: 1.25rem 1.75rem;
-      border-bottom: 1px solid rgba(234, 170, 0, 0.25);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -748,16 +767,16 @@
     .modal-header-title {
       font-size: 1.2rem;
       font-weight: 700;
-      color: #DDE3E8;
+      color: #FAF9F6;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
     .modal-close-btn {
-      background: rgba(221, 227, 232, 0.12);
-      border: 1px solid rgba(221, 227, 232, 0.2);
-      color: #DDE3E8;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FAF9F6;
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -770,9 +789,9 @@
     }
 
     .modal-close-btn:hover {
-      background: #EAAA00;
+      background: #D4AF37;
       color: #170314;
-      border-color: #EAAA00;
+      border-color: #D4AF37;
     }
 
     .modal-body-content {
@@ -786,7 +805,7 @@
       overflow: hidden;
       background: #000;
       margin-bottom: 1.8rem;
-      border: 1.5px solid rgba(234, 170, 0, 0.35);
+      border: 1.5px solid rgba(212, 175, 55, 0.35);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
 
@@ -801,16 +820,16 @@
     .unlocked-lessons-box {
       margin-top: -0.8rem;
       margin-bottom: 1.6rem;
-      background: rgba(58, 15, 52, 0.55);
-      border: 1px solid rgba(234, 170, 0, 0.3);
+      background: rgba(43, 15, 42, 0.55);
+      border: 1px solid rgba(212, 175, 55, 0.3);
       border-radius: 12px;
       padding: 12px 16px;
     }
 
     .lesson-pill-btn {
-      background: rgba(221, 227, 232, 0.1);
-      border: 1px solid rgba(221, 227, 232, 0.18);
-      color: #DDE3E8;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #FAF9F6;
       padding: 7px 14px;
       border-radius: 20px;
       font-size: 0.82rem;
@@ -823,23 +842,23 @@
     }
 
     .lesson-pill-btn:hover {
-      border-color: #EAAA00;
-      background: rgba(234, 170, 0, 0.18);
-      color: #EAAA00;
+      border-color: #D4AF37;
+      background: rgba(212, 175, 55, 0.18);
+      color: #D4AF37;
     }
 
     .lesson-pill-btn.active {
-      background: linear-gradient(135deg, #EAAA00 0%, #d49b00 100%);
-      border-color: #EAAA00;
+      background: linear-gradient(135deg, #D4AF37 0%, #C59B27 100%);
+      border-color: #D4AF37;
       color: #170314;
       font-weight: 800;
-      box-shadow: 0 4px 15px rgba(234, 170, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
     }
 
     /* Theory Information Card */
     .theory-box {
-      background: rgba(58, 15, 52, 0.45);
-      border: 1px solid rgba(234, 170, 0, 0.25);
+      background: rgba(43, 15, 42, 0.45);
+      border: 1px solid rgba(212, 175, 55, 0.25);
       border-radius: 14px;
       padding: 1.5rem;
       margin-bottom: 1.8rem;
@@ -850,7 +869,7 @@
       align-items: center;
       gap: 0.6rem;
       margin-bottom: 1rem;
-      color: #EAAA00;
+      color: #D4AF37;
       font-size: 1.1rem;
       font-weight: 700;
     }
@@ -858,7 +877,7 @@
     .theory-text {
       font-size: 0.95rem;
       line-height: 1.65;
-      color: #DDE3E8;
+      color: #FAF9F6;
       margin-bottom: 1rem;
     }
 
@@ -874,12 +893,12 @@
       align-items: flex-start;
       gap: 0.6rem;
       font-size: 0.92rem;
-      color: #DDE3E8;
+      color: #FAF9F6;
       line-height: 1.5;
     }
 
     .theory-check-icon {
-      color: #EAAA00;
+      color: #D4AF37;
       font-weight: bold;
       flex-shrink: 0;
       margin-top: 2px;
@@ -894,7 +913,7 @@
       justify-content: center !important;
       text-align: center !important;
       padding-top: 1rem;
-      border-top: 1px solid rgba(234, 170, 0, 0.2);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
       width: 100%;
     }
 
@@ -902,7 +921,7 @@
       width: 100%;
       max-width: 480px;
       margin: 0 auto !important;
-      background: linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%);
+      background: linear-gradient(135deg, #D4AF37 0%, #F0D478 50%, #C59B27 100%);
       border: none;
       color: #170314;
       padding: 1rem 1.8rem;
@@ -915,19 +934,19 @@
       justify-content: center !important;
       text-align: center !important;
       gap: 0.6rem;
-      box-shadow: 0 8px 25px rgba(234, 170, 0, 0.45);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
       transition: all 0.2s;
     }
 
     .btn-modal-unlock:hover {
-      background: linear-gradient(135deg, #d49b00 0%, #EAAA00 50%, #b88200 100%);
+      background: linear-gradient(135deg, #C59B27 0%, #D4AF37 50%, #AA822A 100%);
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(234, 170, 0, 0.65);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.65);
     }
 
     .unlock-subtext {
       font-size: 0.85rem;
-      color: #DDE3E8;
+      color: #FAF9F6;
       opacity: 0.8;
       text-align: center !important;
       display: block !important;
@@ -936,16 +955,16 @@
 
     /* Professional Ad World & SaaS Checkout Gateway */
     .pro-checkout-box {
-      background: linear-gradient(160deg, #240620 0%, #170314 60%, #3A0F34 100%);
-      border: 1.5px solid rgba(234, 170, 0, 0.35);
+      background: linear-gradient(160deg, #1A1423 0%, #170314 60%, #2B0F2A 100%);
+      border: 1.5px solid rgba(212, 175, 55, 0.35);
       border-radius: 18px;
       max-width: 590px;
       width: 95%;
       max-height: 94vh;
       overflow-y: auto;
       position: relative;
-      box-shadow: 0 25px 70px rgba(23, 3, 20, 0.85), 0 0 35px rgba(234, 170, 0, 0.18);
-      color: #DDE3E8;
+      box-shadow: 0 25px 70px rgba(23, 3, 20, 0.85), 0 0 35px rgba(212, 175, 55, 0.18);
+      color: #FAF9F6;
       display: flex;
       flex-direction: column;
     }
@@ -953,7 +972,7 @@
     .pro-checkout-header {
       padding: 0.75rem 1.25rem;
       background: #170314;
-      border-bottom: 1px solid rgba(234, 170, 0, 0.25);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -962,9 +981,9 @@
     }
 
     .checkout-back-btn {
-      background: rgba(221, 227, 232, 0.08);
-      border: 1px solid rgba(234, 170, 0, 0.3);
-      color: #DDE3E8;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: #FAF9F6;
       padding: 0.35rem 0.75rem;
       border-radius: 8px;
       font-size: 0.8rem;
@@ -979,9 +998,9 @@
     }
 
     .checkout-back-btn:hover {
-      background: rgba(234, 170, 0, 0.2);
-      border-color: #EAAA00;
-      color: #EAAA00;
+      background: rgba(212, 175, 55, 0.2);
+      border-color: #D4AF37;
+      color: #D4AF37;
       transform: translateX(-2px);
     }
 
@@ -989,7 +1008,7 @@
       display: flex;
       align-items: center;
       gap: 0.35rem;
-      color: #EAAA00;
+      color: #D4AF37;
       font-size: 0.7rem;
       font-weight: 800;
       letter-spacing: 0.04em;
@@ -1006,7 +1025,7 @@
     .checkout-cancel-back-btn {
       background: transparent;
       border: none;
-      color: #DDE3E8;
+      color: #FAF9F6;
       opacity: 0.75;
       font-size: 0.8rem;
       font-weight: 600;
@@ -1023,9 +1042,9 @@
     }
 
     .checkout-cancel-back-btn:hover {
-      color: #EAAA00;
+      color: #D4AF37;
       opacity: 1;
-      text-decoration-color: #EAAA00;
+      text-decoration-color: #D4AF37;
     }
 
     .pro-checkout-body {
@@ -1043,13 +1062,13 @@
       background: rgba(23, 3, 20, 0.75);
       padding: 0.3rem;
       border-radius: 12px;
-      border: 1px solid rgba(234, 170, 0, 0.25);
+      border: 1px solid rgba(212, 175, 55, 0.25);
     }
 
     .checkout-opt-btn {
       background: transparent;
       border: 1px solid transparent;
-      color: #DDE3E8;
+      color: #FAF9F6;
       opacity: 0.75;
       padding: 0.48rem 0.25rem;
       border-radius: 8px;
@@ -1071,17 +1090,17 @@
     .checkout-opt-btn:hover {
       color: #fff;
       opacity: 1;
-      background: rgba(234, 170, 0, 0.12);
+      background: rgba(212, 175, 55, 0.12);
     }
 
     .checkout-opt-btn.active-opt-1,
     .checkout-opt-btn.active-opt-2,
     .checkout-opt-btn.active-opt-3 {
-      background: rgba(234, 170, 0, 0.25);
-      border-color: #EAAA00;
-      color: #EAAA00;
+      background: rgba(212, 175, 55, 0.25);
+      border-color: #D4AF37;
+      color: #D4AF37;
       opacity: 1;
-      box-shadow: 0 0 14px rgba(234, 170, 0, 0.35);
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.35);
     }
 
     @media (max-width: 580px) {
@@ -1103,8 +1122,8 @@
 
     /* Compact Order Summary Card */
     .checkout-summary-card {
-      background: rgba(58, 15, 52, 0.55);
-      border: 1px solid rgba(234, 170, 0, 0.25);
+      background: rgba(43, 15, 42, 0.55);
+      border: 1px solid rgba(212, 175, 55, 0.25);
       border-radius: 12px;
       padding: 0.65rem 0.95rem;
     }
@@ -1136,9 +1155,9 @@
       font-weight: 800;
       padding: 0.18rem 0.5rem;
       border-radius: 5px;
-      background: rgba(234, 170, 0, 0.18);
-      color: #EAAA00;
-      border: 1px solid rgba(234, 170, 0, 0.4);
+      background: rgba(212, 175, 55, 0.18);
+      color: #D4AF37;
+      border: 1px solid rgba(212, 175, 55, 0.4);
       text-transform: uppercase;
       letter-spacing: 0.04em;
       white-space: nowrap;
@@ -1147,7 +1166,7 @@
     .checkout-guarantee-pill {
       font-size: 0.7rem;
       font-weight: 700;
-      color: #DDE3E8;
+      color: #FAF9F6;
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
@@ -1175,7 +1194,7 @@
     .price-original-striked {
       font-size: 0.72rem;
       text-decoration: line-through;
-      color: #DDE3E8;
+      color: #FAF9F6;
       opacity: 0.6;
       line-height: 1;
       margin-bottom: 0.15rem;
@@ -1184,7 +1203,7 @@
     .price-final-pay {
       font-size: 1.35rem;
       font-weight: 900;
-      color: #EAAA00;
+      color: #D4AF37;
       line-height: 1.1;
     }
 
@@ -1192,7 +1211,7 @@
       font-size: 0.65rem;
       font-weight: 800;
       color: #170314;
-      background: #EAAA00;
+      background: #D4AF37;
       padding: 0.1rem 0.35rem;
       border-radius: 4px;
       margin-top: 0.15rem;
@@ -1202,7 +1221,7 @@
     /* Payment Methods Segment */
     .checkout-payment-methods {
       background: rgba(23, 3, 20, 0.6);
-      border: 1px solid rgba(234, 170, 0, 0.2);
+      border: 1px solid rgba(212, 175, 55, 0.2);
       border-radius: 14px;
       padding: 1.1rem;
     }
@@ -1211,15 +1230,15 @@
       display: flex;
       gap: 0.5rem;
       margin-bottom: 1rem;
-      border-bottom: 1px solid rgba(234, 170, 0, 0.2);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
       padding-bottom: 0.75rem;
     }
 
     .method-tab {
       flex: 1;
-      background: rgba(221, 227, 232, 0.06);
-      border: 1px solid rgba(221, 227, 232, 0.12);
-      color: #DDE3E8;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #FAF9F6;
       opacity: 0.8;
       padding: 0.55rem 0.5rem;
       border-radius: 8px;
@@ -1234,19 +1253,19 @@
     .method-tab:hover {
       color: #fff;
       opacity: 1;
-      background: rgba(234, 170, 0, 0.15);
+      background: rgba(212, 175, 55, 0.15);
     }
 
     .method-tab.active {
-      background: linear-gradient(135deg, rgba(234, 170, 0, 0.28), rgba(234, 170, 0, 0.45));
-      border-color: #EAAA00;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.28), rgba(212, 175, 55, 0.45));
+      border-color: #D4AF37;
       color: #ffffff;
       opacity: 1;
     }
 
     .panel-instruction {
       font-size: 0.8rem;
-      color: #DDE3E8;
+      color: #FAF9F6;
       opacity: 0.8;
       margin-bottom: 0.75rem;
     }
@@ -1259,9 +1278,9 @@
     }
 
     .upi-app-btn {
-      background: rgba(221, 227, 232, 0.06);
-      border: 1px solid rgba(221, 227, 232, 0.14);
-      color: #DDE3E8;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #FAF9F6;
       padding: 0.5rem 0.4rem;
       border-radius: 8px;
       font-size: 0.78rem;
@@ -1277,9 +1296,9 @@
 
     .upi-app-btn:hover,
     .upi-app-btn.active {
-      background: rgba(234, 170, 0, 0.22);
-      border-color: #EAAA00;
-      color: #EAAA00;
+      background: rgba(212, 175, 55, 0.22);
+      border-color: #D4AF37;
+      color: #D4AF37;
     }
 
     .checkout-input-group {
@@ -1292,7 +1311,7 @@
     .pro-input {
       width: 100%;
       background: rgba(23, 3, 20, 0.85);
-      border: 1px solid rgba(221, 227, 232, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: 10px;
       padding: 0.75rem 1rem;
       font-size: 0.88rem;
@@ -1303,8 +1322,8 @@
     }
 
     .pro-input:focus {
-      border-color: #EAAA00;
-      box-shadow: 0 0 10px rgba(234, 170, 0, 0.35);
+      border-color: #D4AF37;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
     }
 
     .input-verified-tag {
@@ -1312,7 +1331,7 @@
       right: 12px;
       font-size: 0.72rem;
       font-weight: 800;
-      color: #EAAA00;
+      color: #D4AF37;
       letter-spacing: 0.05em;
       pointer-events: none;
     }
@@ -1329,9 +1348,9 @@
     }
 
     .bank-pill {
-      background: rgba(221, 227, 232, 0.06);
-      border: 1px solid rgba(221, 227, 232, 0.14);
-      color: #DDE3E8;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #FAF9F6;
       padding: 0.6rem 0.8rem;
       border-radius: 8px;
       font-size: 0.82rem;
@@ -1344,15 +1363,15 @@
 
     .bank-pill:hover,
     .bank-pill.active {
-      background: rgba(234, 170, 0, 0.22);
-      border-color: #EAAA00;
-      color: #EAAA00;
+      background: rgba(212, 175, 55, 0.22);
+      border-color: #D4AF37;
+      color: #D4AF37;
     }
 
     /* Checkout Action Button */
     .pro-btn-checkout {
       width: 100%;
-      background: linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%);
+      background: linear-gradient(135deg, #D4AF37 0%, #F0D478 50%, #C59B27 100%);
       border: none;
       color: #170314;
       padding: 1rem 1.4rem;
@@ -1365,14 +1384,14 @@
       justify-content: center;
       gap: 0.6rem;
       transition: all 0.25s;
-      box-shadow: 0 6px 22px rgba(234, 170, 0, 0.45);
+      box-shadow: 0 6px 22px rgba(212, 175, 55, 0.45);
       font-family: inherit;
     }
 
     .pro-btn-checkout:hover {
       transform: translateY(-2px);
-      background: linear-gradient(135deg, #d49b00 0%, #EAAA00 50%, #b88200 100%);
-      box-shadow: 0 10px 30px rgba(234, 170, 0, 0.65);
+      background: linear-gradient(135deg, #C59B27 0%, #D4AF37 50%, #AA822A 100%);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.65);
     }
 
     /* Trust Footer */
@@ -1394,7 +1413,7 @@
     .trust-item {
       font-size: 0.74rem;
       font-weight: 700;
-      color: #DDE3E8;
+      color: #FAF9F6;
       opacity: 0.8;
       display: inline-flex;
       align-items: center;
@@ -1403,7 +1422,7 @@
 
     .trust-disclaimer {
       font-size: 0.72rem;
-      color: #DDE3E8;
+      color: #FAF9F6;
       opacity: 0.65;
       line-height: 1.4;
       margin: 0;
@@ -1467,12 +1486,12 @@
           <button type="button" class="filter-btn filter-btn-youtube" onclick="openOptionModal(3)">
             <span>▶️ YouTube Campaigns</span>
           </button>
-          <button type="button" class="filter-btn" onclick="window.location.href='WelcomePage.html'"
-            style="background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%); border: 1.5px solid rgba(234, 170, 0, 0.45); color: #DDE3E8; font-weight: 800; box-shadow: 0 4px 15px rgba(58, 15, 52, 0.25);">
+          <button type="button" class="filter-btn" onclick="window.location.href='IntroPage.html'"
+            style="background: linear-gradient(135deg, #2B0F2A 0%, #5A1E54 100%); border: 1.5px solid rgba(212, 175, 55, 0.45); color: #FAF9F6; font-weight: 800; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.38);">
             <span>🎬 Original 3-Video Hub (Welcome Page)</span>
           </button>
           <button type="button" class="filter-btn" onclick="openPaymentGateway(currentOptionId)"
-            style="background: linear-gradient(135deg, #EAAA00 0%, #d49b00 100%); border: 1.5px solid #EAAA00; color: #170314; font-weight: 800; box-shadow: 0 4px 18px rgba(234, 170, 0, 0.4);">
+            style="background: linear-gradient(135deg, #D4AF37 0%, #C59B27 100%); border: 1.5px solid #D4AF37; color: #170314; font-weight: 800; box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);">
             <span>💳 Payment Gateway (All 3 Options)</span>
           </button>
         </div>
@@ -1515,10 +1534,12 @@
             and dynamic creative variations to eliminate ad fatigue.
           </p>
 
-          <!-- Action Button: Watch Intro Video & Theory -->
+          <!-- Single in-page action: open the walkthrough, intro video, and theory modal -->
           <div class="card-action-btn-group" id="cardActionGroup1">
-            <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(1)">
-              <span>▶ Watch Intro Video & Theory</span>
+            <button type="button" class="btn-card-intro"
+              style="margin-top:0;padding:11px 16px;font-size:0.92rem;width:100%;"
+              onclick="event.stopPropagation(); openOptionModal(1, 'both')">
+              <span>▶ Walthrough intro videos and theory</span>
             </button>
           </div>
         </div>
@@ -1557,10 +1578,12 @@
             GST tax exemptions, and recover disabled accounts.
           </p>
 
-          <!-- Action Button: Watch Intro Video & Theory -->
+          <!-- Single in-page action: open the walkthrough, intro video, and theory modal -->
           <div class="card-action-btn-group" id="cardActionGroup2">
-            <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(2)">
-              <span>▶ Watch Intro Video & Theory</span>
+            <button type="button" class="btn-card-intro"
+              style="margin-top:0;padding:11px 16px;font-size:0.92rem;width:100%;"
+              onclick="event.stopPropagation(); openOptionModal(2, 'both')">
+              <span>▶ Walthrough intro videos and theory</span>
             </button>
           </div>
         </div>
@@ -1599,10 +1622,12 @@
             lead acquisition costs, and scale video budgets with maximum ROAS.
           </p>
 
-          <!-- Action Button: Watch Intro Video & Theory -->
+          <!-- Single in-page action: open the walkthrough, intro video, and theory modal -->
           <div class="card-action-btn-group" id="cardActionGroup3">
-            <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(3)">
-              <span>▶ Watch Intro Video & Theory</span>
+            <button type="button" class="btn-card-intro"
+              style="margin-top:0;padding:11px 16px;font-size:0.92rem;width:100%;"
+              onclick="event.stopPropagation(); openOptionModal(3, 'both')">
+              <span>▶ Walthrough intro videos and theory</span>
             </button>
           </div>
         </div>
@@ -1651,7 +1676,7 @@
         <!-- Full-Length Lessons Playlist for Unlocked Members -->
         <div class="unlocked-lessons-box" id="unlockedLessonsContainer" style="display: none;">
           <div
-            style="font-size: 0.82rem; font-weight: 800; color: #EAAA00; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+            style="font-size: 0.82rem; font-weight: 800; color: #D4AF37; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
             <span>🎬</span> <span>Select Masterclass Lesson (Full Length):</span>
           </div>
           <div id="unlockedLessonsList" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
@@ -1677,7 +1702,7 @@
           <button type="button" class="btn-modal-unlock" id="btnUnlockOption"
             onclick="openPaymentGateway(currentOptionId)"
             style="margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-            <span id="unlockBtnText">💳 Payment Gateway — Unlock Masterclass Video (₹499)</span>
+            <span id="unlockBtnText">Unlock Full Instagram Masterclass</span>
           </button>
           <span class="unlock-subtext" style="text-align: center; display: block; margin: 0.5rem auto 0;">Instant Access
             • Secure 256-bit Encrypted Checkout • UPI, Cards & NetBanking</span>
@@ -1688,163 +1713,9 @@
     </div>
   </div>
 
-  <!-- =========================================================================
-       POPUP 2: PROFESSIONAL ADS & SAAS CHECKOUT GATEWAY (FOR ALL 3 OPTIONS)
-       ========================================================================= -->
-  <div class="modal-overlay" id="paymentGatewayModal" style="z-index: 1100;">
-    <div class="pro-checkout-box">
-      <!-- Top Bar: Back Button, Trust Badge & Close -->
-      <div class="pro-checkout-header">
-        <button type="button" class="checkout-back-btn" onclick="closePaymentGateway()"
-          title="Return to masterclass overview">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-          <span>← Back</span>
-        </button>
-        <div class="checkout-brand-lock">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          <span>256-BIT SSL ENCRYPTED GATEWAY</span>
-        </div>
-        <button class="modal-close-btn" onclick="closePaymentGateway()" aria-label="Close checkout">×</button>
-      </div>
-
-      <div class="pro-checkout-body">
-        <!-- 3 Options Segment Selector inside Checkout -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.1rem;">
-          <span
-            style="font-size: 0.74rem; font-weight: 800; color: #DDE3E8; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.05em;">⚡
-            Payment Gateway • Choose Target Platform:</span>
-          <span style="font-size: 0.72rem; color: #EAAA00; font-weight: 700;">All 3 Available</span>
-        </div>
-        <div class="checkout-option-selector">
-          <button type="button" class="checkout-opt-btn" id="checkoutOptBtn1" onclick="switchCheckoutOption(1)">
-            <span>📸 Option 1: Instagram (₹499)</span>
-          </button>
-          <button type="button" class="checkout-opt-btn" id="checkoutOptBtn2" onclick="switchCheckoutOption(2)">
-            <span>🌐 Option 2: Facebook (₹499)</span>
-          </button>
-          <button type="button" class="checkout-opt-btn" id="checkoutOptBtn3" onclick="switchCheckoutOption(3)">
-            <span>▶️ Option 3: YouTube (₹499)</span>
-          </button>
-        </div>
-
-        <!-- Compact Order Summary Card (Clean & Valid Info for all 3 Options) -->
-        <div class="checkout-summary-card">
-          <div class="summary-compact-row">
-            <div class="summary-info-left">
-              <div class="summary-badge-line">
-                <span class="checkout-platform-pill" id="checkoutPlatformBadge">📸 INSTAGRAM MASTERCLASS</span>
-                <span class="checkout-guarantee-pill">🛡️ 18% GST Waived • Lifetime Access</span>
-              </div>
-              <h3 class="checkout-product-title" id="checkoutProductTitle">Instagram 3-Second Hook Formulas &
-                High-Converting Video Ads</h3>
-            </div>
-            <div class="summary-price-right">
-              <div class="price-original-striked">₹2,499</div>
-              <div class="price-final-pay" id="checkoutTotalAmount">₹499</div>
-              <span class="price-discount-badge">80% OFF</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Payment Method Tabs -->
-        <div class="checkout-payment-methods">
-          <div class="methods-tab-bar">
-            <button type="button" class="method-tab active" id="tabUpi" onclick="switchPaymentTab('upi')">
-              <span>⚡ Instant UPI</span>
-            </button>
-            <button type="button" class="method-tab" id="tabCard" onclick="switchPaymentTab('card')">
-              <span>💳 Card / Debit</span>
-            </button>
-            <button type="button" class="method-tab" id="tabNet" onclick="switchPaymentTab('net')">
-              <span>🏦 NetBanking</span>
-            </button>
-          </div>
-
-          <!-- Panel 1: UPI Pay -->
-          <div class="method-panel" id="panelUpi">
-            <p class="panel-instruction">Select your preferred UPI App or enter your UPI ID:</p>
-            <div class="upi-apps-row">
-              <button type="button" class="upi-app-btn active" onclick="selectUpiApp(this, 'gpay')">
-                <span>🟢</span> GPay
-              </button>
-              <button type="button" class="upi-app-btn" onclick="selectUpiApp(this, 'phonepe')">
-                <span>🟣</span> PhonePe
-              </button>
-              <button type="button" class="upi-app-btn" onclick="selectUpiApp(this, 'paytm')">
-                <span>🔵</span> Paytm
-              </button>
-              <button type="button" class="upi-app-btn" onclick="selectUpiApp(this, 'bhim')">
-                <span>🟠</span> BHIM
-              </button>
-            </div>
-            <div class="checkout-input-group">
-              <input type="text" id="upiIdInput" placeholder="username@okhdfcbank / mobile@upi"
-                value="shriya@okhdfcbank" class="pro-input">
-              <span class="input-verified-tag">✓ VERIFIED</span>
-            </div>
-          </div>
-
-          <!-- Panel 2: Card Pay -->
-          <div class="method-panel" id="panelCard" style="display: none;">
-            <div class="checkout-input-group">
-              <input type="text" placeholder="Card Number (4242 •••• •••• 4242)" value="4532 8912 3421 9814"
-                class="pro-input">
-              <span class="input-verified-tag">💳 VISA</span>
-            </div>
-            <div class="card-dual-row">
-              <input type="text" placeholder="MM / YY" value="12/28" class="pro-input" style="flex: 1;">
-              <input type="password" placeholder="CVV" value="882" class="pro-input" style="width: 100px;">
-            </div>
-          </div>
-
-          <!-- Panel 3: NetBanking -->
-          <div class="method-panel" id="panelNet" style="display: none;">
-            <p class="panel-instruction">Choose your bank for instant authorization:</p>
-            <div class="banks-grid">
-              <button type="button" class="bank-pill active" onclick="selectBank(this)">HDFC Bank</button>
-              <button type="button" class="bank-pill" onclick="selectBank(this)">ICICI Bank</button>
-              <button type="button" class="bank-pill" onclick="selectBank(this)">State Bank of India</button>
-              <button type="button" class="bank-pill" onclick="selectBank(this)">Axis Bank</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Checkout Action Button -->
-        <button type="button" class="pro-btn-checkout" id="proCheckoutSubmitBtn" onclick="simulatePaymentSuccess()">
-          <span style="font-size: 1.15rem;">🔒</span>
-          <span id="checkoutSubmitBtnText">Complete Payment (₹499) & Unlock Video</span>
-        </button>
-
-        <!-- Secondary Back Option -->
-        <div style="display: flex; justify-content: center; margin-top: -0.25rem;">
-          <button type="button" class="checkout-cancel-back-btn" onclick="closePaymentGateway()">
-            <span>← Back to Video Overview</span>
-          </button>
-        </div>
-
-        <!-- Trust Badges & Guarantee Row -->
-        <div class="checkout-trust-footer">
-          <div class="trust-icons-strip">
-            <span class="trust-item">🔒 PCI-DSS Certified</span>
-            <span class="trust-item">⚡ Instant Access</span>
-            <span class="trust-item">🛡️ 100% Secure Checkout</span>
-          </div>
-          <p class="trust-disclaimer">By clicking Complete Payment, you receive immediate unhindered stream access to
-            this masterclass video. Official receipt generated automatically.</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
   <!-- Footer -->
   <footer
-    style="text-align: center; padding: 2.5rem 1.5rem; color: #54274e; font-size: 0.88rem; font-weight: 600; border-top: 1.5px solid rgba(58, 15, 52, 0.15); background: rgba(221, 227, 232, 0.65);">
+    style="text-align: center; padding: 2.5rem 1.5rem; color: #4D4D4D; font-size: 0.88rem; font-weight: 600; border-top: 1.5px solid rgba(212, 175, 55, 0.25); background: rgba(255, 255, 255, 0.65);">
     © 2026 GLOBAL DIGI PULSE • ALL RIGHTS RESERVED • Empowering High-Growth Advertisers Worldwide
   </footer>
 
@@ -2054,19 +1925,18 @@
         actionBtn.style.textAlign = 'center';
 
         if (isPaid) {
-          const targetUrl = optId === 1 ? 'BusinessAccount.html' : (optId === 3 ? 'CampainPage.html' : 'WelcomePage.html');
-          actionBtn.style.background = 'linear-gradient(135deg, #3A0F34 0%, #581a50 100%)';
-          actionBtn.style.color = '#DDE3E8';
-          actionBtn.style.border = '1.5px solid #EAAA00';
-          actionBtn.style.boxShadow = '0 6px 25px rgba(234, 170, 0, 0.35)';
-          btnText.innerHTML = `🚀 Open Dedicated ${opt.platform} Masterclass Hub`;
-          actionBtn.onclick = function () { window.location.href = targetUrl; };
+          actionBtn.style.background = 'linear-gradient(135deg, #2B0F2A 0%, #5A1E54 100%)';
+          actionBtn.style.color = '#FAF9F6';
+          actionBtn.style.border = '1.5px solid #D4AF37';
+          actionBtn.style.boxShadow = '0 6px 25px rgba(212, 175, 55, 0.35)';
+          btnText.textContent = `Unlock Full ${opt.platform} Masterclass`;
+          actionBtn.onclick = function () { openPaymentGateway(optId); };
         } else {
-          actionBtn.style.background = 'linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%)';
+          actionBtn.style.background = 'linear-gradient(135deg, #D4AF37 0%, #F0D478 50%, #C59B27 100%)';
           actionBtn.style.color = '#170314';
           actionBtn.style.border = 'none';
-          actionBtn.style.boxShadow = '0 6px 25px rgba(234, 170, 0, 0.45)';
-          btnText.innerHTML = `💳 Payment Gateway — Unlock ${opt.platform} Masterclass (${opt.price})`;
+          actionBtn.style.boxShadow = '0 6px 25px rgba(212, 175, 55, 0.45)';
+          btnText.textContent = `Unlock Full ${opt.platform} Masterclass`;
           actionBtn.onclick = function () { openPaymentGateway(optId); };
         }
       }
@@ -2094,138 +1964,23 @@
     }
 
     // Step 3: Professional Payment Gateway Flow (For all 3 options)
-    function switchCheckoutOption(optId) {
-      currentOptionId = optId;
-      const opt = optionsData[optId];
-      if (!opt) return;
-
-      // Update button active state
-      for (let i = 1; i <= 3; i++) {
-        const btn = document.getElementById(`checkoutOptBtn${i}`);
-        if (btn) {
-          btn.className = `checkout-opt-btn${i === optId ? ' active-opt-' + i : ''}`;
-        }
-      }
-
-      const badgeEl = document.getElementById('checkoutPlatformBadge');
-      if (badgeEl) {
-        badgeEl.textContent = opt.badge;
-        badgeEl.style.color = '#EAAA00';
-        badgeEl.style.borderColor = 'rgba(234, 170, 0, 0.45)';
-        badgeEl.style.background = 'rgba(234, 170, 0, 0.18)';
-      }
-
-      const titleEl = document.getElementById('checkoutProductTitle');
-      if (titleEl) titleEl.textContent = opt.title;
-
-      const descEl = document.getElementById('checkoutProductDesc');
-      if (descEl) descEl.textContent = `Original HD ${opt.platform} Masterclass Video • Theoretical Strategy Blueprint • Lifetime Video Access`;
-
-      const subtotalEl = document.getElementById('checkoutPriceSubtotal');
-      if (subtotalEl) subtotalEl.textContent = opt.price;
-
-      const totalEl = document.getElementById('checkoutTotalAmount');
-      if (totalEl) totalEl.textContent = opt.price;
-
-      const submitTextEl = document.getElementById('checkoutSubmitBtnText');
-      if (submitTextEl) {
-        submitTextEl.textContent = `Pay ${opt.price} & Unlock ${opt.platform} Masterclass`;
-      }
-
-      const submitBtn = document.getElementById('proCheckoutSubmitBtn');
-      if (submitBtn) {
-        submitBtn.style.background = 'linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%)';
-        submitBtn.style.color = '#170314';
-        submitBtn.style.boxShadow = '0 6px 22px rgba(234, 170, 0, 0.45)';
-      }
-    }
-
-    function openPaymentGateway(optId) {
+    // All unlock/hub buttons must go through the paid checkout — never straight to a hub page.
+    function openPaymentGateway(optId, intent) {
       if (optId) {
         currentOptionId = optId;
       }
-      switchCheckoutOption(currentOptionId);
-      switchPaymentTab('upi');
-      document.getElementById('paymentGatewayModal').style.display = 'flex';
+      const productMap = { 1: 'instagram', 2: 'facebook', 3: 'youtube' };
+      const productId = productMap[currentOptionId] || 'instagram';
+      window.location.href = `/checkout/?product=${productId}&option=${currentOptionId}`;
     }
 
-    function switchPaymentTab(tabName) {
-      document.querySelectorAll('.method-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.method-panel').forEach(p => p.style.display = 'none');
-
-      if (tabName === 'upi') {
-        document.getElementById('tabUpi')?.classList.add('active');
-        const p = document.getElementById('panelUpi');
-        if (p) p.style.display = 'block';
-      } else if (tabName === 'card') {
-        document.getElementById('tabCard')?.classList.add('active');
-        const p = document.getElementById('panelCard');
-        if (p) p.style.display = 'block';
-      } else if (tabName === 'net') {
-        document.getElementById('tabNet')?.classList.add('active');
-        const p = document.getElementById('panelNet');
-        if (p) p.style.display = 'block';
-      }
-    }
-
-    function selectUpiApp(btn, app) {
-      document.querySelectorAll('.upi-app-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const input = document.getElementById('upiIdInput');
-      if (input) {
-        input.value = `shriya@${app === 'gpay' ? 'okhdfcbank' : (app === 'phonepe' ? 'ybl' : (app === 'paytm' ? 'paytm' : 'upi'))}`;
-      }
-    }
-
-    function selectBank(btn) {
-      document.querySelectorAll('.bank-pill').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-
-    function closePaymentGateway() {
-      document.getElementById('paymentGatewayModal').style.display = 'none';
-    }
-
-    // Step 4: After Payment is done -> Direct to matching Original Page & Video Vault
-    function simulatePaymentSuccess() {
-      // Save unlock status across storage
-      for (let i = 1; i <= 3; i++) {
-        sessionStorage.setItem(`unlocked_option_${i}`, 'true');
-        localStorage.setItem(`unlocked_option_${i}`, 'true');
-        localStorage.setItem(`unlocked_platform_${i}`, 'true');
-      }
-      localStorage.setItem('accessGranted', 'true');
-      localStorage.setItem('scanPaid', 'true');
-      localStorage.setItem('campaignPaid', 'true');
-      localStorage.setItem('paymentStatus', '1499');
-
-      // Close checkout
-      closePaymentGateway();
-
-      // Redirect directly to the matching original page based on topic:
-      // Option 1 (Instagram) -> BusinessAccount.html
-      // Option 2 (Facebook)  -> WelcomePage.html
-      // Option 3 (YouTube)   -> CampainPage.html
-      let targetUrl = "WelcomePage.html";
-      if (currentOptionId === 1) {
-        targetUrl = "BusinessAccount.html";
-      } else if (currentOptionId === 2) {
-        targetUrl = "WelcomePage.html";
-      } else if (currentOptionId === 3) {
-        targetUrl = "CampainPage.html";
-      }
-      window.location.href = targetUrl;
-    }
-
-    // Update Dashboard Card Badges, Payment Details & Buttons for All 3 Options
+    // Keep one consistent in-page walkthrough action on every course card.
     function updateDashboardBadges() {
       for (let i = 1; i <= 3; i++) {
         const badgeEl = document.getElementById(`cardStatusBadge${i}`);
         const actionGroup = document.getElementById(`cardActionGroup${i}`);
-        const opt = optionsData[i];
         const isUnlocked = sessionStorage.getItem(`unlocked_option_${i}`) === 'true';
 
-        // 1. Update Preview Card Badge
         if (badgeEl) {
           if (isUnlocked) {
             badgeEl.className = 'option-status-badge status-unlocked';
@@ -2236,27 +1991,12 @@
           }
         }
 
-        // 2. Update Card Action Buttons
         if (actionGroup) {
-          if (isUnlocked) {
-            const targetUrl = i === 1 ? 'BusinessAccount.html' : (i === 3 ? 'CampainPage.html' : 'WelcomePage.html');
-            actionGroup.innerHTML = `
-              <div style="display:flex;gap:8px;width:100%;">
-                <button type="button" class="btn-card-pay" style="flex:1.2;background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%); color:#DDE3E8; border: 1.5px solid #EAAA00; box-shadow: 0 4px 16px rgba(234, 170, 0, 0.3); margin-top: 0; padding:10px 14px; font-size:0.9rem;" onclick="event.stopPropagation(); window.location.href='${targetUrl}';">
-                  <span>🚀 Open ${opt.platform} Hub</span>
-                </button>
-                <button type="button" class="btn-card-intro" style="flex:0.8;margin-top:0;padding:10px 12px;font-size:0.85rem;" onclick="event.stopPropagation(); openOptionModal(${i})">
-                  <span>▶ Theory</span>
-                </button>
-              </div>
-            `;
-          } else {
-            actionGroup.innerHTML = `
-              <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(${i})">
-                <span>▶ Watch Intro Video & Theory</span>
-              </button>
-            `;
-          }
+          actionGroup.innerHTML = `
+            <button type="button" class="btn-card-intro" style="margin-top:0;padding:11px 16px;font-size:0.92rem;width:100%;" onclick="event.stopPropagation(); openOptionModal(${i}, 'both')">
+              <span>▶ Walthrough intro videos and theory</span>
+            </button>
+          `;
         }
       }
     }

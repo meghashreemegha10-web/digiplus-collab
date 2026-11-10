@@ -25,6 +25,8 @@
     { "source": "/ScanAndPay.html", "destination": "/ui/html/ScanAndPay.html" },
     { "source": "/LoginPage.html", "destination": "/ui/html/LoginPage.html" },
     { "source": "/RegisterPage.html", "destination": "/ui/html/RegisterPage.html" },
+    { "source": "/checkout/(.*)", "destination": "/ui/checkout/$1" },
+    { "source": "/checkout", "destination": "/ui/checkout/index.html" },
     { "source": "/styles.css", "destination": "/ui/styles.css" },
     { "source": "/(.*)", "destination": "/api/index.js" }
   ]

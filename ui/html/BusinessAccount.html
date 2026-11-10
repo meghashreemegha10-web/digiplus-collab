@@ -10,22 +10,22 @@
     <link rel="stylesheet" href="../css/madgicx-motion.css?v=1.0">
     <style>
         body {
-            background-color: #f7f7fa;
+            background: radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%), radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%), radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%), linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%); background-color: #FAF9F6;
         }
         .header-section {
             padding: 40px 28px;
             border-radius: 18px;
-            box-shadow: 0 8px 32px rgba(46, 154, 208, 0.18);
-            background: rgba(255,255,255,0.92);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.22);
+            background: rgba(255,255,255,0.96); border: 1.5px solid rgba(212, 175, 55, 0.42);
             margin-bottom: 32px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         h1.main-title {
-            color: #2e9ad0;
+            color: #D4AF37;
             font-size: 2.6rem;
-            text-shadow: 2px 2px 12px #ffe066, 0 2px 8px #2e9ad0;
+            text-shadow: 2px 2px 12px #F0D478, 0 2px 8px #D4AF37;
             font-weight: bold;
             letter-spacing: 2px;
             margin-bottom: 18px;
@@ -46,9 +46,9 @@
             min-height: 100px;  /* was 80px, now even bigger */
             display: flex;
             align-items: center;
-            box-shadow: 0 4px 24px #2e9ad0a0, 0 2px 8px #ffe066a0;
+            box-shadow: 0 4px 24px rgba(212, 175, 55, 0.45), 0 2px 8px rgba(212, 175, 55, 0.45);
             border-radius: 40px; /* was 32px, now even bigger */
-            background: rgba(255,255,255,0.92);
+            background: rgba(255,255,255,0.96); border: 1.5px solid rgba(212, 175, 55, 0.42);
             position: relative;
             overflow: visible;
             transition: box-shadow 0.2s, transform 0.2s;
@@ -58,14 +58,14 @@
             position: absolute;
             inset: -3px;
             border-radius: 32px;
-            background: linear-gradient(120deg, #ffe066 0%, #2e9ad0 100%);
+            background: linear-gradient(120deg, #F0D478 0%, #D4AF37 100%);
             filter: blur(8px);
             opacity: 0.4;
             z-index: 0;
             pointer-events: none;
         }
         .btn-group:hover {
-            box-shadow: 0 12px 36px #ffe066, 0 4px 24px #2e9ad0;
+            box-shadow: 0 12px 36px #F0D478, 0 4px 24px #D4AF37;
             transform: scale(1.035);
         }
         .icon-circle {
@@ -78,12 +78,12 @@
             border-radius: 50%;
             background: #fff;
             margin-right: 28px; /* was 20px, now even bigger */
-            box-shadow: 0 2px 8px #2e9ad0a0;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.45);
         }
         .label {
             font-size: 1.7rem; /* was 1.3rem, now even bigger */
             font-weight: 700;
-            color: #232946;
+            color: #1A0D26;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -92,23 +92,23 @@
             max-width: 420px;
             margin-bottom: 24px;
             border-radius: 12px;
-            box-shadow: 0 2px 8px #2e9ad0;
+            box-shadow: 0 2px 8px #D4AF37;
             overflow: hidden;
-            background: rgba(255,255,255,0.92);
+            background: rgba(255,255,255,0.96); border: 1.5px solid rgba(212, 175, 55, 0.42);
             padding: 24px;
             margin-left: 350px; /* move video box further right */
             margin-top: 34px; /* move video box a little down */
         }
         .main-action-btn {
-            background: linear-gradient(90deg, #2e9ad0 0%, #ffe066 100%);
-            color: #232946;
+            background: linear-gradient(90deg, #D4AF37 0%, #F0D478 100%);
+            color: #1A0D26;
             border: none;
             border-radius: 32px;
             padding: 16px 40px;
             font-size: 20px;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 24px #2e9ad0a0, 0 2px 8px #ffe066a0;
+            box-shadow: 0 4px 24px rgba(212, 175, 55, 0.45), 0 2px 8px rgba(212, 175, 55, 0.45);
             margin-top: 24px;
             position: relative;
             overflow: hidden;
@@ -122,7 +122,7 @@
             position: absolute;
             top: -2px; left: -2px; right: -2px; bottom: -2px;
             border-radius: 36px;
-            background: linear-gradient(120deg, #ffe066 0%, #2e9ad0 100%);
+            background: linear-gradient(120deg, #F0D478 0%, #D4AF37 100%);
             filter: blur(8px);
             opacity: 0.5;
             z-index: -1;
@@ -130,11 +130,11 @@
         }
         .main-action-btn:hover, .main-action-btn:focus {
             transform: scale(1.04);
-            box-shadow: 0 8px 32px #ffe066, 0 2px 16px #2e9ad0;
+            box-shadow: 0 8px 32px #F0D478, 0 2px 16px #D4AF37;
         }
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 4px 24px #2e9ad0a0, 0 2px 8px #ffe066a0; }
-            50% { box-shadow: 0 8px 40px #ffe066, 0 2px 16px #2e9ad0; }
+            0%, 100% { box-shadow: 0 4px 24px rgba(212, 175, 55, 0.45), 0 2px 8px rgba(212, 175, 55, 0.45); }
+            50% { box-shadow: 0 8px 40px #F0D478, 0 2px 16px #D4AF37; }
         }
         @media (max-width: 900px) {
             .main-content { flex-direction: column !important; align-items: center !important; gap: 0 !important; }
@@ -181,7 +181,7 @@
             bottom: 0;
             padding: 6px 0 !important;
             color: #fff;
-            text-shadow: 1px 1px 4px #2e9ad0;
+            text-shadow: 1px 1px 4px #D4AF37;
             background: rgba(46,154,208,0.85);
             z-index: 10;
             display: flex;
@@ -193,7 +193,7 @@
           top: 0; left: 0; width: 100vw; height: 100vh;
           z-index: 0;
           pointer-events: none;
-          background: linear-gradient(120deg, #2e9ad0 0%, #ffe066 40%, #ff4e50 80%, #6dd5ed 100%);
+          background: linear-gradient(120deg, #D4AF37 0%, #F0D478 40%, #ff4e50 80%, #6dd5ed 100%);
           background-size: 200% 200%;
           animation: bgMove 12s ease-in-out infinite;
           opacity: 0.93;
@@ -206,8 +206,12 @@
         }
         .creative-bg, body > .gradient-overlay { display: none !important; }
         body {
-          background: linear-gradient(180deg, rgba(8, 12, 28, 0.06) 0%, rgba(10, 15, 34, 0.16) 50%, rgba(6, 10, 24, 0.40) 100%),
-                      url('../assets/ads_social_matrix.jpg?v=14.0') no-repeat center center fixed !important;
+          background: 
+        radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+        radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%),
+        radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+        linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%) !important;
+      background-color: #FAF9F6 !important;
           background-size: cover !important;
         }
     </style>
@@ -225,19 +229,19 @@
           <h1 class="main-title" style="margin-bottom:16px;font-size:2.1rem;text-align:center;">WELCOME TO GLOBAL DIGI PULSE</h1>
           <div class="video-container" style="width:100%;max-width:440px;margin-bottom:16px;border-radius:16px;overflow:hidden;">
             <video width="100%" height="220" controls style="border-radius:14px;max-height:220px;display:block;">
-              <source src="https://archive.org/download/short-video.jpg/short%20video2.jpg.mp4" type="video/mp4">
+              <source src="../assets/insta_intro.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
           <div style="margin-top:14px;display:flex;justify-content:center;gap:14px;width:100%;flex-wrap:wrap;">
-            <button class="welcome-btn" onclick="window.location.href='CampainPage.html'" style="background:rgba(255,255,255,0.95);color:#0284c7;border:1.5px solid #0284c7;padding:12px 20px;font-size:1.05rem;box-shadow:none;">
+            <button class="welcome-btn" onclick="window.location.href='CampainPage.html'" style="background:rgba(255,255,255,0.95);color:#B58A2B;border:1.5px solid #B58A2B;padding:12px 20px;font-size:1.05rem;box-shadow:none;">
               ← Previous (YouTube Hub)
             </button>
             <button class="welcome-btn" id="goToThankYouBtn" style="background:linear-gradient(135deg, #10b981 0%, #06b6d4 100%) !important;padding:12px 24px;font-size:1.05rem;">
               <svg style="vertical-align:middle;margin-right:8px;" width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               Complete Masterclass
             </button>
-            <button class="welcome-btn" onclick="window.location.href='IntroPage.html'" style="background:rgba(255,255,255,0.95);color:#0284c7;border:1.5px solid #0284c7;padding:12px 20px;font-size:1.05rem;box-shadow:none;">
+            <button class="welcome-btn" onclick="window.location.href='IntroPage.html'" style="background:rgba(255,255,255,0.95);color:#B58A2B;border:1.5px solid #B58A2B;padding:12px 20px;font-size:1.05rem;box-shadow:none;">
               Vault Overview
             </button>
             <button class="welcome-btn" onclick="window.location.href='LoginPage.html'" style="background:linear-gradient(135deg, #ef4444, #dc2626) !important;padding:12px 24px;font-size:1.05rem;">
@@ -251,7 +255,7 @@
           <div class="magical-nav-badge" style="align-self:flex-start;margin-bottom:6px;background:rgba(250,204,21,0.18);border-color:rgba(250,204,21,0.5);color:#fde047;font-size:1.05rem !important;padding:4px 12px;">🎁 EXCLUSIVE BONUS MASTERCLASSES</div>
           
           <div class="btn-group" onclick="showBonusVideoPopup()" style="min-height:64px;padding:8px 16px;border-radius:22px;">
-            <div class="icon-circle" style="background:linear-gradient(135deg,#38bdf8,#0284c7) !important; border:none !important; box-shadow:0 0 12px rgba(56,189,248,0.5) !important; width:48px; height:48px; min-width:48px; margin-right:16px;">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#F0D478,#B58A2B) !important; border:none !important; box-shadow:0 0 12px rgba(212, 175, 55, 0.45) !important; width:48px; height:48px; min-width:48px; margin-right:16px;">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="#ffffff"/></svg>
             </div>
             <div class="pill-bg blue-grad">
@@ -292,9 +296,9 @@
   </main>
     <!-- Loading spinner -->
     <div id="loadingSpinner" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(255,255,255,0.7);z-index:999;justify-content:center;align-items:center;">
-        <div style="border:8px solid #2e9ad0;border-top:8px solid #ffe066;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;"></div>
+        <div style="border:8px solid #D4AF37;border-top:8px solid #F0D478;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;"></div>
     </div>
-    <footer class="footer-line" style="position:fixed;left:0;bottom:0;width:100vw;text-align:center;padding:12px 0;color:#fff;font-size:16px;font-weight:700;text-shadow:1px 1px 4px #2e9ad0;background:rgba(10,16,38,0.95);z-index:10;">ALL RIGHTS RESERVED</footer>
+    <footer class="footer-line" style="position:fixed;left:0;bottom:0;width:100vw;text-align:center;padding:12px 0;color:#fff;font-size:16px;font-weight:700;text-shadow:1px 1px 4px #D4AF37;background:rgba(10,16,38,0.95);z-index:10;">ALL RIGHTS RESERVED</footer>
     <script>
     // Enforce payment access on live website, but allow open preview for the hoster on localhost
     (function enforceAccess() {

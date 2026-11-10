@@ -10,7 +10,11 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         body {
-            background: #f7f7fa;
+            background: 
+    radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+    radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%),
+    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%);
             /* Removed background image for plain background */
             min-height: 100vh;
             position: relative;
@@ -73,7 +77,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(135deg, #ffe066 0%, #2e9ad0 100%);
+            background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.12), transparent 60%), radial-gradient(circle at 80% 70%, rgba(43, 15, 42, 0.05), transparent 60%);
             opacity: 0.85;
             z-index: 0;
             pointer-events: none;
@@ -81,7 +85,7 @@
         .login-box {
             padding: 38px 26px 30px 26px;
             border-radius: 20px;
-            box-shadow: 0 4px 18px #2e9ad033, 0 0 18px #ffe06633;
+            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.18), 0 2px 8px rgba(0, 0, 0, 0.03); border: 1.5px solid rgba(212, 175, 55, 0.42);
             min-width: 240px;
             max-width: 320px;
             width: 100%;
@@ -95,7 +99,7 @@
             transition: box-shadow 0.3s, transform 0.3s;
         }
         .login-box:hover {
-            box-shadow: 0 4px 18px #2e9ad033, 0 0 18px #ffe06633;
+            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.18), 0 2px 8px rgba(0, 0, 0, 0.03); border: 1.5px solid rgba(212, 175, 55, 0.42);
             transform: translateY(-2px) scale(1.01);
         }
         .login-box::before {
@@ -127,9 +131,9 @@
             font-size: 16px;
             font-weight: 700;
             border-radius: 8px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid rgba(212, 175, 55, 0.35);
             background: #fff;
-            color: #2e9ad0;
+            color: #B58A2B;
             letter-spacing: 0.5px;
             box-shadow: none;
             transition: background 0.2s, color 0.2s, border 0.2s;
@@ -137,22 +141,26 @@
             overflow: hidden;
         }
         #registerBtn:hover, #forgotBtn:hover {
-            background: #f7f7fa;
-            color: #232946;
-            border: 1.5px solid #2e9ad0;
+            background: 
+    radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+    radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%),
+    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%);
+            color: #1A1423;
+            border: 1.5px solid #D4AF37;
         }
         #forgotBtn {
             color: #ff4e50;
         }
         #forgotBtn:hover {
-            color: #232946;
+            color: #1A1423;
         }
         p {
             margin-top: 22px;
             text-align: center;
             font-size: 18px;
             font-weight: 600;
-            color: #2e9ad0;
+            color: #B58A2B;
         }
         a {
             color: #ff4e50;
@@ -211,7 +219,7 @@
             }
         }
         .login-box input:focus {
-            box-shadow: 0 0 8px #2e9ad0;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.45); border-color: #D4AF37;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -242,7 +250,7 @@
             background: #fff;
             padding: 32px 24px;
             border-radius: 18px;
-            box-shadow: 0 8px 32px #2e9ad0;
+            box-shadow: 0 8px 32px #D4AF37;
             max-width: 420px;
             width: 95vw;
             position: relative;
@@ -251,11 +259,11 @@
             align-items: center;
         }
         #registerModal h1 {
-            color: #2e9ad0;
+            color: #B58A2B;
             font-size: 2.2rem;
             font-weight: bold;
             margin-bottom: 18px;
-            text-shadow: 1px 1px 8px #ffe066;
+            text-shadow: 1px 1px 8px #F0D478;
         }
         #registerModal button.close {
             position: absolute;
@@ -263,7 +271,7 @@
             right: 12px;
             background: none;
             border: none;
-            color: #2e9ad0;
+            color: #B58A2B;
             font-size: 22px;
             cursor: pointer;
         }
@@ -276,18 +284,18 @@
         #registerModal input {
             padding: 8px;
             font-size: 15px;
-            border: 1px solid #2e9ad0;
+            border: 1px solid #D4AF37;
             border-radius: 12px;
         }
         #registerModal button[type="submit"] {
             padding: 12px 0;
             font-size: 18px;
-            background: #2e9ad0;
+            background: #D4AF37;
             color: #fff;
             border: none;
             border-radius: 12px;
             font-weight: 700;
-            box-shadow: 0 2px 8px #ffe066;
+            box-shadow: 0 2px 8px #F0D478;
             transition: background 0.3s;
         }
         #registerMessageModal {
@@ -300,31 +308,30 @@
         .login-box button[type="submit"] {
             padding: 10px 0;
             font-size: 16px;
-            background: #2e9ad0;
-            color: #fff;
+            background: linear-gradient(135deg, #E2BF6F 0%, #D4AF37 50%, #C19626 100%);
+            color: #1A0D26;
             border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            box-shadow: none;
-            letter-spacing: 1px;
-            margin-top: 8px;
+            border-radius: 999px;
+            font-weight: 700;
+            box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+            letter-spacing: 0.02em;
+            margin-top: 10px;
             margin-bottom: 6px;
-            transition: background 0.2s, transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
             overflow: hidden;
-            min-height: 36px;
-            max-height: 38px;
+            min-height: 38px;
+            cursor: pointer;
         }
         .login-box button[type="submit"]:hover {
-            background: #232946;
-            color: #fff;
-            transform: translateY(-1px) scale(1.01);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
         .login-container h1 {
             font-size: 2.8rem !important;
             font-weight: bold;
-            color: #000 !important;
-            text-shadow: 2px 2px 12px #ffe066, 0 2px 8px #2e9ad0;
+            color: #1A1423 !important;
+            text-shadow: none;
             margin-bottom: 18px;
             letter-spacing: 2px;
         }
@@ -388,32 +395,36 @@
         }
         .login-description p {
             font-size: 1.1rem;
-            color: #232946;
+            color: #1A1423;
             margin-bottom: 10px;
             line-height: 1.5;
         }
         .login-description ul {
             font-size: 1rem;
-            color: #2e9ad0;
+            color: #B58A2B;
             margin-bottom: 10px;
             line-height: 1.5;
             padding-left: 18px;
         }
         .login-description div {
             font-size: 1rem;
-            color: #232946;
+            color: #1A1423;
             margin-bottom: 10px;
             line-height: 1.5;
         }
         .login-description b {
-            color: #2e9ad0;
+            color: #B58A2B;
         }
         .login-description .short-version {
-            background: #f7f7fa;
+            background: 
+    radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+    radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%),
+    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%);
             border-radius: 10px;
             padding: 12px 16px;
             margin: 18px 0 0 0;
-            box-shadow: 0 2px 8px #2e9ad033;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
         }
         .login-description .meta-description {
             font-size: 0.98rem;
@@ -425,11 +436,15 @@
                 display: block;
                 margin: 108px auto 0 auto; /* Keep description spacing unchanged */
                 max-width: 340px;
-                background: #f7f7fa;
-                color: #232946;
+                background: 
+    radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+    radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%),
+    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%);
+                color: #1A1423;
                 font-size: 1rem;
                 border-radius: 10px;
-                box-shadow: 0 2px 8px #2e9ad033;
+                box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
                 padding: 12px 16px;
                 text-align: center;
             }
@@ -449,7 +464,11 @@
         </div>
         <div class="login-description" id="loginDescription" style="flex:1;max-width:480px;padding:66px 32px 36px 8px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;z-index:2;margin-top:110px;margin-left:120px;">
             <h2 style="color:#232323;font-size:1.3rem;font-weight:700;margin-bottom:12px;line-height:1.2;">Learn How to Sell Your Products Online Like a Pro – Complete Social Media Marketing Video Course</h2>
-      <div style="background:#f7f7fa;border-radius:10px;padding:12px 16px;margin:18px 0 0 0;box-shadow:0 2px 8px #2e9ad033;">
+      <div style="background: 
+    radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+    radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%),
+    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%);border-radius:10px;padding:12px 16px;margin:18px 0 0 0;box-shadow:0 2px 8px rgba(212, 175, 55, 0.25);">
         Discover how to successfully sell on Facebook, Instagram, YouTube & more.<br>
         This complete video course teaches you practical strategies to create engaging content, run effective ads, build an audience, and convert followers into buyers.<br>
         Perfect for small business owners, entrepreneurs, and anyone who wants to grow online sales without wasting time and money.<br>
@@ -478,7 +497,7 @@
             </div>  
             <noscript>
                 <div style="margin-top:10px;">
-                    <a href="/RegisterPage.html" style="color:#2e9ad0;font-weight:bold;">Register here (if button does not work)</a>
+                    <a href="/RegisterPage.html" style="color: #B58A2B;font-weight:bold;">Register here (if button does not work)</a>
                 </div>
             </noscript>
         </div>
@@ -488,31 +507,31 @@
         </div>
         <!-- Loading spinner -->
         <div id="loadingSpinner" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(255,255,255,0.7);z-index:999;justify-content:center;align-items:center;">
-            <div style="border:8px solid #2e9ad0;border-top:8px solid #ffe066;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;"></div>
+            <div style="border:8px solid #D4AF37;border-top:8px solid #F0D478;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;"></div>
         </div>
         <!-- Forgot user popup -->
         <div id="forgotPopup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);z-index:1000;justify-content:center;align-items:center;">
             <div style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.2);position:relative;width:90%;max-width:400px;">
-                <h2 style="color:#2e9ad0;margin-bottom:16px;">Forgot Username/Password?</h2>
+                <h2 style="color: #B58A2B;margin-bottom:16px;">Forgot Username/Password?</h2>
                 <div class="input-box" style="margin-bottom:12px;padding-right:4px;height:38px;min-height:unset;">
                     <img src="/html/usericon.jpg" alt="User Icon" style="width:18px;height:18px;margin-right:6px;">
                     <input type="email" id="forgotEmail" placeholder="Enter your registered email" required style="padding:8px 6px;font-size:15px;border:none;outline:none;background:transparent;width:100%;box-sizing:border-box;height:100%;min-height:unset;">
                 </div>
-                <button id="sendForgotBtn" style="background:#2e9ad0;color:#fff;border:none;border-radius:8px;padding:10px;font-size:16px;font-weight:600;cursor:pointer;width:100%;transition:background 0.3s;">Click to Get Reset Link</button>
-                <div id="forgotMsg" style="margin-top:12px;color:#2e9ad0;font-size:16px;"></div>
-                <button onclick="closeForgotPopup()" style="position:absolute;top:2px;right:12px;background:none;border:none;color:#2e9ad0;font-size:22px;cursor:pointer;width:32px;height:32px;line-height:32px;text-align:center;">&times;</button>
+                <button id="sendForgotBtn" style="background:#D4AF37;color:#fff;border:none;border-radius:8px;padding:10px;font-size:16px;font-weight:600;cursor:pointer;width:100%;transition:background 0.3s;">Click to Get Reset Link</button>
+                <div id="forgotMsg" style="margin-top:12px;color: #B58A2B;font-size:16px;"></div>
+                <button onclick="closeForgotPopup()" style="position:absolute;top:2px;right:12px;background:none;border:none;color: #B58A2B;font-size:22px;cursor:pointer;width:32px;height:32px;line-height:32px;text-align:center;">&times;</button>
             </div>
         </div>
         <!-- Registration Modal Popup -->
         <div id="registerModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);z-index:2000;justify-content:center;align-items:center;">
-            <div style="background:#fff;padding:32px 24px;border-radius:18px;box-shadow:0 8px 32px #2e9ad0;max-width:420px;width:95vw;position:relative;display:flex;flex-direction:column;align-items:center;">
-                <button onclick="closeRegisterModal()" style="position:absolute;top:12px;right:12px;background:none;border:none;color:#2e9ad0;font-size:22px;cursor:pointer;">&times;</button>
-                <h1 style="color:#2e9ad0;font-size:2.2rem;font-weight:bold;margin-bottom:18px;text-shadow:1px 1px 8px #ffe066;">Register New Account</h1>
+            <div style="background:#fff;padding:32px 24px;border-radius:18px;box-shadow:0 8px 32px #D4AF37;max-width:420px;width:95vw;position:relative;display:flex;flex-direction:column;align-items:center;">
+                <button onclick="closeRegisterModal()" style="position:absolute;top:12px;right:12px;background:none;border:none;color: #B58A2B;font-size:22px;cursor:pointer;">&times;</button>
+                <h1 style="color: #B58A2B;font-size:2.2rem;font-weight:bold;margin-bottom:18px;text-shadow:1px 1px 8px #F0D478;">Register New Account</h1>
                 <form id="registerFormModal" style="width:100%;display:flex;flex-direction:column;gap:16px;" autocomplete="off">
-                    <input type="text" id="registerUsername" name="username" placeholder="Username" required style="padding:8px;font-size:15px;border:1px solid #2e9ad0;border-radius:12px;">
-                    <input type="email" id="registerEmail" name="email" placeholder="Email" required style="padding:8px;font-size:15px;border:1px solid #2e9ad0;border-radius:12px;">
-                    <input type="password" id="registerPassword" name="password" placeholder="Password" required style="padding:8px;font-size:15px;border:1px solid #2e9ad0;border-radius:12px;">
-                    <button type="submit" style="padding:12px 0;font-size:18px;background:#2e9ad0;color:#fff;border:none;border-radius:12px;font-weight:700;box-shadow:0 2px 8px #ffe066;transition:background 0.3s;">Register</button>
+                    <input type="text" id="registerUsername" name="username" placeholder="Username" required style="padding:8px;font-size:15px;border:1px solid #D4AF37;border-radius:12px;">
+                    <input type="email" id="registerEmail" name="email" placeholder="Email" required style="padding:8px;font-size:15px;border:1px solid #D4AF37;border-radius:12px;">
+                    <input type="password" id="registerPassword" name="password" placeholder="Password" required style="padding:8px;font-size:15px;border:1px solid #D4AF37;border-radius:12px;">
+                    <button type="submit" style="padding:12px 0;font-size:18px;background:#D4AF37;color:#fff;border:none;border-radius:12px;font-weight:700;box-shadow:0 2px 8px #F0D478;transition:background 0.3s;">Register</button>
                 </form>
                 <div id="registerMessageModal" style="margin-top:16px;color:#ff4e50;font-size:17px;font-weight:600;text-align:center;"></div>
             </div>
@@ -726,7 +745,7 @@
                 });
                 const data = await res.json();
                 if (data.success) {
-                    msgDiv.style.color = "#2e9ad0";
+                    msgDiv.style.color = "#D4AF37";
                     msgDiv.textContent = "Registration successful! Redirecting to login...";
                     fetch("https://globaldigipulse.onrender.com/send-register-thankyou", {
                         method: "POST",
