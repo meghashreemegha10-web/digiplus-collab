@@ -2378,3 +2378,138 @@ body {
   width: 100% !important;
   height: 100% !important;
 }
+
+/* ==========================================================================
+   HERO SHOWCASE SECTION: 1:1 PIXEL-EXACT GRAPHIC WITH INTERACTIVE HOTSPOTS
+   ========================================================================== */
+.hero-showcase-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 520px;
+  max-height: 100vh;
+  overflow: hidden;
+  background: #FAF9F6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-banner-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-main-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Top Navigation Hotspots */
+.hero-nav-hotspots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(54px, 10vh, 68px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 3.5vw, 40px);
+  z-index: 20;
+}
+
+.hotspot-brand {
+  width: clamp(140px, 14vw, 170px);
+  height: 42px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.hotspot-brand:hover {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.hotspot-nav-links {
+  display: flex;
+  gap: clamp(14px, 2vw, 26px);
+  height: 100%;
+  align-items: center;
+}
+.hotspot-nav-link {
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  padding: 0 4px;
+  cursor: pointer;
+  text-decoration: none;
+  color: transparent;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.hotspot-nav-link:hover {
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.hotspot-login-btn {
+  width: clamp(100px, 11vw, 130px);
+  height: 36px;
+  border-radius: 999px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.hotspot-login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+}
+
+/* 4 Feature Items Hotspots */
+.hotspot-features {
+  position: absolute;
+  top: clamp(230px, 42vh, 260px);
+  left: clamp(24px, 3.4vw, 44px);
+  width: clamp(260px, 26vw, 320px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(7px, 1.4vh, 10px);
+  z-index: 20;
+}
+.hotspot-feature-item {
+  display: block;
+  height: clamp(22px, 3.2vh, 26px);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.hotspot-feature-item:hover {
+  background: rgba(212, 175, 55, 0.12);
+}
+
+/* 3 Stats Cards Hotspots */
+.hotspot-cards {
+  position: absolute;
+  bottom: clamp(24px, 6vh, 48px);
+  left: clamp(24px, 3.4vw, 44px);
+  width: clamp(380px, 42vw, 460px);
+  height: clamp(126px, 24vh, 154px);
+  display: flex;
+  gap: clamp(8px, 1.2vw, 14px);
+  z-index: 20;
+}
+.hotspot-card-item {
+  flex: 1;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.hotspot-card-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+}
