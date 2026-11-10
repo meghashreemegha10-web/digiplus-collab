@@ -44,7 +44,7 @@
   height: 100%;
   display: block;
   transform-origin: 3px 2px;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 12px rgba(234, 170, 0, 0.45));
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 12px rgba(212, 175, 55, 0.45));
   transition: transform 0.14s ease-out;
 }
 
@@ -61,9 +61,9 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(234, 170, 0, 0.5);
+  background: rgba(212, 175, 55, 0.5);
   border: 2px solid #ffffff;
-  box-shadow: 0 0 16px rgba(234, 170, 0, 0.75);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.75);
   transform: translate(-50%, -50%);
   transform-origin: center center;
   transition: transform 0.15s ease-out;
@@ -72,7 +72,7 @@
 .demo-cursor.is-clicking .demo-cursor-touch-dot,
 .demo-cursor-overlay.is-clicking .demo-cursor-touch-dot {
   transform: translate(-50%, -50%) scale(0.82);
-  background: rgba(234, 170, 0, 0.9);
+  background: rgba(212, 175, 55, 0.9);
 }
 
 @media (max-width: 480px) {
@@ -104,8 +104,8 @@
   border-radius: 50%;
   pointer-events: none !important;
   z-index: 94;
-  background: radial-gradient(circle, rgba(234, 170, 0, 0.6) 0%, rgba(58, 15, 52, 0.3) 70%, transparent 100%);
-  border: 1.5px solid rgba(234, 170, 0, 0.9);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.6) 0%, rgba(58, 15, 52, 0.3) 70%, transparent 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.9);
   transform: scale(0.2);
   opacity: 0;
   will-change: transform, opacity;
@@ -131,7 +131,7 @@
    ========================================================================== */
 .demo-target-pressed {
   transform: scale(0.96) !important;
-  box-shadow: 0 0 20px rgba(234, 170, 0, 0.6) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6) !important;
   transition: transform 0.15s ease, box-shadow 0.15s ease !important;
 }
 
@@ -139,8 +139,8 @@
    5. Step Navigation Arrow Bar Active Glow Animations
    ========================================================================== */
 .opt-step-arrow.is-active-arrow {
-  color: #EAAA00 !important;
-  text-shadow: 0 0 10px #EAAA00;
+  color: #D4AF37 !important;
+  text-shadow: 0 0 10px #D4AF37;
   transform: translateX(2px);
 }
 
@@ -157,8 +157,8 @@
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(234, 170, 0, 0.4);
-  color: #EAAA00;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #D4AF37;
   font-family: var(--font-inter, 'Inter', -apple-system, sans-serif);
   font-size: 0.75rem;
   font-weight: 700;
@@ -180,10 +180,10 @@
 
 .demo-replay-control:hover,
 .demo-replay-control:focus-visible {
-  background: rgba(234, 170, 0, 0.2);
-  border-color: #EAAA00;
+  background: rgba(212, 175, 55, 0.2);
+  border-color: #D4AF37;
   color: #ffffff;
-  box-shadow: 0 0 18px rgba(234, 170, 0, 0.5);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.5);
   outline: none;
 }
 
@@ -216,16 +216,16 @@
 }
 
 .animated-button .btn-opt-cta {
-  background: linear-gradient(135deg, #EAAA00 0%, #d89600 100%) !important;
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
   color: #2b0b26 !important;
   font-weight: 800 !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 8px 24px rgba(234, 170, 0, 0.45) !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.45) !important;
 }
 
 .opt-steps-bar {
   background: rgba(43, 11, 38, 0.75) !important;
-  border: 1px solid rgba(234, 170, 0, 0.25) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
 }
 
@@ -234,69 +234,69 @@
 }
 
 .opt-step-btn.is-active {
-  background: #EAAA00 !important;
+  background: #D4AF37 !important;
   color: #2b0b26 !important;
   font-weight: 800 !important;
-  box-shadow: 0 4px 18px rgba(234, 170, 0, 0.45) !important;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.45) !important;
 }
 
 .opt-step-btn.is-active .opt-step-num {
   background: #3A0F34 !important;
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
   box-shadow: 0 0 8px rgba(58, 15, 52, 0.6) !important;
 }
 
 .opt-step-arrow {
-  color: rgba(234, 170, 0, 0.4) !important;
+  color: rgba(212, 175, 55, 0.4) !important;
 }
 
 .opt-step-arrow.is-active-arrow {
-  color: #EAAA00 !important;
-  text-shadow: 0 0 10px #EAAA00 !important;
+  color: #D4AF37 !important;
+  text-shadow: 0 0 10px #D4AF37 !important;
 }
 
 .screen_component {
-  border: 1px solid rgba(234, 170, 0, 0.3) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
   background: #180517 !important;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(234, 170, 0, 0.12) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 175, 55, 0.12) !important;
 }
 
 .video-step-hud {
   background: rgba(30, 8, 27, 0.95) !important;
-  border-bottom: 1px solid rgba(234, 170, 0, 0.25) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
 }
 
 .video-hud-pulse {
-  background: #EAAA00 !important;
-  box-shadow: 0 0 10px #EAAA00 !important;
+  background: #D4AF37 !important;
+  box-shadow: 0 0 10px #D4AF37 !important;
 }
 
 #videoHudUrl {
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
 }
 
 .journey-auth-card--dark {
   background: #240821 !important;
-  border: 1px solid rgba(234, 170, 0, 0.4) !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(234, 170, 0, 0.15) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.15) !important;
 }
 
 .journey-auth-card input {
   background: #350d30 !important;
-  border: 1px solid rgba(234, 170, 0, 0.3) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
   color: #fff !important;
 }
 
 .journey-auth-card input:focus {
-  border-color: #EAAA00 !important;
-  box-shadow: 0 0 10px rgba(234, 170, 0, 0.3) !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
 }
 
 .journey-gradient-btn {
-  background: linear-gradient(135deg, #EAAA00 0%, #d89600 100%) !important;
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
   color: #2b0b26 !important;
   font-weight: 800 !important;
-  box-shadow: 0 8px 24px rgba(234, 170, 0, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4) !important;
 }
 
 .journey-auth-card--light {
@@ -307,9 +307,9 @@
 
 .journey-auth-card--light .journey-gradient-btn,
 .journey-auth-card--light .journey-login-btn {
-  background: linear-gradient(135deg, #EAAA00 0%, #d89600 100%) !important;
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
   color: #2b0b26 !important;
-  box-shadow: 0 8px 24px rgba(234, 170, 0, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4) !important;
 }
 
 .journey-auth-card--light input {
@@ -319,34 +319,34 @@
 }
 
 .journey-pay-btn {
-  background: linear-gradient(135deg, #EAAA00 0%, #d89600 100%) !important;
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
   color: #2b0b26 !important;
   font-weight: 800 !important;
-  box-shadow: 0 8px 24px rgba(234, 170, 0, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4) !important;
 }
 
 .journey-option-tabs button.is-active,
 .journey-payment-methods button.is-active,
 .journey-upi-apps button.is-active {
-  background: #EAAA00 !important;
+  background: #D4AF37 !important;
   color: #2b0b26 !important;
-  border-color: #EAAA00 !important;
+  border-color: #D4AF37 !important;
 }
 
 .features-screen_features {
-  border: 1px solid rgba(234, 170, 0, 0.2) !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
   background: rgba(36, 9, 32, 0.65) !important;
   backdrop-filter: blur(12px) !important;
 }
 
 .features-screen_feature {
-  border-color: rgba(234, 170, 0, 0.15) !important;
+  border-color: rgba(212, 175, 55, 0.15) !important;
 }
 
 .features-screen_feature:hover {
-  background-color: rgba(234, 170, 0, 0.08) !important;
-  border-color: rgba(234, 170, 0, 0.4) !important;
-  box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.55), 0 0 30px -5px rgba(234, 170, 0, 0.25) !important;
+  background-color: rgba(212, 175, 55, 0.08) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.55), 0 0 30px -5px rgba(212, 175, 55, 0.25) !important;
 }
 
 .features-screen_title {
@@ -366,12 +366,12 @@
   align-items: center;
   gap: 24px;
   padding: 14px 20px;
-  border-bottom: 1px solid rgba(234, 170, 0, 0.25) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
   background: #180517 !important;
 }
 
 .journey-portal-nav strong span {
-  background: linear-gradient(135deg, #EAAA00, #C48E00) !important;
+  background: linear-gradient(135deg, #D4AF37, #AA822A) !important;
   color: #3A0F34 !important;
 }
 
@@ -380,21 +380,21 @@
 }
 
 .journey-portal-nav em {
-  border: 1px solid rgba(234, 170, 0, 0.4) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
   border-radius: 999px;
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
   background: rgba(58, 15, 52, 0.5) !important;
 }
 
 .journey-portal-nav > button {
-  border: 1px solid rgba(234, 170, 0, 0.3) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
   border-radius: 8px;
   background: #2e0b29 !important;
   color: #DDE3E8 !important;
 }
 
 .journey-course-card {
-  border: 1px solid rgba(234, 170, 0, 0.25) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-radius: 22px;
   background: #20071d !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
@@ -403,11 +403,11 @@
 .journey-course-card--instagram,
 .journey-course-card--facebook,
 .journey-course-card--youtube {
-  border-color: rgba(234, 170, 0, 0.35) !important;
+  border-color: rgba(212, 175, 55, 0.35) !important;
 }
 
 .journey-course-media > button {
-  background: #EAAA00 !important;
+  background: #D4AF37 !important;
   color: #3A0F34 !important;
 }
 
@@ -415,11 +415,11 @@
 .journey-course-media b {
   background: rgba(28, 7, 25, 0.9) !important;
   color: #DDE3E8 !important;
-  border: 1px solid rgba(234, 170, 0, 0.2) !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
 }
 
 .journey-course-body small {
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
 }
 
 .journey-course-body h3 {
@@ -431,35 +431,35 @@
 }
 
 .journey-course-body > button {
-  background: linear-gradient(135deg, #EAAA00 0%, #d89600 100%) !important;
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
   color: #2b0b26 !important;
   font-weight: 800 !important;
-  box-shadow: 0 6px 20px rgba(234, 170, 0, 0.35) !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35) !important;
 }
 
 .journey-course-card--instagram .journey-course-body > button,
 .journey-course-card--youtube .journey-course-body > button {
-  background: linear-gradient(135deg, #EAAA00 0%, #d89600 100%) !important;
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
   color: #2b0b26 !important;
 }
 
 .journey-payment-shell {
   background: #20071d !important;
-  border: 1px solid rgba(234, 170, 0, 0.35) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
 }
 
 .journey-payment-top {
-  border-bottom: 1px solid rgba(234, 170, 0, 0.25) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
   background: #180517 !important;
 }
 
 .journey-payment-top strong {
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
 }
 
 .journey-payment-top button {
-  border: 1px solid rgba(234, 170, 0, 0.3) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
   background: #2a0b27 !important;
   color: #DDE3E8 !important;
 }
@@ -469,13 +469,13 @@
 }
 
 .journey-payment-heading span {
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
 }
 
 .journey-option-tabs button,
 .journey-payment-methods button,
 .journey-upi-apps button {
-  border: 1px solid rgba(234, 170, 0, 0.25) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   background: #2a0b27 !important;
   color: rgba(221, 227, 232, 0.85) !important;
 }
@@ -483,19 +483,19 @@
 .journey-option-tabs .is-active,
 .journey-payment-methods .is-active,
 .journey-upi-apps .is-active {
-  background: #EAAA00 !important;
+  background: #D4AF37 !important;
   color: #2b0b26 !important;
   font-weight: 800 !important;
-  border-color: #EAAA00 !important;
+  border-color: #D4AF37 !important;
 }
 
 .journey-order-card {
-  border: 1px solid rgba(234, 170, 0, 0.25) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   background: rgba(58, 15, 52, 0.35) !important;
 }
 
 .journey-order-card span {
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
 }
 
 .journey-order-card strong {
@@ -511,7 +511,7 @@
 }
 
 .journey-order-card em {
-  background: #EAAA00 !important;
+  background: #D4AF37 !important;
   color: #2b0b26 !important;
   font-weight: 800 !important;
   border: none !important;
@@ -522,36 +522,36 @@
 }
 
 .journey-upi-id {
-  border: 1px solid rgba(234, 170, 0, 0.3) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
   background: #180517 !important;
   color: #ffffff !important;
 }
 
 .journey-upi-id span {
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
 }
 
 .journey-unlocked-shell {
   background: #20071d !important;
-  border: 1px solid rgba(234, 170, 0, 0.35) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
 }
 
 .journey-unlocked-head {
-  border-bottom: 1px solid rgba(234, 170, 0, 0.25) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
   background: #180517 !important;
   color: #ffffff !important;
 }
 
 .journey-theory-card {
-  border: 1px solid rgba(234, 170, 0, 0.25) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-top: 0 !important;
   background: #290b26 !important;
   color: #DDE3E8 !important;
 }
 
 .journey-theory-card h3 {
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
 }
 
 .journey-theory-card p,
@@ -560,15 +560,15 @@
 }
 
 .journey-theory-card li::marker {
-  color: #EAAA00 !important;
+  color: #D4AF37 !important;
 }
 
 .journey-unlocked-btn {
-  background: linear-gradient(135deg, #EAAA00 0%, #d89600 100%) !important;
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B88E2B 100%) !important;
   color: #2b0b26 !important;
   font-weight: 900 !important;
   border: 2px solid rgba(255, 255, 255, 0.4) !important;
-  box-shadow: 0 0 30px rgba(234, 170, 0, 0.4) !important;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4) !important;
 }
 
 .journey-unlocked-foot {
@@ -577,8 +577,8 @@
 
 .screen-badge_bage {
   background-color: #2b0b26 !important;
-  background-image: linear-gradient(135deg, rgba(234, 170, 0, 0.25), rgba(58, 15, 52, 0.8)) !important;
-  border: 1.5px solid #EAAA00 !important;
+  background-image: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(58, 15, 52, 0.8)) !important;
+  border: 1.5px solid #D4AF37 !important;
   color: #ffffff !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(234, 170, 0, 0.5) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.5) !important;
 }

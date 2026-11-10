@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=34.0">
+  <link rel="stylesheet" href="styles.css?v=35.0">
   <link rel="stylesheet" href="css/madgicx-motion.css?v=3.0">
-  <link rel="stylesheet" href="css/product-walkthrough.css?v=2.5">
+  <link rel="stylesheet" href="css/product-walkthrough.css?v=3.0">
 </head>
 <body>
 
@@ -20,6 +20,9 @@
   <main>
     <section class="hero-showcase-section" id="hero">
       
+      <!-- High-res 2x clean background containing Presenter, Ribbons, and Floating Tiles -->
+      <img src="assets/white_gold_hero_clean_bg_2x.jpg" alt="Global Digi Pulse - Advertising Ecosystem" class="hero-main-bg-img">
+
       <!-- Top Floating Navigation Bar -->
       <header class="hero-navbar">
         <a href="#hero" class="brand-logo">
@@ -39,7 +42,7 @@
           <a href="#about-surprise" class="nav-item">Modules</a>
           <a href="#curriculum" class="nav-item">Curriculum</a>
           <a href="#optimization" class="nav-item">Optimization</a>
-          <a href="/demo/index.html" class="nav-item" style="color:#EAAA00; font-weight:800;">Live Demo ✨</a>
+          <a href="/demo/index.html" class="nav-item nav-item-highlight">Live Demo ✨</a>
           <a href="#footerContact" class="nav-item">Contact</a>
         </nav>
 
@@ -48,28 +51,86 @@
         </div>
       </header>
 
-      <!-- Center Hero Showcase Frame: Edge-to-Edge 100vh Complete Frame -->
-      <div class="hero-banner-viewport">
-        <div class="hero-banner-wrapper">
-          <img src="assets/white_gold_hero_clean_top.jpg" alt="Global Digi Pulse - Learn Create Run Ads Grow - Standing Marketing Instructor" class="hero-main-banner-img">
+      <!-- Crisp Native Vector Left Content Layer -->
+      <div class="hero-content-layer">
+        <div class="hero-upper-text">
+          <h1 class="hero-headline">
+            Learn. Create.<br>
+            Run Ads. <span class="classic-gold-text">Grow.</span>
+          </h1>
+          <p class="hero-subhead">
+            Your advertising ecosystem for skills, strategy & results.
+          </p>
 
-          <!-- Motion-only overlays aligned with the platform tiles already
-               present in the hero artwork. They add depth without changing
-               the existing layout, content, or background composition. -->
-          <!-- Interactive Hotspot Links for 4 Feature Pills & 3 Bottom Stats Cards -->
-          <div class="hero-interactive-hotspots" aria-label="Hero feature links">
-            <div class="hero-hotspots-pills">
-              <a href="#curriculum" class="hero-hotspot-pill" title="Expert-Led Masterclasses"></a>
-              <a href="#curriculum" class="hero-hotspot-pill" title="Campaign Tools & Resources"></a>
-              <a href="#curriculum" class="hero-hotspot-pill" title="Exclusive Enterprise Access"></a>
-              <a href="#curriculum" class="hero-hotspot-pill" title="Lifetime Learning"></a>
-            </div>
-            <div class="hero-hotspots-cards">
-              <a href="#curriculum" class="hero-hotspot-card" title="1290% Growth YoY"></a>
-              <a href="#curriculum" class="hero-hotspot-card" title="10k+ Campaigns Launched"></a>
-              <a href="#curriculum" class="hero-hotspot-card" title="98% Client Success Rate"></a>
-            </div>
+          <div class="hero-features-list">
+            <a href="#curriculum" class="hero-feature-item">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <span>Expert-Led Masterclasses</span>
+            </a>
+
+            <a href="#curriculum" class="hero-feature-item">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <span>Campaign Tools & Resources</span>
+            </a>
+
+            <a href="#curriculum" class="hero-feature-item">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <span>Exclusive Enterprise Access</span>
+            </a>
+
+            <a href="#curriculum" class="hero-feature-item">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18.178 8c5.096 0 5.096 8 0 8-3.02 0-4.52-2.52-6.178-5.48C10.342 7.56 8.842 5 5.822 5 0.726 5 .726 13 5.822 13c3.02 0 4.52-2.52 6.178-5.48C13.658 10.44 15.158 13 18.178 13z"></path>
+                </svg>
+              </div>
+              <span>Lifetime Learning</span>
+            </a>
           </div>
+        </div>
+
+        <!-- 3 Native White Crystal Stats Cards -->
+        <div class="hero-stats-row">
+          <a href="#curriculum" class="stat-card">
+            <svg class="stat-icon" viewBox="0 0 24 24">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+            <span class="stat-value">1290%</span>
+            <span class="stat-label">+ Growth YoY</span>
+          </a>
+
+          <a href="#curriculum" class="stat-card">
+            <svg class="stat-icon" viewBox="0 0 24 24">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+            <span class="stat-value">10k+</span>
+            <span class="stat-label">Campaigns Launched</span>
+          </a>
+
+          <a href="#curriculum" class="stat-card">
+            <svg class="stat-icon" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+            <span class="stat-value">98%</span>
+            <span class="stat-label">Client Success Rate</span>
+          </a>
         </div>
       </div>
     </section>
@@ -328,7 +389,7 @@
                     <span id="videoHudStep" style="font-weight: 700; color: #fff; font-size: 0.85rem; letter-spacing: 0.04em;">STEP 01 • CHOOSE MASTERCLASS TRACK</span>
                   </div>
                   <div style="display: flex; align-items: center; gap: 0.75rem;">
-                    <span id="videoHudUrl" style="color: #EAAA00; font-family: monospace; font-size: 0.78rem;">https://globaldigipulse.com/index.html#curriculum</span>
+                    <span id="videoHudUrl" style="color: #D4AF37; font-family: monospace; font-size: 0.78rem;">https://globaldigipulse.com/index.html#curriculum</span>
                     <span style="background: rgba(52, 211, 153, 0.2); border: 1px solid rgba(52, 211, 153, 0.4); color: #34d399; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px;">LIVE DEMO</span>
                   </div>
                 </div>
@@ -740,7 +801,7 @@
           <a href="#curriculum" style="color:var(--text-muted); text-decoration:none;">Courses</a>
           <a href="#optimization" style="color:var(--text-muted); text-decoration:none;">Optimization</a>
           <a href="/demo/index.html" style="color:var(--cyan-pulse); text-decoration:none; font-weight:700;">Live Demo ✨</a>
-          <a href="/LoginPage.html" id="footerLoginLink" style="color:#EAAA00; text-decoration:none;">Member Portal</a>
+          <a href="/LoginPage.html" id="footerLoginLink" style="color:#D4AF37; text-decoration:none;">Member Portal</a>
         </div>
       </div>
 
@@ -776,10 +837,10 @@
         </div>
 
         <div style="display:flex; justify-content:flex-end; margin-top:-0.2rem; margin-bottom:0.6rem;">
-          <a href="#" class="card-forgot-link" onclick="closeModal('loginModal'); openModal('forgotModal'); return false;" style="font-size:0.78rem; color:#EAAA00; font-weight:700; text-decoration:none;">Forgot password?</a>
+          <a href="#" class="card-forgot-link" onclick="closeModal('loginModal'); openModal('forgotModal'); return false;" style="font-size:0.78rem; color:#D4AF37; font-weight:700; text-decoration:none;">Forgot password?</a>
         </div>
 
-        <button type="submit" class="card-login-btn" style="width:100%; padding:10.5px 18px; border-radius:10px; background:linear-gradient(135deg, #EAAA00 0%, #FFC42E 50%, #d49b00 100%); border:none; color:#170314; font-size:0.94rem; font-weight:800; cursor:pointer; box-shadow:0 6px 18px rgba(234, 170, 0, 0.45); display:flex; align-items:center; justify-content:center; margin-top:0.5rem; letter-spacing:0.01em;">
+        <button type="submit" class="card-login-btn" style="width:100%; padding:10.5px 18px; border-radius:10px; background:linear-gradient(135deg, #D4AF37 0%, #FFC42E 50%, #d49b00 100%); border:none; color:#170314; font-size:0.94rem; font-weight:800; cursor:pointer; box-shadow:0 6px 18px rgba(234, 170, 0, 0.45); display:flex; align-items:center; justify-content:center; margin-top:0.5rem; letter-spacing:0.01em;">
           <span>Login →</span>
         </button>
 
@@ -798,7 +859,7 @@
 
         <div class="card-signup-prompt" style="text-align:center; font-size:0.85rem; color:#475569; font-weight:600; margin-top:0.5rem;">
           <span>Don't have an account?</span>
-          <a href="#" onclick="closeModal('loginModal'); openModal('registerModal'); return false;" style="color:#EAAA00; font-weight:800; text-decoration:none; margin-left:5px;">Sign Up</a>
+          <a href="#" onclick="closeModal('loginModal'); openModal('registerModal'); return false;" style="color:#D4AF37; font-weight:800; text-decoration:none; margin-left:5px;">Sign Up</a>
         </div>
       </form>
     </div>
