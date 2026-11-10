@@ -351,11 +351,11 @@
 
 .journey-portal-nav strong span {
   background: linear-gradient(135deg, #D4AF37, #AA822A) !important;
-  color: #3A0F34 !important;
+  color: #2B0F2A !important;
 }
 
 .journey-portal-nav nav {
-  color: rgba(221, 227, 232, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .journey-portal-nav em {
@@ -369,7 +369,7 @@
   border: 1px solid rgba(212, 175, 55, 0.3) !important;
   border-radius: 8px;
   background: #2e0b29 !important;
-  color: #DDE3E8 !important;
+  color: #FAF9F6 !important;
 }
 
 .journey-course-card {
@@ -387,13 +387,13 @@
 
 .journey-course-media > button {
   background: #D4AF37 !important;
-  color: #3A0F34 !important;
+  color: #2B0F2A !important;
 }
 
 .journey-course-media span,
 .journey-course-media b {
   background: rgba(28, 7, 25, 0.9) !important;
-  color: #DDE3E8 !important;
+  color: #FAF9F6 !important;
   border: 1px solid rgba(212, 175, 55, 0.2) !important;
 }
 
@@ -406,7 +406,7 @@
 }
 
 .journey-course-body p {
-  color: rgba(221, 227, 232, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .journey-course-body > button {
@@ -440,11 +440,11 @@
 .journey-payment-top button {
   border: 1px solid rgba(212, 175, 55, 0.3) !important;
   background: #2a0b27 !important;
-  color: #DDE3E8 !important;
+  color: #FAF9F6 !important;
 }
 
 .journey-payment-heading {
-  color: rgba(221, 227, 232, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .journey-payment-heading span {
@@ -456,7 +456,7 @@
 .journey-upi-apps button {
   border: 1px solid rgba(212, 175, 55, 0.25) !important;
   background: #2a0b27 !important;
-  color: rgba(221, 227, 232, 0.85) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .journey-option-tabs .is-active,
@@ -482,7 +482,7 @@
 }
 
 .journey-order-card del {
-  color: rgba(221, 227, 232, 0.6) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .journey-order-card b {
@@ -497,7 +497,7 @@
 }
 
 .journey-payment-shell > p {
-  color: rgba(221, 227, 232, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .journey-upi-id {
@@ -526,7 +526,7 @@
   border: 1px solid rgba(212, 175, 55, 0.25) !important;
   border-top: 0 !important;
   background: #290b26 !important;
-  color: #DDE3E8 !important;
+  color: #FAF9F6 !important;
 }
 
 .journey-theory-card h3 {
@@ -535,7 +535,7 @@
 
 .journey-theory-card p,
 .journey-theory-card li {
-  color: rgba(221, 227, 232, 0.9) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .journey-theory-card li::marker {
@@ -551,7 +551,7 @@
 }
 
 .journey-unlocked-foot {
-  color: rgba(221, 227, 232, 0.7) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .screen-badge_bage {
