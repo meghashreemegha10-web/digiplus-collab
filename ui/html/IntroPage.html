@@ -457,6 +457,7 @@
     }
 
     @keyframes radarPing {
+
       75%,
       100% {
         transform: scale(1.6);
@@ -1517,13 +1518,12 @@
             and dynamic creative variations to eliminate ad fatigue.
           </p>
 
-          <!-- Action Buttons: Unlock Masterclass & Watch Intro Video -->
+          <!-- Single in-page action: open the walkthrough, intro video, and theory modal -->
           <div class="card-action-btn-group" id="cardActionGroup1">
-            <button type="button" class="btn-card-pay" style="margin-top:0;padding:10px 16px;font-size:0.92rem;margin-bottom:8px;" onclick="event.stopPropagation(); openPaymentGateway(1)">
-              <span>💳 Unlock Instagram (₹499)</span>
-            </button>
-            <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(1)">
-              <span>▶ Watch Intro Video & Theory</span>
+            <button type="button" class="btn-card-intro"
+              style="margin-top:0;padding:11px 16px;font-size:0.92rem;width:100%;"
+              onclick="event.stopPropagation(); openOptionModal(1, 'both')">
+              <span>▶ Walthrough intro videos and theory</span>
             </button>
           </div>
         </div>
@@ -1562,13 +1562,12 @@
             GST tax exemptions, and recover disabled accounts.
           </p>
 
-          <!-- Action Buttons: Unlock Masterclass & Watch Intro Video -->
+          <!-- Single in-page action: open the walkthrough, intro video, and theory modal -->
           <div class="card-action-btn-group" id="cardActionGroup2">
-            <button type="button" class="btn-card-pay" style="margin-top:0;padding:10px 16px;font-size:0.92rem;margin-bottom:8px;" onclick="event.stopPropagation(); openPaymentGateway(2)">
-              <span>💳 Unlock Facebook (₹499)</span>
-            </button>
-            <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(2)">
-              <span>▶ Watch Intro Video & Theory</span>
+            <button type="button" class="btn-card-intro"
+              style="margin-top:0;padding:11px 16px;font-size:0.92rem;width:100%;"
+              onclick="event.stopPropagation(); openOptionModal(2, 'both')">
+              <span>▶ Walthrough intro videos and theory</span>
             </button>
           </div>
         </div>
@@ -1607,13 +1606,12 @@
             lead acquisition costs, and scale video budgets with maximum ROAS.
           </p>
 
-          <!-- Action Buttons: Unlock Masterclass & Watch Intro Video -->
+          <!-- Single in-page action: open the walkthrough, intro video, and theory modal -->
           <div class="card-action-btn-group" id="cardActionGroup3">
-            <button type="button" class="btn-card-pay" style="margin-top:0;padding:10px 16px;font-size:0.92rem;margin-bottom:8px;" onclick="event.stopPropagation(); openPaymentGateway(3)">
-              <span>💳 Unlock YouTube (₹499)</span>
-            </button>
-            <button type="button" class="btn-card-intro" onclick="event.stopPropagation(); openOptionModal(3)">
-              <span>▶ Watch Intro Video & Theory</span>
+            <button type="button" class="btn-card-intro"
+              style="margin-top:0;padding:11px 16px;font-size:0.92rem;width:100%;"
+              onclick="event.stopPropagation(); openOptionModal(3, 'both')">
+              <span>▶ Walthrough intro videos and theory</span>
             </button>
           </div>
         </div>
@@ -1960,15 +1958,13 @@
       window.location.href = `/checkout/?product=${productId}&option=${currentOptionId}`;
     }
 
-    // Update Dashboard Card Badges, Payment Details & Buttons for All 3 Options
+    // Keep one consistent in-page walkthrough action on every course card.
     function updateDashboardBadges() {
       for (let i = 1; i <= 3; i++) {
         const badgeEl = document.getElementById(`cardStatusBadge${i}`);
         const actionGroup = document.getElementById(`cardActionGroup${i}`);
-        const opt = optionsData[i];
         const isUnlocked = sessionStorage.getItem(`unlocked_option_${i}`) === 'true';
 
-        // 1. Update Preview Card Badge
         if (badgeEl) {
           if (isUnlocked) {
             badgeEl.className = 'option-status-badge status-unlocked';
@@ -1979,31 +1975,12 @@
           }
         }
 
-        // 2. Update Card Action Buttons
         if (actionGroup) {
-          if (isUnlocked) {
-            actionGroup.innerHTML = `
-              <div style="display:flex;gap:8px;width:100%;">
-                <button type="button" class="btn-card-pay" style="flex:1.2;background: linear-gradient(135deg, #3A0F34 0%, #581a50 100%); color:#DDE3E8; border: 1.5px solid #EAAA00; box-shadow: 0 4px 16px rgba(234, 170, 0, 0.3); margin-top: 0; padding:10px 14px; font-size:0.9rem;" onclick="event.stopPropagation(); openPaymentGateway(${i});">
-                  <span>🚀 Open ${opt.platform} Hub</span>
-                </button>
-                <button type="button" class="btn-card-intro" style="flex:0.8;margin-top:0;padding:10px 12px;font-size:0.85rem;" onclick="event.stopPropagation(); openOptionModal(${i})">
-                  <span>▶ Theory</span>
-                </button>
-              </div>
-            `;
-          } else {
-            actionGroup.innerHTML = `
-              <div style="display:flex;flex-direction:column;gap:8px;width:100%;">
-                <button type="button" class="btn-card-pay" style="margin-top:0;padding:10px 16px;font-size:0.92rem;" onclick="event.stopPropagation(); openPaymentGateway(${i})">
-                  <span>💳 Unlock ${opt.platform} (${opt.price})</span>
-                </button>
-                <button type="button" class="btn-card-intro" style="margin-top:0;padding:8px 14px;font-size:0.88rem;" onclick="event.stopPropagation(); openOptionModal(${i})">
-                  <span>▶ Watch Intro Video & Theory</span>
-                </button>
-              </div>
-            `;
-          }
+          actionGroup.innerHTML = `
+            <button type="button" class="btn-card-intro" style="margin-top:0;padding:11px 16px;font-size:0.92rem;width:100%;" onclick="event.stopPropagation(); openOptionModal(${i}, 'both')">
+              <span>▶ Walthrough intro videos and theory</span>
+            </button>
+          `;
         }
       }
     }
