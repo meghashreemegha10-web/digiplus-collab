@@ -2738,3 +2738,164 @@ body {
     font-size: 10px !important;
   }
 }
+
+
+/* ==========================================================================
+   Living 3D Platform Ecosystem Badges (Hyper-Realistic Floating UI Cards)
+   ========================================================================== */
+.hero-floating-badges {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.hero-real-badge {
+  position: absolute;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 249, 245, 0.92) 100%);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: clamp(16px, 1.4vw, 24px);
+  box-shadow: 
+    0 16px 36px -4px rgba(26, 20, 35, 0.12),
+    0 6px 14px -2px rgba(212, 175, 55, 0.14),
+    inset 0 2px 2px rgba(255, 255, 255, 1),
+    inset 0 -2px 3px rgba(212, 175, 55, 0.22);
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  user-select: none;
+}
+
+.hero-real-badge:hover {
+  transform: translateY(-10px) scale(1.08) !important;
+  box-shadow: 
+    0 24px 44px -4px rgba(26, 20, 35, 0.18),
+    0 8px 20px -2px rgba(212, 175, 55, 0.3),
+    inset 0 2px 3px rgba(255, 255, 255, 1);
+  border-color: rgba(212, 175, 55, 0.65);
+}
+
+.badge-svg {
+  width: 58%;
+  height: 58%;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+}
+
+/* 1. 1290% Performance Growth Badge */
+.badge-growth {
+  left: 42.5%;
+  top: 24.5%;
+  width: clamp(92px, 7.2vw, 132px);
+  height: clamp(66px, 5.2vw, 94px);
+  animation: floatRealBadge1 4.5s ease-in-out infinite alternate;
+}
+.badge-growth-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px;
+}
+.growth-val {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(14px, 1.25vw, 20px);
+  font-weight: 800;
+  color: #0081FB;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.growth-bars-row {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(3px, 0.3vw, 5px);
+  height: clamp(16px, 1.4vw, 24px);
+}
+.growth-bar {
+  width: clamp(4px, 0.35vw, 6px);
+  border-radius: 2px;
+  background: linear-gradient(180deg, #00A6FB 0%, #0081FB 100%);
+}
+.gbar-1 { height: 35%; }
+.gbar-2 { height: 50%; }
+.gbar-3 { height: 68%; }
+.gbar-4 { height: 85%; }
+.gbar-5 { height: 100%; }
+
+/* 2. Meta Badge */
+.badge-meta {
+  left: 55.4%;
+  top: 20%;
+  width: clamp(60px, 4.8vw, 86px);
+  height: clamp(60px, 4.8vw, 86px);
+  animation: floatRealBadge2 5s ease-in-out 0.8s infinite alternate;
+}
+
+/* 3. YouTube Badge */
+.badge-youtube {
+  left: 68.4%;
+  top: 18.5%;
+  width: clamp(58px, 4.6vw, 84px);
+  height: clamp(58px, 4.6vw, 84px);
+  animation: floatRealBadge3 4.8s ease-in-out 1.5s infinite alternate;
+}
+
+/* 4. Google Ads Badge */
+.badge-googleads {
+  left: 75.8%;
+  top: 28.5%;
+  width: clamp(62px, 4.9vw, 88px);
+  height: clamp(62px, 4.9vw, 88px);
+  animation: floatRealBadge4 5.2s ease-in-out 0.4s infinite alternate;
+}
+
+/* 5. Google "G" Badge */
+.badge-google {
+  left: 85%;
+  top: 20%;
+  width: clamp(62px, 4.9vw, 88px);
+  height: clamp(62px, 4.9vw, 88px);
+  animation: floatRealBadge5 4.6s ease-in-out 1.2s infinite alternate;
+}
+
+@keyframes floatRealBadge1 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-8px) rotate(0.8deg); }
+}
+@keyframes floatRealBadge2 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(-1.2deg); }
+}
+@keyframes floatRealBadge3 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-7px) rotate(1deg); }
+}
+@keyframes floatRealBadge4 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-9px) rotate(-0.8deg); }
+}
+@keyframes floatRealBadge5 {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-8px) rotate(1.2deg); }
+}
+
+@media (max-width: 900px) {
+  .badge-growth {
+    left: 38%;
+    top: 22%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-floating-badges {
+    display: none;
+  }
+}
+
