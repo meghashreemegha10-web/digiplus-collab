@@ -2789,10 +2789,10 @@ body {
 
 /* 1. 1290% Performance Growth Badge */
 .badge-growth {
-  left: 42.5%;
-  top: 24.5%;
-  width: clamp(92px, 7.2vw, 132px);
-  height: clamp(66px, 5.2vw, 94px);
+  left: 39%;
+  top: 25.5%;
+  width: clamp(86px, 6.8vw, 120px);
+  height: clamp(60px, 4.8vw, 84px);
   animation: floatRealBadge1 4.5s ease-in-out infinite alternate;
 }
 .badge-growth-inner {
@@ -2831,37 +2831,37 @@ body {
 
 /* 2. Meta Badge */
 .badge-meta {
-  left: 55.4%;
-  top: 20%;
-  width: clamp(60px, 4.8vw, 86px);
-  height: clamp(60px, 4.8vw, 86px);
+  left: 48.5%;
+  top: 13.5%;
+  width: clamp(56px, 4.4vw, 78px);
+  height: clamp(56px, 4.4vw, 78px);
   animation: floatRealBadge2 5s ease-in-out 0.8s infinite alternate;
 }
 
 /* 3. YouTube Badge */
 .badge-youtube {
-  left: 68.4%;
-  top: 18.5%;
-  width: clamp(58px, 4.6vw, 84px);
-  height: clamp(58px, 4.6vw, 84px);
+  left: 71%;
+  top: 13.5%;
+  width: clamp(56px, 4.4vw, 78px);
+  height: clamp(56px, 4.4vw, 78px);
   animation: floatRealBadge3 4.8s ease-in-out 1.5s infinite alternate;
 }
 
 /* 4. Google Ads Badge */
 .badge-googleads {
-  left: 75.8%;
-  top: 28.5%;
-  width: clamp(62px, 4.9vw, 88px);
-  height: clamp(62px, 4.9vw, 88px);
+  left: 78.5%;
+  top: 29%;
+  width: clamp(58px, 4.6vw, 82px);
+  height: clamp(58px, 4.6vw, 82px);
   animation: floatRealBadge4 5.2s ease-in-out 0.4s infinite alternate;
 }
 
 /* 5. Google "G" Badge */
 .badge-google {
-  left: 85%;
-  top: 20%;
-  width: clamp(62px, 4.9vw, 88px);
-  height: clamp(62px, 4.9vw, 88px);
+  left: 85.5%;
+  top: 17%;
+  width: clamp(58px, 4.6vw, 82px);
+  height: clamp(58px, 4.6vw, 82px);
   animation: floatRealBadge5 4.6s ease-in-out 1.2s infinite alternate;
 }
 
