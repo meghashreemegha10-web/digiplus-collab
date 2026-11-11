@@ -47,35 +47,22 @@ body {
   position: relative;
 }
 
-/* Distinct Magical Advertising Background for Each Post-Login Page */
-body.page-intro {
-  background-image: 
-    linear-gradient(180deg, rgba(8, 12, 28, 0.04) 0%, rgba(10, 15, 34, 0.12) 50%, rgba(6, 10, 24, 0.35) 100%),
-    url('../assets/ads_magical_apps.jpg?v=14.0') !important;
-  background-position: center center !important;
+/* Distinct Pearl White & Classic Gold System for Each Post-Login Page */
+body.page-intro,
+body.page-welcome,
+body.page-campaign,
+body.page-business,
+body.page-scanpay,
+body.page-thankyou {
+  background: 
+    radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+    radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%),
+    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%) !important;
+  background-color: #FAF9F6 !important;
   background-attachment: fixed !important;
-  background-size: cover !important;
-}
-
-body.page-welcome {
-  background-image: 
-    linear-gradient(180deg, rgba(10, 16, 35, 0.12) 0%, rgba(12, 18, 40, 0.22) 50%, rgba(8, 13, 28, 0.45) 100%),
-    url('../assets/ads_meta_command.jpg?v=7.0') !important;
-}
-
-body.page-campaign {
-  background-image: 
-    linear-gradient(180deg, rgba(10, 16, 35, 0.12) 0%, rgba(12, 18, 40, 0.22) 50%, rgba(8, 13, 28, 0.45) 100%),
-    url('../assets/ads_youtube_campaign.jpg?v=7.0') !important;
-}
-
-body.page-business {
-  background-image: 
-    linear-gradient(180deg, rgba(8, 12, 28, 0.06) 0%, rgba(10, 15, 34, 0.16) 50%, rgba(6, 10, 24, 0.40) 100%),
-    url('../assets/ads_social_matrix.jpg?v=14.0') !important;
-  background-position: center center !important;
-  background-attachment: fixed !important;
-  background-size: cover !important;
+  color: #1A1423 !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
 body.page-business .content-left,
@@ -95,11 +82,12 @@ body.page-campaign .campaign-box {
   max-width: 1140px !important;
   padding: 30px 28px !important;
   gap: 32px !important;
-  background: rgba(10, 16, 38, 0.45) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.42) !important;
   border-radius: 24px !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(56, 189, 248, 0.25) !important;
+  box-shadow: 0 14px 40px rgba(212, 175, 55, 0.18), 0 2px 8px rgba(0, 0, 0, 0.03) !important;
 }
 
 body.page-business h1,
@@ -110,10 +98,13 @@ body.page-business .main-title,
 body.page-intro .main-title,
 body.page-welcome .main-title,
 body.page-campaign .main-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  color: #1A1423 !important;
   font-size: 2.1rem !important;
   line-height: 1.2 !important;
   margin-bottom: 16px !important;
   letter-spacing: 0.02em !important;
+  font-weight: 700 !important;
 }
 
 body.page-business .magical-nav-badge,
@@ -198,9 +189,13 @@ body.page-campaign .icon-circle svg {
 }
 
 body.page-scanpay {
-  background-image: 
-    linear-gradient(180deg, rgba(10, 16, 35, 0.12) 0%, rgba(12, 18, 40, 0.22) 50%, rgba(8, 13, 28, 0.45) 100%),
-    url('../assets/ads_global_ecosystem.jpg?v=7.0') !important;
+  background: 
+    radial-gradient(circle at 14% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+    radial-gradient(circle at 86% 22%, rgba(226, 191, 111, 0.12), transparent 42%),
+    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.95), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 35%, #F5F3EF 70%, #FAF9F6 100%) !important;
+  background-color: #FAF9F6 !important;
+  background-image: none !important;
 }
 
 body.page-thankyou {
@@ -335,43 +330,44 @@ body::before {
   100% { opacity: 0.5; filter: brightness(1); }
 }
 
-/* Bold High-Impact Marketing Headings (Matching Website Design) */
+/* Bold High-Impact Marketing Headings (Pearl White & Classic Gold) */
 h1, .main-title, h1.main-title {
-  font-family: var(--font-magic) !important;
-  font-size: clamp(2.6rem, 4.5vw, 3.6rem) !important;
-  font-weight: 900 !important;
-  background: linear-gradient(135deg, #ffffff 0%, #fef08a 35%, #38bdf8 70%, #c084fc 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(2rem, 3.4vw, 2.6rem) !important;
+  font-weight: 700 !important;
+  color: #1A1423 !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #1A1423 !important;
   letter-spacing: -0.01em !important;
   line-height: 1.2 !important;
-  margin-bottom: 20px !important;
+  margin-bottom: 16px !important;
   text-align: center !important;
   text-shadow: none !important;
-  filter: drop-shadow(0 0 24px rgba(56, 189, 248, 0.6)) !important;
+  filter: none !important;
 }
 
 p, .sub-title, .instruction {
-  font-family: var(--font-magic) !important;
-  font-size: 1.32rem !important;
-  color: #e2e8f0 !important;
-  font-weight: 700 !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
-  line-height: 1.65 !important;
-  margin-bottom: 24px !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 1.1rem !important;
+  color: #4A4A4A !important;
+  font-weight: 500 !important;
+  text-shadow: none !important;
+  line-height: 1.5 !important;
+  margin-bottom: 20px !important;
   text-align: center !important;
 }
 
-/* Magical Crystal Video Container */
+/* Crystal Video Container */
 .video-container, .video-preview {
   position: relative;
   width: 100%;
   max-width: 460px !important;
   border-radius: 18px !important;
-  border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.42) !important;
   box-shadow: 
-    0 12px 35px rgba(0, 0, 0, 0.5),
-    0 0 25px rgba(56, 189, 248, 0.3) !important;
+    0 12px 35px rgba(212, 175, 55, 0.16),
+    0 2px 8px rgba(0, 0, 0, 0.03) !important;
   overflow: hidden !important;
   background: #000000 !important;
   margin-bottom: 20px !important;
@@ -384,140 +380,86 @@ p, .sub-title, .instruction {
   display: block;
 }
 
-/* Bold High-Converting Next Page / Action Buttons */
+/* Bold Classic Gold Next Page / Action Buttons */
 .intro-btn, .welcome-btn, #goToCampaignBtn, #goToWelcomeBtn, #goToThankYouBtn, #payBtn, #goWelcomeBtn {
-  font-family: var(--font-magic) !important;
-  background: linear-gradient(135deg, #0284c7 0%, #00f2fe 30%, #a855f7 70%, #facc15 100%) !important;
-  color: #ffffff !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  background: linear-gradient(135deg, #E2BF6F 0%, #D4AF37 50%, #C19626 100%) !important;
+  color: #1A0D26 !important;
   border: none !important;
   border-radius: 9999px !important;
-  padding: 18px 48px !important;
-  font-size: 1.4rem !important;
-  font-weight: 900 !important;
+  padding: 14px 38px !important;
+  font-size: 1.12rem !important;
+  font-weight: 700 !important;
   cursor: pointer !important;
-  letter-spacing: 0.02em !important;
-  box-shadow: 
-    0 8px 25px rgba(2, 132, 199, 0.45),
-    0 0 25px rgba(168, 85, 247, 0.35) !important;
+  letter-spacing: -0.01em !important;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35) !important;
   position: relative !important;
   overflow: hidden !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 14px !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+  gap: 10px !important;
+  text-shadow: none !important;
 }
 
 .intro-btn:hover, .welcome-btn:hover, #goToCampaignBtn:hover, #goToWelcomeBtn:hover, #payBtn:hover {
-  transform: translateY(-2px) scale(1.03) !important;
-  box-shadow: 
-    0 14px 35px rgba(2, 132, 199, 0.6),
-    0 0 35px rgba(250, 204, 21, 0.5) !important;
-}
-
-/* Shimmer ray on button */
-.shimmer {
-  position: absolute;
-  top: 0; left: -100%;
-  width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transform: skewX(-20deg);
-  animation: magicShimmer 2.4s infinite;
-}
-
-@keyframes magicShimmer {
-  0% { left: -100%; }
-  60%, 100% { left: 140%; }
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
 }
 
 /* Logout Button */
 #logoutBtn {
-  background: rgba(239, 68, 68, 0.25) !important;
-  border: 1.5px solid rgba(239, 68, 68, 0.5) !important;
-  color: #fca5a5 !important;
-  font-size: 1.35rem !important;
-  font-weight: 800 !important;
-  padding: 16px 36px !important;
+  background: rgba(239, 68, 68, 0.12) !important;
+  border: 1.5px solid rgba(239, 68, 68, 0.4) !important;
+  color: #dc2626 !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  padding: 12px 28px !important;
   border-radius: 9999px !important;
-  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25) !important;
+  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.15) !important;
 }
 
 #logoutBtn:hover {
-  background: rgba(239, 68, 68, 0.5) !important;
+  background: #dc2626 !important;
   color: #ffffff !important;
-  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5) !important;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35) !important;
 }
 
-/* Magical Sidebar Module Buttons (The Enchanted Scrolls) */
+/* Sidebar Module Buttons (Pearl White with Classic Gold Accent) */
 .button-sidebar {
   display: flex !important;
   flex-direction: column !important;
-  gap: 16px !important;
+  gap: 14px !important;
   margin-left: clamp(20px, 3.5vw, 48px) !important;
   margin-top: 0 !important;
   align-items: stretch !important;
   z-index: 2;
 }
 
-.button-sidebar::-webkit-scrollbar {
-  width: 5px;
-}
-.button-sidebar::-webkit-scrollbar-track {
-  background: rgba(10, 16, 35, 0.4);
-  border-radius: 9999px;
-}
-.button-sidebar::-webkit-scrollbar-thumb {
-  background: rgba(56, 189, 248, 0.4);
-  border-radius: 9999px;
-}
-.button-sidebar::-webkit-scrollbar-thumb:hover {
-  background: rgba(56, 189, 248, 0.8);
-}
-
 .btn-group {
   width: 100% !important;
   max-width: 540px !important;
-  min-height: 72px !important;
+  min-height: 64px !important;
   display: flex !important;
   align-items: center !important;
-  background: rgba(14, 22, 50, 0.78) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border: 1.5px solid rgba(56, 189, 248, 0.35) !important;
-  border-radius: 9999px !important;
-  padding: 10px 22px 10px 14px !important;
-  box-shadow: 
-    0 8px 24px rgba(0, 0, 0, 0.4),
-    0 0 15px rgba(56, 189, 248, 0.15) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.38) !important;
+  border-radius: 20px !important;
+  padding: 8px 18px 8px 14px !important;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.10) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 }
 
-.btn-group::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 9999px;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(192, 132, 252, 0.3), rgba(254, 240, 138, 0.2));
-  opacity: 0;
-  transition: opacity 0.25s;
-  z-index: 0;
-}
-
 .btn-group:hover {
-  transform: translateY(-3px) scale(1.02) !important;
-  border-color: rgba(56, 189, 248, 0.7) !important;
-  box-shadow: 
-    0 14px 35px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(56, 189, 248, 0.4),
-    0 0 15px rgba(254, 240, 138, 0.25) !important;
-}
-
-.btn-group:hover::before {
-  opacity: 1;
+  transform: translateX(4px) !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.22) !important;
 }
 
 /* Icon Medallion */
@@ -559,16 +501,16 @@ p, .sub-title, .instruction {
 }
 
 .pill-bg button, .label {
-  font-family: var(--font-magic) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
   background: none !important;
   border: none !important;
-  color: #ffffff !important;
+  color: #1A1423 !important;
   font-size: 1.22rem !important;
   font-weight: 800 !important;
   cursor: pointer !important;
   text-align: left !important;
   letter-spacing: 0.03em !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  text-shadow: none !important;
   padding: 0 6px !important;
   text-transform: uppercase !important;
   width: 100% !important;
@@ -582,17 +524,17 @@ p, .sub-title, .instruction {
 
 /* Subtitle styling for multi-line items (Bonus Videos, etc.) */
 .btn-group .pill-bg div div:first-child {
-  font-size: 1.22rem !important;
+  font-size: 1.15rem !important;
   font-weight: 800 !important;
-  color: #ffffff !important;
-  letter-spacing: 0.03em !important;
+  color: #1A1423 !important;
+  letter-spacing: 0.02em !important;
   line-height: 1.3 !important;
 }
 
 .btn-group .pill-bg div div:last-child {
-  font-size: 0.98rem !important;
+  font-size: 0.92rem !important;
   font-weight: 600 !important;
-  color: #e2e8f0 !important;
+  color: #555555 !important;
   line-height: 1.35 !important;
   margin-top: 2px !important;
 }
