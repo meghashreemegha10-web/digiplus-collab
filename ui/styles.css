@@ -1741,10 +1741,7 @@ body {
   object-position: center center;
   z-index: 1;
   pointer-events: none;
-  image-rendering: -webkit-optimize-contrast !important;
-  image-rendering: crisp-edges !important;
-  filter: contrast(1.05) saturate(1.18) !important;
-}
+  }
 
 /* Floating Top Navbar */
 .hero-navbar {
